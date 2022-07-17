@@ -3,9 +3,9 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter , Routes , Route } from "react-router-dom";
+import SignContextProviderInterface from "./SignContextProviderInterface";
+import LoginContextProviderInterface from './LoginContextProviderInterface'
 
-import Login from "./Login";
-import Signup from "./Signup";
 function App() {
   return (
     <div /*className="App"*/>
@@ -28,8 +28,8 @@ function App() {
 
           <Routes>
 
-              <Route exact path="/Login" element={ <Login/> } />
-              <Route exact path="/Signup" element={ <Signup/> } />
+              <Route exact path="/Login" element={ <LoginContextProviderInterface/> } />
+              <Route exact path="/Signup" element={ <SignContextProviderInterface/> } />
 
           </Routes>
 

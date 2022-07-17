@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import {Link} from "react-router-dom";
 import loginPhoto from './backgroudphotoLogin.jpg'
+import ReactLinkContextProvider, {ReactLinkContext} from "./ReactLinkContext";
 
 const Login = () => {
 
-    const signUpLink = '#'
+    const { SignUpLink } = useContext( ReactLinkContext )
 
     const forgotPasswordLink = '#'
 
@@ -34,88 +35,90 @@ const Login = () => {
 
     return (
 
-        <div className="h-100">
+            <div className="h-100">
 
-            <section className="h-100 bg-danger">
+                {/*<ReactLinkContextProvider>*/}
 
-                <div className="container py-5 h-100">
+                <section className="h-100 bg-danger">
 
-                    <div className="row d-flex justify-content-center align-items-center h-100">
+                    <div className="container py-5 h-100">
 
-                        <div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">
+                        <div className="row d-flex justify-content-center align-items-center h-100">
 
-                            <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0">
+                            <div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">
 
-                                <div className="row g-0">
+                                <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0">
 
-                                    <div className="col-lg-6 my-lg-5">
+                                    <div className="row g-0">
 
-                                        <div className="card-body p-md-1 mx-md-4 mt-5">
+                                        <div className="col-lg-6 my-lg-5">
 
-                                            <div className="mb-3">
+                                            <div className="card-body p-md-1 mx-md-4 mt-5">
 
-                                                <div className="text-center">
+                                                <div className="mb-3">
 
-                                                    <p className="fs-3 fw-bold pb-3"> Login with </p>
+                                                    <div className="text-center">
+
+                                                        <p className="fs-3 fw-bold pb-3"> Login with </p>
 
 
-                                                    <div className="d-flex justify-content-center">
+                                                        <div className="d-flex justify-content-center">
 
-                                                        <button className="btn btn-success mx-1">
+                                                            <button className="btn btn-success mx-1">
 
-                                                            <i className="bi bi-google me-2"></i>
-                                                            Login with Google
+                                                                <i className="bi bi-google me-2"></i>
+                                                                Login with Google
 
-                                                        </button>
+                                                            </button>
 
-                                                        <button className="btn btn-primary mx-1">
+                                                            <button className="btn btn-primary mx-1">
 
-                                                            <i className="bi bi-facebook me-2"></i>
-                                                            Login with Facebook
+                                                                <i className="bi bi-facebook me-2"></i>
+                                                                Login with Facebook
 
-                                                        </button>
+                                                            </button>
+
+                                                        </div>
+
+                                                        <p className="fs-3 fw-bold mt-4"> or </p>
+
 
                                                     </div>
 
-                                                    <p className="fs-3 fw-bold mt-4"> or </p>
-
-
                                                 </div>
 
-                                            </div>
+                                                <form action="" className="my-4 mx-5">
 
-                                            <form action="" className="my-4 mx-5">
-
-                                                <div className="input-group mb-3">
+                                                    <div className="input-group mb-3">
                                                     <span className="input-group-text">
 
                                                         <i className="bi bi-envelope-fill"></i>
 
                                                     </span>
-                                                    <input type="email" className="form-control"
-                                                           placeholder="flash@gmail.com"
-                                                           value={ email }
-                                                           onChange={ ( e ) => setEmail( e.target.value )}
-                                                           /*aria-label="Username" aria-describedby="basic-addon1"*/
-                                                           autoFocus
-                                                           required
-                                                    />
-                                                </div>
+                                                        <input type="email" className="form-control"
+                                                               placeholder="flash@gmail.com"
+                                                               value={ email }
+                                                               onChange={ ( e ) => setEmail( e.target.value )}
+                                                            /*aria-label="Username" aria-describedby="basic-addon1"*/
+                                                               autoFocus
+                                                               required
+                                                        />
+                                                    </div>
 
-                                                <div className="input-group mb-3">
+                                                    <div className="input-group mb-3">
                                                     <span className="input-group-text">
 
                                                         <i className="bi bi-lock-fill"></i>
 
                                                     </span>
-                                                    <input type={ passwordType } className="form-control"
-                                                           placeholder="Enter password"
-                                                           value={ password }
-                                                           onChange={ ( e ) => setPassword( e.target.value ) }
-                                                           required
-                                                    />
+                                                        <input type={ passwordType } className="form-control"
+                                                               placeholder="Enter password"
+                                                               value={ password }
+                                                               onChange={ ( e ) => setPassword( e.target.value ) }
+                                                               required
+                                                        />
 
-                                                    <span className="input-group-text">
+                                                        <span className="input-group-text">
 
 
                                                         <button className="btn btn-outline-dark border-0"
@@ -126,47 +129,49 @@ const Login = () => {
                                                         </button>
 
                                                     </span>
-                                                </div>
+                                                    </div>
 
 
-                                                <div className="text-center">
+                                                    <div className="text-center">
 
-                                                    <div className="d-flex align-items-center justify-content-center pb-4">
+                                                        <div className="d-flex align-items-center justify-content-center pb-4">
 
-                                                        <button className="btn btn-danger btn-block" type="submit">
+                                                            <button className="btn btn-danger btn-block" type="submit">
 
-                                                            Login
+                                                                Login
 
-                                                        </button>
+                                                            </button>
+
+                                                        </div>
+
+                                                        <Link className="text-primary" to={ forgotPasswordLink }>Forgot password?</Link>
+
+                                                        <p> Don't have an account? <Link className="text-primary" to={ SignUpLink }> Signup </Link>  </p>
 
                                                     </div>
 
-                                                    <Link className="text-primary" to={ forgotPasswordLink }>Forgot password?</Link>
 
-                                                    <p> Don't have an account? <Link className="text-primary" to={ signUpLink }> Signup </Link>  </p>
+
+                                                </form>
+
+
+                                                <div>
 
                                                 </div>
-
-
-
-                                            </form>
-
-
-                                            <div>
 
                                             </div>
 
                                         </div>
 
-                                    </div>
+                                        <div className="col-lg-6 d-lg-flex d-none">
 
-                                    <div className="col-lg-6 d-lg-flex d-none">
+                                            <div className="d-lg-flex d-none">
 
-                                        <div className="d-lg-flex d-none">
+                                                <div className="text-center">
 
-                                            <div className="text-center">
+                                                    <img className="img-fluid rounded-3 h-100" src={ loginPhoto } alt="Camera"/>
 
-                                                <img className="img-fluid rounded-3 h-100" src={ loginPhoto } alt="Camera"/>
+                                                </div>
 
                                             </div>
 
@@ -182,11 +187,11 @@ const Login = () => {
 
                     </div>
 
-                </div>
+                </section>
 
-            </section>
+                {/*</ReactLinkContextProvider>*/}
 
-        </div>
+            </div>
 
     )
 
