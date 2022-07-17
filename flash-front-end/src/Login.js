@@ -96,7 +96,10 @@ const Login = () => {
                                                            placeholder="flash@gmail.com"
                                                            value={ email }
                                                            onChange={ ( e ) => setEmail( e.target.value )}
-                                                           /*aria-label="Username" aria-describedby="basic-addon1"*/ autoFocus/>
+                                                           /*aria-label="Username" aria-describedby="basic-addon1"*/
+                                                           autoFocus
+                                                           required
+                                                    />
                                                 </div>
 
                                                 <div className="input-group mb-3">
@@ -109,6 +112,7 @@ const Login = () => {
                                                            placeholder="Enter password"
                                                            value={ password }
                                                            onChange={ ( e ) => setPassword( e.target.value ) }
+                                                           required
                                                     />
 
                                                     <span className="input-group-text">
