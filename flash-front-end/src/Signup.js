@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react'
 import {Link} from "react-router-dom";
 import loginPhoto from "./backgroudphotoLogin.jpg";
 import {ReactLinkContext} from "./ReactLinkContext";
+import validator from "validator";
 
 const Signup = () => {
 
@@ -25,6 +26,18 @@ const Signup = () => {
 
     const [ contactNumber , setContactNumber ] = useState( '' )
 
+    const [ errorMessageStatus , setErrorMessageStatus ] = useState( false )
+
+    const errorMessage = 'Password requires to have one lower case, one uppercase, one number, one symbol and be minimum of 8 characters in lengths';
+
+    const [ confirmPasswordStatus , setConfirmPasswordStatus ] = useState( false )
+
+    const [ confirmPasswordErrorMessage , setConfirmPasswordErrorMessage ] = useState( '' )
+
+    const [ emailStatus , setEmailStatus ] = useState( false )
+
+    const [ emailErrorMessage , setEmailErrorMessage ] = useState( '' )
+
     const showHidePassword = () => {
 
         if ( isPasswordHidden ) {
@@ -37,6 +50,53 @@ const Signup = () => {
             setPasswordType( 'password' )
             setIsPasswordHidden( true )
 
+        }
+
+    }
+
+    const validatePassword = ( passwordInputValue ) => {
+
+        setPassword( passwordInputValue )
+        if ( validator.isStrongPassword( password , {
+
+            minLength : 8 , minLowercase : 1 , minUppercase : 1 ,
+            minNumbers : 1 , minSymbols : 1
+
+        } ) )setErrorMessageStatus( false )
+        else setErrorMessageStatus( true )
+
+    }
+
+    const validateConfirmPassword = ( confirmPasswordInputValue ) =>{
+
+        setConfirmPassword( confirmPasswordInputValue )
+        if ( password !== confirmPassword ){
+
+            setConfirmPasswordStatus( true )
+            setConfirmPasswordErrorMessage( 'Passwords does not match' )
+
+        }else{
+
+            setConfirmPasswordStatus( false )
+            setConfirmPasswordErrorMessage( 'Password matches' )
+
+        }
+
+    }
+
+    const validateEmail = ( emailInputValue ) => {
+
+        setEmail( emailInputValue )
+
+        if ( validator.isEmail( emailInputValue ) ) {
+
+            setEmailStatus(true)
+            setEmailErrorMessage( 'valid email' )
+        }
+        else {
+
+            setEmailStatus(false)
+            setEmailErrorMessage( 'Invalid email' )
         }
 
     }
@@ -173,11 +233,31 @@ const Signup = () => {
                                                         <input type="email" className="form-control"
                                                                placeholder="flash@gmail.com"
                                                                value={ email }
-                                                               onChange={ ( e ) => setEmail( e.target.value )}
+                                                               onChange={ ( e ) => validateEmail( e.target.value )}
                                                             /*aria-label="Username" aria-describedby="basic-addon1"*/
                                                                required
                                                         />
                                                     </div>
+
+                                                    {
+
+                                                        emailStatus && <div className="mx-2 bg-success my-0">
+
+                                                            <p className="d-flex justify-content-center"> { emailErrorMessage } </p>
+
+                                                        </div>
+
+                                                    }
+
+                                                    {
+
+                                                        !emailStatus && <div className="mx-2 bg-warning my-0">
+
+                                                            <p className="d-flex justify-content-center"> { emailErrorMessage } </p>
+
+                                                        </div>
+
+                                                    }
 
                                                     <div className="input-group mb-3">
                                                     <span className="input-group-text">
@@ -188,7 +268,7 @@ const Signup = () => {
                                                         <input type={ passwordType } className="form-control"
                                                                placeholder="Enter password"
                                                                value={ password }
-                                                               onChange={ ( e ) => setPassword( e.target.value ) }
+                                                               onChange={ ( e ) => validatePassword( e.target.value ) }
                                                                required
                                                         />
 
@@ -204,6 +284,16 @@ const Signup = () => {
 
                                                     </span>
                                                     </div>
+
+                                                    {
+
+                                                        errorMessageStatus && <div className="mx-2 bg-warning my-0">
+
+                                                            <p className="d-flex justify-content-center"> { errorMessage } </p>
+
+                                                        </div>
+
+                                                    }
 
                                                     <div className="input-group mb-3">
                                                     <span className="input-group-text">
@@ -214,7 +304,7 @@ const Signup = () => {
                                                         <input type={ passwordType } className="form-control"
                                                                placeholder="Confirm password"
                                                                value={ confirmPassword }
-                                                               onChange={ ( e ) => setConfirmPassword( e.target.value ) }
+                                                               onChange={ ( e ) => validateConfirmPassword( e.target.value ) }
                                                                required
                                                         />
 
@@ -231,6 +321,25 @@ const Signup = () => {
                                                     </span>
                                                     </div>
 
+                                                    {
+
+                                                        confirmPasswordStatus && <div className="mx-2 bg-warning my-0">
+
+                                                            <p className="d-flex justify-content-center"> { confirmPasswordErrorMessage } </p>
+
+                                                        </div>
+
+                                                    }
+
+                                                    {
+
+                                                        !confirmPasswordStatus && <div className="mx-2 bg-success my-0">
+
+                                                            <p className="d-flex justify-content-center"> { confirmPasswordErrorMessage } </p>
+
+                                                        </div>
+
+                                                    }
 
                                                     <div className="text-center">
 
