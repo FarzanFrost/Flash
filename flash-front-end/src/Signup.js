@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import {Link} from "react-router-dom";
-import loginPhoto from "./backgroudphotoLogin.jpg";
-import {ReactLinkContext} from "./ReactLinkContext";
+import loginPhoto from "./Images/backgroudphotoLogin.jpg";
+import {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
 import validator from "validator";
 
 const Signup = () => {
