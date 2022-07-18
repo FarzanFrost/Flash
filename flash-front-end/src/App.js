@@ -1,16 +1,16 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-
-
 import { BrowserRouter , Routes , Route } from "react-router-dom";
 
+import Header from "./Header";
 import Login from "./Login";
-
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
-
 import Sample from "./Sample";
+import AddEmployee from "./AddEmployee";
+import ViewPackages from "./ViewPackages";
+
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
           Learn React
         </a>
       </header>*/}
+        <AddEmployee />
 
       <BrowserRouter>
 
@@ -37,8 +38,12 @@ function App() {
               <Route exact path="/Login" element={ <Login/> } />
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
               <Route exact path="/Sample" element={ <Sample/> } />
+              <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
+              <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
+              <Route exact path="/Header" element={ <Header/> } />
 
           </Routes>
+
 
       </BrowserRouter>
 
