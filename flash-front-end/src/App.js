@@ -4,7 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 import { BrowserRouter , Routes , Route } from "react-router-dom";
 
-
+import Header from "./Header";
 import Login from "./Login";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
@@ -33,12 +33,19 @@ function App() {
           <Routes>
 
 
+              <Route exact path="/Header" element={ <Header/> } />
+
+          </Routes>
+
+          <Routes>
+
               <Route exact path="/Login" element={ <Login/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
 
 
           </Routes>
+
 
       </BrowserRouter>
 
