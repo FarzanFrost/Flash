@@ -3,8 +3,9 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 import { BrowserRouter , Routes , Route } from "react-router-dom";
-
+import Header from "./Header";
 import Login from "./Login";
+
 function App() {
   return (
     <div /*className="App"*/>
@@ -27,9 +28,16 @@ function App() {
 
           <Routes>
 
+              <Route exact path="/Header" element={ <Header/> } />
+
+          </Routes>
+
+          <Routes>
+
               <Route exact path="/Login" element={ <Login/> } />
 
           </Routes>
+
 
       </BrowserRouter>
 
