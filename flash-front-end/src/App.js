@@ -1,8 +1,11 @@
 //import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter , Routes , Route } from "react-router-dom";
+import SignContextProviderInterface from "./SignContextProviderInterface";
+import LoginContextProviderInterface from './LoginContextProviderInterface'
+
 
 import Header from "./Header";
 import Login from "./Login";
@@ -10,7 +13,6 @@ import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
-
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
 
           <Routes>
 
+              <Route exact path="/Login" element={ <LoginContextProviderInterface/> } />
+              <Route exact path="/Signup" element={ <SignContextProviderInterface/> } />
               <Route exact path="/Login" element={ <Login/> } />
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
               <Route exact path="/Sample" element={ <Sample/> } />
