@@ -56,8 +56,7 @@ const Signup = () => {
 
     const validatePassword = ( passwordInputValue ) => {
 
-        setPassword( passwordInputValue )
-        if ( validator.isStrongPassword( password , {
+        if ( validator.isStrongPassword( passwordInputValue , {
 
             minLength : 8 , minLowercase : 1 , minUppercase : 1 ,
             minNumbers : 1 , minSymbols : 1
@@ -65,22 +64,25 @@ const Signup = () => {
         } ) )setErrorMessageStatus( false )
         else setErrorMessageStatus( true )
 
+        setPassword( passwordInputValue )
+
     }
 
     const validateConfirmPassword = ( confirmPasswordInputValue ) =>{
 
-        setConfirmPassword( confirmPasswordInputValue )
-        if ( password !== confirmPassword ){
+        if ( password === confirmPasswordInputValue ){
 
-            setConfirmPasswordStatus( true )
-            setConfirmPasswordErrorMessage( 'Passwords does not match' )
+            setConfirmPasswordErrorMessage( 'Password matches' )
+            setConfirmPasswordStatus( false )
 
         }else{
 
-            setConfirmPasswordStatus( false )
-            setConfirmPasswordErrorMessage( 'Password matches' )
+            setConfirmPasswordErrorMessage( 'Passwords does not match' )
+            setConfirmPasswordStatus( true )
 
         }
+
+        setConfirmPassword( confirmPasswordInputValue )
 
     }
 
