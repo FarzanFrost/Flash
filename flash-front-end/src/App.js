@@ -31,7 +31,6 @@ function App() {
           Learn React
         </a>
       </header>*/}
-        <AddEmployee />
 
       <BrowserRouter>
 
@@ -39,12 +38,12 @@ function App() {
 
               <Route exact path="/Login" element={ <LoginContextProviderInterface/> } />
               <Route exact path="/Signup" element={ <SignContextProviderInterface/> } />
-              <Route exact path="/Login" element={ <Login/> } />
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
               <Route exact path="/Sample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
               <Route exact path="/Header" element={ <Header/> } />
+              <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
 
           </Routes>
 
