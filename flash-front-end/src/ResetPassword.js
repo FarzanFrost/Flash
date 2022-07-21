@@ -1,17 +1,77 @@
-import React from "react";
-
+import React , { useState} from "react";
+import {Link} from "react-router-dom";
+import loginPhoto from "./Images/backgroudphotoLogin.jpg";
+import ResetPasswordSendEmail from './ResetPasswordSendEmail'
+import ReactLinkContextProvider from './ContextFiles/ReactLinkContext'
+import ChangePassword from "./ChangePassword";
 
 const ResetPassword = () => {
 
-     return(
 
-         <div>
 
-             reset Password
+    return (
 
-         </div>
+        <div className="h-100">
 
-     )
+            <section className="h-100 bg-danger">
+
+                <div className="container py-5 h-100">
+
+                    <div className="row d-flex justify-content-center align-items-center h-100">
+
+                        <div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">
+
+                            <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0">
+
+                                <div className="row g-0">
+
+                                    <div className="col-lg-6 my-lg-5">
+
+                                        <div className="card-body  p-md-1 p-lg-5 mx-md-4 mt-5">
+
+                                            <ReactLinkContextProvider>
+
+                                                {/*<ResetPasswordSendEmail/>*/}
+                                                <ChangePassword/>
+
+
+                                            </ReactLinkContextProvider>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div className="col-lg-6 d-lg-flex d-none">
+
+                                        <div className="d-lg-flex d-none">
+
+                                            <div className="text-center">
+
+                                                <img className="img-fluid rounded-3 h-100" src={ loginPhoto } alt="Camera"/>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+
+    )
 
 }
 

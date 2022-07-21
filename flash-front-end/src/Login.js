@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import {Link} from "react-router-dom";
 import loginPhoto from './Images/backgroudphotoLogin.jpg'
-import ReactLinkContextProvider, {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
+import {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
 
 const Login = () => {
 
