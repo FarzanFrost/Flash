@@ -7,7 +7,7 @@ const Login = () => {
 
     const { SignUpLink } = useContext( ReactLinkContext )
 
-    const forgotPasswordLink = '#'
+    const { ResetPasswordLink : forgotPasswordLink } = useContext( ReactLinkContext )
 
     const [ isPasswordHidden , setIsPasswordHidden ] = useState( true )
 

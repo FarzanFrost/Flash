@@ -6,11 +6,12 @@ const ReactLinkContextProvider = ( props ) => {
 
     const LoginLink = '/Login'
     const SignUpLink = '/Signup'
+    const ResetPasswordLink = '/ResetPassword'
 
 
     return(
 
-        <ReactLinkContext.Provider value={ { LoginLink , SignUpLink } }>
+        <ReactLinkContext.Provider value={ { LoginLink , SignUpLink , ResetPasswordLink } }>
 
             { props.children }
 

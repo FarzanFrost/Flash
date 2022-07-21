@@ -13,6 +13,7 @@ import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
+import ResetPassword from "./ResetPassword";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
               <Route exact path="/Header" element={ <Header/> } />
+              <Route exact path={"/ResetPassword"} element={ <ResetPassword/> } />
 
           </Routes>
 
