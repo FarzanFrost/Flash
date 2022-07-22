@@ -1,5 +1,6 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {ResetPasswordContext} from "./ContextFiles/ResetPasswordContext";
+import { useTimer } from 'use-timer'
 
 const ResetPasswordSendEmail = () => {
 
@@ -14,6 +15,8 @@ const ResetPasswordSendEmail = () => {
     const [ otp , setOtp ] = useState('')
 
     const { addData } = useContext( ResetPasswordContext )
+
+    const format = require( 'format-duration' )
 
     const showHidePassword = () => {
 
@@ -30,6 +33,25 @@ const ResetPasswordSendEmail = () => {
         }
 
     }
+
+    const { time , start , pause , reset , status } = useTimer(
+
+        {
+
+            initialTime : 120,
+            endTime : 0 ,
+            timerType : 'DECREMENTAL' ,
+            onTimeOver : () => {
+
+                reset()
+                start()
+
+            },
+            autostart : true
+
+        }
+
+    )
 
     return(
 
@@ -140,6 +162,12 @@ const ResetPasswordSendEmail = () => {
 
                     </div>
 
+
+                </div>
+
+                <div className="display-4">
+
+                    { format( time * 1000 , { leading : true } ) }
 
                 </div>
 
