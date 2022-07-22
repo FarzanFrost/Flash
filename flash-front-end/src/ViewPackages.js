@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import sliverPhoto from './Images/silver-package.png'
 import goldPhoto from './Images/gold-package_.png'
-import diamondPhoto from './Images/diamond-package.jpg'
+import diamondPhoto from './Images/diamond-package.png'
 import platinumPhoto from './Images/platinum-package.png'
 
 
@@ -90,13 +90,18 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"src={sliverPhoto}></img>
+                                                    <img className="img-fluid" width="1000" height="1000" src={sliverPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
 
                                                         <p className="card-text">
-                                                            <h5>Silver Package</h5>
-                                                            <h5>Event Date</h5>
+                                                            <h4>Silver Package</h4>
+                                                            <h5>70page album</h5>
+                                                            <h5>Out Shoot</h5>
+                                                            <h5>Couple Frame</h5>
+                                                            <h5>Signature Board</h5>
+                                                            <h5>Save the Data photo</h5>
+                                                            <h5>Additional per sheet 2500</h5>
                                                         </p>
                                                         <br/><br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
@@ -117,10 +122,16 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
 
                                                         <p className="card-text">
-                                                            <h5>Gold Package</h5>
-                                                            <h5>Event Date</h5>
+                                                            <h4>Gold Package</h4>
+                                                            <h5>70page album</h5>
+                                                            <h5>Out Shoot</h5>
+                                                            <h5>Couple Frame(16*24)</h5>
+                                                            <h5>Signature Board</h5>
+                                                            <h5>highlights photo</h5>
+                                                            <h5>Save the Data(video or Photo)</h5>
+                                                            <h5>Additional per sheet 2500</h5>
                                                         </p>
-                                                        <br/><br/>
+                                                        <br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
                                                     <div className="card-footer bg-dark text-center">
@@ -138,8 +149,14 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
 
                                                         <p className="card-text">
-                                                            <h5>Dimand Package</h5>
-                                                            <h5>Event Date</h5>
+                                                            <h4>Dimand Package</h4>
+                                                            <h5>70page album</h5>
+                                                            <h5>Out Shoot</h5>
+                                                            <h5>Couple Frame(16*24)</h5>
+                                                            <h5>Signature Board</h5>
+                                                            <h5>highlights photo</h5>
+                                                            <h5>Save the Data(video or Photo)</h5>
+                                                            <h5>Additional per sheet 2500</h5>
                                                         </p>
                                                         <br/><br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
@@ -163,8 +180,14 @@ const Vieweventdetailsforadmin = () => {
                                                 <div className="card-body">
 
                                                     <p className="card-text">
-                                                        <h5>Plantinum Package</h5>
-                                                        <h5>Event Date</h5>
+                                                        <h4>Plantinum Package</h4>
+                                                        <h5>70page album</h5>
+                                                        <h5>Out Shoot</h5>
+                                                        <h5>Couple Frame(16*24)</h5>
+                                                        <h5>Signature Board</h5>
+                                                        <h5>highlights photo</h5>
+                                                        <h5>Save the Data(video or Photo)</h5>
+                                                        <h5>Additional per sheet 2500</h5>
                                                     </p>
                                                     <br/><br/>
                                                     <a href="#" className="btn" style={{...style3}}>Subscribe</a>
