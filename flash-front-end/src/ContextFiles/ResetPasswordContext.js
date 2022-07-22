@@ -6,6 +6,22 @@ const ResetPasswordContextProvider = ( props ) => {
 
     const [ email , setEmail ] = useState( null )
 
+    const [ data , setData ] = useState( null )
+
+    const addData = ( otp , newPassword ) => {
+
+        setData(
+
+            {
+
+                otp : otp , newPassword : newPassword
+
+            }
+
+        )
+
+    }
+
     const addEmail = ( email ) => {
 
         setEmail( email )
@@ -14,7 +30,7 @@ const ResetPasswordContextProvider = ( props ) => {
 
     return(
 
-        <ResetPasswordContext.Provider value={ { email , addEmail } }>
+        <ResetPasswordContext.Provider value={ { email , addEmail , addData } }>
 
             { props.children }
 

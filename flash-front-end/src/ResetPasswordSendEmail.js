@@ -1,6 +1,8 @@
 import React , {useState , useContext} from "react";
 import {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
 import {Link} from "react-router-dom";
+import {ResetPasswordContext} from "./ContextFiles/ResetPasswordContext";
+import validator from "validator";
 
 const ResetPasswordSendEmail = () => {
 
@@ -8,6 +10,23 @@ const ResetPasswordSendEmail = () => {
     const [ email , setEmail ] = useState( '' )
 
     const { LoginLink } = useContext( ReactLinkContext )
+
+    const { addEmail } = useContext( ResetPasswordContext )
+
+    const submitButton = () => {
+
+        if( validator.isEmail( email ) ){
+
+            addEmail( email )
+
+        }else{
+
+            alert( "Email not valid ")
+
+        }
+
+
+    }
 
     return(
 
@@ -54,7 +73,7 @@ const ResetPasswordSendEmail = () => {
                 <div className="text-center">
 
                     <div className="d-flex align-items-center justify-content-center pb-4">
-                        {/*this is not needed here but if you change your mind to make the link bellow a button then remove d-none*/}
+
                         <button className="btn btn-dark btn-block mx-2 w-50 justify-content-center" type="button">
 
                             <div className="flex-wrap">
@@ -65,7 +84,7 @@ const ResetPasswordSendEmail = () => {
 
                         </button>
 
-                        <button className="btn btn-danger mx-2 w-50 justify-content-center" type="button">
+                        <button className="btn btn-danger mx-2 w-50 justify-content-center" type="button" onClick={ submitButton }>
 
                             <div className="flex-wrap">
 

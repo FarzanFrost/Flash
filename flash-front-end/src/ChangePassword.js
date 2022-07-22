@@ -1,4 +1,5 @@
-import React , {useState} from "react";
+import React, {useContext, useState} from "react";
+import {ResetPasswordContext} from "./ContextFiles/ResetPasswordContext";
 
 const ResetPasswordSendEmail = () => {
 
@@ -7,9 +8,12 @@ const ResetPasswordSendEmail = () => {
     const [ passwordType , setPasswordType ] = useState( 'password' )
 
     const [ password , setPassword ] = useState( '' )
+
     const [ confirmPassword , setConfirmPassword ] = useState( '' )
 
     const [ otp , setOtp ] = useState('')
+
+    const { addData } = useContext( ResetPasswordContext )
 
     const showHidePassword = () => {
 
@@ -124,7 +128,7 @@ const ResetPasswordSendEmail = () => {
 
                         </button>
 
-                        <button className="btn btn-danger btn-block mx-2 w-50" type="submit">
+                        <button className="btn btn-danger btn-block mx-2 w-50" type="button" onClick={ () => { addData( otp , password ) } }>
 
                             <div className="flex-wrap">
 
