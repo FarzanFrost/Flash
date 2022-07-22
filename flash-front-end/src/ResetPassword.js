@@ -1,13 +1,14 @@
-import React , { useState} from "react";
+import React, {useContext, useState} from "react";
 import {Link} from "react-router-dom";
 import loginPhoto from "./Images/backgroudphotoLogin.jpg";
 import ResetPasswordSendEmail from './ResetPasswordSendEmail'
 import ReactLinkContextProvider from './ContextFiles/ReactLinkContext'
 import ChangePassword from "./ChangePassword";
+import {ResetPasswordContext} from "./ContextFiles/ResetPasswordContext";
 
 const ResetPassword = () => {
 
-
+    const { email } = useContext( ResetPasswordContext )
 
     return (
 
@@ -31,8 +32,8 @@ const ResetPassword = () => {
 
                                             <ReactLinkContextProvider>
 
-                                                {/*<ResetPasswordSendEmail/>*/}
-                                                <ChangePassword/>
+                                                { !email && <ResetPasswordSendEmail/>}
+                                                { email && <ChangePassword/>}
 
 
                                             </ReactLinkContextProvider>
