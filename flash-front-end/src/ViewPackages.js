@@ -94,8 +94,8 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Silver Package</h5>
                                                             <h5>Event Date</h5>
                                                         </p>
-                                                        <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
-                                                        <a href="#" className="btn" style={{...style3}}>Edit details</a>
+                                                        <br/><br/>
+                                                        <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
                                                     <div className="card-footer bg-dark text-center">
                                                         <small className="text-muted">Last updated 3 mins ago</small>
@@ -105,6 +105,7 @@ const Vieweventdetailsforadmin = () => {
 
                                                 </div>
                                             </div>
+
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <img className="img-fluid" alt="100%x280"
@@ -116,8 +117,8 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Gold Package</h5>
                                                             <h5>Event Date</h5>
                                                         </p>
-                                                        <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
-                                                        <a href="#" className="btn" style={{...style3}}>Edit details</a>
+                                                        <br/><br/>
+                                                        <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
                                                     <div className="card-footer bg-dark text-center">
                                                         <small className="text-muted">Last updated 3 mins ago</small>
@@ -126,6 +127,7 @@ const Vieweventdetailsforadmin = () => {
                                                 </div>
                                                 </div>
                                             </div>
+
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <img className="img-fluid" alt="100%x280"
@@ -137,11 +139,11 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Dimand Package</h5>
                                                             <h5>Event Date</h5>
                                                         </p>
-                                                        <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
-                                                        <a href="#" className="btn" style={{...style3}}>Edit details</a>
+                                                        <br/><br/>
+                                                        <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
                                                     <div className="card-footer bg-dark text-center">
-                                                        <small className="text-muted">Last updated 3 mins ago</small>
+                                                        <small className="text-muted">Subscribe</small>
                                                     </div>
 
                                                 </div>
@@ -163,8 +165,8 @@ const Vieweventdetailsforadmin = () => {
                                                         <h5>Plantinum Package</h5>
                                                         <h5>Event Date</h5>
                                                     </p>
-                                                    <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
-                                                    <a href="#" className="btn" style={{...style3}}>Edit details</a>
+                                                    <br/><br/>
+                                                    <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                 </div>
                                                 <div className="card-footer bg-dark text-center">
                                                     <small className="text-muted">Last updated 3 mins ago</small>
@@ -173,10 +175,6 @@ const Vieweventdetailsforadmin = () => {
                                             </div>
                                             </div>
                                         </div>
-
-
-                                       
-
                                     </div>
 
 
