@@ -1,6 +1,11 @@
 import React from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
+import sliverPhoto from './Images/silver-package.png'
+import goldPhoto from './Images/gold-package_.png'
+import diamondPhoto from './Images/diamond-package.jpg'
+import platinumPhoto from './Images/platinum-package.png'
+
 
 const Vieweventdetailsforadmin = () => {
 
@@ -85,9 +90,8 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"
-                                                         src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-                                                    </img>       <div className="card-body">
+                                                    <img className="img-fluid" alt="100%x280"src={sliverPhoto}></img>
+                                                    <div className="card-body">
                                                     <div className="card-body">
 
                                                         <p className="card-text">
@@ -108,9 +112,8 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"
-                                                         src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-                                                    </img>  <div className="card-body">
+                                                    <img className="img-fluid" alt="100%x280"src={goldPhoto}></img>
+                                                    <div className="card-body">
                                                     <div className="card-body">
 
                                                         <p className="card-text">
@@ -130,9 +133,8 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"
-                                                         src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
-                                                    </img>  <div className="card-body">
+                                                    <img className="img-fluid" alt="100%x280"src={diamondPhoto}></img>
+                                                    <div className="card-body">
                                                     <div className="card-body">
 
                                                         <p className="card-text">
@@ -156,9 +158,8 @@ const Vieweventdetailsforadmin = () => {
                                     <div className="carousel-item">
                                         <div className="col-md-4 mb-3">
                                             <div className="card border-dark border-5 rounded-3">
-                                                <img className="img-fluid" alt="100%x280"
-                                                     src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
-                                                </img>  <div className="card-body">
+                                                <img className="img-fluid" alt="100%x280"src={platinumPhoto}></img>
+                                                <div className="card-body">
                                                 <div className="card-body">
 
                                                     <p className="card-text">
