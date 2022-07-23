@@ -1,20 +1,20 @@
-import React, {useState} from 'react'
+import React from 'react'
 import bgpic from './photo.jpeg'
 
-const EmpEditForm = () => {
-    const [firstName,setFirstName] = useState('')
-    const [lastName,setLastName] = useState('')
-    const [nic,setNic] = useState('')
-    const [gender,setGender] = useState('')
-    const [address,setAddress] = useState('')
-    const [contact,setContact] = useState('')
-    const [type,setType] = useState('')
-    const [salary,setSalary] = useState('')
-    const [email,setEmail] = useState('')
-    const [uname,setUname] = useState('')
-    const [password,setPassword] = useState('')
-
-}
+// const EmpEdit = () => {
+//     const [firstName,setFirstName] = useState('')
+//     const [lastName,setLastName] = useState('')
+//     const [nic,setNic] = useState('')
+//     const [gender,setGender] = useState('')
+//     const [address,setAddress] = useState('')
+//     const [contact,setContact] = useState('')
+//     const [type,setType] = useState('')
+//     const [salary,setSalary] = useState('')
+//     const [email,setEmail] = useState('')
+//     const [uname,setUname] = useState('')
+//     const [password,setPassword] = useState('')
+//
+// }
 
 const EditEmployee = () => {
     return(
@@ -26,13 +26,11 @@ const EditEmployee = () => {
 
                     <div className="row d-flex justify-content-center align-items-center h-100">
 
-                        {/*<div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">*/}
-
                         <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0">
 
                             <div className="row g-0">
 
-                                <h1 className="text-center mt-3 pb-5">New Employee</h1>
+                                <h1 className="text-center mt-3 pb-5">Welcome Nitharsha's Profile</h1>
 
                                 <div className="col-lg-5 d-lg-flex d-none">
                                     <div className="d-lg-flex d-none ">
@@ -49,7 +47,7 @@ const EditEmployee = () => {
                                             <label className="col-sm-3 col-form-label">First Name</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                     value="Nitharsha"
                                                     className="form-control"
                                                     type="text"
                                                     placeholder="Enter First Name"
@@ -58,6 +56,9 @@ const EditEmployee = () => {
                                                     required
                                                 />
                                             </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
+                                            </div>
 
                                         </div>
 
@@ -65,7 +66,7 @@ const EditEmployee = () => {
                                             <label className="col-sm-3 col-form-label">Last Name</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={lastName}
+                                                    value="Thevakumar"
                                                     className="form-control"
                                                     type="text"
                                                     placeholder="Enter Last Name"
@@ -73,6 +74,9 @@ const EditEmployee = () => {
                                                     autoFocus
                                                     required
                                                 />
+                                            </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
                                             </div>
 
                                         </div>
@@ -90,6 +94,9 @@ const EditEmployee = () => {
                                                     required
                                                 />
                                             </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
+                                            </div>
 
                                         </div>
 
@@ -105,6 +112,9 @@ const EditEmployee = () => {
                                                     autoFocus
                                                     required
                                                 />
+                                            </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
                                             </div>
 
                                         </div>
@@ -122,6 +132,9 @@ const EditEmployee = () => {
                                                     required
                                                 />
                                             </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
+                                            </div>
 
                                         </div>
 
@@ -131,12 +144,15 @@ const EditEmployee = () => {
                                                 <input
                                                     //value={last name}
                                                     className="form-control"
-                                                    type="text"
+                                                    type="tell"
                                                     placeholder="Enter Contact No"
                                                     //onChange={ (e) => setName( e.target.value )}
                                                     autoFocus
                                                     required
                                                 />
+                                            </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
                                             </div>
 
                                         </div>
@@ -149,6 +165,9 @@ const EditEmployee = () => {
                                                     <option>Videographer</option>
                                                     <option>Editor</option>
                                                 </select>
+                                            </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
                                             </div>
 
                                         </div>
@@ -166,6 +185,9 @@ const EditEmployee = () => {
                                                     required
                                                 />
                                             </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
+                                            </div>
 
                                         </div>
 
@@ -175,12 +197,15 @@ const EditEmployee = () => {
                                                 <input
                                                     //value={last name}
                                                     className="form-control"
-                                                    type="text"
+                                                    type="email"
                                                     placeholder="Enter Email"
                                                     //onChange={ (e) => setName( e.target.value )}
                                                     autoFocus
                                                     required
                                                 />
+                                            </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
                                             </div>
 
                                         </div>
@@ -198,6 +223,9 @@ const EditEmployee = () => {
                                                     required
                                                 />
                                             </div>
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
+                                            </div>
 
                                         </div>
 
@@ -214,35 +242,39 @@ const EditEmployee = () => {
                                                     required
                                                 />
                                             </div>
-
-                                        </div>
-
-                                        <div className="form-group row mt-3 mx-3">
-                                            <label className="col-sm-3 col-form-label">Profile Pic</label>
-                                            <div className="col-sm-8">
-                                                <input
-                                                    //value={last name}
-                                                    className="form-control"
-                                                    type="file"
-                                                    placeholder="Upload"
-                                                    //onChange={ (e) => setName( e.target.value )}
-                                                    autoFocus
-                                                    required
-                                                />
+                                            <div className="col-sm-1">
+                                                <i className="bi bi-pencil-fill"></i>
                                             </div>
 
                                         </div>
+
+                                        {/*<div className="form-group row mt-3 mx-3">*/}
+                                        {/*    <label className="col-sm-3 col-form-label">Profile Pic</label>*/}
+                                        {/*    <div className="col-sm-8">*/}
+                                        {/*        <input*/}
+                                        {/*            //value={last name}*/}
+                                        {/*            className="form-control"*/}
+                                        {/*            type="file"*/}
+                                        {/*            placeholder="Upload"*/}
+                                        {/*            //onChange={ (e) => setName( e.target.value )}*/}
+                                        {/*            autoFocus*/}
+                                        {/*            required*/}
+                                        {/*        />*/}
+                                        {/*    </div>*/}
+                                        {/*    <div className="col-sm-1">*/}
+                                        {/*        <i className="bi bi-pencil-fill"></i>*/}
+                                        {/*    </div>*/}
+
+                                        {/*</div>*/}
 
                                         <div>
-                                            <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
-                                                <button type="submit"
-                                                        className="btn btn-danger btn-block">
+                                            <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
+                                                <button type="submit" variant="primary"
+                                                        className="btn btn-primary btn-block">
                                                     Save
                                                 </button>
-                                            </div>
 
-                                            <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
-                                                <button type="submit"
+                                                <button type="submit" variant="secondary"
                                                         className="btn btn-danger btn-block">
                                                     Delete
                                                 </button>
@@ -257,8 +289,6 @@ const EditEmployee = () => {
                             </div>
 
                         </div>
-
-                        {/*</div>*/}
 
                     </div>
 

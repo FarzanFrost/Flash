@@ -8,11 +8,11 @@ import LoginContextProviderInterface from './LoginContextProviderInterface'
 
 
 import Header from "./Header";
-import Login from "./Login";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
+import EditEmployee from "./EditEmployee";
 
 function App() {
   return (
@@ -28,11 +28,13 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+
           Learn React
         </a>
-      </header>*/}
+      </header>*/
+      }
 
-      <BrowserRouter>
+        <BrowserRouter>
 
           <Routes>
 
