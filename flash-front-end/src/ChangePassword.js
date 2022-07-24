@@ -41,14 +41,14 @@ const ResetPasswordSendEmail = () => {
 
         {
             //time in seconds
-            initialTime : 10,
+            initialTime : 120,
             endTime : 0 ,
             timerType : 'DECREMENTAL' ,
             onTimeOver : () => {
 
                 setIsResendOtpDisabled( false )
 
-            },
+            } ,
             autostart : true
 
         }
@@ -241,9 +241,9 @@ const ResetPasswordSendEmail = () => {
 
                 </div>
 
-                <div className="display-4">
+                <div className="h6">
 
-                    { format( time * 1000 , { leading : true } ) }
+                    Didn't receive OTP? Resend Email after { format( time * 1000 , { leading : true } ) }.
 
                 </div>
 
