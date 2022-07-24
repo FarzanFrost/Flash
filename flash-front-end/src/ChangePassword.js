@@ -1,6 +1,7 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import {ResetPasswordContext} from "./ContextFiles/ResetPasswordContext";
 import { useTimer } from 'use-timer'
+import validator from "validator";
 
 const ResetPasswordSendEmail = () => {
 
@@ -16,7 +17,9 @@ const ResetPasswordSendEmail = () => {
 
     const { addData } = useContext( ResetPasswordContext )
 
-    const format = require( 'format-duration' )
+    const [ isResendOtpDisabled , setIsResendOtpDisabled ] = useState( true )
+
+    const format = require( 'format-duration' )//required time in milliseconds
 
     const showHidePassword = () => {
 
@@ -37,14 +40,13 @@ const ResetPasswordSendEmail = () => {
     const { time , start , pause , reset , status } = useTimer(
 
         {
-
-            initialTime : 120,
+            //time in seconds
+            initialTime : 10,
             endTime : 0 ,
             timerType : 'DECREMENTAL' ,
             onTimeOver : () => {
 
-                reset()
-                start()
+                setIsResendOtpDisabled( false )
 
             },
             autostart : true
@@ -52,6 +54,65 @@ const ResetPasswordSendEmail = () => {
         }
 
     )
+
+    const resendOtp = () => {
+
+        setIsResendOtpDisabled( true )
+        reset()
+        start()
+
+    }
+
+    const [ passwordErrorMessage , setPasswordErrorMessage ] = useState( null )
+
+    const [ passwordValidationStyles , setPasswordValidationStyles ] = useState( "text-center bg-warning mb-2" )
+
+    const validatePassword = ( passwordInputValue ) => {
+
+        if ( validator.isStrongPassword( passwordInputValue , {
+
+            minLength : 8 , minLowercase : 1 , minUppercase : 1 ,
+            minNumbers : 1 , minSymbols : 1
+
+        } ) ) {
+
+            setPasswordValidationStyles( "text-center bg-success mb-2" )
+            setPasswordErrorMessage('Valid password')
+
+        }
+        else {
+
+            setPasswordValidationStyles( "text-center bg-warning mb-2" )
+            setPasswordErrorMessage('Invalid password')
+
+        }
+
+        setPassword( passwordInputValue )
+
+    }
+
+    const [ confirmPasswordErrorMessage , setConfirmPasswordErrorMessage ] = useState( null )
+
+    const [ confirmPasswordValidationStyles , setConfirmPasswordValidationStyles ] = useState( "text-center bg-warning mb-2" )
+
+    const validateConfirmPassword = ( confirmPasswordInputValue ) => {
+
+        if ( password === confirmPasswordInputValue ) {
+
+            setConfirmPasswordValidationStyles( "text-center bg-success mb-2" )
+            setConfirmPasswordErrorMessage('Valid password')
+
+        }
+        else {
+
+            setConfirmPasswordValidationStyles( "text-center bg-warning mb-2" )
+            setConfirmPasswordErrorMessage('Invalid password')
+
+        }
+
+        setConfirmPassword( confirmPasswordInputValue )
+
+    }
 
     return(
 
@@ -95,7 +156,7 @@ const ResetPasswordSendEmail = () => {
                     <input type={ passwordType } className="form-control"
                            placeholder="Enter new password"
                            value={ password }
-                           onChange={ ( e ) => setPassword( e.target.value ) }
+                           onChange={ ( e ) => validatePassword( e.target.value ) }
                            required
                     />
 
@@ -110,6 +171,12 @@ const ResetPasswordSendEmail = () => {
 
                     </span>
                 </div>
+
+                { passwordErrorMessage && <div className= { passwordValidationStyles }>
+
+                    { passwordErrorMessage }
+
+                </div> }
 
                 <div className="input-group mb-3">
                     <span className="input-group-text">
@@ -120,7 +187,7 @@ const ResetPasswordSendEmail = () => {
                     <input type={ passwordType } className="form-control"
                            placeholder="Confirm new password"
                            value={ confirmPassword }
-                           onChange={ ( e ) => setConfirmPassword( e.target.value ) }
+                           onChange={ ( e ) => validateConfirmPassword( e.target.value ) }
                            required
                     />
 
@@ -136,15 +203,24 @@ const ResetPasswordSendEmail = () => {
                     </span>
                 </div>
 
+                { confirmPasswordErrorMessage && <div className={ confirmPasswordValidationStyles }>
+
+                    { confirmPasswordErrorMessage }
+
+                </div> }
+
                 <div className="text-center">
 
                     <div className="d-flex align-items-center justify-content-center pb-4">
 
-                        <button className="btn btn-dark btn-block mx-2 w-50" type="button">
+                        <button className="btn btn-dark btn-block mx-2 w-50" type="button"
+                            disabled={ isResendOtpDisabled }
+                            onClick={ resendOtp }
+                        >
 
                             <div className="flex-wrap">
 
-                                Res-send OTP
+                                Re-send OTP
 
                             </div>
 
