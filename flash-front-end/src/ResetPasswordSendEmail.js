@@ -13,15 +13,18 @@ const ResetPasswordSendEmail = () => {
 
     const { addEmail } = useContext( ResetPasswordContext )
 
+    const [ isEmailValid , setIsEmailValid ] = useState( null )
+
     const submitButton = () => {
 
         if( validator.isEmail( email ) ){
 
             addEmail( email )
+            setIsEmailValid( null )
 
         }else{
 
-            alert( "Email not valid ")
+            setIsEmailValid( 'Email not valid' )
 
         }
 
@@ -55,11 +58,13 @@ const ResetPasswordSendEmail = () => {
             <div className="my-4 mx-0">
 
                 <div className="input-group mb-3">
-                                                    <span className="input-group-text">
 
-                                                        <i className="bi bi-envelope-fill"></i>
+                    <span className="input-group-text">
 
-                                                    </span>
+                        <i className="bi bi-envelope-fill"></i>
+
+                    </span>
+
                     <input type="email" className="form-control"
                            placeholder="flash@gmail.com"
                            value={ email }
@@ -68,7 +73,10 @@ const ResetPasswordSendEmail = () => {
                            autoFocus
                            required
                     />
+
                 </div>
+
+                { isEmailValid && <div className="text-center bg-warning mb-2"> Email not valid </div> }
 
                 <div className="text-center">
 
