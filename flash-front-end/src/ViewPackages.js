@@ -90,7 +90,7 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" width="1000" height="1000" src={sliverPhoto}></img>
+                                                    <img className="img-fluid" alt="100%x280" src={sliverPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
 
@@ -106,9 +106,7 @@ const Vieweventdetailsforadmin = () => {
                                                         <br/><br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
-                                                    <div className="card-footer bg-dark text-center">
-                                                        <small className="text-muted">Last updated 3 mins ago</small>
-                                                    </div>
+
 
                                                 </div>
 
@@ -134,9 +132,7 @@ const Vieweventdetailsforadmin = () => {
                                                         <br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
-                                                    <div className="card-footer bg-dark text-center">
-                                                        <small className="text-muted">Last updated 3 mins ago</small>
-                                                    </div>
+
 
                                                 </div>
                                                 </div>
@@ -161,9 +157,7 @@ const Vieweventdetailsforadmin = () => {
                                                         <br/><br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
-                                                    <div className="card-footer bg-dark text-center">
-                                                        <small className="text-muted">Subscribe</small>
-                                                    </div>
+
 
                                                 </div>
                                                 </div>
@@ -192,9 +186,7 @@ const Vieweventdetailsforadmin = () => {
                                                     <br/><br/>
                                                     <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                 </div>
-                                                <div className="card-footer bg-dark text-center">
-                                                    <small className="text-muted">Last updated 3 mins ago</small>
-                                                </div>
+
 
                                             </div>
                                             </div>
