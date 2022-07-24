@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import {ResetPasswordContext} from "./ContextFiles/ResetPasswordContext";
 import { useTimer } from 'use-timer'
 import validator from "validator";
+import format from 'format-duration' //required time in milliseconds
 
 const ResetPasswordSendEmail = () => {
 
@@ -18,8 +19,6 @@ const ResetPasswordSendEmail = () => {
     const { addData } = useContext( ResetPasswordContext )
 
     const [ isResendOtpDisabled , setIsResendOtpDisabled ] = useState( true )
-
-    const format = require( 'format-duration' )//required time in milliseconds
 
     const showHidePassword = () => {
 
