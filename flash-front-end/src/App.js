@@ -12,6 +12,7 @@ import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
+import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
 import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
 
@@ -48,7 +49,9 @@ function App() {
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
               <Route exact path="/Adminviewemployeedetailspage" element={ <Adminviewemployeedetailspage/> } />
               <Route exact path="/Header" element={ <Header/> } />
+              <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
+
 
           </Routes>
 

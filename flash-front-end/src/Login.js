@@ -1,13 +1,13 @@
 import React, {useContext, useState} from 'react'
 import {Link} from "react-router-dom";
 import loginPhoto from './Images/backgroudphotoLogin.jpg'
-import ReactLinkContextProvider, {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
+import {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
 
 const Login = () => {
 
     const { SignUpLink } = useContext( ReactLinkContext )
 
-    const forgotPasswordLink = '#'
+    const { ResetPasswordLink : forgotPasswordLink } = useContext( ReactLinkContext )
 
     const [ isPasswordHidden , setIsPasswordHidden ] = useState( true )
 
@@ -64,17 +64,15 @@ const Login = () => {
 
                                                         <div className="d-flex justify-content-center">
 
-                                                            <button className="btn btn-success mx-1">
+                                                            <button className="btn btn-success mx-auto w-auto flex-wrap">
 
-                                                                <i className="bi bi-google me-2"></i>
-                                                                Login with Google
+                                                                <i className="bi bi-google me-2"></i>Login with Google
 
                                                             </button>
 
-                                                            <button className="btn btn-primary mx-1">
+                                                            <button className="btn btn-primary mx-auto w-auto flex-wrap">
 
-                                                                <i className="bi bi-facebook me-2"></i>
-                                                                Login with Facebook
+                                                                <i className="bi bi-facebook me-2"></i>Login with Facebook
 
                                                             </button>
 
@@ -192,7 +190,6 @@ const Login = () => {
                 {/*</ReactLinkContextProvider>*/}
 
        </div>
-
 
 
     )

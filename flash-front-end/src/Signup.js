@@ -132,14 +132,14 @@ const Signup = () => {
 
                                                         <div className="d-flex justify-content-center">
 
-                                                            <button className="btn btn-success mx-1">
+                                                            <button className="btn btn-success mx-auto w-auto flex-wrap">
 
                                                                 <i className="bi bi-google me-2"></i>
                                                                 Signup with Google
 
                                                             </button>
 
-                                                            <button className="btn btn-primary mx-1">
+                                                            <button className="btn btn-primary mx-auto w-auto flex-wrap">
 
                                                                 <i className="bi bi-facebook me-2"></i>
                                                                 Signup with Facebook
