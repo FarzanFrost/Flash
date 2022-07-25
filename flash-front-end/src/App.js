@@ -13,6 +13,7 @@ import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
+import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
 
 function App() {
   return (
@@ -39,11 +40,12 @@ function App() {
 
               <Route exact path="/Login" element={ <LoginContextProviderInterface/> } />
               <Route exact path="/Signup" element={ <SignContextProviderInterface/> } />
-              <Route exact path="/Login" element={ <Login/> } />
+
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
-              <Route exact path="/Sample" element={ <Sample/> } />
+              <Route exact path="/Snample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
+              <Route exact path="/Adminviewemployeedetailspage" element={ <Adminviewemployeedetailspage/> } />
               <Route exact path="/Header" element={ <Header/> } />
 
           </Routes>
