@@ -64,7 +64,7 @@ const ResetPasswordSendEmail = () => {
 
     const [ passwordErrorMessage , setPasswordErrorMessage ] = useState( null )
 
-    const [ passwordValidationStyles , setPasswordValidationStyles ] = useState( "text-center bg-warning mb-2" )
+    const [ passwordValidationStyles , setPasswordValidationStyles ] = useState( "bg-warning mb-2" )
 
     const validatePassword = ( passwordInputValue ) => {
 
@@ -75,14 +75,14 @@ const ResetPasswordSendEmail = () => {
 
         } ) ) {
 
-            setPasswordValidationStyles( "text-center bg-success mb-2" )
+            setPasswordValidationStyles( "bg-success mb-2" )
             setPasswordErrorMessage('Valid password')
 
         }
         else {
 
-            setPasswordValidationStyles( "text-center bg-warning mb-2" )
-            setPasswordErrorMessage('Invalid password')
+            setPasswordValidationStyles( "bg-warning mb-2" )
+            setPasswordErrorMessage('Password requires to have one lower case, one uppercase, one number, one symbol and be minimum of 8 characters in lengths')
 
         }
 
@@ -92,19 +92,19 @@ const ResetPasswordSendEmail = () => {
 
     const [ confirmPasswordErrorMessage , setConfirmPasswordErrorMessage ] = useState( null )
 
-    const [ confirmPasswordValidationStyles , setConfirmPasswordValidationStyles ] = useState( "text-center bg-warning mb-2" )
+    const [ confirmPasswordValidationStyles , setConfirmPasswordValidationStyles ] = useState( "bg-warning mb-2" )
 
     const validateConfirmPassword = ( confirmPasswordInputValue ) => {
 
         if ( password === confirmPasswordInputValue ) {
 
-            setConfirmPasswordValidationStyles( "text-center bg-success mb-2" )
+            setConfirmPasswordValidationStyles( "bg-success mb-2" )
             setConfirmPasswordErrorMessage('Valid password')
 
         }
         else {
 
-            setConfirmPasswordValidationStyles( "text-center bg-warning mb-2" )
+            setConfirmPasswordValidationStyles( "bg-warning mb-2" )
             setConfirmPasswordErrorMessage('Invalid password')
 
         }
