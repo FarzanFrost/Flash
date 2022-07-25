@@ -16,6 +16,9 @@ import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
 import ViewPackages from "./ViewPackages";
 import LandingPage from "./LandingPage";
+import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
+import EditEmployee from "./EditEmployee";
+import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
 
 function App() {
   return (
@@ -31,26 +34,32 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+
           Learn React
         </a>
       </header>*/}
 
-      <BrowserRouter>
+
+        <BrowserRouter>
 
           <Routes>
 
               <Route exact path="/Login" element={ <LoginContextProviderInterface/> } />
               <Route exact path="/Signup" element={ <SignContextProviderInterface/> } />
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
-              <Route exact path="/Sample" element={ <Sample/> } />
+              <Route exact path="/Snample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
+              <Route exact path="/Adminviewemployeedetailspage" element={ <Adminviewemployeedetailspage/> } />
               <Route exact path="/Header" element={ <Header/> } />
               <Route exact path="/LandingPage" element={ <LandingPage/> } />
               <Route exact path="/SideNavAdmin" element={ <SideNavAdmin/> } />
               <Route exact path="/SideNavCustomer" element={ <SideNavCustomer/> } />
               <Route exact path="/SideNavEmployee" element={ <SideNavEmployee/> } />
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
+              <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
+              <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
+
 
           </Routes>
 
