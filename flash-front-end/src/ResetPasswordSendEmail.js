@@ -92,7 +92,7 @@ const ResetPasswordSendEmail = () => {
 
                         </button>
 
-                        <button className="btn btn-danger mx-2 w-50 justify-content-center" type="button" onClick={ submitButton }>
+                        <button className="btn btn-dark mx-2 w-50 justify-content-center" type="button" onClick={ submitButton }>
 
                             <div className="flex-wrap">
 
