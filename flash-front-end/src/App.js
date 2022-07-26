@@ -10,6 +10,7 @@ import SideNavAdmin from "./SideNavAdmin";
 import SideNavCustomer from "./SideNavCustomer";
 import SideNavEmployee from "./SideNavEmployee";
 import SideNavManager from "./SideNavManager";
+import ContactUs from "./ContactUs";
 import Login from "./Login";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
@@ -57,6 +58,7 @@ function App() {
               <Route exact path="/SideNavCustomer" element={ <SideNavCustomer/> } />
               <Route exact path="/SideNavEmployee" element={ <SideNavEmployee/> } />
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
+              <Route exact path="/ContactUs" element={ <ContactUs/> } />
               <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
 
