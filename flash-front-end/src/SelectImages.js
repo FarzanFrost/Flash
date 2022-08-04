@@ -1,9 +1,10 @@
 import React, {useContext} from 'react'
 import { SelectImageContext } from "./ContextFiles/SelectImageContext";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
+import SingleFolder from "./SingleFolder";
 const SelectImages = () => {
 
-    const { ImageList } = useContext( SelectImageContext )
+    const { ImageList , isFolderOpen } = useContext( SelectImageContext )
 
     const column1 = []
     const column2 = []
@@ -54,14 +55,9 @@ const SelectImages = () => {
                 }
 
             }
-            console.log( imageCount )
             imageCount++
 
         }  )
-
-        console.log( "column 1 : " , column1 )
-        console.log( "column 2 : " , column2 )
-        console.log( "column 3 : " , column3 )
 
     }
 
@@ -81,7 +77,7 @@ const SelectImages = () => {
 
                 <div className="row">
 
-                    <div className="col bg-success">
+                    <div className="col bg-success overflow-scroll" style={ { height : "720px" } }>
 
                         <div className="row p-4">
 
@@ -98,7 +94,7 @@ const SelectImages = () => {
                                                 alt="Boat on Calm Water"
                                             />
 
-                                            <div className="form-check mt-1 ms-1">
+                                            { isFolderOpen && <div className="form-check mt-1 ms-1">
 
                                                 <input className="form-check-input" type="checkbox" value=""
                                                        id="flexCheckDefault"/>
@@ -108,7 +104,7 @@ const SelectImages = () => {
 
                                                 </label>
 
-                                            </div>
+                                            </div> }
 
                                         </div>
 
@@ -131,7 +127,7 @@ const SelectImages = () => {
                                                 alt="Boat on Calm Water"
                                             />
 
-                                            <div className="form-check mt-1  ms-1">
+                                            { isFolderOpen && <div className="form-check mt-1 ms-1">
 
                                                 <input className="form-check-input" type="checkbox" value=""
                                                        id="flexCheckDefault"/>
@@ -141,7 +137,7 @@ const SelectImages = () => {
 
                                                 </label>
 
-                                            </div>
+                                            </div> }
 
                                         </div>
 
@@ -164,7 +160,7 @@ const SelectImages = () => {
                                                 alt="Boat on Calm Water"
                                             />
 
-                                            <div className="form-check mt-1  ms-1">
+                                            { isFolderOpen && <div className="form-check mt-1 ms-1">
 
                                                 <input className="form-check-input" type="checkbox" value=""
                                                        id="flexCheckDefault"/>
@@ -174,7 +170,7 @@ const SelectImages = () => {
 
                                                 </label>
 
-                                            </div>
+                                            </div> }
 
                                         </div>
 
@@ -190,7 +186,8 @@ const SelectImages = () => {
 
                     <div className="col p-0">
 
-                        <FolderStructuresCustomers/>
+                        { !isFolderOpen && <FolderStructuresCustomers/> }
+                        { isFolderOpen && <SingleFolder/> }
 
                     </div>
 
