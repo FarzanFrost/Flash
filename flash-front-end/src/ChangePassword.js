@@ -225,7 +225,7 @@ const ResetPasswordSendEmail = () => {
 
                         </button>
 
-                        <button className="btn btn-danger btn-block mx-2 w-50" type="button" onClick={ () => { addData( otp , password ) } }>
+                        <button className="btn btn-dark btn-block mx-2 w-50" type="button" onClick={ () => { addData( otp , password ) } }>
 
                             <div className="flex-wrap">
 
