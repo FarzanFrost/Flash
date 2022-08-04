@@ -18,7 +18,7 @@ import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
 import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
-import SelectImages from "./SelectImages";
+import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 
 function App() {
   return (
@@ -59,7 +59,7 @@ function App() {
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
               <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
-              <Route exact path="/SelectImages" element={ <SelectImages/> } />
+              <Route exact path="/SelectImages" element={ <SelectImageContextProviderInterface/> } />
 
 
           </Routes>
