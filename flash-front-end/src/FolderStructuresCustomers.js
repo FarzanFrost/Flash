@@ -37,11 +37,15 @@ const FolderStructuresCustomers = () => {
 
                         <div className="flex-row shadow p-2 border m-3 rounded-2 d-flex display-5">
 
-                            <i className="bi bi-folder my-auto mx-2"></i>
+                            <div className="d-flex cursor-pointer" onClick={ () => console.log( "hi" ) } style={ { cursor : "pointer" } }>
 
-                            <div className="m-auto">
+                                <i className="bi bi-folder my-auto mx-2"></i>
 
-                                { folder }
+                                <div className="m-auto">
+
+                                    { folder }
+
+                                </div>
 
                             </div>
 
