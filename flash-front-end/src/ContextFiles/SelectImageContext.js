@@ -13,9 +13,11 @@ const SelectImageContextProvider = ( props ) => {
         'https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp'
     ];
 
+    const folderList = [ 'Family' , 'Friends' , 'Social Media','Family' , 'Friends' , 'Social Media' ]
+
     return(
 
-        <SelectImageContext.Provider value={ { ImageList } } >
+        <SelectImageContext.Provider value={ { ImageList , folderList } } >
 
             { props.children }
 

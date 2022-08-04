@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import { SelectImageContext } from "./ContextFiles/SelectImageContext";
-
+import FolderStructuresCustomers from "./FolderStructuresCustomers";
 const SelectImages = () => {
 
     const { ImageList } = useContext( SelectImageContext )
@@ -188,9 +188,9 @@ const SelectImages = () => {
 
                     </div>
 
-                    <div className="col bg-danger">
+                    <div className="col p-0">
 
-                        Column2
+                        <FolderStructuresCustomers/>
 
                     </div>
 
