@@ -1,9 +1,57 @@
 import React, {useContext} from "react";
 import {SelectImageContext} from "./ContextFiles/SelectImageContext";
+import Swal from 'sweetalert2'
 
 const FolderStructuresCustomers = () => {
 
     const { folderList } = useContext( SelectImageContext )
+
+    const createNewFolder = () => {
+
+        Swal.mixin({
+            customClass: {
+                confirmButton: 'btn btn-outline-dark mx-1',
+                cancelButton: 'btn btn-outline-primary mx-1'
+            },
+            buttonsStyling: false
+        }).fire({
+            title: 'Enter New Folder Name',
+            input: 'text',
+            inputAttributes: {
+                autocapitalize: 'off'
+            },
+            showCancelButton: true,
+            confirmButtonText: 'Create Folder',
+            showLoaderOnConfirm: true,
+
+            allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+            if (result.isConfirmed) {
+                /* Here we have to use useFetch to send folder name to server*/
+                if ( result.value !== ""){
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Folder Created',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+                }else{
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failed to create folder',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+                }
+
+            }
+        })
+
+    }
 
     return(
 
@@ -19,7 +67,7 @@ const FolderStructuresCustomers = () => {
 
                 <div>
 
-                    <button className="btn btn-outline-light">
+                    <button className="btn btn-outline-light" onClick={ createNewFolder }>
 
                         <i className="bi bi-plus"></i> New Folder
 
