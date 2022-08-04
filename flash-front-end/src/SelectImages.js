@@ -67,9 +67,9 @@ const SelectImages = () => {
 
         <div>
 
-            <div className="container-fluid bg-warning">
+            <div className="container-fluid bg-warning display-3">
 
-                lkdsjf;laksjd;flka
+                Gallery
 
             </div>
 

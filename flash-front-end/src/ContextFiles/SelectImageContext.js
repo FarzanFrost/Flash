@@ -22,16 +22,18 @@ const SelectImageContextProvider = ( props ) => {
 
     const [ isFolderOpen , setIsFolderOpen ] = useState( false );
 
-    const changeFolderOpenState = () => {
+    const [ currentFolderName , setCurrentFolderName ] = useState( '' )
 
+    const changeFolderOpenState = ( folderName ) => {
+
+        setCurrentFolderName( folderName )
         setIsFolderOpen( true )
-        console.log( " aslkdjf;alskdj;" )
 
     }
 
     return(
 
-        <SelectImageContext.Provider value={ { ImageList , folderList , isFolderOpen , changeFolderOpenState } } >
+        <SelectImageContext.Provider value={ { ImageList , folderList , isFolderOpen , changeFolderOpenState , currentFolderName } } >
 
             { props.children }
 

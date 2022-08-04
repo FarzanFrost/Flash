@@ -85,7 +85,7 @@ const FolderStructuresCustomers = () => {
 
                         <div className="flex-row shadow p-2 border m-3 rounded-2 d-flex display-5">
 
-                            <div className="d-flex cursor-pointer" onClick={ changeFolderOpenState } style={ { cursor : "pointer" } }>
+                            <div className="d-flex cursor-pointer" onClick={ () => changeFolderOpenState( folder ) } style={ { cursor : "pointer" } }>
 
                                 <i className="bi bi-folder my-auto mx-2"></i>
 

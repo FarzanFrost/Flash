@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import {SelectImageContext} from "./ContextFiles/SelectImageContext";
 
 const SingleFolder = () => {
+
+    const { currentFolderName } = useContext( SelectImageContext )
 
     return (
 
@@ -8,9 +11,19 @@ const SingleFolder = () => {
 
             <div className="container-fluid bg-info d-flex justify-content-center p-3">
 
+                <div>
+
+                    <button className="btn btn-outline-light" onClick={ () => { window.location.reload() } }>
+
+                        <i className="bi bi-arrow-left-short"></i> Go back to Gallery
+
+                    </button>
+
+                </div>
+
                 <div className="m-auto">
 
-                    Folder Name
+                    { currentFolderName }
 
                 </div>
 
