@@ -1,7 +1,71 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { SelectImageContext } from "./ContextFiles/SelectImageContext";
 
 const SelectImages = () => {
 
+    const { ImageList } = useContext( SelectImageContext )
+
+    const column1 = []
+    const column2 = []
+    const column3 = []
+
+    const breakIntoColumns = () => {
+
+        const imageLength = ImageList.length
+
+        const remainder = imageLength % 3
+
+        const columnSize = ( imageLength - remainder ) / 3
+
+        let imageCount = 1
+
+        ImageList.map( ( image ) => {
+
+            if ( imageCount <= columnSize ){
+
+                column1.push( image )
+
+            }else if( imageCount <= 2 * columnSize ){
+
+                column2.push( image )
+
+            }else if ( imageCount <= 3 * columnSize ){
+
+                column3.push( image )
+
+            }else{
+
+                if ( remainder === 1 ){
+
+                    column1.push( image )
+
+                }else{
+
+                    if ( imageCount !== imageLength ){
+
+                        column1.push( image )
+
+                    }else{
+
+                        column2.push( image )
+
+                    }
+
+                }
+
+            }
+            console.log( imageCount )
+            imageCount++
+
+        }  )
+
+        console.log( "column 1 : " , column1 )
+        console.log( "column 2 : " , column2 )
+        console.log( "column 3 : " , column3 )
+
+    }
+
+    breakIntoColumns()
 
     return (
 
@@ -23,78 +87,101 @@ const SelectImages = () => {
 
                             <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
-                                <div className="p-1 bg-primary mb-4">
+                                {
+                                    column1.map( ( image ) => (
 
-                                    <img
-                                        src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                        className="w-100 shadow-1-strong rounded"
-                                        alt="Boat on Calm Water"
-                                    />
+                                        <div className="p-1 bg-primary mb-4">
 
-                                    <div className="form-check mt-1">
+                                            <img
+                                                src={ image }
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
 
-                                        <input className="form-check-input" type="checkbox" value=""
-                                               id="flexCheckDefault"/>
-                                            <label className="form-check-label" htmlFor="flexCheckDefault">
+                                            <div className="form-check mt-1 ms-1">
 
-                                                Select Image
+                                                <input className="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault"/>
+                                                <label className="form-check-label" htmlFor="flexCheckDefault">
 
-                                            </label>
+                                                    Select Image
 
-                                    </div>
+                                                </label>
 
-                                </div>
+                                            </div>
 
-                                <div className="p-1 bg-primary mb-4">
+                                        </div>
 
-                                    <img
-                                        src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                                        className="w-100 shadow-1-strong rounded mb-4"
-                                        alt="Wintry Mountain Landscape"
-                                    />
+                                    ) )
 
-                                    <div className="form-check mt-1">
-
-                                        <input className="form-check-input" type="checkbox" value=""
-                                               id="flexCheckDefault"/>
-                                        <label className="form-check-label" htmlFor="flexCheckDefault">
-
-                                            Select Image
-
-                                        </label>
-
-                                    </div>
-
-                                </div>
+                                }
 
                             </div>
 
                             <div className="col-lg-4 mb-4 mb-lg-0">
-                                <img
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                                    className="w-100 shadow-1-strong rounded mb-4"
-                                    alt="Mountains in the Clouds"
-                                />
 
-                                <img
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                                    className="w-100 shadow-1-strong rounded mb-4"
-                                    alt="Boat on Calm Water"
-                                />
+                                {
+                                    column2.map( ( image ) => (
+
+                                        <div className="p-1 bg-primary mb-4">
+
+                                            <img
+                                                src={ image }
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                            <div className="form-check mt-1  ms-1">
+
+                                                <input className="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault"/>
+                                                <label className="form-check-label" htmlFor="flexCheckDefault">
+
+                                                    Select Image
+
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+
+                                    ) )
+
+                                }
+
                             </div>
 
                             <div className="col-lg-4 mb-4 mb-lg-0">
-                                <img
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                                    className="w-100 shadow-1-strong rounded mb-4"
-                                    alt="Waves at Sea"
-                                />
 
-                                <img
-                                    src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                                    className="w-100 shadow-1-strong rounded mb-4"
-                                    alt="Yosemite National Park"
-                                />
+                                {
+                                    column3.map( ( image ) => (
+
+                                        <div className="p-1 bg-primary mb-4">
+
+                                            <img
+                                                src={ image }
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                            <div className="form-check mt-1  ms-1">
+
+                                                <input className="form-check-input" type="checkbox" value=""
+                                                       id="flexCheckDefault"/>
+                                                <label className="form-check-label" htmlFor="flexCheckDefault">
+
+                                                    Select Image
+
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+
+                                    ) )
+
+                                }
+
                             </div>
 
                         </div>
