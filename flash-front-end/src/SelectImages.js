@@ -2,7 +2,10 @@ import React, {useContext} from 'react'
 import { SelectImageContext } from "./ContextFiles/SelectImageContext";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import SingleFolder from "./SingleFolder";
+import Swal from 'sweetalert2'
+
 const SelectImages = () => {
+
 
     const { ImageList , isFolderOpen , breakImagesIntoThreeColumns , AddImageToFolder , RemoveImageFromFolder , changeFolderOpenState } = useContext( SelectImageContext )
 
@@ -21,6 +24,8 @@ const SelectImages = () => {
         }
 
     }
+
+    // Swal.fire( 'Categorise the images into different folders.if you do, you get separate albums, if not every photo will be compiled into a single album' )
 
     return (
 
@@ -155,6 +160,9 @@ const SelectImages = () => {
             </div>
 
         </div>
+
+
+
 
     )
 
