@@ -59,7 +59,7 @@ function App() {
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
               <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
-              <Route exact path="/SelectImages" element={ <SelectImageContextProviderInterface/> } />
+              <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
 
 
           </Routes>

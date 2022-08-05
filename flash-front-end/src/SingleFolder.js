@@ -41,17 +41,17 @@ const SingleFolder = () => {
 
             </div>
 
-            <div className="container-fluid d-flex p-2 flex-wrap justify-content-center pt-5 " style={ { height : "659px" } }>
+            <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
 
                 <div className="row">
 
-                    <div className="col  overflow-scroll" style={ { height : "665px" } }>
+                    <div className="col overflow-scroll">
 
-                        { imagesInFolder.length ===0 && <h3> Select Images on the right and click done selecting... </h3> }
+                        { imagesInFolder.length ===0 && <h3 className="pt-5"> Select Images on the right and click done selecting... </h3> }
 
                         { imagesInFolder.length > 0 &&
 
-                            <div className="row p-4">
+                            <div className="row p-4" style={ { height : "555px" } }>
 
                                 <div className="col-lg-4 border-end border-3 border-dark col-md-12 mb-4 mb-lg-0">
 

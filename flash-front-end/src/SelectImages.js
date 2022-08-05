@@ -4,7 +4,7 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import SingleFolder from "./SingleFolder";
 const SelectImages = () => {
 
-    const { ImageList , isFolderOpen , breakImagesIntoThreeColumns , AddImageToFolder , RemoveImageFromFolder } = useContext( SelectImageContext )
+    const { ImageList , isFolderOpen , breakImagesIntoThreeColumns , AddImageToFolder , RemoveImageFromFolder , changeFolderOpenState } = useContext( SelectImageContext )
 
     const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( ImageList )
 
@@ -26,7 +26,7 @@ const SelectImages = () => {
 
         <div>
 
-            <div className="container-fluid display-3 pb-3" style={ { backgroundColor : '#d7d7d7' } }>
+            <div className="container-fluid display-3 pb-3" style={ { backgroundColor : '#d7d7d7' , cursor : 'pointer' } } onClick={ () => { changeFolderOpenState( "" ) } } >
 
                 Gallery
 
