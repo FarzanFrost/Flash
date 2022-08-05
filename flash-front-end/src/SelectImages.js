@@ -40,7 +40,7 @@ const SelectImages = () => {
 
                         <div className="row p-4">
 
-                            <div className="col-lg-4 border-end border-3 col-md-12 mb-4 mb-lg-0">
+                            <div className="col-lg-4 border-end border-3 border-dark col-md-12 mb-4 mb-lg-0">
 
                                 {
                                     column1.map( ( image ) => (
@@ -73,7 +73,7 @@ const SelectImages = () => {
 
                             </div>
 
-                            <div className="col-lg-4 mb-4 mb-lg-0">
+                            <div className="col-lg-4 mb-4 mb-lg-0 border-end border-3 border-dark">
 
                                 {
                                     column2.map( ( image ) => (
@@ -106,7 +106,7 @@ const SelectImages = () => {
 
                             </div>
 
-                            <div className="col-lg-4 mb-4 mb-lg-0">
+                            <div className="col-lg-4 mb-4 mb-lg-0 ">
 
                                 {
                                     column3.map( ( image ) => (
@@ -151,6 +151,7 @@ const SelectImages = () => {
                     </div>
 
                 </div>
+
             </div>
 
         </div>
