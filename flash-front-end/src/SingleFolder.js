@@ -3,7 +3,7 @@ import {SelectImageContext} from "./ContextFiles/SelectImageContext";
 
 const SingleFolder = () => {
 
-    const { currentFolderName } = useContext( SelectImageContext )
+    const { currentFolderName , changeFolderOpenState } = useContext( SelectImageContext )
 
     return (
 
@@ -13,7 +13,7 @@ const SingleFolder = () => {
 
                 <div>
 
-                    <button className="btn btn-outline-light" onClick={ () => { window.location.reload() } }>
+                    <button className="btn btn-outline-light" onClick={ () => { changeFolderOpenState( "" ) } }>
 
                         <i className="bi bi-arrow-left-short"></i> Go back to Gallery
 

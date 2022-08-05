@@ -4,64 +4,23 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import SingleFolder from "./SingleFolder";
 const SelectImages = () => {
 
-    const { ImageList , isFolderOpen } = useContext( SelectImageContext )
+    const { ImageList , isFolderOpen , breakImagesIntoThreeColumns , AddImageToFolder , RemoveImageFromFolder } = useContext( SelectImageContext )
 
-    const column1 = []
-    const column2 = []
-    const column3 = []
+    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( ImageList )
 
-    const breakIntoColumns = () => {
+    const selectDeselectImages = ( e ) => {
 
-        const imageLength = ImageList.length
+        if ( e.target.checked ){
 
-        const remainder = imageLength % 3
+            AddImageToFolder( e.target.value )
 
-        const columnSize = ( imageLength - remainder ) / 3
+        }else{
 
-        let imageCount = 1
+            RemoveImageFromFolder( e.target.value )
 
-        ImageList.map( ( image ) => {
-
-            if ( imageCount <= columnSize ){
-
-                column1.push( image )
-
-            }else if( imageCount <= 2 * columnSize ){
-
-                column2.push( image )
-
-            }else if ( imageCount <= 3 * columnSize ){
-
-                column3.push( image )
-
-            }else{
-
-                if ( remainder === 1 ){
-
-                    column1.push( image )
-
-                }else{
-
-                    if ( imageCount !== imageLength ){
-
-                        column1.push( image )
-
-                    }else{
-
-                        column2.push( image )
-
-                    }
-
-                }
-
-            }
-            imageCount++
-
-        }  )
+        }
 
     }
-
-    breakIntoColumns()
 
     return (
 
@@ -86,7 +45,7 @@ const SelectImages = () => {
                                 {
                                     column1.map( ( image ) => (
 
-                                        <div className="p-1 bg-dark mb-4">
+                                        <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
                                                 src={ image }
@@ -96,8 +55,8 @@ const SelectImages = () => {
 
                                             { isFolderOpen && <div className="form-check mt-1 ms-1">
 
-                                                <input className="form-check-input" type="checkbox" value=""
-                                                       id="flexCheckDefault"/>
+                                                <input className="form-check-input" type="checkbox" value={ image }
+                                                       id="flexCheckDefault" onChange={ (e) => selectDeselectImages( e ) }/>
                                                 <label className="form-check-label" htmlFor="flexCheckDefault">
 
                                                     Select Image
@@ -119,7 +78,7 @@ const SelectImages = () => {
                                 {
                                     column2.map( ( image ) => (
 
-                                        <div className="p-1 bg-dark mb-4">
+                                        <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
                                                 src={ image }
@@ -129,8 +88,8 @@ const SelectImages = () => {
 
                                             { isFolderOpen && <div className="form-check mt-1 ms-1">
 
-                                                <input className="form-check-input" type="checkbox" value=""
-                                                       id="flexCheckDefault"/>
+                                                <input className="form-check-input" type="checkbox" value={ image }
+                                                       id="flexCheckDefault" onChange={ (e) => selectDeselectImages( e ) }/>
                                                 <label className="form-check-label" htmlFor="flexCheckDefault">
 
                                                     Select Image
@@ -152,7 +111,7 @@ const SelectImages = () => {
                                 {
                                     column3.map( ( image ) => (
 
-                                        <div className="p-1 bg-dark mb-4">
+                                        <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
                                                 src={ image }
@@ -162,8 +121,8 @@ const SelectImages = () => {
 
                                             { isFolderOpen && <div className="form-check mt-1 ms-1">
 
-                                                <input className="form-check-input" type="checkbox" value=""
-                                                       id="flexCheckDefault"/>
+                                                <input className="form-check-input" type="checkbox" value={ image }
+                                                       id="flexCheckDefault" onChange={ (e) => selectDeselectImages( e ) }/>
                                                 <label className="form-check-label" htmlFor="flexCheckDefault">
 
                                                     Select Image
