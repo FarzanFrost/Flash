@@ -9,7 +9,7 @@ const SingleFolder = () => {
 
         <div>
 
-            <div className="container-fluid bg-info d-flex justify-content-center p-3">
+            <div className="container-fluid bg-dark d-flex justify-content-center p-3 text-light">
 
                 <div>
 
@@ -23,7 +23,7 @@ const SingleFolder = () => {
 
                 <div className="m-auto">
 
-                    { currentFolderName }
+                    Gallery / { currentFolderName }
 
                 </div>
 
@@ -39,7 +39,7 @@ const SingleFolder = () => {
 
             </div>
 
-            <div className="container-fluid d-flex p-2 flex-wrap justify-content-center pt-5 bg-primary text-light" style={ { height : "659px" } }>
+            <div className="container-fluid d-flex p-2 flex-wrap justify-content-center pt-5 " style={ { height : "659px" } }>
 
                 Select Images on the right and click done selecting...
 

@@ -67,7 +67,7 @@ const SelectImages = () => {
 
         <div>
 
-            <div className="container-fluid bg-warning display-3">
+            <div className="container-fluid display-3 pb-3" style={ { backgroundColor : '#d7d7d7' } }>
 
                 Gallery
 
@@ -77,16 +77,16 @@ const SelectImages = () => {
 
                 <div className="row">
 
-                    <div className="col bg-success overflow-scroll" style={ { height : "720px" } }>
+                    <div className="col  overflow-scroll" style={ { height : "665px" } }>
 
                         <div className="row p-4">
 
-                            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                            <div className="col-lg-4 border-end border-3 col-md-12 mb-4 mb-lg-0">
 
                                 {
                                     column1.map( ( image ) => (
 
-                                        <div className="p-1 bg-primary mb-4">
+                                        <div className="p-1 bg-dark mb-4">
 
                                             <img
                                                 src={ image }
@@ -119,7 +119,7 @@ const SelectImages = () => {
                                 {
                                     column2.map( ( image ) => (
 
-                                        <div className="p-1 bg-primary mb-4">
+                                        <div className="p-1 bg-dark mb-4">
 
                                             <img
                                                 src={ image }
@@ -152,7 +152,7 @@ const SelectImages = () => {
                                 {
                                     column3.map( ( image ) => (
 
-                                        <div className="p-1 bg-primary mb-4">
+                                        <div className="p-1 bg-dark mb-4">
 
                                             <img
                                                 src={ image }

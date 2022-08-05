@@ -57,7 +57,7 @@ const FolderStructuresCustomers = () => {
 
         <div>
 
-            <div className="container-fluid bg-info d-flex justify-content-center p-3">
+            <div className="container-fluid bg-dark d-flex justify-content-center p-3 text-light">
 
                 <div className="m-auto">
 
