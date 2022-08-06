@@ -19,6 +19,7 @@ import ResetPasswordContextProviderInterface from "./ResetPasswordContextProvide
 import EditEmployee from "./EditEmployee";
 import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
+import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
               <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
+              <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
 
 
           </Routes>
