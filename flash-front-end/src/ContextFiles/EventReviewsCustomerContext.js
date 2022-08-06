@@ -41,7 +41,7 @@ const EventReviewsCustomerContextProvider = ( props ) => {
         },
         {
 
-            eventType : "DJ party", reviewContent : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.",
+            eventType : "Get-Together", reviewContent : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.",
             rating : 0 , eventId : 1
 
         }
