@@ -47,13 +47,13 @@ const SingleFolder = () => {
 
                     <div className="col overflow-scroll">
 
-                        { imagesInFolder.length ===0 && <h3 className="pt-5"> Select Images on the right and click done selecting... </h3> }
+                        { imagesInFolder.length ===0 && <h3 className="pt-5"> Select Images on the left and click done selecting... </h3> }
 
                         { imagesInFolder.length > 0 &&
 
                             <div className="row p-4" style={ { height : "555px" } }>
 
-                                <div className="col-lg-4 border-end border-3 border-dark col-md-12 mb-4 mb-lg-0">
+                                <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
                                     {
                                         column1.map( ( image ) => (
@@ -74,7 +74,7 @@ const SingleFolder = () => {
 
                                 </div>
 
-                                <div className="col-lg-4 mb-4 mb-lg-0 border-end border-3 border-dark">
+                                <div className="col-lg-4 mb-4 mb-lg-0">
 
                                     {
                                         column2.map( ( image ) => (

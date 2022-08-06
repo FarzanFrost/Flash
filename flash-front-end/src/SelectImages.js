@@ -31,9 +31,9 @@ const SelectImages = () => {
 
         <div>
 
-            <div className="container-fluid display-3 pb-3" style={ { backgroundColor : '#d7d7d7' , cursor : 'pointer' } } onClick={ () => { changeFolderOpenState( "" ) } } >
+            <div className="container-fluid display-3 pb-3" style={ { backgroundColor : '#d7d7d7' } } >
 
-                Gallery
+                <div onClick={ () => { changeFolderOpenState( "" ) } } style={ { cursor : 'pointer' , width : '13%' } } > Gallery </div>
 
             </div>
 
@@ -45,7 +45,7 @@ const SelectImages = () => {
 
                         <div className="row p-4">
 
-                            <div className="col-lg-4 border-end border-3 border-dark col-md-12 mb-4 mb-lg-0">
+                            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
                                 {
                                     column1.map( ( image ) => (
@@ -78,7 +78,7 @@ const SelectImages = () => {
 
                             </div>
 
-                            <div className="col-lg-4 mb-4 mb-lg-0 border-end border-3 border-dark">
+                            <div className="col-lg-4 mb-4 mb-lg-0">
 
                                 {
                                     column2.map( ( image ) => (
