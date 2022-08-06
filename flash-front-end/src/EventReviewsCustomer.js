@@ -33,7 +33,24 @@ const EventReviewsCustomer = () => {
 
                                 <div className="col-md-4 my-3 shadow-lg p-4">
 
-                                    <h2 className="h2"> { review.eventType } </h2>
+                                    <div className="d-flex">
+
+                                        <h2 className="h2 m-auto"> { review.eventType } </h2>
+
+                                        <div className="dropdown m-auto me-0">
+                                            <button className="btn bi-three-dots-vertical rounded-circle" type="button" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
+                                            </button>
+                                            <ul className="dropdown-menu">
+
+                                                <li> <button className="dropdown-item"> Edit</button> </li>
+                                                <li> <button className="dropdown-item"> Delete</button> </li>
+
+                                            </ul>
+                                        </div>
+
+                                    </div>
+
                                     <p className="px-xl-3">
                                         <i className="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet, consectetur
                                         adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic

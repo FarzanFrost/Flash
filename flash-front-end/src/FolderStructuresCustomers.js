@@ -104,7 +104,7 @@ const FolderStructuresCustomers = () => {
                                 <ul className="dropdown-menu">
 
                                     <li> <button className="dropdown-item"> Rename</button> </li>
-                                    <li> <button className="dropdown-item"> Delete Folder</button> </li>
+                                    <li> <button className="dropdown-item"> Delete</button> </li>
 
                                 </ul>
                             </div>
