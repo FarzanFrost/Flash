@@ -20,7 +20,7 @@ import EditEmployee from "./EditEmployee";
 import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
-
+import ViewPackagesOther from "./ViewPackagesOther";
 function App() {
   return (
     <div /*className="App"*/>
@@ -62,7 +62,7 @@ function App() {
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
-
+              <Route exact path="/ViewPackagesOther" element={ <ViewPackagesOther/> } />
 
           </Routes>
 
