@@ -20,7 +20,7 @@ const AddEmployee = () => {
     return(
         <div className="h-100">
 
-            <section className="h-100 bg-danger">
+            <section className="h-100">
 
                 <div className="container py-5 h-100">
 
@@ -41,9 +41,9 @@ const AddEmployee = () => {
 
                                         </div>
 
-                                        <div className="col-lg-7">
+                                        <div className="col-lg-7 rounded-3" style={ { backgroundColor : '#d7d7d7' } }>
 
-                                            <form className="container rounded mb-0 bg-opacity-25 p-lg-3 mt-0" style={{background : "white"}}>
+                                            <form className="container rounded-3 mb-0 bg-opacity-25 p-lg-3 mt-0" style={ { backgroundColor : '#d7d7d7' } }>
 
                                                 <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">First Name</label>
@@ -235,7 +235,7 @@ const AddEmployee = () => {
 
                                                 <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
                                                     <button type="submit"
-                                                            className="btn btn-danger btn-block">
+                                                            className="btn btn-dark btn-block">
                                                         ADD
                                                     </button>
                                                 </div>
