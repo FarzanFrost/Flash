@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { Form, Button } from 'react-bootstrap';
 
 const newPack = () =>{
 
@@ -41,7 +42,6 @@ const NewPackage = () => {
                                                     required
                                                 />
                                             </div>
-
                                         </div>
 
                                         <div className="form-group row mt-3 mx-3">
@@ -50,10 +50,214 @@ const NewPackage = () => {
                                                 <select className="form-select">
                                                     <option>Wedding</option>
                                                     <option>Birthday</option>
-                                                    <option>Purberty</option>
+                                                    <option>Puberty</option>
+                                                    <option>Get together</option>
+                                                    <option>House warming</option>
+                                                    <option>Prize giving</option>
                                                 </select>
                                             </div>
+                                        </div>
 
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Additional</label>
+                                            <div className="col-sm-8">
+                                                <select className="form-select">
+                                                    <option>Wedding Only</option>
+                                                    <option>Reception Only</option>
+                                                    <option>Registration Only</option>
+                                                    <option>Wedding with Reception</option>
+                                                    <option>Wedding with Registration</option>
+                                                    <option>Registration with Reception</option>
+                                                    <option>Wedding with both ceremony</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">No Of Pages</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Number"
+                                                    placeholder="Enter the Pages Count"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">No Of Photographers</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Number"
+                                                    placeholder="Enter the Photographer Count"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">No Of Videographer</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Number"
+                                                    placeholder="Enter the Videographer Count"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Signature Frame</label>
+                                            <div className="col-sm-8">
+                                                <Form.Check
+                                                    inline
+                                                    label="Yes"
+                                                    name="group1"
+                                                    type="radio"
+                                                />
+
+                                                <Form.Check
+                                                    inline
+                                                    label="No"
+                                                    name="group2"
+                                                    type="radio"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Frame</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Number"
+                                                    placeholder="Length"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                                <span> x </span>
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Number"
+                                                    placeholder="Width"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Calendar</label>
+                                            <div className="col-sm-8">
+                                                <Form.Check
+                                                    inline
+                                                    label="Yes"
+                                                    name="group1"
+                                                    type="radio"
+                                                />
+
+                                                <Form.Check
+                                                    inline
+                                                    label="No"
+                                                    name="group2"
+                                                    type="radio"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">OutShoot</label>
+                                            <div className="col-sm-8">
+                                                <Form.Check
+                                                    inline
+                                                    label="Pre Shoot"
+                                                    name="group1"
+                                                    type="radio"
+                                                />
+
+                                                <Form.Check
+                                                    inline
+                                                    label="Post Shoot"
+                                                    name="group2"
+                                                    type="radio"
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Out Shoot Hours</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Number"
+                                                    placeholder="Enter the Total Hours"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Total Payment</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Text"
+                                                    placeholder="Enter the Total Payment"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Price of Extra Pages</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Text"
+                                                    placeholder="Enter the Price"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group row mt-3 mx-3">
+                                            <label className="col-sm-3 col-form-label">Album Design</label>
+                                            <div className="col-sm-8">
+                                                <input
+                                                    // value={ firstName }
+                                                    className="form-control"
+                                                    type="Text"
+                                                    placeholder="Enter the Album Design"
+                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    autoFocus
+                                                    required
+                                                />
+                                            </div>
                                         </div>
 
                                     </form>
