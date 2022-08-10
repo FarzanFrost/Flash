@@ -6,7 +6,7 @@ const Vieweventdetailsforadmin = () => {
 
     const style1 = {
 
-        backgroundColor: '#B36A5E',
+
         height:'850px'
     };
 
@@ -14,12 +14,12 @@ const Vieweventdetailsforadmin = () => {
 
         width: '150px',
         height: '550px',
-        backgroundColor: '#767676',
+        backgroundColor: 'black',
     };
 
     const style3 = {
 
-        backgroundColor:'#4B2000',
+        backgroundColor:'black',
         color:'white'
     };
 
@@ -30,8 +30,8 @@ const Vieweventdetailsforadmin = () => {
 
     <div className=" row">
         <div className="col-md-6">
-            <div className="position-relative mx-5 m-2" style={{ width: '48rem',left:'16rem'}}>
-                <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input"></input>
+            <div className="position-relative mx-5 m-2 border-dark border-4" style={{ width: '48rem',left:'16rem'}}>
+                <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput" placeholder="Example input"></input>
             </div>
        </div>
 
@@ -41,7 +41,7 @@ const Vieweventdetailsforadmin = () => {
 
             <div className="dropdown position-relative mx-5 m-2" style={{ left:'16rem'}}>
 
-                <select class="btn btn-secondary dropdown-toggle" type="button" id="Filter"
+                <select class="btn btn-dark dropdown-toggle" type="button" id="Filter"
                         data-bs-toggle="dropdown">
                     <option value="All">All</option>
                     <option value="eventname">Event Name</option>
@@ -187,8 +187,5 @@ const Vieweventdetailsforadmin = () => {
     )
 
 }
-
-
-
 
 export default Vieweventdetailsforadmin
