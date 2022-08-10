@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
+import pic from './Images/eventcollection.png';
 
 const newPack = () =>{
 
@@ -22,6 +23,10 @@ const NewPackage = () => {
                                 <h1 className="text-center mt-3 pb-5">New Package</h1>
 
                                 <div className="col-lg-5 d-lg-flex d-none bg-primary">
+
+                                    <div className="d-lg-flex d-none ">
+                                        <img src={ pic } className="img-fluid rounded-3 h-100" alt="Events"/>
+                                    </div>
 
                                 </div>
 
@@ -258,6 +263,13 @@ const NewPackage = () => {
                                                     required
                                                 />
                                             </div>
+                                        </div>
+
+                                        <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
+                                            <button type="submit"
+                                                    className="btn btn-dark btn-block">
+                                                ADD
+                                            </button>
                                         </div>
 
                                     </form>

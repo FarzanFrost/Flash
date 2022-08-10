@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import bgpic from './photo.jpeg'
+import bgpic from './Images/photo.jpeg'
 
 const EmpForm = () => {
     const [firstName,setFirstName] = useState('')
