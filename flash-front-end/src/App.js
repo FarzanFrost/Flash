@@ -18,9 +18,10 @@ import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
 import NewPackage from "./NewPackage";
-import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
+import AdminViewEmployeeDetailspage from "./AdminViewEmployeeDetailspage";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
+
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
               <Route exact path="/Snample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
-              <Route exact path="/Adminviewemployeedetailspage" element={ <Adminviewemployeedetailspage/> } />
+              <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
               <Route exact path="/Header" element={ <Header/> } />
               <Route exact path="/LandingPage" element={ <LandingPage/> } />
               <Route exact path="/SideNavAdmin" element={ <SideNavAdmin/> } />
