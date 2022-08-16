@@ -2,10 +2,16 @@ import  React from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 const ManagerViewAllReviews = () => {
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <div className='container mt-4 '>
@@ -58,7 +64,25 @@ const ManagerViewAllReviews = () => {
                                         <th scope="col">Event code</th>
                                         <th scope="col">Rating</th>
                                         <th scope="col">
-                                            <button type="button" className="btn btn-light">View Details</button>
+
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Review</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                      close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
                                         </th>
 
                                     </tr>
@@ -67,7 +91,24 @@ const ManagerViewAllReviews = () => {
                                         <th scope="col">Event code</th>
                                         <th scope="col">Rating</th>
                                         <th scope="col">
-                                            <button type="button" className="btn btn-light">View Details</button>
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Review</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
                                         </th>
 
                                     </tr>
@@ -76,7 +117,24 @@ const ManagerViewAllReviews = () => {
                                         <th scope="col">Event code</th>
                                         <th scope="col">Rating</th>
                                         <th scope="col">
-                                            <button type="button" className="btn btn-light">View Details</button>
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Review</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
                                         </th>
 
 
