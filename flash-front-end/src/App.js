@@ -21,6 +21,7 @@ import AdminViewEmployeeDetailspage from "./AdminViewEmployeeDetailspage";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
 import AdminViewAllReviews from "./AdminViewAllReviews";
+import ManagerViewEventFullDetails from "./MangerViewEventFullDetails";
 
 
 function App() {
@@ -65,6 +66,8 @@ function App() {
               <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/AdminViewAllReviews" element={ <AdminViewAllReviews/> } />
+              <Route exact path="/ManagerViewEventFullDetails" element={ <ManagerViewEventFullDetails/> } />
+
 
 
           </Routes>
