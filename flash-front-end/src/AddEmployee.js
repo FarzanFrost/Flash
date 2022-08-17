@@ -26,15 +26,14 @@ const AddEmployee = () => {
 
                     <div className="row d-flex justify-content-center align-items-center h-100">
 
-                        {/*<div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">*/}
+                        <div className="col-xl-11 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">
 
-                            <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0">
+                            <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0" style={ { backgroundColor : '#d7d7d7' } }>
 
                                 <div className="row g-0">
 
-                                    <h1 className="text-center mt-3 pb-5">New Employee</h1>
-
                                         <div className="col-lg-5 d-lg-flex d-none">
+
                                             <div className="d-lg-flex d-none ">
                                                 <img src={ bgpic } className="img-fluid rounded-3 h-100" alt="Camera"/>
                                             </div>
@@ -44,6 +43,7 @@ const AddEmployee = () => {
                                         <div className="col-lg-7 rounded-3" style={ { backgroundColor : '#d7d7d7' } }>
 
                                             <form className="container rounded-3 mb-0 bg-opacity-25 p-lg-3 mt-0" style={ { backgroundColor : '#d7d7d7' } }>
+                                                <h1 className="text-center mt-3 pb-5">New Employee</h1>
 
                                                 <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">First Name</label>
@@ -248,7 +248,7 @@ const AddEmployee = () => {
 
                             </div>
 
-                        {/*</div>*/}
+                        </div>
 
                     </div>
 
