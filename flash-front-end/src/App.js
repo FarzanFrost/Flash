@@ -10,6 +10,10 @@ import SideNavAdmin from "./SideNavAdmin";
 import SideNavCustomer from "./SideNavCustomer";
 import SideNavEmployee from "./SideNavEmployee";
 import SideNavManager from "./SideNavManager";
+import ContactUs from "./ContactUs";
+import Footer from "./Footer";
+import ViewEventsForCustomer from "./ViewEventsForCustomer";
+import Login from "./Login";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
@@ -17,6 +21,8 @@ import ViewPackages from "./ViewPackages";
 import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
+import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
+import MoreDetailsOfEventsForAdmin from "./MoreDetailsOfEventsForAdmin";
 import NewPackage from "./NewPackage";
 import AdminViewEmployeeDetailspage from "./AdminViewEmployeeDetailspage";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
@@ -25,7 +31,6 @@ import AdminViewAllReviews from "./AdminViewAllReviews";
 import ManagerViewEventFullDetails from "./MangerViewEventFullDetails";
 import ManagerViewEmployeeDetails from "./ManagerViewEmployeeDetails";
 import ManagerViewAllReviews from "./ManagerViewAllReviews";
-
 
 function App() {
   return (
@@ -64,6 +69,10 @@ function App() {
               <Route exact path="/SideNavCustomer" element={ <SideNavCustomer/> } />
               <Route exact path="/SideNavEmployee" element={ <SideNavEmployee/> } />
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
+              <Route exact path="/ContactUs" element={ <ContactUs/> } />
+              <Route exact path="/Footer" element={ <Footer/> } />
+              <Route exact path="/ViewEventsForCustomer" element={ <ViewEventsForCustomer/> } />
+              <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/NewPackage" element={ <NewPackage/> } />
