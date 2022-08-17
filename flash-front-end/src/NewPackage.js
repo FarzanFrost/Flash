@@ -213,6 +213,13 @@ const NewPackage = () => {
                                                     name="group2"
                                                     type="radio"
                                                 />
+
+                                                <Form.Check
+                                                    inline
+                                                    label="None"
+                                                    name="group3"
+                                                    type="radio"
+                                                />
                                             </div>
                                         </div>
 
