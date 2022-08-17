@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
 import Header from "./Header";
+import Footer from "./Footer";
 import event from './Images/event.jpg';
 import event2 from './Images/event2.jpg';
 import event3 from './Images/event3.jpg';
@@ -7,13 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card} from 'react-bootstrap';
 import FlashLogo from './Images/FlashLogo.png';
 
-const ContactUsForm = () => {
-    const [content,setContent] = useState('')
-    const [name,setName] = useState('')
-    const [email,setEmail] = useState('')
-    const [subject,setSubject] = useState('')
-    const [details,setDetails] = useState('')
-}
 
 const LandingPage = () => {
     return (
@@ -41,7 +34,7 @@ const LandingPage = () => {
                     <div className="carousel-inner w-10 " >
                         <div className="carousel-item active" >
                             <img src={event} className="img-fluid d-block w-100 p-5"  alt="..." />
-                                <div className="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption d-md-block">
                                     <h5>Wedding</h5>
                                     <p>We make your big day memorable</p>
                                 </div>
@@ -49,15 +42,15 @@ const LandingPage = () => {
 
                         <div className="carousel-item">
                             <img src={event2} className="img-fluid d-block w-100 p-5"  alt="..." />
-                                <div className="carousel-caption d-none d-md-block">
-                                    <h5>Get-to-gathers</h5>
+                                <div className="carousel-caption d-md-block">
+                                    <h5>Gatherings</h5>
                                     <p>Some representative placeholder content for the second slide.</p>
                                 </div>
                         </div>
 
                         <div className="carousel-item">
                             <img src={event3} className="img-fluid d-block w-100 p-5"  alt="..." />
-                                <div className="carousel-caption d-none d-md-block">
+                                <div className="carousel-caption d-md-block">
                                     <h5>Birthday Party</h5>
                                     <p>Some representative placeholder content for the third slide.</p>
                                 </div>
@@ -85,6 +78,8 @@ const LandingPage = () => {
                         Commercial photography, Fashion photography and many more..</h3>
                 </div>
             </div>
+
+            <Footer />
         </div>
 
     )

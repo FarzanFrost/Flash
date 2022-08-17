@@ -11,6 +11,8 @@ import SideNavCustomer from "./SideNavCustomer";
 import SideNavEmployee from "./SideNavEmployee";
 import SideNavManager from "./SideNavManager";
 import ContactUs from "./ContactUs";
+import Footer from "./Footer";
+import ViewEventsForCustomer from "./ViewEventsForCustomer";
 import Login from "./Login";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
@@ -20,6 +22,7 @@ import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
 import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
+import MoreDetailsOfEventsForAdmin from "./MoreDetailsOfEventsForAdmin";
 
 function App() {
   return (
@@ -59,6 +62,9 @@ function App() {
               <Route exact path="/SideNavEmployee" element={ <SideNavEmployee/> } />
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
               <Route exact path="/ContactUs" element={ <ContactUs/> } />
+              <Route exact path="/Footer" element={ <Footer/> } />
+              <Route exact path="/ViewEventsForCustomer" element={ <ViewEventsForCustomer/> } />
+              <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
 
