@@ -1,5 +1,5 @@
 import React from 'react'
-import bgpic from './photo.jpeg'
+import bgpic from './Images/photo.jpeg'
 
 // const EmpEdit = () => {
 //     const [firstName,setFirstName] = useState('')
