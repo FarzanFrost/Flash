@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Form, Button } from 'react-bootstrap';
 import pic from './Images/booking.jpeg';
 
 const NewEventBooking = () => {
