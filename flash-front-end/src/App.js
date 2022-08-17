@@ -31,6 +31,7 @@ import AdminViewAllReviews from "./AdminViewAllReviews";
 import ManagerViewEventFullDetails from "./MangerViewEventFullDetails";
 import ManagerViewEmployeeDetails from "./ManagerViewEmployeeDetails";
 import ManagerViewAllReviews from "./ManagerViewAllReviews";
+import NewEventBooking from "./NewEventBooking";
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
               <Route exact path="/ManagerViewEventFullDetails" element={ <ManagerViewEventFullDetails/> } />
               <Route exact path="/ManagerViewEmployeeDetails" element={ <ManagerViewEmployeeDetails/> } />
               <Route exact path="/ManagerViewAllReviews" element={ <ManagerViewAllReviews/> } />
+              <Route exact path="/NewEventBooking" element={ <NewEventBooking/> } />
 
           </Routes>
 
