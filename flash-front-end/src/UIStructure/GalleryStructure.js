@@ -1,8 +1,8 @@
 import React from 'react'
-import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
-import Header from "./Header";
-import Footer from "./Footer";
-import SideNavCustomer from "./SideNavCustomer";
+import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
+import Header from "../Header";
+import Footer from "../Footer";
+import SideNavCustomer from "../SideNavCustomer";
 
 const GalleryStructure = () => {
 
