@@ -23,8 +23,6 @@ import EditEmployee from "./EditEmployee";
 import MoreDetailsOfEventsForAdmin from "./MoreDetailsOfEventsForAdmin";
 import NewPackage from "./NewPackage";
 import AdminViewEmployeeDetailspage from "./AdminViewEmployeeDetailspage";
-import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
-import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
 import CustomerProfile from "./CustomerProfile";
 import EditPackage from "./EditPackage";
 import AdminViewAllReviews from "./AdminViewAllReviews";
@@ -34,6 +32,8 @@ import ManagerViewAllReviews from "./ManagerViewAllReviews";
 import NewEventBooking from "./NewEventBooking";
 import CardDetail from "./CardDetail";
 import ChangeBooking from "./ChangeBooking";
+import GalleryStructure from './UIStructure/GalleryStructure'
+import EventReviewsCustomerStructure from "./UIStructure/EventReviewsCustomerStructure";
 
 function App() {
   return (
@@ -62,7 +62,7 @@ function App() {
               <Route exact path="/Login" element={ <LoginContextProviderInterface/> } />
               <Route exact path="/Signup" element={ <SignContextProviderInterface/> } />
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
-              <Route exact path="/Snample" element={ <Sample/> } />
+              <Route exact path="/Sample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
               <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
@@ -76,11 +76,11 @@ function App() {
               <Route exact path="/Footer" element={ <Footer/> } />
               <Route exact path="/ViewEventsForCustomer" element={ <ViewEventsForCustomer/> } />
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
-              <Route exact path={"/ResetPassword"} element={ <ResetPasswordContextProviderInterface/> } />
+              <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/NewPackage" element={ <NewPackage/> } />
-              <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
-              <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
+              <Route exact path="/Gallery" element={ <GalleryStructure/> } />
+              <Route exact path="/EventReviews" element={ <EventReviewsCustomerStructure/> } />
               <Route exact path="/CustomerProfile" element={ <CustomerProfile/> } />
               <Route exact path="/EditPackage" element={ <EditPackage/> } />
               <Route exact path="/AdminViewAllReviews" element={ <AdminViewAllReviews/> } />
