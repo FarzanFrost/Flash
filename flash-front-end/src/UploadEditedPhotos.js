@@ -20,10 +20,10 @@ const Vieweventdetailsforadmin = () => {
             <section className="pt-5 pb-5">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-12">
                             <form method="post" action="#" id="#">
                                 <div className="form-group files">
-                                    <label>Upload Your Images </label>
+                                    <h3 className="mb-4">Upload Your Images </h3>
                                     <input type="file" className="form-control" multiple=""></input>
                                 </div>
                             </form>
