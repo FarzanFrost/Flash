@@ -3,7 +3,7 @@ package com.example.flashbackend.Entity;
 import java.io.Serializable;
 import java.math.BigInteger;
 
-public class AttendenceCompositeKey implements Serializable {
+public class AttendanceCompositeKey implements Serializable {
 
 
     private BigInteger EmployeeID;

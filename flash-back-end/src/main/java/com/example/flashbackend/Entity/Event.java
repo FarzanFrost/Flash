@@ -26,7 +26,7 @@ public class Event {
 
     private String Latitude;
 
-    private String Longtitude;
+    private String Longitude;
 
     private int ExtraPage;
 
@@ -45,7 +45,7 @@ public class Event {
         EndTime = endTime;
         Address = address;
         Latitude = latitude;
-        Longtitude = longtitude;
+        Longitude = longtitude;
         ExtraPage = extraPage;
         Category = category;
         Delivered = delivered;
@@ -115,12 +115,12 @@ public class Event {
         Latitude = latitude;
     }
 
-    public String getLongtitude() {
-        return Longtitude;
+    public String getLongitude() {
+        return Longitude;
     }
 
-    public void setLongtitude(String longtitude) {
-        Longtitude = longtitude;
+    public void setLongitude(String longitude) {
+        Longitude = longitude;
     }
 
     public int getExtraPage() {

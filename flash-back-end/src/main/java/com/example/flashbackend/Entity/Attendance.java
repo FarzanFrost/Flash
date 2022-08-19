@@ -7,8 +7,8 @@ import java.math.BigInteger;
 import java.sql.Date;
 
 @Entity
-@IdClass( AttendenceCompositeKey.class )
-public class Attendence {
+@IdClass( AttendanceCompositeKey.class )
+public class Attendance {
 
     @Id
     private BigInteger EmployeeID;
@@ -18,9 +18,9 @@ public class Attendence {
 
     private String Present;
 
-    public Attendence(){}
+    public Attendance(){}
 
-    public Attendence(BigInteger employeeID, java.sql.Date date, String present) {
+    public Attendance(BigInteger employeeID, java.sql.Date date, String present) {
         EmployeeID = employeeID;
         Date = date;
         Present = present;

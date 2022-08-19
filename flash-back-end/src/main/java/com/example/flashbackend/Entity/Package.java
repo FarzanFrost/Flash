@@ -12,7 +12,7 @@ public class Package {
 
     private String Frame;
 
-    private int VideoGrapher;
+    private int Videographer;
 
     private int Photographer;
 
@@ -41,7 +41,7 @@ public class Package {
     public Package(BigInteger packageID, String frame, int videoGrapher, int photographer, boolean calender, String name, int pages, float extraPagesPrice, String outshootType, boolean signatureFrame, String albumDesign, float totalPayment, String eventType, String additional) {
         PackageID = packageID;
         Frame = frame;
-        VideoGrapher = videoGrapher;
+        Videographer = videoGrapher;
         Photographer = photographer;
         Calender = calender;
         Name = name;
@@ -72,11 +72,11 @@ public class Package {
     }
 
     public int getVideoGrapher() {
-        return VideoGrapher;
+        return Videographer;
     }
 
     public void setVideoGrapher(int videoGrapher) {
-        VideoGrapher = videoGrapher;
+        Videographer = videoGrapher;
     }
 
     public int getPhotographer() {
