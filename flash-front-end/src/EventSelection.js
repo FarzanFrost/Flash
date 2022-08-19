@@ -1,12 +1,11 @@
 import React from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import sliverPhoto from './Images/silver-package.png'
-import goldPhoto from './Images/gold-package_.png'
-import diamondPhoto from './Images/diamond-package.png'
-import platinumPhoto from './Images/platinum-package.png'
-
-
+import wedding from './Images/wedding.jpg'
+import birthday from './Images/birthday.png'
+import graduation from './Images/graduation.jpg'
+import pubertyceremony from './Images/puberty-ceremony.jpg'
+import anniversary from './Images/25th.jpg'
 const Vieweventdetailsforadmin = () => {
 
     const style1 = {
@@ -14,7 +13,11 @@ const Vieweventdetailsforadmin = () => {
         backgroundColor: '#767676',
         height:'250px'
     };
+    const style3 = {
 
+        backgroundColor:'#767676',
+        color:'white',
+    };
 
 
     return (
@@ -36,19 +39,34 @@ const Vieweventdetailsforadmin = () => {
                                         <div className="row">
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280" src='https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp'></img>
+                                                    <img className="img-fluid" alt="100%x280" src={wedding}></img>
+                                                    <div className="card-body">
+                                                        <div className="text-center">
+                                                            <a href="#" className="btn" style={{...style3}}>SELECT</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"src='https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp'></img>
+                                                    <img className="img-fluid" alt="100%x280"src={birthday}></img>
+                                                    <div className="card-body">
+                                                        <div className="text-center">
+                                                            <a href="#" className="btn" style={{...style3}}>SELECT</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"src='https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp'></img>
+                                                    <img className="img-fluid" alt="100%x280"src={graduation}></img>
+                                                    <div className="card-body">
+                                                        <div className="text-center">
+                                                            <a href="#" className="btn" style={{...style3}}>SELECT</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,21 +89,27 @@ const Vieweventdetailsforadmin = () => {
                                         <div className="row">
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280" src='https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp'></img>
+                                                    <img className="img-fluid" alt="100%x280" src={pubertyceremony}></img>
+                                                    <div className="card-body">
+                                                        <div className="text-center">
+                                                            <a href="#" className="btn" style={{...style3}}>SELECT</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"src='https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp'></img>
+                                                    <img className="img-fluid" alt="100%x280"src={anniversary}></img>
+                                                    <div className="card-body">
+                                                        <div className="text-center">
+                                                            <a href="#" className="btn" style={{...style3}}>SELECT</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div className="col-md-4 mb-3">
-                                                <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280"src='https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp'></img>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </div>
