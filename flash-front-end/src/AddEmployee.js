@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import bgpic from './photo.jpeg'
+import bgpic from './Images/photo.jpeg'
 
 const EmpForm = () => {
     const [firstName,setFirstName] = useState('')
@@ -20,30 +20,30 @@ const AddEmployee = () => {
     return(
         <div className="h-100">
 
-            <section className="h-100 bg-danger">
+            <section className="h-100">
 
                 <div className="container py-5 h-100">
 
                     <div className="row d-flex justify-content-center align-items-center h-100">
 
-                        {/*<div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">*/}
+                        <div className="col-xl-11 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">
 
-                            <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0">
+                            <div className="card rounded-3 text-black my-lg-1 my-xl-0 py-xl-0" style={ { backgroundColor : '#d7d7d7' } }>
 
                                 <div className="row g-0">
 
-                                    <h1 className="text-center mt-3 pb-5">New Employee</h1>
-
                                         <div className="col-lg-5 d-lg-flex d-none">
+
                                             <div className="d-lg-flex d-none ">
                                                 <img src={ bgpic } className="img-fluid rounded-3 h-100" alt="Camera"/>
                                             </div>
 
                                         </div>
 
-                                        <div className="col-lg-7">
+                                        <div className="col-lg-7 rounded-3" style={ { backgroundColor : '#d7d7d7' } }>
 
-                                            <form className="container rounded mb-0 bg-opacity-25 p-lg-3 mt-0" style={{background : "white"}}>
+                                            <form className="container rounded-3 mb-0 bg-opacity-25 p-lg-3 mt-0" style={ { backgroundColor : '#d7d7d7' } }>
+                                                <h1 className="text-center mt-3 pb-5">New Employee</h1>
 
                                                 <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">First Name</label>
@@ -235,7 +235,7 @@ const AddEmployee = () => {
 
                                                 <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
                                                     <button type="submit"
-                                                            className="btn btn-danger btn-block">
+                                                            className="btn btn-dark btn-block">
                                                         ADD
                                                     </button>
                                                 </div>
@@ -248,7 +248,7 @@ const AddEmployee = () => {
 
                             </div>
 
-                        {/*</div>*/}
+                        </div>
 
                     </div>
 

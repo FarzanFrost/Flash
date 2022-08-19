@@ -28,6 +28,12 @@ const SideNavEmployee = () => {
 
                             </ul>
                         </li>
+                        <li className="nav-item p-3">
+                            <a className="nav-link active" aria-current="page" href="#">Calendar</a>
+                        </li>
+                        <li className="nav-item p-3">
+                            <a className="nav-link active" aria-current="page" href="#">Edit profile</a>
+                        </li>
                     </ul>
 
 
