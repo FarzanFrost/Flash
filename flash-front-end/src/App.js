@@ -22,6 +22,7 @@ import SelectImageContextProviderInterface from "./SelectImageContextProviderInt
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
 import ViewPackagesOther from "./ViewPackagesOther";
 import ViewPhotos from "./ViewPhotos";
+import UploadEditedPhotos from "./UploadEditedPhotos";
 function App() {
   return (
     <div /*className="App"*/>
@@ -65,7 +66,7 @@ function App() {
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesOther" element={ <ViewPackagesOther/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
-
+              <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
           </Routes>
 
 
