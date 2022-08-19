@@ -1,0 +1,59 @@
+package com.example.flashbackend.Entity;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.sql.Timestamp;
+
+@Entity
+public class Login {
+
+    @Id
+    private String Email;
+
+    private String Password;
+
+    private String Saltkey;
+
+    private Timestamp DateTime;
+
+    public Login(){}
+
+    public Login(String email, String password, String saltkey, Timestamp dateTime) {
+        Email = email;
+        Password = password;
+        Saltkey = saltkey;
+        DateTime = dateTime;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public String getSaltkey() {
+        return Saltkey;
+    }
+
+    public void setSaltkey(String saltkey) {
+        Saltkey = saltkey;
+    }
+
+    public Timestamp getDateTime() {
+        return DateTime;
+    }
+
+    public void setDateTime(Timestamp dateTime) {
+        DateTime = dateTime;
+    }
+}
