@@ -11,8 +11,8 @@ const Vieweventdetailsforadmin = () => {
 
     const style1 = {
 
-        backgroundColor: '#B36A5E',
-        height:'850px'
+        backgroundColor: '#767676',
+        height:'450px'
     };
 
     const style2 = {
@@ -24,7 +24,7 @@ const Vieweventdetailsforadmin = () => {
 
     const style3 = {
 
-        backgroundColor:'#4B2000',
+        backgroundColor:'#767676',
         color:'white'
     };
 
@@ -33,39 +33,15 @@ const Vieweventdetailsforadmin = () => {
         <div style={{...style1}}>
 
 
-            <div className=" row">
-                <div className="col-md-6">
-                    <div className="position-relative mx-5 m-2" style={{ width: '48rem',left:'16rem'}}>
-                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Example input"></input>
-                    </div>
-                </div>
 
 
-
-                <div className="col-md-6" >
-
-                    <div className="dropdown position-relative mx-5 m-2" style={{ left:'16rem'}}>
-
-                        <select class="btn btn-secondary dropdown-toggle" type="button" id="Filter"
-                                data-bs-toggle="dropdown">
-                            <option value="All">All</option>
-                            <option value="eventname">Event Name</option>
-                            <option value="Date">Date</option>
-
-                        </select>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <section className="pt-5 pb-5">
+            <section className="pt-6 pb-5">
                 <div className=" container">
                     <div className="row">
+
                         <div className="col-6">
                             <h3 className="mb-2">Packages </h3>
                         </div>
-
 
 
 
@@ -90,7 +66,7 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280" src={sliverPhoto}></img>
+                                                    <img className="img-fluid" class="img-rounded" alt="100%x280px" src={sliverPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
 
@@ -154,7 +130,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Save the Data(video or Photo)</h5>
                                                             <h5>Additional per sheet 2500</h5>
                                                         </p>
-                                                        <br/><br/>
+                                                        <br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
 
@@ -183,7 +159,7 @@ const Vieweventdetailsforadmin = () => {
                                                         <h5>Save the Data(video or Photo)</h5>
                                                         <h5>Additional per sheet 2500</h5>
                                                     </p>
-                                                    <br/><br/>
+                                                    <br/>
                                                     <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                 </div>
 

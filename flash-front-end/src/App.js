@@ -20,6 +20,13 @@ import ViewPackages from "./ViewPackages";
 import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
+import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
+import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
+import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
+import ViewPackagesOther from "./ViewPackagesOther";
+import ViewPhotos from "./ViewPhotos";
+import UploadEditedPhotos from "./UploadEditedPhotos";
+import EventSelection  from "./EventSelection";
 import MoreDetailsOfEventsForAdmin from "./MoreDetailsOfEventsForAdmin";
 import NewPackage from "./NewPackage";
 import AdminViewEmployeeDetailspage from "./AdminViewEmployeeDetailspage";
@@ -78,6 +85,12 @@ function App() {
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
+              <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
+              <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
+              <Route exact path="/ViewPackagesOther" element={ <ViewPackagesOther/> } />
+              <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
+              <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
+              <Route exact path="/EventSelection" element={ <EventSelection/> } />
               <Route exact path="/NewPackage" element={ <NewPackage/> } />
               <Route exact path="/Gallery" element={ <GalleryStructure/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerStructure/> } />
