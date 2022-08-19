@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 import java.sql.Date;
@@ -9,6 +11,7 @@ import java.sql.Date;
 public class Customer {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger CustomerID;
 
     private String FirstName;
@@ -31,8 +34,7 @@ public class Customer {
 
     public Customer(){}
 
-    public Customer(BigInteger customerID, String firstName, String lastName, String gender, String NIC, String contactNo, int cardNo, int CVCNo, Date expiaryDate, String cardType) {
-        CustomerID = customerID;
+    public Customer(String firstName, String lastName, String gender, String NIC, String contactNo, int cardNo, int CVCNo, Date expiaryDate, String cardType) {
         FirstName = firstName;
         LastName = lastName;
         Gender = gender;

@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 import java.sql.Timestamp;
@@ -9,6 +11,7 @@ import java.sql.Timestamp;
 public class Chat {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger ChatId;
 
     private Timestamp DateTime;
@@ -17,8 +20,7 @@ public class Chat {
 
     public Chat(){}
 
-    public Chat(BigInteger chatId, Timestamp dateTime, String content) {
-        ChatId = chatId;
+    public Chat(Timestamp dateTime, String content) {
         DateTime = dateTime;
         Content = content;
     }

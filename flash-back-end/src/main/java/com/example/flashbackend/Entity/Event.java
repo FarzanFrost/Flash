@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 import java.sql.Date;
@@ -10,6 +12,7 @@ import java.sql.Time;
 public class Event {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger EventID;
 
     private String Status;
@@ -36,8 +39,7 @@ public class Event {
 
     public Event(){}
 
-    public Event(BigInteger eventID, String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, int extraPage, String category, boolean delivered) {
-        EventID = eventID;
+    public Event(String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, int extraPage, String category, boolean delivered) {
         Status = status;
         AdvanceAmount = advanceAmount;
         EventDate = eventDate;

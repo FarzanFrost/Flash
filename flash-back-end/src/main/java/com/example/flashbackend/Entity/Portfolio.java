@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
@@ -8,6 +10,7 @@ import java.math.BigInteger;
 public class Portfolio {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger PortfolioID;
 
     private String Location;
@@ -18,8 +21,7 @@ public class Portfolio {
 
     public Portfolio(){}
 
-    public Portfolio(BigInteger portfolioID, String location, String messageContent, String contentType) {
-        PortfolioID = portfolioID;
+    public Portfolio(String location, String messageContent, String contentType) {
         Location = location;
         MessageContent = messageContent;
         ContentType = contentType;

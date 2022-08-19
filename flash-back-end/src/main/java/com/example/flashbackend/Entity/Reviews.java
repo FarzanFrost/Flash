@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 import java.sql.Timestamp;
@@ -9,6 +11,7 @@ import java.sql.Timestamp;
 public class Reviews {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger ReviewsID;
 
     private String Comment;
@@ -21,8 +24,7 @@ public class Reviews {
 
     public Reviews(){}
 
-    public Reviews(BigInteger reviewsID, String comment, Timestamp dateTime, int rate, boolean deleted) {
-        ReviewsID = reviewsID;
+    public Reviews(String comment, Timestamp dateTime, int rate, boolean deleted) {
         Comment = comment;
         DateTime = dateTime;
         Rate = rate;

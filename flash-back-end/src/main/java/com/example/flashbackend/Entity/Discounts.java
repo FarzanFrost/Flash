@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
@@ -8,6 +10,7 @@ import java.math.BigInteger;
 public class Discounts {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger DiscountsID;
 
     private String SerialNo;
@@ -18,8 +21,7 @@ public class Discounts {
 
     public Discounts(){}
 
-    public Discounts(BigInteger discountsID, String serialNo, int percentage, boolean used) {
-        DiscountsID = discountsID;
+    public Discounts(String serialNo, int percentage, boolean used) {
         SerialNo = serialNo;
         Percentage = percentage;
         Used = used;

@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
@@ -8,6 +10,7 @@ import java.math.BigInteger;
 public class Package {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger PackageID;
 
     private String Frame;
@@ -38,8 +41,7 @@ public class Package {
 
     public Package(){}
 
-    public Package(BigInteger packageID, String frame, int videoGrapher, int photographer, boolean calender, String name, int pages, float extraPagesPrice, String outshootType, boolean signatureFrame, String albumDesign, float totalPayment, String eventType, String additional) {
-        PackageID = packageID;
+    public Package(String frame, int videoGrapher, int photographer, boolean calender, String name, int pages, float extraPagesPrice, String outshootType, boolean signatureFrame, String albumDesign, float totalPayment, String eventType, String additional) {
         Frame = frame;
         Videographer = videoGrapher;
         Photographer = photographer;

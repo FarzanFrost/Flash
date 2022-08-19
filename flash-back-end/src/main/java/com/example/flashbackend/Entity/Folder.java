@@ -1,6 +1,8 @@
 package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
@@ -8,14 +10,14 @@ import java.math.BigInteger;
 public class Folder {
 
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger FolderID;
 
     private String Name;
 
     public Folder(){}
 
-    public Folder(BigInteger folderID, String name) {
-        FolderID = folderID;
+    public Folder(String name) {
         Name = name;
     }
 
