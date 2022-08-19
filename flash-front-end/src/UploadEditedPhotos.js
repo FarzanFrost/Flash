@@ -36,9 +36,7 @@ const Vieweventdetailsforadmin = () => {
             <section className="pt-5 pb-5">
                 <div className=" container">
                     <div className="row">
-                        <div className="col-6">
-                            <h3 className="mb-2">Upload Photos </h3>
-                        </div>
+
 
 
                         <div className="col-12">
