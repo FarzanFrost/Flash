@@ -1,9 +1,6 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Timestamp;
 
@@ -17,6 +14,12 @@ public class Chat {
     private Timestamp DateTime;
 
     private String Content;
+
+    private boolean IsMessageFromManager;
+
+    @ManyToOne
+    @JoinColumn( name = "CustomerID")
+    private Customer customer;
 
     public Chat(){}
 
@@ -47,5 +50,13 @@ public class Chat {
 
     public void setContent(String content) {
         Content = content;
+    }
+
+    public boolean isMessageFromManager() {
+        return IsMessageFromManager;
+    }
+
+    public void setMessageFromManager(boolean messageFromManager) {
+        IsMessageFromManager = messageFromManager;
     }
 }

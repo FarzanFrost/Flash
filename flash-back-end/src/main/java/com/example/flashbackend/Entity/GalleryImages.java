@@ -1,10 +1,8 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 public class GalleryImages {
@@ -13,13 +11,15 @@ public class GalleryImages {
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger ImageID;
 
-    private BigInteger EventID;
+    @ManyToOne
+    @JoinColumn( name = "EventID" )
+    private Event event;
+
+    @ManyToMany
+    @JoinTable( name = "FolderImages" , joinColumns = @JoinColumn( name = "ImageID") , inverseJoinColumns = @JoinColumn( name = "FolderID" ))
+    private List<Folder> folders;
 
     public GalleryImages(){}
-
-    public GalleryImages(BigInteger eventID) {
-        EventID = eventID;
-    }
 
     public BigInteger getImageID() {
         return ImageID;
@@ -27,13 +27,5 @@ public class GalleryImages {
 
     public void setImageID(BigInteger imageID) {
         ImageID = imageID;
-    }
-
-    public BigInteger getEventID() {
-        return EventID;
-    }
-
-    public void setEventID(BigInteger eventID) {
-        EventID = eventID;
     }
 }

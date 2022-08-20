@@ -1,8 +1,6 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
 
@@ -17,6 +15,10 @@ public class Attendance {
     private Date Date;
 
     private String Present;
+
+    @ManyToOne
+    @JoinColumn( name = "EventID" )
+    private Employee employee;
 
     public Attendance(){}
 

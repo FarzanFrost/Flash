@@ -1,9 +1,6 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
@@ -18,6 +15,10 @@ public class Discounts {
     private int Percentage;
 
     private boolean Used;
+
+    @ManyToOne
+    @JoinColumn( name = "CustomerID" )
+    private Customer customer;
 
     public Discounts(){}
 

@@ -2,6 +2,8 @@ package com.example.flashbackend.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import java.sql.Timestamp;
 
 @Entity
@@ -15,6 +17,14 @@ public class Login {
     private String Saltkey;
 
     private Timestamp DateTime;
+
+    @OneToOne
+    @JoinColumn( name = "CustomerID" )
+    private Customer customer;
+
+    @OneToOne
+    @JoinColumn( name = "EmployeeID")
+    private Employee employee;
 
     public Login(){}
 

@@ -1,12 +1,10 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
 @Entity
 public class Event {
@@ -14,6 +12,7 @@ public class Event {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger EventID;
+
 
     private String Status;
 
@@ -36,6 +35,24 @@ public class Event {
     private String Category;
 
     private boolean Delivered;
+
+    @ManyToOne
+    @JoinColumn( name = "PackageID" )
+    private Package aPackage;
+
+    @ManyToOne
+    @JoinColumn( name = "CustomerID" )
+    private Customer aCustomer;
+
+    @OneToMany( mappedBy = "event" )
+    private List<Folder> folders;
+
+    @OneToMany( mappedBy = "event" )
+    private List<GalleryImages> galleryImages;
+
+    @ManyToMany
+    @JoinTable( name = "EventRelationship" , joinColumns = @JoinColumn( name = "EventID") , inverseJoinColumns = @JoinColumn( name = "EmployeeID" ))
+    private List<Employee> employees;
 
     public Event(){}
 
@@ -147,5 +164,9 @@ public class Event {
 
     public void setDelivered(boolean delivered) {
         Delivered = delivered;
+    }
+
+    public Package getaPackage() {
+        return aPackage;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.flashbackend.DAO;
 
+import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
 import org.springframework.data.repository.CrudRepository;
 
@@ -10,5 +11,7 @@ public interface PackageRepository extends CrudRepository<Package , BigInteger> 
 
     @Override
     List<Package> findAll();
+
+    Package findByEvents( Event event);
 
 }

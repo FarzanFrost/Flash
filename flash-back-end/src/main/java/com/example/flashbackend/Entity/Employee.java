@@ -1,10 +1,8 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -28,6 +26,16 @@ public class Employee {
     private String ContactNo;
 
     private String Address;
+
+    @OneToOne( mappedBy = "employee" )
+    private Login login;
+
+    @OneToMany( mappedBy = "employee" )
+    private List<Attendance> attendances;
+
+    @ManyToMany
+    @JoinTable( name = "EventRelationship" , joinColumns = @JoinColumn( name = "EmployeeID") , inverseJoinColumns = @JoinColumn( name = "EventID" ))
+    private List<Event> events;
 
     public Employee(){}
 

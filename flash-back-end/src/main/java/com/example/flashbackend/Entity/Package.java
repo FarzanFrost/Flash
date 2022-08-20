@@ -1,10 +1,8 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 public class Package {
@@ -38,6 +36,9 @@ public class Package {
     private String EventType;
 
     private String Additional;
+
+    @OneToMany( mappedBy = "aPackage" )
+    private List<Event> events;
 
     public Package(){}
 

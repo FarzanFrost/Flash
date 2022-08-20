@@ -1,11 +1,11 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Customer {
@@ -31,6 +31,21 @@ public class Customer {
     private Date ExpiaryDate;
 
     private String CardType;
+
+    @OneToOne(mappedBy = "customer")
+    private Login login;
+
+    @OneToMany( mappedBy = "aCustomer")
+    private List<Event> events;
+
+    @OneToMany( mappedBy = "customer")
+    private List<Discounts> discounts;
+
+    @OneToMany( mappedBy = "customer" )
+    private List<Chat> chats;
+
+    @OneToMany( mappedBy = "customer")
+    Set<ReviewRelationship> reviewRelationships = new HashSet<>();
 
     public Customer(){}
 

@@ -1,10 +1,8 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
+import java.util.List;
 
 @Entity
 public class Folder {
@@ -14,6 +12,14 @@ public class Folder {
     private BigInteger FolderID;
 
     private String Name;
+
+    @ManyToOne
+    @JoinColumn( name = "EventID" )
+    private Event event;
+
+    @ManyToMany
+    @JoinTable( name = "FolderImages" , joinColumns = @JoinColumn( name = "FolderID") , inverseJoinColumns = @JoinColumn( name = "ImageID" ))
+    private List<GalleryImages> galleryImages;
 
     public Folder(){}
 

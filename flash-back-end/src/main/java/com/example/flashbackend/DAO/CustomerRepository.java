@@ -1,6 +1,7 @@
 package com.example.flashbackend.DAO;
 
 import com.example.flashbackend.Entity.Customer;
+import com.example.flashbackend.Entity.Login;
 import org.springframework.data.repository.CrudRepository;
 
 import java.math.BigInteger;
@@ -10,5 +11,7 @@ public interface CustomerRepository extends CrudRepository< Customer , BigIntege
 
     @Override
     List<Customer> findAll();
+
+//    Customer findByLogin(Login login);
 
 }
