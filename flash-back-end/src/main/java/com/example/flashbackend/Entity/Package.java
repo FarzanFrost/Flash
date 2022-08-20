@@ -169,4 +169,20 @@ public class Package {
     public void setAdditional(String additional) {
         Additional = additional;
     }
+
+    public int getVideographer() {
+        return Videographer;
+    }
+
+    public void setVideographer(int videographer) {
+        Videographer = videographer;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
 }

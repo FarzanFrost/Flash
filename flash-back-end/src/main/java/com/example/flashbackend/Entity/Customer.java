@@ -140,4 +140,44 @@ public class Customer {
     public void setCardType(String cardType) {
         CardType = cardType;
     }
+
+    public Login getLogin() {
+        return login;
+    }
+
+    public void setLogin(Login login) {
+        this.login = login;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
+
+    public List<Discounts> getDiscounts() {
+        return discounts;
+    }
+
+    public void setDiscounts(List<Discounts> discounts) {
+        this.discounts = discounts;
+    }
+
+    public List<Chat> getChats() {
+        return chats;
+    }
+
+    public void setChats(List<Chat> chats) {
+        this.chats = chats;
+    }
+
+    public Set<ReviewRelationship> getReviewRelationships() {
+        return reviewRelationships;
+    }
+
+    public void setReviewRelationships(Set<ReviewRelationship> reviewRelationships) {
+        this.reviewRelationships = reviewRelationships;
+    }
 }

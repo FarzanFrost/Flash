@@ -59,4 +59,12 @@ public class Chat {
     public void setMessageFromManager(boolean messageFromManager) {
         IsMessageFromManager = messageFromManager;
     }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

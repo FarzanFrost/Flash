@@ -59,4 +59,12 @@ public class Discounts {
     public void setUsed(boolean used) {
         Used = used;
     }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }

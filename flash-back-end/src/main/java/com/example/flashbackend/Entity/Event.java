@@ -169,4 +169,40 @@ public class Event {
     public Package getaPackage() {
         return aPackage;
     }
+
+    public void setaPackage(Package aPackage) {
+        this.aPackage = aPackage;
+    }
+
+    public Customer getaCustomer() {
+        return aCustomer;
+    }
+
+    public void setaCustomer(Customer aCustomer) {
+        this.aCustomer = aCustomer;
+    }
+
+    public List<Folder> getFolders() {
+        return folders;
+    }
+
+    public void setFolders(List<Folder> folders) {
+        this.folders = folders;
+    }
+
+    public List<GalleryImages> getGalleryImages() {
+        return galleryImages;
+    }
+
+    public void setGalleryImages(List<GalleryImages> galleryImages) {
+        this.galleryImages = galleryImages;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }

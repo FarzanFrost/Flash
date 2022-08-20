@@ -28,4 +28,20 @@ public class GalleryImages {
     public void setImageID(BigInteger imageID) {
         ImageID = imageID;
     }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public List<Folder> getFolders() {
+        return folders;
+    }
+
+    public void setFolders(List<Folder> folders) {
+        this.folders = folders;
+    }
 }

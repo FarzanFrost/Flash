@@ -4,9 +4,14 @@ import com.example.flashbackend.Entity.Login;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface LoginRepository extends CrudRepository< Login, String > {
 
-//    List<Login> findAll(String e );
+    @Override
+    List<Login> findAll();
+
+    @Override
+    Optional<Login> findById( String Email );
 
 }
