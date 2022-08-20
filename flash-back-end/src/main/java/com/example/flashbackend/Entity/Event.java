@@ -31,7 +31,7 @@ public class Event {
 
     private String Longitude;
 
-    private int ExtraPage;
+    private Integer ExtraPage;
 
     private String Category;
 
@@ -39,7 +39,7 @@ public class Event {
 
     public Event(){}
 
-    public Event(String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, int extraPage, String category, boolean delivered) {
+    public Event(String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, Integer extraPage, String category, boolean delivered) {
         Status = status;
         AdvanceAmount = advanceAmount;
         EventDate = eventDate;
@@ -125,11 +125,11 @@ public class Event {
         Longitude = longitude;
     }
 
-    public int getExtraPage() {
+    public Integer getExtraPage() {
         return ExtraPage;
     }
 
-    public void setExtraPage(int extraPage) {
+    public void setExtraPage(Integer extraPage) {
         ExtraPage = extraPage;
     }
 

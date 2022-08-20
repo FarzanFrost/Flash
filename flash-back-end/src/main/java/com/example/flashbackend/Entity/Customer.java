@@ -24,9 +24,9 @@ public class Customer {
 
     private String ContactNo;
 
-    private int CardNo;
+    private Integer CardNo;
 
-    private int CVCNo;
+    private Integer CVCNo;
 
     private Date ExpiaryDate;
 
@@ -34,7 +34,7 @@ public class Customer {
 
     public Customer(){}
 
-    public Customer(String firstName, String lastName, String gender, String NIC, String contactNo, int cardNo, int CVCNo, Date expiaryDate, String cardType) {
+    public Customer(String firstName, String lastName, String gender, String NIC, String contactNo, Integer cardNo, Integer CVCNo, Date expiaryDate, String cardType) {
         FirstName = firstName;
         LastName = lastName;
         Gender = gender;
@@ -94,19 +94,19 @@ public class Customer {
         ContactNo = contactNo;
     }
 
-    public int getCardNo() {
+    public Integer getCardNo() {
         return CardNo;
     }
 
-    public void setCardNo(int cardNo) {
+    public void setCardNo(Integer cardNo) {
         CardNo = cardNo;
     }
 
-    public int getCVCNo() {
+    public Integer getCVCNo() {
         return CVCNo;
     }
 
-    public void setCVCNo(int CVCNo) {
+    public void setCVCNo(Integer CVCNo) {
         this.CVCNo = CVCNo;
     }
 
