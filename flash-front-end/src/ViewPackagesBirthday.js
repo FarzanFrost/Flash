@@ -15,16 +15,11 @@ const Vieweventdetailsforadmin = () => {
         height:'850px'
     };
 
-    const style2 = {
 
-        width: '150px',
-        height: '550px',
-        backgroundColor: '#767676',
-    };
 
     const style3 = {
 
-        backgroundColor:'#4B2000',
+        backgroundColor:'#767676',
         color:'white'
     };
 
