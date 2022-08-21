@@ -20,7 +20,7 @@ import ViewPackages from "./ViewPackages";
 import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
-import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
+
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
 import ViewPackagesOther from "./ViewPackagesOther";
