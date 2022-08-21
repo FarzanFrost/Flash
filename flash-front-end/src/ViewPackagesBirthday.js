@@ -12,19 +12,14 @@ const Vieweventdetailsforadmin = () => {
     const style1 = {
 
         backgroundColor: '#767676',
-        height:'850px'
+        height:'550px'
     };
 
-    const style2 = {
 
-        width: '150px',
-        height: '550px',
-        backgroundColor: '#767676',
-    };
 
     const style3 = {
 
-        backgroundColor:'#4B2000',
+        backgroundColor:'#767676',
         color:'white'
     };
 
@@ -72,14 +67,16 @@ const Vieweventdetailsforadmin = () => {
 
                                                         <p className="card-text">
                                                             <h4>Silver Package</h4>
-                                                            <h5>70page album</h5>
-                                                            <h5>Out Shoot</h5>
-                                                            <h5>Couple Frame</h5>
-                                                            <h5>Signature Board</h5>
-                                                            <h5>Save the Data photo</h5>
+                                                            <h5>60minuts Session</h5>
+                                                            <h5>for only current location</h5>
+                                                            <h5>outfit changes</h5>
+                                                            <h5>40 Images album</h5>
+                                                            <h5>printed frame(4*6)</h5>
                                                             <h5>Additional per sheet 2500</h5>
+                                                            <h5>&nbsp;</h5>
+                                                            <h5>&nbsp;</h5>
                                                         </p>
-                                                        <br/><br/>
+
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
 
@@ -97,15 +94,16 @@ const Vieweventdetailsforadmin = () => {
 
                                                         <p className="card-text">
                                                             <h4>Gold Package</h4>
-                                                            <h5>70page album</h5>
-                                                            <h5>Out Shoot</h5>
-                                                            <h5>Couple Frame(16*24)</h5>
-                                                            <h5>Signature Board</h5>
-                                                            <h5>highlights photo</h5>
-                                                            <h5>Save the Data(video or Photo)</h5>
+                                                            <h5>60minuts Session</h5>
+                                                            <h5>for only current location</h5>
+                                                            <h5>outfit changes</h5>
+                                                            <h5>40 Images album</h5>
+                                                            <h5>printed frame(4*6)</h5>
                                                             <h5>Additional per sheet 2500</h5>
+                                                            <h5>&nbsp;</h5>
+                                                            <h5>&nbsp;</h5>
                                                         </p>
-                                                        <br/>
+
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
 
@@ -122,15 +120,16 @@ const Vieweventdetailsforadmin = () => {
 
                                                         <p className="card-text">
                                                             <h4>Dimand Package</h4>
-                                                            <h5>70page album</h5>
-                                                            <h5>Out Shoot</h5>
-                                                            <h5>Couple Frame(16*24)</h5>
-                                                            <h5>Signature Board</h5>
-                                                            <h5>highlights photo</h5>
-                                                            <h5>Save the Data(video or Photo)</h5>
-                                                            <h5>Additional per sheet 2500</h5>
+                                                            <h5>60minuts Session</h5>
+                                                            <h5>for only current location</h5>
+                                                            <h5>outfit changes</h5>
+                                                            <h5>40 Images album</h5>
+                                                            <h5>printed frame(4*6)</h5>
+                                                            <h5>DVD slideshow</h5>
+                                                            <h5>out door shot(UnLimited hours)</h5>
+                                                            <h5>calender</h5>
                                                         </p>
-                                                        <br/><br/>
+
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
 
@@ -151,15 +150,16 @@ const Vieweventdetailsforadmin = () => {
 
                                                     <p className="card-text">
                                                         <h4>Plantinum Package</h4>
-                                                        <h5>70page album</h5>
-                                                        <h5>Out Shoot</h5>
-                                                        <h5>Couple Frame(16*24)</h5>
-                                                        <h5>Signature Board</h5>
-                                                        <h5>highlights photo</h5>
-                                                        <h5>Save the Data(video or Photo)</h5>
-                                                        <h5>Additional per sheet 2500</h5>
+                                                        <h5>60minuts Session</h5>
+                                                        <h5>for only current location</h5>
+                                                        <h5>outfit changes</h5>
+                                                        <h5>40 Images album</h5>
+                                                        <h5>printed frame(4*6)</h5>
+                                                        <h5>DVD slideshow</h5>
+                                                        <h5>out door shot(UnLimited hours)</h5>
+                                                        <h5>calender</h5>
                                                     </p>
-                                                    <br/><br/>
+
                                                     <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                 </div>
 

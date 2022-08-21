@@ -15,13 +15,6 @@ const Vieweventdetailsforadmin = () => {
         height:'450px'
     };
 
-    const style2 = {
-
-        width: '150px',
-        height: '550px',
-        backgroundColor: '#767676',
-    };
-
     const style3 = {
 
         backgroundColor:'#767676',
@@ -69,7 +62,6 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" class="img-rounded" alt="100%x280px" src={sliverPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
-
                                                         <p className="card-text">
                                                             <h4>Silver Package</h4>
                                                             <h5>70page album</h5>
@@ -78,14 +70,12 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Signature Board</h5>
                                                             <h5>Save the Data photo</h5>
                                                             <h5>Additional per sheet 2500</h5>
+                                                            <h5>&nbsp;</h5>
                                                         </p>
-                                                        <br/><br/>
+                                                        <br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
-
-
                                                 </div>
-
                                                 </div>
                                             </div>
 
@@ -94,7 +84,6 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280"src={goldPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
-
                                                         <p className="card-text">
                                                             <h4>Gold Package</h4>
                                                             <h5>70page album</h5>
@@ -108,8 +97,6 @@ const Vieweventdetailsforadmin = () => {
                                                         <br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
-
-
                                                 </div>
                                                 </div>
                                             </div>
@@ -133,11 +120,10 @@ const Vieweventdetailsforadmin = () => {
                                                         <br/>
                                                         <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                     </div>
-
-
                                                 </div>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
 
@@ -148,7 +134,6 @@ const Vieweventdetailsforadmin = () => {
                                                 <img className="img-fluid" alt="100%x280"src={platinumPhoto}></img>
                                                 <div className="card-body">
                                                 <div className="card-body">
-
                                                     <p className="card-text">
                                                         <h4>Plantinum Package</h4>
                                                         <h5>70page album</h5>
@@ -162,8 +147,6 @@ const Vieweventdetailsforadmin = () => {
                                                     <br/>
                                                     <a href="#" className="btn" style={{...style3}}>Subscribe</a>
                                                 </div>
-
-
                                             </div>
                                             </div>
                                         </div>

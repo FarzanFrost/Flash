@@ -16,14 +16,14 @@ import ViewEventsForCustomer from "./ViewEventsForCustomer";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
-import ViewPackages from "./ViewPackages";
+import ViewPackagesWedding from "./ViewPackagesWedding";
 import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
-import Adminviewemployeedetailspage from "./Adminviewemployeedetailspage";
+
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
-import ViewPackagesOther from "./ViewPackagesOther";
+import ViewPackagesBirthday from "./ViewPackagesBirthday";
 import ViewPhotos from "./ViewPhotos";
 import UploadEditedPhotos from "./UploadEditedPhotos";
 import EventSelection  from "./EventSelection";
@@ -41,6 +41,7 @@ import CardDetail from "./CardDetail";
 import ChangeBooking from "./ChangeBooking";
 import GalleryStructure from './UIStructure/GalleryStructure'
 import EventReviewsCustomerStructure from "./UIStructure/EventReviewsCustomerStructure";
+import ViewPackagesPurperty from "./ViewPackagesPurperty";
 
 function App() {
   return (
@@ -71,7 +72,7 @@ function App() {
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
               <Route exact path="/Sample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
-              <Route exact path="/ViewPackages" element={ <ViewPackages/> } />
+              <Route exact path="/ViewPackagesWedding" element={ <ViewPackagesWedding/> } />
               <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
               <Route exact path="/Header" element={ <Header/> } />
               <Route exact path="/LandingPage" element={ <LandingPage/> } />
@@ -87,7 +88,7 @@ function App() {
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
-              <Route exact path="/ViewPackagesOther" element={ <ViewPackagesOther/> } />
+              <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
               <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
               <Route exact path="/EventSelection" element={ <EventSelection/> } />
@@ -103,7 +104,7 @@ function App() {
               <Route exact path="/NewEventBooking" element={ <NewEventBooking/> } />
               <Route exact path="/CardDetail" element={ <CardDetail/> } />
               <Route exact path="/ChangeBooking" element={ <ChangeBooking/> } />
-
+              <Route exact path="/ViewPackagesPurperty" element={ <ViewPackagesPurperty/> } />
           </Routes>
 
 
