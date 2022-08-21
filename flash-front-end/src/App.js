@@ -41,6 +41,7 @@ import CardDetail from "./CardDetail";
 import ChangeBooking from "./ChangeBooking";
 import GalleryStructure from './UIStructure/GalleryStructure'
 import EventReviewsCustomerStructure from "./UIStructure/EventReviewsCustomerStructure";
+import ViewPackagesPurperty from "./ViewPackagesPurperty";
 
 function App() {
   return (
@@ -103,7 +104,7 @@ function App() {
               <Route exact path="/NewEventBooking" element={ <NewEventBooking/> } />
               <Route exact path="/CardDetail" element={ <CardDetail/> } />
               <Route exact path="/ChangeBooking" element={ <ChangeBooking/> } />
-
+              <Route exact path="/ViewPackagesPurperty" element={ <ViewPackagesPurperty/> } />
           </Routes>
 
 
