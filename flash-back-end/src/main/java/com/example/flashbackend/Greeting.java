@@ -7,6 +7,7 @@ import com.example.flashbackend.DAO.PackageRepository;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @RestController
+@CrossOrigin( origins = "http://localhost:3000")
 public class Greeting {
 
     @Autowired
@@ -29,7 +31,7 @@ public class Greeting {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping("/")
+    @GetMapping("/Greetings")
     public List<Event> greetMessage(){
 
         List<Event> events = eventRepository.findAll();
