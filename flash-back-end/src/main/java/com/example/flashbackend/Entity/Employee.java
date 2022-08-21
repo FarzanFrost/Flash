@@ -1,10 +1,15 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.List;
 
 @Entity
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "employeeID")
 public class Employee {
 
     @Id
@@ -35,6 +40,7 @@ public class Employee {
 
     @ManyToMany
     @JoinTable( name = "EventRelationship" , joinColumns = @JoinColumn( name = "EmployeeID") , inverseJoinColumns = @JoinColumn( name = "EventID" ))
+    @JsonIgnore
     private List<Event> events;
 
     public Employee(){}

@@ -1,11 +1,12 @@
 package com.example.flashbackend.Entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Reviews {
@@ -21,6 +22,10 @@ public class Reviews {
     private int Rate;
 
     private boolean Deleted;
+
+    @OneToMany( mappedBy = "reviews")
+    @JsonIgnore
+    Set<ReviewRelationship> reviewRelationships = new HashSet<>();
 
     public Reviews(){}
 

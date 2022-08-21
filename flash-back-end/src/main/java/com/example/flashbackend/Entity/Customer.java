@@ -1,5 +1,9 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
@@ -8,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "customerID")
 public class Customer {
 
     @Id
@@ -45,6 +50,7 @@ public class Customer {
     private List<Chat> chats;
 
     @OneToMany( mappedBy = "customer")
+    @JsonIgnore
     Set<ReviewRelationship> reviewRelationships = new HashSet<>();
 
     public Customer(){}
@@ -60,6 +66,19 @@ public class Customer {
         ExpiaryDate = expiaryDate;
         CardType = cardType;
     }
+
+    /*public Customer(BigInteger customerID, String firstName, String lastName, String gender, String NIC, String contactNo, Integer cardNo, Integer CVCNo, Date expiaryDate, String cardType) {
+        CustomerID = customerID;
+        FirstName = firstName;
+        LastName = lastName;
+        Gender = gender;
+        this.NIC = NIC;
+        ContactNo = contactNo;
+        CardNo = cardNo;
+        this.CVCNo = CVCNo;
+        ExpiaryDate = expiaryDate;
+        CardType = cardType;
+    }*/
 
     public BigInteger getCustomerID() {
         return CustomerID;
@@ -173,11 +192,4 @@ public class Customer {
         this.chats = chats;
     }
 
-    public Set<ReviewRelationship> getReviewRelationships() {
-        return reviewRelationships;
-    }
-
-    public void setReviewRelationships(Set<ReviewRelationship> reviewRelationships) {
-        this.reviewRelationships = reviewRelationships;
-    }
 }

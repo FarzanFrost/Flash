@@ -1,9 +1,14 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "discountsID")
 public class Discounts {
 
     @Id
@@ -18,6 +23,7 @@ public class Discounts {
 
     @ManyToOne
     @JoinColumn( name = "CustomerID" )
+    @JsonIgnore
     private Customer customer;
 
     public Discounts(){}

@@ -1,12 +1,19 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "eventID")
 public class Event {
 
     @Id
@@ -38,10 +45,12 @@ public class Event {
 
     @ManyToOne
     @JoinColumn( name = "PackageID" )
+    @JsonIgnore
     private Package aPackage;
 
     @ManyToOne
     @JoinColumn( name = "CustomerID" )
+    @JsonIgnore
     private Customer aCustomer;
 
     @OneToMany( mappedBy = "event" )
@@ -52,7 +61,12 @@ public class Event {
 
     @ManyToMany
     @JoinTable( name = "EventRelationship" , joinColumns = @JoinColumn( name = "EventID") , inverseJoinColumns = @JoinColumn( name = "EmployeeID" ))
+    @JsonIgnore
     private List<Employee> employees;
+
+    @OneToMany( mappedBy = "event")
+    @JsonIgnore
+    Set<ReviewRelationship> reviewRelationships = new HashSet<>();
 
     public Event(){}
 

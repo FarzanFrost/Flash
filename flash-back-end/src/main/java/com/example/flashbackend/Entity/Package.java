@@ -1,10 +1,14 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.List;
 
 @Entity
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "packageID")
 public class Package {
 
     @Id

@@ -1,10 +1,15 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Timestamp;
 
 @Entity
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "chatID")
 public class Chat {
 
     @Id
@@ -19,6 +24,7 @@ public class Chat {
 
     @ManyToOne
     @JoinColumn( name = "CustomerID")
+    @JsonIgnore
     private Customer customer;
 
     public Chat(){}

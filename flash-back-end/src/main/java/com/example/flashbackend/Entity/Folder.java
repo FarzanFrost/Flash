@@ -1,10 +1,15 @@
 package com.example.flashbackend.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.List;
 
 @Entity
+//@JsonIdentityInfo( generator = ObjectIdGenerators.PropertyGenerator.class,property = "folderID")
 public class Folder {
 
     @Id
@@ -15,10 +20,12 @@ public class Folder {
 
     @ManyToOne
     @JoinColumn( name = "EventID" )
+    @JsonIgnore
     private Event event;
 
     @ManyToMany
     @JoinTable( name = "FolderImages" , joinColumns = @JoinColumn( name = "FolderID") , inverseJoinColumns = @JoinColumn( name = "ImageID" ))
+    @JsonIgnore
     private List<GalleryImages> galleryImages;
 
     public Folder(){}

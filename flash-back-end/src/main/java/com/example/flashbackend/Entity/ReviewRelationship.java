@@ -33,6 +33,35 @@ public class ReviewRelationship {
 
         public ReviewRelationshipId(){}
 
+        public ReviewRelationshipId(BigInteger reviewsID, BigInteger customerID, BigInteger eventID) {
+            ReviewsID = reviewsID;
+            CustomerID = customerID;
+            EventID = eventID;
+        }
+
+        public BigInteger getReviewsID() {
+            return ReviewsID;
+        }
+
+        public void setReviewsID(BigInteger reviewsID) {
+            ReviewsID = reviewsID;
+        }
+
+        public BigInteger getCustomerID() {
+            return CustomerID;
+        }
+
+        public void setCustomerID(BigInteger customerID) {
+            CustomerID = customerID;
+        }
+
+        public BigInteger getEventID() {
+            return EventID;
+        }
+
+        public void setEventID(BigInteger eventID) {
+            EventID = eventID;
+        }
     }
 
 }
