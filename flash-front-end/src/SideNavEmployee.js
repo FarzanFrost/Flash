@@ -1,8 +1,13 @@
 import React from 'react';
 
 const SideNavEmployee = () => {
+
+    const style1 = {
+        height: '100vh',
+    };
+
     return (
-        <div className="col-2 bg-dark mh-100 ">
+        <div className="col-12 bg-dark" style={{...style1}}>
             <div className=" text-bg-dark" tabIndex="-1"
                  aria-labelledby="offcanvasDarkNavbarLabel">
                 <div className="offcanvas-header">
@@ -15,18 +20,21 @@ const SideNavEmployee = () => {
                         </li>
 
                         <li className="nav-item dropdown p-3">
-                            <a className="nav-link dropdown-toggle" href="#" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
+                            <a className="nav-link active" aria-current="page" href="#">
                                 Add photos
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-dark">
-                                <li><a className="dropdown-item" href="#">Wedding</a></li>
-                                <hr className="dropdown-divider"/>
-                                <li><a className="dropdown-item" href="#">Birthday party</a></li>
-                                <hr className="dropdown-divider"/>
-                                <li><a className="dropdown-item" href="#">Get-to-gathers</a></li>
+                            {/*<a className="nav-link dropdown-toggle" href="#" role="button"*/}
+                            {/*   data-bs-toggle="dropdown" aria-expanded="false">*/}
+                            {/*    Add photos*/}
+                            {/*</a>*/}
+                            {/*<ul className="dropdown-menu dropdown-menu-dark">*/}
+                            {/*    <li><a className="dropdown-item" href="#">Wedding</a></li>*/}
+                            {/*    <hr className="dropdown-divider"/>*/}
+                            {/*    <li><a className="dropdown-item" href="#">Birthday party</a></li>*/}
+                            {/*    <hr className="dropdown-divider"/>*/}
+                            {/*    <li><a className="dropdown-item" href="#">Get-to-gathers</a></li>*/}
 
-                            </ul>
+                            {/*</ul>*/}
                         </li>
                         <li className="nav-item p-3">
                             <a className="nav-link active" aria-current="page" href="#">Calendar</a>

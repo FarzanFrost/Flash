@@ -1,8 +1,13 @@
 import React from 'react';
 
 const SideNavManager = () => {
+
+    const style1 = {
+        height: '100vh',
+    };
+
     return (
-        <div class="col-2 bg-dark mh-100 ">
+        <div class="col-12 bg-dark" style={{...style1}}>
                             <div className=" text-bg-dark" tabIndex="-1"
                                  aria-labelledby="offcanvasDarkNavbarLabel">
                                 <div className="offcanvas-header">
@@ -21,18 +26,30 @@ const SideNavManager = () => {
                                         </li>
 
                                         <li className="nav-item dropdown p-3">
-                                            <a className="nav-link dropdown-toggle" href="#" role="button"
-                                               data-bs-toggle="dropdown" aria-expanded="false">
+                                            <a className="nav-link active" aria-current="page" href="#">
                                                 View Events
                                             </a>
-                                            <ul className="dropdown-menu dropdown-menu-dark">
-                                                <li><a className="dropdown-item" href="#">Wedding</a></li>
-                                                <hr className="dropdown-divider"/>
-                                                <li><a className="dropdown-item" href="#">Birthday party</a></li>
-                                                <hr className="dropdown-divider"/>
-                                                <li><a className="dropdown-item" href="#">Get-to-gathers</a></li>
+                                            {/*<a className="nav-link dropdown-toggle" href="#" role="button"*/}
+                                            {/*   data-bs-toggle="dropdown" aria-expanded="false">*/}
+                                            {/*    View Events*/}
+                                            {/*</a>*/}
+                                            {/*<ul className="dropdown-menu dropdown-menu-dark">*/}
+                                            {/*    <li><a className="dropdown-item" href="#">Wedding</a></li>*/}
+                                            {/*    <hr className="dropdown-divider"/>*/}
+                                            {/*    <li><a className="dropdown-item" href="#">Birthday party</a></li>*/}
+                                            {/*    <hr className="dropdown-divider"/>*/}
+                                            {/*    <li><a className="dropdown-item" href="#">Get-to-gathers</a></li>*/}
+                                            {/*</ul>*/}
+                                        </li>
 
-                                            </ul>
+                                        <li className="nav-item p-3">
+                                            <a className="nav-link active" aria-current="page" href="#">Chat</a>
+                                        </li>
+                                        <li className="nav-item p-3">
+                                            <a className="nav-link active" aria-current="page" href="#">Add employee</a>
+                                        </li>
+                                        <li className="nav-item p-3">
+                                            <a className="nav-link active" aria-current="page" href="#">Edit Employee</a>
                                         </li>
                                     </ul>
 

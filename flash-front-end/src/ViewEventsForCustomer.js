@@ -37,31 +37,61 @@ const ViewEventsForCustomer = () => {
                                 <div className="card border-light border-5">
                                     <div className="card-body">
 
-                                            <p className="card-text">
-                                                <h5>Booking ID:14</h5>
-                                                <h5>Event Date:2021-8-12</h5>
-                                                <h5>Event Name:Wedding</h5>
-                                                <h5>Package chose:Silver</h5>
-                                                <h5>Total price: Rs.150 000</h5>
+                                        <div className="container">
+                                            <div className="row">
+                                                <div className="col-6 col-sm-4">Booking ID</div>
+                                                <div className="col-6 col-sm-6">14</div>
 
-                                                <a href="#" className="btn" style={{...style3}}>Edit package</a>
 
-                                                <div className="col-md-12 mb-3">
-                                                    <div className="card border-light border-5">
-                                                        <div className="card-body">
-                                                            <h5>Review: Best service</h5>
-                                                            <a href="#" className="btn" style={{...style3}} >Edit Review</a><br/><br/>
+                                                <div className="w-100 d-none d-md-block"></div>
+
+                                                <div className="col-6 col-sm-4">Event Date</div>
+                                                <div className="col-6 col-sm-6">2021-8-12</div>
+
+                                                <div className="w-100 d-none d-md-block"></div>
+
+                                                <div className="col-6 col-sm-4">Event Name</div>
+                                                <div className="col-6 col-sm-6">Wedding</div>
+
+                                                <div className="w-100 d-none d-md-block"></div>
+
+                                                <div className="col-6 col-sm-4">Package choosed</div>
+                                                <div className="col-6 col-sm-6">Silver</div>
+
+                                                <div className="w-100 d-none d-md-block"></div>
+
+                                                <div className="col-6 col-sm-4">Total Price</div>
+                                                <div className="col-6 col-sm-6">Rs.150 000</div>
+
+                                            </div>
+                                            <a href="#" className="btn bg-dark text-light" >Edit Booking</a>
+                                        </div>
+
+
+                                            {/*<p className="card-text">*/}
+                                                {/*<h5>Booking ID:14</h5>*/}
+                                                {/*<h5>Event Date:2021-8-12</h5>*/}
+                                                {/*<h5>Event Name:Wedding</h5>*/}
+                                                {/*<h5>Package chose:Silver</h5>*/}
+                                                {/*<h5>Total price: Rs.150 000</h5>*/}
+
+
+
+                                        <br/>
+                                                <div class="container">
+                                                        <div className="row">
+                                                            <div className="col-6 col-sm-4">Review</div>
+                                                            <div className="col-6 col-sm-6">Best Service</div>
                                                         </div>
-                                                    </div>
+                                                            <a href="#" className="btn bg-dark text-light"  >Edit Review</a><br/><br/>
+
                                                 </div>
-                                            </p>
+                                            {/*</p>*/}
 
 
                                     </div>
                                 </div>
                             </div>
-
-                        {/*End of item*/}
 
                 </div>
 
