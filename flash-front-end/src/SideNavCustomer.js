@@ -1,8 +1,13 @@
 import React from 'react';
 
 const SideNavCustomer = () => {
+
+    const style1 = {
+        height: '100vh',
+    };
+
     return (
-        <div class="col-2 bg-dark mh-100 ">
+        <div class="col-12 bg-dark" style={{...style1}}>
                             <div className=" text-bg-dark" tabIndex="-1"
                                  aria-labelledby="offcanvasDarkNavbarLabel">
                                 <div className="offcanvas-header">
@@ -22,7 +27,9 @@ const SideNavCustomer = () => {
                                         <li className="nav-item p-3">
                                             <a className="nav-link" href="#">Choose photos</a>
                                         </li>
-
+                                        <li className="nav-item p-3">
+                                            <a className="nav-link" href="#">Edit profile</a>
+                                        </li>
                                     </ul>
 
                                 </div>

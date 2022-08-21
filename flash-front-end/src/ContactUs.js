@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "./Header";
+import Footer from "./Footer";
 
 const ContactUs = () => {
     return (
@@ -66,14 +67,14 @@ const ContactUs = () => {
                                 </div>
                             </div>
 
-                            <button type="submit" className="btn btn-primary d-grid gap-2 col-2 mx-auto my-3 p-2">Submit</button>
+                            <button type="submit" className="btn bg-dark text-white d-grid gap-2 col-2 mx-auto my-3 p-2">Submit</button>
                         </form>
 
                     </div>
                 </div>
             </section>
             {/*End of form*/}
-
+<Footer />
         </div>
     )
 }

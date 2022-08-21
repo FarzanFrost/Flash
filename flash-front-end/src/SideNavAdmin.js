@@ -1,8 +1,13 @@
 import React from 'react';
 
 const SideNavAdmin = () => {
+
+    const style1 = {
+        height: '100vh',
+    };
+
     return (
-        <div class="col-2 bg-dark mh-100 ">
+        <div class="col-12 bg-dark" style={{...style1}}>
                     <div className=" text-bg-dark" tabIndex="-1"
                          aria-labelledby="offcanvasDarkNavbarLabel">
                         <div className="offcanvas-header">
@@ -23,20 +28,6 @@ const SideNavAdmin = () => {
                                     <a className="nav-link" href="#">Event details</a>
                                 </li>
 
-                                <li className="nav-item dropdown p-3">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button"
-                                       data-bs-toggle="dropdown" aria-expanded="false">
-                                        Event details
-                                    </a>
-                                    <ul className="dropdown-menu dropdown-menu-dark">
-                                        <li><a className="dropdown-item" href="#">Wedding</a></li>
-                                        <hr className="dropdown-divider"/>
-                                        <li><a className="dropdown-item" href="#">Birthday party</a></li>
-                                        <hr className="dropdown-divider"/>
-                                        <li><a className="dropdown-item" href="#">Get-to-gathers</a></li>
-
-                                    </ul>
-                                </li>
                             </ul>
 
 

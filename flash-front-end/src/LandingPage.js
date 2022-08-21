@@ -15,9 +15,9 @@ const LandingPage = () => {
 
             <div class="p-5">
 
-                <h2 className="m-3 p-2" style={{textAlign: "Center"}}>Welcome to Studio Flash.</h2>
-                <h4 className="m-3 p-2" style={{textAlign: "Center"}}>We are specialized in Wedding photography, Commercial
-                    photography, Fashion photography and many more..</h4>
+                <h1 className="m-3 p-2" style={{textAlign: "Center"}}>Welcome to Studio Flash.</h1>
+                <h5 className="m-3 p-2" style={{textAlign: "Center"}}>We are specialized in Wedding photography, Commercial
+                    photography, Fashion photography and many more..</h5>
 
                 {/*carousal*/}
                 <div id="carouselExampleCaptions" className="carousel slide m-3" data-bs-ride="false">
@@ -31,6 +31,7 @@ const LandingPage = () => {
                                 aria-label="Slide 3"></button>
                     </div>
 
+                    <div className="container m-lg-5">
                     <div className="carousel-inner w-10 " >
                         <div className="carousel-item active" >
                             <img src={event} className="img-fluid d-block w-100 p-5"  alt="..." />
@@ -39,6 +40,7 @@ const LandingPage = () => {
                                     <p>We make your big day memorable</p>
                                 </div>
                         </div>
+
 
                         <div className="carousel-item">
                             <img src={event2} className="img-fluid d-block w-100 p-5"  alt="..." />
@@ -50,11 +52,12 @@ const LandingPage = () => {
 
                         <div className="carousel-item">
                             <img src={event3} className="img-fluid d-block w-100 p-5"  alt="..." />
-                                <div className="carousel-caption d-md-block">
+                                <div className="carousel-caption d-md-block ">
                                     <h5>Birthday Party</h5>
                                     <p>Some representative placeholder content for the third slide.</p>
                                 </div>
                         </div>
+                    </div>
                     </div>
 
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -74,7 +77,7 @@ const LandingPage = () => {
                 {/*About Us*/}
                 <div className="p-5">
                     <h2 className="m-3 p-2" style={{textAlign: "Center"}}>About Us</h2>
-                    <h3 className="m-3 p-2 col-6" style={{textAlign: "Center"}}>We are specialized in Wedding photography,
+                    <h3 className="m-3 p-2 col-12" style={{textAlign: "Center"}}>We are specialized in Wedding photography,
                         Commercial photography, Fashion photography and many more..</h3>
                 </div>
             </div>
