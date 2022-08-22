@@ -7,10 +7,6 @@ import SignContextProviderInterface from "./SignContextProviderInterface";
 import LoginContextProviderInterface from './LoginContextProviderInterface'
 import OldHeader from "./oldHeader";
 import Header from "./Header";
-import SideNavAdmin from "./SideNavAdmin";
-import SideNavCustomer from "./SideNavCustomer";
-import SideNavEmployee from "./SideNavEmployee";
-import SideNavManager from "./SideNavManager";
 import ContactUs from "./ContactUs";
 import OldFooter from "./oldFooter";
 import Footer from "./Footer";
@@ -22,8 +18,6 @@ import ViewPackagesWedding from "./ViewPackagesWedding";
 import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
-
-import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import EventReviewsCustomerContextProviderInterface from "./EventReviewsCustomerContextProviderInterface";
 import ViewPackagesBirthday from "./ViewPackagesBirthday";
 import ViewPhotos from "./ViewPhotos";
@@ -45,6 +39,7 @@ import Customer from './UIStructure/Customer'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import Employee from "./UIStructure/Employee";
 
 function App() {
   return (
@@ -80,10 +75,6 @@ function App() {
               <Route exact path="/OldHeader" element={ <OldHeader/> } />
               <Route exact path="/Header" element={ <Header/> } />
               <Route exact path="/LandingPage" element={ <LandingPage/> } />
-              <Route exact path="/SideNavAdmin" element={ <SideNavAdmin/> } />
-              <Route exact path="/SideNavCustomer" element={ <SideNavCustomer/> } />
-              <Route exact path="/SideNavEmployee" element={ <SideNavEmployee/> } />
-              <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
               <Route exact path="/ContactUs" element={ <ContactUs/> } />
               <Route exact path="/Footer" element={ <Footer/> } />
               <Route exact path="/OldFooter" element={ <OldFooter/> } />
@@ -92,6 +83,7 @@ function App() {
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Customer" element={ <Customer/> } />
+              <Route exact path="/Employee" element={ <Employee/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
