@@ -5,12 +5,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BrowserRouter , Routes , Route } from "react-router-dom";
 import SignContextProviderInterface from "./SignContextProviderInterface";
 import LoginContextProviderInterface from './LoginContextProviderInterface'
+import OldHeader from "./oldHeader";
 import Header from "./Header";
 import SideNavAdmin from "./SideNavAdmin";
 import SideNavCustomer from "./SideNavCustomer";
 import SideNavEmployee from "./SideNavEmployee";
 import SideNavManager from "./SideNavManager";
 import ContactUs from "./ContactUs";
+import OldFooter from "./oldFooter";
 import Footer from "./Footer";
 import ViewEventsForCustomer from "./ViewEventsForCustomer";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
@@ -76,6 +78,7 @@ function App() {
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
               <Route exact path="/ViewPackagesWedding" element={ <ViewPackagesWedding/> } />
               <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
+              <Route exact path="/OldHeader" element={ <OldHeader/> } />
               <Route exact path="/Header" element={ <Header/> } />
               <Route exact path="/LandingPage" element={ <LandingPage/> } />
               <Route exact path="/SideNavAdmin" element={ <SideNavAdmin/> } />
@@ -84,6 +87,7 @@ function App() {
               <Route exact path="/SideNavManager" element={ <SideNavManager/> } />
               <Route exact path="/ContactUs" element={ <ContactUs/> } />
               <Route exact path="/Footer" element={ <Footer/> } />
+              <Route exact path="/OldFooter" element={ <OldFooter/> } />
               <Route exact path="/ViewEventsForCustomer" element={ <ViewEventsForCustomer/> } />
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />

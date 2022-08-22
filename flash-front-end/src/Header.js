@@ -1,47 +1,35 @@
 import React from 'react';
 import FlashLogo from './Images/FlashLogo.png';
 
+
 const Header = () => {
     return (
 
+        <div className="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <nav className="navbar navbar-expand-md  navbar-dark bg-dark pt-1 pb-1">
-            <div className="container-lg ms-0 me-0">
-                <a className="navbar-brand shadow-lg text-white" href="#">Studio Flash
-                    <img src={FlashLogo} alt="logo" height="65px" width="70px" class="d-inline-block align-top p-0"/>
-                </a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
-                        aria-controls="#toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                    <button className="btn btn-dark p-4">
+                        <i className="bi bi-list"></i>
+                    </button>
+                    <img src={FlashLogo} alt="logo" height="80px" width="80px"/>
+                    <a className="nav-item nav-link active  m-3 pb-3 pe-5 ps-5" href="#" >Studio Flash <span className="sr-only"></span></a>
+                    <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-5" href="#" >Home <span className="sr-only"></span></a>
+                    <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
+                    <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
+                    <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
+                    <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
+                    <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
 
 
-                <div className="collapse navbar-collapse" id="toggleMobileMenu">
-                    <ul class="navbar-nav ms-auto text-center">
-
-                        <li>
-                            <a className="nav-link active m-3 pb-2 pe-5 ps-5 shadow-lg text-white text-nowrap"  aria-current="page" href="#">Home</a>
-                        </li>
-                        <li>
-                            <a className="nav-link m-3 pb-2 pe-5 ps-5 shadow-lg text-white text-nowrap" href="#">Book Now</a>
-                        </li>
-                        <li>
-                            <a className="nav-link m-3 pb-2 pe-5 ps-5 shadow-lg text-white text-nowrap" href="#">Portfolio</a>
-                        </li>
-                        <li>
-                            <a className="nav-link m-3 pb-2 pe-5 ps-5 shadow-lg text-white text-nowrap" href="#">About us</a>
-                        </li>
-                        <li>
-                            <a className="nav-link m-3 pb-2 pe-5 ps-5 shadow-lg text-white text-nowrap" href="#">Contact us</a>
-                        </li>
-                        <li>
-                            <a className="nav-link m-3 pb-2 pe-5 ps-5 shadow-lg text-white text-nowrap" href="#">Sign out</a>
-                        </li>
-                    </ul>
                 </div>
-
             </div>
-        </nav>
+        </div>
+
 
     )
 }

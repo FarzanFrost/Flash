@@ -5,6 +5,10 @@ import Footer from "../Footer";
 import CustomerNav from "../CustomerNav";
 import EventReviewsCustomer from "../EventReviewsCustomer";
 import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
+import OldHeader from "../oldHeader";
+import OldFooter from "../oldFooter";
+import SideNavCustomer from "../SideNavCustomer";
+
 
 const GalleryStructure = () => {
 
@@ -12,7 +16,7 @@ const GalleryStructure = () => {
 
         <div>
 
-            <Header/>
+            <OldHeader/>
 
             <div className="row h-100 d-flex" >
 
@@ -87,7 +91,7 @@ const GalleryStructure = () => {
 
             </div>
 
-            <Footer/>
+            <OldFooter/>
 
         </div>
 

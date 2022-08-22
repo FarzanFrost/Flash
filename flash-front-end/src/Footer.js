@@ -1,60 +1,41 @@
 import React from 'react';
-import FlashLogo from './Images/FlashLogo.png';
+import FlashLogo from "./Images/FlashLogo.png";
 
 const Footer = () => {
     return (
         <div className="main-footer bg-dark pt-1 pb-1" >
             <div className="container">
-                <div className="row">
-                    {/*Coloumn*/}
 
-                    <div className="col-md-3 col-sm-6">
-                        <div className="content has-text-centered">
-                            <h3 className="title has-text-white text-white">Follow Us</h3>
-                        </div>
-                        <div className="row mt-1 social-icon-set has-text-centered">
+                <div className="navbar navbar-expand-lg navbar-dark bg-dark">
 
-                            <a href="https://www.facebook.com/">
-                            <span className="icon is-small mr-1 social-icons">
-                            <i className="fab fa-facebook-f"></i>
-                            </span>
-                            </a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                            <a href="https://www.instagram.com/">
-                            <span className="icon is-small mr-1 social-icons">
-                            <i className="fab fa-instagram"></i>
-                            </span>
-                            </a>
-
-                            <a href="https://www.youtube.com/channel/">
-                            <span className="icon is-small mr-1 social-icons">
-                            <i className="fab fa-youtube"></i>
-                            </span>
-                            </a>
-
-                            <a href="https://www.linkedin.com/">
-                            <span className="icon is-small mr-1 social-icons">
-                            <i className="fab fa-linkedin-in"></i>
-                            </span>
-                            </a>
+                    <div className="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+                        <div className="navbar-nav ">
+                                <a className="nav-item nav-link active  m-2 pb-2 pe-5 ps-5   " style={{right:'30rem'}} href="#" >About <span className="sr-only"></span></a>
+                                <a className="nav-item nav-link  m-2 pb-2 pe-5 ps-5 align-middle" href="#">Privacy and Policy</a>
+                                <a className="nav-item nav-link  m-2 pb-2 pe-5 ps-5 align-middle" href="#">Portfolio</a>
+                                <a className="nav-item nav-link  m-2 pb-2 pe-5 ps-5 align-middle" href="#">Contact us</a>
                         </div>
                     </div>
-
                 </div>
 
-            <div>
 
-
-                    {/*Footer bottom*/}
+                    {/*OldFooter bottom*/}
+                <center>
                     <div className="footer-bottom">
                         <p className="text-xs-center text-white">
                             &copy;{new Date().getFullYear()} Flash Studio - All Rights Reserved
                         </p>
                     </div>
+                </center>
+
 
                 </div>
 
-            </div>
         </div>
     )
 }

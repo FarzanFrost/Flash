@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import OldHeader from "./oldHeader";
+import OldFooter from "./oldFooter";
 import event from './Images/event.jpg';
 import event2 from './Images/event2.jpg';
 import event3 from './Images/event3.jpg';
@@ -11,7 +11,7 @@ import FlashLogo from './Images/FlashLogo.png';
 const LandingPage = () => {
     return (
         <div style={{backgroundColor:"rgba(255,212,181,0.91)"}}>
-            <Header />
+            <OldHeader />
 
             <div class="p-5">
 
@@ -82,7 +82,7 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            <Footer />
+            <OldFooter />
         </div>
 
     )
