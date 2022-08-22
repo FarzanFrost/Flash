@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import Header from "./Header";
-import Footer from "./Footer";
+import OldHeader from "./oldHeader";
+import OldFooter from "./oldFooter";
 
 const ViewEventsForCustomer = () => {
 
@@ -24,7 +24,7 @@ const ViewEventsForCustomer = () => {
     return (
 
         <div style={{...style1}}>
-            <Header/>
+            <OldHeader/>
 
             <div class="p-5">
 
@@ -97,7 +97,7 @@ const ViewEventsForCustomer = () => {
 
             </div>
 
-            <Footer/>
+            <OldFooter/>
 
     </div>
 

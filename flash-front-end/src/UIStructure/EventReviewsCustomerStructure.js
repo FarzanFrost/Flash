@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from "../Header";
+import OldHeader from "../oldHeader";
 import SideNavCustomer from "../SideNavCustomer";
-import Footer from "../Footer";
+import OldFooter from "../oldFooter";
 import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
 
 const EventReviewsCustomerStructure = () => {
@@ -11,7 +11,7 @@ const EventReviewsCustomerStructure = () => {
 
         <div>
 
-            <Header/>
+            <OldHeader/>
 
             <div className="row">
 
@@ -29,7 +29,7 @@ const EventReviewsCustomerStructure = () => {
 
             </div>
 
-            <Footer/>
+            <OldFooter/>
 
         </div>
 

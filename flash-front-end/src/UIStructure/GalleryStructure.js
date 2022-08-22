@@ -1,7 +1,7 @@
 import React from 'react'
 import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
-import Header from "../Header";
-import Footer from "../Footer";
+import OldHeader from "../oldHeader";
+import OldFooter from "../oldFooter";
 import SideNavCustomer from "../SideNavCustomer";
 
 const GalleryStructure = () => {
@@ -10,7 +10,7 @@ const GalleryStructure = () => {
 
         <div>
 
-            <Header/>
+            <OldHeader/>
 
             <div className="row">
 
@@ -28,7 +28,7 @@ const GalleryStructure = () => {
 
             </div>
 
-            <Footer/>
+            <OldFooter/>
 
         </div>
 
