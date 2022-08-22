@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "./Header";
-import Footer from "./Footer";
+import OldHeader from "./oldHeader";
+import OldFooter from "./oldFooter";
 
 const ContactUs = () => {
     return (
         <div style={{backgroundColor:"rgba(255,212,181,0.91)"}}>
-            <Header />
+            <OldHeader />
 
             {/*Start of form*/}
             <section className="h-100">
@@ -74,7 +74,7 @@ const ContactUs = () => {
                 </div>
             </section>
             {/*End of form*/}
-<Footer />
+<OldFooter />
         </div>
     )
 }
