@@ -140,7 +140,7 @@ const Manager = () => {
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
                     {/*<AddEmployee/>*/} {/*no need*/}
-                    {/*<EditEmployee/>*/} {/*no need*/}
+                    <EditEmployee/> no need
                     {/*<EditPackage/>*/} {/*no need*/}
                     {/*<ManagerViewAllReviews/>*/} {/*reviews*/}
                     {/*<ManagerViewEmployeeDetails/>*/} {/*employee details*/} {/*want to add some options in uis*/}

@@ -44,9 +44,9 @@ const EditEmployee = () => {
                                     <div className="col-lg-7">
 
                                         <form className="container rounded mb-0 bg-opacity-25 p-lg-3 mt-0" >
-                                            <h1 className="text-center mt-3 pb-5">Welcome Nitharsha's Profile</h1>
+                                            <h1 className="text-center mt-3 pb-2">Welcome Nitharsha's Profile</h1>
 
-                                            <div className="d-flex mb-2 align-items-center justify-content-center">
+                                            <div className="d-flex align-items-center justify-content-end">
                                                 <button type="submit" variant="primary"
                                                         className="btn btn-dark btn-block px-3" >
                                                     Change Password
