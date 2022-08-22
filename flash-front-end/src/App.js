@@ -44,6 +44,8 @@ import ChangeBooking from "./ChangeBooking";
 import GalleryStructure from './UIStructure/GalleryStructure'
 import EventReviewsCustomerStructure from "./UIStructure/EventReviewsCustomerStructure";
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
+import CustomerNav from "./CustomerNav";
+import EmployeeNav from "./EmployeeNav";
 
 function App() {
   return (
@@ -90,14 +92,13 @@ function App() {
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
-              <Route exact path="/Gallery" element={ <SelectImageContextProviderInterface/> } />
+              <Route exact path="/Gallery" element={ <GalleryStructure/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
               <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
               <Route exact path="/EventSelection" element={ <EventSelection/> } />
               <Route exact path="/NewPackage" element={ <NewPackage/> } />
-              <Route exact path="/Gallery" element={ <GalleryStructure/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerStructure/> } />
               <Route exact path="/CustomerProfile" element={ <CustomerProfile/> } />
               <Route exact path="/EditPackage" element={ <EditPackage/> } />
@@ -109,6 +110,8 @@ function App() {
               <Route exact path="/CardDetail" element={ <CardDetail/> } />
               <Route exact path="/ChangeBooking" element={ <ChangeBooking/> } />
               <Route exact path="/ViewPackagesPurperty" element={ <ViewPackagesPurperty/> } />
+              <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
+              <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
           </Routes>
 
 
