@@ -1,5 +1,5 @@
 import React from 'react'
-import bgpic from './Images/photo.jpeg'
+import bgpic from './Images/photographer.jpg'
 import {Form} from "react-bootstrap";
 
 // const EmpEdit = () => {
@@ -45,6 +45,14 @@ const EditEmployee = () => {
 
                                         <form className="container rounded mb-0 bg-opacity-25 p-lg-3 mt-0" >
                                             <h1 className="text-center mt-3 pb-5">Welcome Nitharsha's Profile</h1>
+
+                                            <div className="d-flex mb-2 align-items-center justify-content-center">
+                                                <button type="submit" variant="primary"
+                                                        className="btn btn-dark btn-block px-3" >
+                                                    Change Password
+                                                </button>
+
+                                            </div>
 
                                             <div className="form-group row mt-3 mx-3">
                                                 <label className="col-sm-3 col-form-label">First Name</label>
@@ -233,24 +241,16 @@ const EditEmployee = () => {
 
                                             </div>
 
-                                            <div className="form-group row mt-3 mx-3">
-                                                <label className="col-sm-3 col-form-label">Password</label>
-                                                <div className="col-sm-9">
-                                                    <input
-                                                        value="nitharsha"
-                                                        className="form-control"
-                                                        type="password"
-                                                        placeholder="Enter password"
-                                                        //onChange={ (e) => setName( e.target.value )}
-                                                        autoFocus
-                                                        required
-                                                    />
-                                                </div>
+                                            {/*<div className="form-group row mt-3 mx-3">*/}
+                                            {/*    <label className="col-sm-3 col-form-label">Password</label>*/}
+                                            {/*    <div className="col-sm-9">*/}
+                                            {/*        */}
+                                            {/*    </div>*/}
                                                 {/*<div className="col-sm-1">*/}
                                                 {/*    <i className="bi bi-pencil-fill"></i>*/}
                                                 {/*</div>*/}
 
-                                            </div>
+                                            {/*</div>*/}
 
                                             {/*<div className="form-group row mt-3 mx-3">*/}
                                             {/*    <label className="col-sm-3 col-form-label">Profile Pic</label>*/}
@@ -273,7 +273,7 @@ const EditEmployee = () => {
 
                                             <div>
                                                 <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
-                                                    <button type="submit" variant="primary"
+                                                    <button type="submit" variant="secondary"
                                                             className="btn btn-dark btn-block px-3" >
                                                         Save
                                                     </button>

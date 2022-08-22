@@ -40,6 +40,7 @@ import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
 import Employee from "./UIStructure/Employee";
+import Manager from "./UIStructure/Manager";
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Customer" element={ <Customer/> } />
               <Route exact path="/Employee" element={ <Employee/> } />
+              <Route exact path="/Manager" element={ <Manager/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
