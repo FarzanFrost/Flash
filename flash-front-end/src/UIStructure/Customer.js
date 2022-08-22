@@ -32,6 +32,8 @@ const Customer = () => {
 
     }
 
+    const [ contentVisible , setContentVisible ] = useState( 0 )
+
     return(
 
         <div>
@@ -86,35 +88,35 @@ const Customer = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page">
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
                                         <i className="bi bi-grid bi me-2"></i>
                                         Events
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
                                         <i className="bi bi-window-desktop bi me-2"></i>
                                         Book Here
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
                                         <i className="bi bi-window-desktop bi me-2"></i>
                                         View Bookings
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
                                         <i className="bi bi-chat-dots bi me-2"></i>
                                         Post Reviews
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>
                                         <i className="bi bi-person bi me-2"></i>
                                         Profile
                                     </a>
@@ -131,16 +133,16 @@ const Customer = () => {
 
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
-                    {/*<CardDetail/>*/}
-                    {/*<ChangeBooking/>*/}
-                    {/*<ResetPasswordContextProviderInterface/>*/}
-                    {/*<CustomerProfile/>*/}
-                    {/*<EventReviewsCustomerContextProviderInterface/>*/}
-                    {/*<EventSelection/>*/}
-                    {/*<NewEventBooking/>*/}
-                    {/*<SelectImageContextProviderInterface/>*/ }
-                    {/*<ViewEventsForCustomer/>*/}{/*change event UI*/}
-                    {/*<ViewPackagesBirthday/>*/}
+                    {/*<CardDetail/>*/}{/*no need*/}
+                    {/*<ChangeBooking/>*/}{/*no need*/}
+                    {/*<ResetPasswordContextProviderInterface/>*/}{/*no need*/}
+                    { contentVisible === 4 && <CustomerProfile/>}{/*profile*/}
+                    { contentVisible === 3 && <EventReviewsCustomerContextProviderInterface/>}{/*post reviews*/}
+                    { contentVisible === 0 && <EventSelection/>}{/*events*/}
+                    { contentVisible === 1 && <NewEventBooking/>}{/*book here*/}
+                    {/*<SelectImageContextProviderInterface/>*/ }{/*no need*/}
+                    { contentVisible === 2 && <ViewEventsForCustomer/>}{/*change event UI*/}{/*view books*/}
+                    {/*<ViewPackagesBirthday/>*/}{/*no need*/}
 
 
 
