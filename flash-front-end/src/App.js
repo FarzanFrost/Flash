@@ -41,8 +41,7 @@ import ManagerViewAllReviews from "./ManagerViewAllReviews";
 import NewEventBooking from "./NewEventBooking";
 import CardDetail from "./CardDetail";
 import ChangeBooking from "./ChangeBooking";
-import GalleryStructure from './UIStructure/GalleryStructure'
-import EventReviewsCustomerStructure from "./UIStructure/EventReviewsCustomerStructure";
+import Customer from './UIStructure/Customer'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
@@ -92,14 +91,13 @@ function App() {
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
-              <Route exact path="/Gallery" element={ <GalleryStructure/> } />
+              <Route exact path="/Customer" element={ <Customer/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
               <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
               <Route exact path="/EventSelection" element={ <EventSelection/> } />
               <Route exact path="/NewPackage" element={ <NewPackage/> } />
-              <Route exact path="/EventReviews" element={ <EventReviewsCustomerStructure/> } />
               <Route exact path="/CustomerProfile" element={ <CustomerProfile/> } />
               <Route exact path="/EditPackage" element={ <EditPackage/> } />
               <Route exact path="/AdminViewAllReviews" element={ <AdminViewAllReviews/> } />
