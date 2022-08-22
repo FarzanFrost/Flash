@@ -2,9 +2,19 @@ import React, {useState} from 'react'
 import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
+import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
+import CardDetail from "../CardDetail";
+import ChangeBooking from "../ChangeBooking";
+import ChangePassword from "../ChangePassword";
+import CustomerProfile from "../CustomerProfile";
+import EventSelection from "../EventSelection";
+import NewEventBooking from "../NewEventBooking";
+import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
+import ViewEventsForCustomer from "../ViewEventsForCustomer";
+import ViewPackagesBirthday from "../ViewPackagesBirthday";
 
 
-const GalleryStructure = () => {
+const Customer = () => {
 
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
@@ -26,6 +36,7 @@ const GalleryStructure = () => {
 
         <div>
 
+            {/*header begins*/}
             <div className="navbar navbar-expand-lg navbar-dark bg-dark">
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -50,14 +61,16 @@ const GalleryStructure = () => {
                     </div>
                 </div>
             </div>
+            {/*header ends*/}
 
+            {/*side nav begins*/}
             <div className="row h-100 d-flex" >
 
-                <div className={ isSideNavVisible ? "col-2 h-100 flex-grow-1" : "d-none" }>
+                <div className={ isSideNavVisible ? "col-2" : "d-none" }>
 
                     <div className="h-100" >
 
-                        <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{width: "260px",alignItems: "stretch", height: "755px"}}>
+                        <div className="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style={{width: "257px",alignItems: "stretch", height: "755px"}}>
                             <a href="" className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
 
                                 <i className="bi bi-camera bi me-2"></i>
@@ -114,10 +127,23 @@ const GalleryStructure = () => {
                     </div>
 
                 </div>
+                {/*side nav ends*/}
 
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
-                    <SelectImageContextProviderInterface/>
+                    {/*<CardDetail/>*/}
+                    {/*<ChangeBooking/>*/}
+                    {/*<ResetPasswordContextProviderInterface/>*/}
+                    {/*<CustomerProfile/>*/}
+                    {/*<EventReviewsCustomerContextProviderInterface/>*/}
+                    {/*<EventSelection/>*/}
+                    {/*<NewEventBooking/>*/}
+                    {/*<SelectImageContextProviderInterface/>*/ }
+                    {/*<ViewEventsForCustomer/>*/}{/*change event UI*/}
+                    {/*<ViewPackagesBirthday/>*/}
+
+
+
 
                 </div>
 
@@ -131,4 +157,4 @@ const GalleryStructure = () => {
 
 }
 
-export default GalleryStructure
+export default Customer
