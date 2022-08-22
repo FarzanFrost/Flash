@@ -34,7 +34,7 @@ const NewPackage = () => {
 
                                     <form className="container rounded-3 mb-0 bg-opacity-25 p-lg-3 mt-0" >
 
-                                        <h1 className="text-center mt-3 pb-5">New Package</h1>
+                                        <h1 className="text-center mt-3 pb-5 fw-bold" style={{fontFamily: 'Eagle Lake' }}>New Package</h1>
 
                                         <div className="form-group row mt-3 mx-3">
                                             <label className="col-sm-4 col-form-label">Package Name</label>
