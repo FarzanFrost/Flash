@@ -1,26 +1,59 @@
-import React from 'react'
+import React, {useState} from 'react'
 import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
-import Header from "../Header";
 import Footer from "../Footer";
-import CustomerNav from "../CustomerNav";
-import EventReviewsCustomer from "../EventReviewsCustomer";
-import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
-import OldHeader from "../oldHeader";
-import OldFooter from "../oldFooter";
-import SideNavCustomer from "../SideNavCustomer";
+import FlashLogo from "../Images/FlashLogo.png";
 
 
 const GalleryStructure = () => {
+
+    const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
+
+    const showHideSideNav = () => {
+
+        if ( isSideNavVisible ){
+
+            setIsSideNavVisible( false );
+
+        }else{
+
+            setIsSideNavVisible( true );
+
+        }
+
+    }
 
     return(
 
         <div>
 
-            <OldHeader/>
+            <div className="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div className="navbar-nav">
+                        <button className="btn btn-dark px-3 ms-1" onClick={showHideSideNav}>
+                            <i className="bi bi-list"></i>
+                        </button>
+                        <img src={FlashLogo} alt="logo" height="80px" width="80px"/>
+                        <a className="nav-item nav-link active  m-3 pb-3 pe-5 ps-5" href="#" >Studio Flash <span className="sr-only"></span></a>
+                        <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-5" href="#" >Home <span className="sr-only"></span></a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
+
+
+                    </div>
+                </div>
+            </div>
 
             <div className="row h-100 d-flex" >
 
-                <div className="col-2 h-100 flex-grow-1">
+                <div className={ isSideNavVisible ? "col-2 h-100 flex-grow-1" : "d-none" }>
 
                     <div className="h-100" >
 
@@ -82,16 +115,15 @@ const GalleryStructure = () => {
 
                 </div>
 
-                <div className="col-10">
+                <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
                     <SelectImageContextProviderInterface/>
-                    {/*<EventReviewsCustomerContextProviderInterface id="reviewid"/>*/}
 
                 </div>
 
             </div>
 
-            <OldFooter/>
+            <Footer/>
 
         </div>
 

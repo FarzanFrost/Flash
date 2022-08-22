@@ -83,7 +83,7 @@ const FolderStructuresCustomers = () => {
 
                     folderList.map( ( folder ) => (
 
-                        <div className="flex-row shadow p-2 border m-3 rounded-2 d-flex display-5">
+                        <div className="flex-row shadow p-2 border m-3 rounded-2 d-flex ">
 
                             <div className="d-flex cursor-pointer" onClick={ () => changeFolderOpenState( folder ) } style={ { cursor : "pointer" } }>
 
