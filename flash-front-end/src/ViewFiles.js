@@ -12,7 +12,7 @@ const Vieweventdetailsforadmin = () => {
     const style1 = {
 
         backgroundColor: '#767676',
-        height:'250px'
+        height:'95px'
     };
 
 
@@ -21,7 +21,31 @@ const Vieweventdetailsforadmin = () => {
 
         <div style={{...style1}}>
 
-            <section className="pt-5 pb-5">
+            <div className=" row">
+                <div className="col-md-6">
+                    <div className="position-relative mx-5 m-2 border-dark border-4"
+                         style={{width: '48rem', left: '16rem'}}>
+                        <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
+                               placeholder="Example input"></input>
+                    </div>
+                </div>
+
+
+                <div className="col-md-6">
+                    <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
+                        <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
+                                data-bs-toggle="dropdown">
+                            <option value="All">all</option>
+                            <option value="eventname">Date</option>
+                            <option value="Date">Size</option>
+
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <section className="pt-6 pb-5">
                 <div className=" container">
                     <div className="row">
                         <center>
@@ -38,12 +62,30 @@ const Vieweventdetailsforadmin = () => {
                                     <div className="carousel-item active">
                                         <div className="row">
                                             <div className="col-md-4 mb-3">
-                                                <div className="card border-dark border-5 rounded-3 w-100 p-3">
-                                                    <i className="bi bi-folder"></i>
+                                                <div className="card border-dark border-5 rounded-3 w-90 p-3">
+                                                    <button class="border-0 bg-white"><i className="bi bi-folder"> file name ID 101</i></button>
                                                 </div>
                                             </div>
-
-
+                                            <div className="col-md-4 mb-3">
+                                                <div className="card border-dark border-5 rounded-3 w-90 p-3">
+                                                    <button className="border-0 bg-white"><i className="bi bi-folder"> file name ID 102</i></button>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-4 mb-3">
+                                                <div className="card border-dark border-5 rounded-3 w-90 p-3">
+                                                    <button className="border-0 bg-white"><i className="bi bi-folder"> file name ID 103</i></button>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-4 mb-3">
+                                                <div className="card border-dark border-5 rounded-3 w-90 p-3">
+                                                    <button className="border-0 bg-white"><i className="bi bi-folder"> file name ID 104</i></button>
+                                                </div>
+                                            </div>
+                                            <div className="col-md-4 mb-3">
+                                                <div className="card border-dark border-5 rounded-3 w-90 p-3">
+                                                    <button className="border-0 bg-white"><i className="bi bi-folder"> file name ID 105</i></button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
