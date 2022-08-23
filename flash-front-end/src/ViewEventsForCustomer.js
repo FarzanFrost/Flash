@@ -24,7 +24,6 @@ const ViewEventsForCustomer = () => {
     return (
 
         <div style={{...style1}}>
-            <OldHeader/>
 
             <div class="p-5">
 
@@ -96,8 +95,6 @@ const ViewEventsForCustomer = () => {
                 </div>
 
             </div>
-
-            <OldFooter/>
 
     </div>
 
