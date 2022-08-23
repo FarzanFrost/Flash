@@ -22,6 +22,9 @@ const Employee = () => {
         }
 
     }
+
+    const [ contentVisible , setContentVisible ] = useState( 0 )
+    
     return(
 
         <div>
