@@ -41,6 +41,7 @@ import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
 import Employee from "./UIStructure/Employee";
 import Manager from "./UIStructure/Manager";
+import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 
 function App() {
   return (
@@ -104,6 +105,7 @@ function App() {
               <Route exact path="/ViewPackagesPurperty" element={ <ViewPackagesPurperty/> } />
               <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
               <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
+              <Route exact path="/Folder" element={ <SelectImageContextProviderInterface/> } />
           </Routes>
 
 

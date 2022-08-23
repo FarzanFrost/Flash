@@ -6,6 +6,9 @@ import loginPhoto from "./Images/backgroudphoto.jpg";
 
 const ManagerViewEmployeeDetails = () => {
 
+    const NewEmployee = () => {
+
+    }
 
     return (
         <div className='container mt-4 '>
@@ -47,12 +50,18 @@ const ManagerViewEmployeeDetails = () => {
 
                     </div>
 
+                    <div className="d-flex align-items-center justify-content-end px-xl-5 pt-3">
+                        <button onClick={ NewEmployee }
+                                className="btn btn-dark btn-block">
+                            <i className="bi bi-plus"></i> Add Employee
+                        </button>
+                    </div>
 
-                    <div className="card bg-light border-dark border-4 mt-5 mx-5" style={{width: '75rem',height:'40rem'}}>
+
+                    <div className="card bg-light border-dark border-4 mt-3 mx-5" style={{width: '75rem',height:'40rem'}}>
                         <div className="card-body ">
                             <div className="table-responsive ">
-                                <table className="table table-dark table-striped align-middle"
-                                >
+                                <table className="table table-dark table-striped align-middle">
                                     <thead>
                                     <tr>
                                         <th scope="col">NO</th>
