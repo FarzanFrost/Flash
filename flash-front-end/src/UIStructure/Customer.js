@@ -11,7 +11,7 @@ import EventSelection from "../EventSelection";
 import NewEventBooking from "../NewEventBooking";
 import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
-import ViewPackagesBirthday from "../ViewPackagesBirthday";
+
 
 
 const Customer = () => {
