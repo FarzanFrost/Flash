@@ -45,6 +45,8 @@ import Customer from './UIStructure/Customer'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import CustomerAuthenticationContextProviderInterface
+    from "./UIStructure/CustomerAuthenticationContextProviderInterface";
 
 function App() {
   return (
@@ -91,7 +93,7 @@ function App() {
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
-              <Route exact path="/Customer" element={ <Customer/> } />
+              <Route exact path="/Customer" element={ <CustomerAuthenticationContextProviderInterface/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
