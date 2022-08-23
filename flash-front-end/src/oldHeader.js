@@ -8,7 +8,7 @@ const OldHeader = () => {
         <nav className="navbar navbar-expand-md  navbar-dark bg-dark pt-1 pb-1">
             <div className="container-lg ms-0 me-0">
                 <a className="navbar-brand shadow-lg text-white" href="#">Studio Flash
-                    <img src={FlashLogo} alt="logo" height="300px" width="300px" class="d-inline-block align-top p-0"/>
+                    <img src={FlashLogo} alt="logo" height="65px" width="70px" class="d-inline-block align-top p-0"/>
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu"
                         aria-controls="#toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
