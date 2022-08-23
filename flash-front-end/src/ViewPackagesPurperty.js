@@ -81,7 +81,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-                                                        <a href="#" className="btn" style={{...style3}}>Subscribe</a>
+                                                        
                                                     </div>
                                                 </div>
                                                 </div>
@@ -111,7 +111,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-                                                        <a href="#" className="btn" style={{...style3}}>Subscribe</a>
+
                                                     </div>
                                                 </div>
                                                 </div>
@@ -142,7 +142,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-                                                        <a href="#" className="btn" style={{...style3}}>Subscribe</a>
+
                                                     </div>
                                                 </div>
                                                 </div>
@@ -151,46 +151,52 @@ const Vieweventdetailsforadmin = () => {
                                         </div>
                                     </div>
 
-
-                                    <div className="carousel-item">
-                                        <div className="col-md-4 mb-3">
-                                            <div className="card border-dark border-5 rounded-3">
-                                                <img className="img-fluid" alt="100%x280"src={platinumPhoto}></img>
-                                                <div className="card-body">
-                                                <div className="card-body">
-                                                    <p className="card-text">
-                                                        <h4>Plantinum Package</h4>
-                                                        <h5>2 Photographers</h5>
-                                                        <h5>2 Videographers</h5>
-                                                        <h5>150 pages 12X30 AlbumGlass top wood</h5>
-                                                        <h5>50	pages 8X24 Preshoot album</h5>
-                                                        <h5>1 Signature frame</h5>
-                                                        <h5>150	Thank you cards</h5>
-                                                        <h5>2 12x18 frame</h5>
-                                                        <h5>2 Blu-rays</h5>
-                                                        <h5>2 DVD's</h5>
-                                                        <h5>1 Pen drive</h5>
-                                                        <h5>&nbsp;</h5>
-                                                        <h6>This package includes the following activities:</h6>
-                                                        <h5>Full day coverage</h5>
-                                                        <h5>Ceremony</h5>
-                                                        <h5>Pre-shoot OR Post-shoot session</h5>
-                                                    </p>
-                                                    <br/>
-                                                    <a href="#" className="btn" style={{...style3}}>Subscribe</a>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-
-
                                 </div>
                             </div>
                         </div>
+
+                        <div className="col-12">
+                            <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-inner">
+                                    <div className="carousel-item active">
+                                        <div className="row">
+                                            <div className="col-md-4 mb-3">
+                                                <div className="card border-dark border-5 rounded-3">
+                                                    <img className="img-fluid" alt="100%x280" src={platinumPhoto}></img>
+                                                    <div className="card-body">
+                                                        <div className="card-body">
+
+                                                            <p className="card-text">
+                                                                <h4>Plantinum Package</h4>
+                                                                <h5>2 Photographers</h5>
+                                                                <h5>2 Videographers</h5>
+                                                                <h5>150 pages 12X30 AlbumGlass top wood</h5>
+                                                                <h5>50	pages 8X24 Preshoot album</h5>
+                                                                <h5>1 Signature frame</h5>
+                                                                <h5>150	Thank you cards</h5>
+                                                                <h5>2 12x18 frame</h5>
+                                                                <h5>2 Blu-rays</h5>
+                                                                <h5>2 DVD's</h5>
+                                                                <h5>1 Pen drive</h5>
+                                                                <h5>&nbsp;</h5>
+                                                                <h6>This package includes the following activities:</h6>
+                                                                <h5>Full day coverage</h5>
+                                                                <h5>Ceremony</h5>
+                                                                <h5>Pre-shoot OR Post-shoot session</h5>
+                                                            </p>
+                                                            <br/>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </section>
