@@ -27,15 +27,41 @@ const Vieweventdetailsforadmin = () => {
 
         <div style={{...style1}}>
 
+            <div className=" row">
+                <div className="col-md-6">
+                    <div className="position-relative mx-5 m-2 border-dark border-4"
+                         style={{width: '48rem', left: '16rem'}}>
+                        <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
+                               placeholder="Example input"></input>
+                    </div>
+                </div>
 
+
+                <div className="col-md-6">
+                    <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
+                        <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
+                                data-bs-toggle="dropdown">
+                            <option value="All">Wedding</option>
+                            <option value="eventname">Birthday</option>
+                            <option value="Date">Puperty</option>
+                            <option value="All">Get together</option>
+                            <option value="eventname">House warming</option>
+                            <option value="Date">Prize Giving</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
 
 
             <section className="pt-5 pb-5">
                 <div className=" container">
                     <div className="row">
-                        <div className="col-6">
-                            <h3 className="mb-2">Packages </h3>
-                        </div>
+                        <center>
+                            <div className="col-6">
+                                <h3 className="mb-2">Packages </h3>
+                            </div>
+                        </center>
 
                         <div className="col-12">
                             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
