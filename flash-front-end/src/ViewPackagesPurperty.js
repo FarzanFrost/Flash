@@ -15,11 +15,7 @@ const Vieweventdetailsforadmin = () => {
         height:'450px'
     };
 
-    const style3 = {
 
-        backgroundColor:'#767676',
-        color:'white'
-    };
 
     return (
 
@@ -96,8 +92,10 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-
                                                     </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 125,000.00</h5></small>
+                                                        </div>
                                                 </div>
                                                 </div>
                                             </div>
@@ -126,8 +124,10 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-                                                        
                                                     </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 135,000.00</h5></small>
+                                                        </div>
                                                 </div>
                                                 </div>
                                             </div>
@@ -157,8 +157,10 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-                                                        
                                                     </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 225,000.00</h5></small>
+                                                        </div>
                                                 </div>
                                                 </div>
                                             </div>
@@ -200,7 +202,9 @@ const Vieweventdetailsforadmin = () => {
                                                                 <h5>Pre-shoot OR Post-shoot session</h5>
                                                             </p>
                                                             <br/>
-                                                            
+                                                            <div className="card-footer bg-dark text-center" >
+                                                                <small className="text-muted"><h5>Rs. 300,000.00</h5></small>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
