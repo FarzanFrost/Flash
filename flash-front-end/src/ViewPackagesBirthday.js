@@ -69,17 +69,19 @@ const Vieweventdetailsforadmin = () => {
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <img className="img-fluid" class="img-rounded" alt="100%x280px" src={sliverPhoto}></img>
                                                     <div className="card-body">
-                                                        <div className="card-body">
-                                                            <p className="card-text">
-                                                                <h4>Silver Package</h4>
-                                                                <h5>60minuts Session</h5>
-                                                                <h5>for only current location</h5>
-                                                                <h5>outfit changes</h5>
-                                                                <h5>40 Images album</h5>
-                                                                <h5>printed frame(4*6)</h5>
-                                                                <h5>Additional per sheet 2500</h5>
-                                                                <h5>&nbsp;</h5>
-                                                                <h5>&nbsp;</h5>
+                                                        <div className="card-body ">
+                                                            <p className="card-text ">
+                                                                <center>
+                                                                    <h4>Silver Package</h4>
+                                                                    <h5>60minuts Session</h5>
+                                                                    <h5>for only current location</h5>
+                                                                    <h5>outfit changes</h5>
+                                                                    <h5>40 Images album</h5>
+                                                                    <h5>printed frame(4*6)</h5>
+                                                                    <h5>Additional per sheet 2500</h5>
+                                                                    <h5>&nbsp;</h5>
+                                                                    <h5>&nbsp;</h5>
+                                                                </center>
                                                             </p>
                                                             <br/>
                                                         </div>
@@ -96,15 +98,17 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
                                                         <div className="card-body">
                                                             <p className="card-text">
-                                                                <h4>Gold Package</h4>
-                                                                <h5>60minuts Session</h5>
-                                                                <h5>for only current location</h5>
-                                                                <h5>outfit changes</h5>
-                                                                <h5>40 Images album</h5>
-                                                                <h5>printed frame(4*6)</h5>
-                                                                <h5>Additional per sheet 2500</h5>
-                                                                <h5>&nbsp;</h5>
-                                                                <h5>&nbsp;</h5>
+                                                                <center>
+                                                                    <h4>Gold Package</h4>
+                                                                    <h5>60minuts Session</h5>
+                                                                    <h5>for only current location</h5>
+                                                                    <h5>outfit changes</h5>
+                                                                    <h5>40 Images album</h5>
+                                                                    <h5>printed frame(4*6)</h5>
+                                                                    <h5>Additional per sheet 2500</h5>
+                                                                    <h5>&nbsp;</h5>
+                                                                    <h5>&nbsp;</h5>
+                                                                </center>
                                                             </p>
                                                             <br/>
                                                         </div>
@@ -120,17 +124,18 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280"src={diamondPhoto}></img>
                                                     <div className="card-body">
                                                         <div className="card-body">
-
                                                             <p className="card-text">
-                                                                <h4>Dimand Package</h4>
-                                                                <h5>60minuts Session</h5>
-                                                                <h5>for only current location</h5>
-                                                                <h5>outfit changes</h5>
-                                                                <h5>40 Images album</h5>
-                                                                <h5>printed frame(4*6)</h5>
-                                                                <h5>DVD slideshow</h5>
-                                                                <h5>out door shot(UnLimited hours)</h5>
-                                                                <h5>calender</h5>
+                                                                <center>
+                                                                    <h4>Dimand Package</h4>
+                                                                    <h5>60minuts Session</h5>
+                                                                    <h5>for only current location</h5>
+                                                                    <h5>outfit changes</h5>
+                                                                    <h5>40 Images album</h5>
+                                                                    <h5>printed frame(4*6)</h5>
+                                                                    <h5>DVD slideshow</h5>
+                                                                    <h5>out door shot(UnLimited hours)</h5>
+                                                                    <h5>calender</h5>
+                                                                </center>
                                                             </p>
                                                             <br/>
                                                         </div>
@@ -160,17 +165,18 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280" src={platinumPhoto}></img>
                                                     <div className="card-body">
                                                         <div className="card-body">
-
                                                             <p className="card-text">
-                                                                <h4>Plantinum Package</h4>
-                                                                <h5>60minuts Session</h5>
-                                                                <h5>for only current location</h5>
-                                                                <h5>outfit changes</h5>
-                                                                <h5>40 Images album</h5>
-                                                                <h5>printed frame(4*6)</h5>
-                                                                <h5>DVD slideshow</h5>
-                                                                <h5>out door shot(UnLimited hours)</h5>
-                                                                <h5>calender</h5>
+                                                                <center>
+                                                                    <h4>Plantinum Package</h4>
+                                                                    <h5>60minuts Session</h5>
+                                                                    <h5>for only current location</h5>
+                                                                    <h5>outfit changes</h5>
+                                                                    <h5>40 Images album</h5>
+                                                                    <h5>printed frame(4*6)</h5>
+                                                                    <h5>DVD slideshow</h5>
+                                                                    <h5>out door shot(UnLimited hours)</h5>
+                                                                    <h5>calender</h5>
+                                                                </center>
                                                             </p>
                                                             <br/>
                                                         </div>
