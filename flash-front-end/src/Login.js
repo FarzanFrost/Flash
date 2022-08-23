@@ -2,10 +2,13 @@ import React, {useContext, useState} from 'react'
 import {Link} from "react-router-dom";
 import loginPhoto from './Images/backgroudphotoLogin.jpg'
 import {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const Login = () => {
 
     const { SignUpLink } = useContext( ReactLinkContext )
+
+    const { login } = useContext( AuthenticationContext )
 
     const { ResetPasswordLink : forgotPasswordLink } = useContext( ReactLinkContext )
 
@@ -16,6 +19,8 @@ const Login = () => {
     const [ email , setEmail ] = useState( '' )
 
     const [ password , setPassword ] = useState( '' )
+
+    const username = 'in28minutes';
 
     const showHidePassword = () => {
 
@@ -134,7 +139,7 @@ const Login = () => {
 
                                                         <div className="d-flex align-items-center justify-content-center pb-4">
 
-                                                            <button className="btn btn-dark btn-block" type="submit">
+                                                            <button className="btn btn-dark btn-block" type="button" onClick={ () => login( username , password ) }>
 
                                                                 Login
 
