@@ -81,7 +81,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-                                                        
+
                                                     </div>
                                                 </div>
                                                 </div>
@@ -111,7 +111,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-
+                                                        
                                                     </div>
                                                 </div>
                                                 </div>
@@ -142,7 +142,7 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>Pre-shoot OR Post-shoot session</h5>
                                                         </p>
                                                         <br/>
-
+                                                        
                                                     </div>
                                                 </div>
                                                 </div>
@@ -185,7 +185,7 @@ const Vieweventdetailsforadmin = () => {
                                                                 <h5>Pre-shoot OR Post-shoot session</h5>
                                                             </p>
                                                             <br/>
-
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
