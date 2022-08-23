@@ -46,6 +46,7 @@ import Admin from './UIStructure/Admin'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import Calender from "./Calender";
 
 function App() {
   return (
@@ -112,6 +113,7 @@ function App() {
               <Route exact path="/ViewPackagesPurperty" element={ <ViewPackagesPurperty/> } />
               <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
               <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
+              <Route exact path="/Calender" element={ <Calender/> } />
           </Routes>
 
 
