@@ -1,17 +1,8 @@
 import React, {useState} from 'react'
-import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
-import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
-import CardDetail from "../CardDetail";
-import ChangeBooking from "../ChangeBooking";
-import ChangePassword from "../ChangePassword";
-import CustomerProfile from "../CustomerProfile";
-import EventSelection from "../EventSelection";
-import NewEventBooking from "../NewEventBooking";
-import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
-import ViewEventsForCustomer from "../ViewEventsForCustomer";
-import ViewPackagesBirthday from "../ViewPackagesBirthday";
+import MoreDetailsOfEventsForAdmin from "../MoreDetailsOfEventsForAdmin";
+import Vieweventdetailsforadmin from "../Vieweventdetailsforadmin";
 
 
 const Customer = () => {
@@ -51,12 +42,8 @@ const Customer = () => {
                             <i className="bi bi-list"></i>
                         </button>
                         <img src={FlashLogo} alt="logo" height="80px" width="80px"/>
-                        <a className="nav-item nav-link active  m-3 pb-3 pe-5 ps-5" href="#" >Studio Flash <span className="sr-only"></span></a>
                         <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-5" href="#" >Home <span className="sr-only"></span></a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
 
 
@@ -132,17 +119,9 @@ const Customer = () => {
                 {/*side nav ends*/}
 
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
+                    <Vieweventdetailsforadmin/>
+                    <MoreDetailsOfEventsForAdmin/>
 
-                    {/*<CardDetail/>no need*/}
-                    {/*<ChangeBooking/>*/}{/*no need*/}
-                    {/*<ResetPasswordContextProviderInterface/>*/}{/*no need*/}
-                    { contentVisible === 4 && <CustomerProfile/>}{/*profile*/}
-                    { contentVisible === 3 && <EventReviewsCustomerContextProviderInterface/>}{/*post reviews*/}
-                    { contentVisible === 0 && <EventSelection/>}{/*events*/}
-                    { contentVisible === 1 && <NewEventBooking/>}{/*book here*/}
-                    {/*<SelectImageContextProviderInterface/>*/ }{/*no need*/}
-                    { contentVisible === 2 && <ViewEventsForCustomer/>}{/*change event UI*/}{/*view books*/}
-                    {/*<ViewPackagesBirthday/>*/}{/*no need*/}
 
 
 

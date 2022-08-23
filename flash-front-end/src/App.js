@@ -42,6 +42,7 @@ import NewEventBooking from "./NewEventBooking";
 import CardDetail from "./CardDetail";
 import ChangeBooking from "./ChangeBooking";
 import Customer from './UIStructure/Customer'
+import Admin from './UIStructure/Admin'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
@@ -92,6 +93,7 @@ function App() {
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Customer" element={ <Customer/> } />
+              <Route exact path="/Admin" element={ <Admin/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPackagesBirthday" element={ <ViewPackagesBirthday/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
