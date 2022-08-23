@@ -12,16 +12,10 @@ const Vieweventdetailsforadmin = () => {
     const style1 = {
 
         backgroundColor: '#767676',
-        height:'550px'
+        height:'450px'
     };
 
 
-
-    const style3 = {
-
-        backgroundColor:'#767676',
-        color:'white'
-    };
 
     return (
 
@@ -54,7 +48,7 @@ const Vieweventdetailsforadmin = () => {
             </div>
 
 
-            <section className="pt-5 pb-5">
+            <section className="pt-6 pb-5">
                 <div className=" container">
                     <div className="row">
                         <center>
@@ -62,6 +56,7 @@ const Vieweventdetailsforadmin = () => {
                                 <h3 className="mb-2">Packages </h3>
                             </div>
                         </center>
+
 
                         <div className="col-12">
                             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -72,28 +67,26 @@ const Vieweventdetailsforadmin = () => {
 
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
-                                                    <img className="img-fluid" alt="100%x280" src={sliverPhoto}></img>
+                                                    <img className="img-fluid" class="img-rounded" alt="100%x280px" src={sliverPhoto}></img>
                                                     <div className="card-body">
-                                                    <div className="card-body">
-
-                                                        <p className="card-text">
-                                                            <h4>Silver Package</h4>
-                                                            <h5>60minuts Session</h5>
-                                                            <h5>for only current location</h5>
-                                                            <h5>outfit changes</h5>
-                                                            <h5>40 Images album</h5>
-                                                            <h5>printed frame(4*6)</h5>
-                                                            <h5>Additional per sheet 2500</h5>
-                                                            <h5>&nbsp;</h5>
-                                                            <h5>&nbsp;</h5>
-                                                        </p>
-
-
+                                                        <div className="card-body">
+                                                            <p className="card-text">
+                                                                <h4>Silver Package</h4>
+                                                                <h5>60minuts Session</h5>
+                                                                <h5>for only current location</h5>
+                                                                <h5>outfit changes</h5>
+                                                                <h5>40 Images album</h5>
+                                                                <h5>printed frame(4*6)</h5>
+                                                                <h5>Additional per sheet 2500</h5>
+                                                                <h5>&nbsp;</h5>
+                                                                <h5>&nbsp;</h5>
+                                                            </p>
+                                                            <br/>
+                                                        </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 125,000.00</h5></small>
+                                                        </div>
                                                     </div>
-
-
-                                                </div>
-
                                                 </div>
                                             </div>
 
@@ -101,25 +94,24 @@ const Vieweventdetailsforadmin = () => {
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <img className="img-fluid" alt="100%x280"src={goldPhoto}></img>
                                                     <div className="card-body">
-                                                    <div className="card-body">
-
-                                                        <p className="card-text">
-                                                            <h4>Gold Package</h4>
-                                                            <h5>60minuts Session</h5>
-                                                            <h5>for only current location</h5>
-                                                            <h5>outfit changes</h5>
-                                                            <h5>40 Images album</h5>
-                                                            <h5>printed frame(4*6)</h5>
-                                                            <h5>Additional per sheet 2500</h5>
-                                                            <h5>&nbsp;</h5>
-                                                            <h5>&nbsp;</h5>
-                                                        </p>
-
-
+                                                        <div className="card-body">
+                                                            <p className="card-text">
+                                                                <h4>Gold Package</h4>
+                                                                <h5>60minuts Session</h5>
+                                                                <h5>for only current location</h5>
+                                                                <h5>outfit changes</h5>
+                                                                <h5>40 Images album</h5>
+                                                                <h5>printed frame(4*6)</h5>
+                                                                <h5>Additional per sheet 2500</h5>
+                                                                <h5>&nbsp;</h5>
+                                                                <h5>&nbsp;</h5>
+                                                            </p>
+                                                            <br/>
+                                                        </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 135,000.00</h5></small>
+                                                        </div>
                                                     </div>
-
-
-                                                </div>
                                                 </div>
                                             </div>
 
@@ -127,29 +119,33 @@ const Vieweventdetailsforadmin = () => {
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <img className="img-fluid" alt="100%x280"src={diamondPhoto}></img>
                                                     <div className="card-body">
-                                                    <div className="card-body">
+                                                        <div className="card-body">
 
-                                                        <p className="card-text">
-                                                            <h4>Dimand Package</h4>
-                                                            <h5>60minuts Session</h5>
-                                                            <h5>for only current location</h5>
-                                                            <h5>outfit changes</h5>
-                                                            <h5>40 Images album</h5>
-                                                            <h5>printed frame(4*6)</h5>
-                                                            <h5>DVD slideshow</h5>
-                                                            <h5>out door shot(UnLimited hours)</h5>
-                                                            <h5>calender</h5>
-                                                        </p>
-
-
+                                                            <p className="card-text">
+                                                                <h4>Dimand Package</h4>
+                                                                <h5>60minuts Session</h5>
+                                                                <h5>for only current location</h5>
+                                                                <h5>outfit changes</h5>
+                                                                <h5>40 Images album</h5>
+                                                                <h5>printed frame(4*6)</h5>
+                                                                <h5>DVD slideshow</h5>
+                                                                <h5>out door shot(UnLimited hours)</h5>
+                                                                <h5>calender</h5>
+                                                            </p>
+                                                            <br/>
+                                                        </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 225,000.00</h5></small>
+                                                        </div>
                                                     </div>
-
-
-                                                </div>
                                                 </div>
                                             </div>
+
                                         </div>
+
                                     </div>
+
+
                                 </div>
                             </div>
                         </div>
@@ -177,7 +173,9 @@ const Vieweventdetailsforadmin = () => {
                                                                 <h5>calender</h5>
                                                             </p>
                                                             <br/>
-
+                                                        </div>
+                                                        <div className="card-footer bg-dark text-center" >
+                                                            <small className="text-muted"><h5>Rs. 300,000.00</h5></small>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -187,8 +185,6 @@ const Vieweventdetailsforadmin = () => {
                                 </div>
                             </div>
                         </div>
-
-
 
                     </div>
                 </div>
