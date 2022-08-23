@@ -71,14 +71,16 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
                                                     <div className="card-body">
                                                         <p className="card-text">
-                                                            <h4>Silver Package</h4>
-                                                            <h5>70page album</h5>
-                                                            <h5>Out Shoot</h5>
-                                                            <h5>Couple Frame</h5>
-                                                            <h5>Signature Board</h5>
-                                                            <h5>Save the Data photo</h5>
-                                                            <h5>Additional per sheet 2500</h5>
-                                                            <h5>&nbsp;</h5>
+                                                            <center>
+                                                                <h4>Silver Package</h4>
+                                                                <h5>70page album</h5>
+                                                                <h5>Out Shoot</h5>
+                                                                <h5>Couple Frame</h5>
+                                                                <h5>Signature Board</h5>
+                                                                <h5>Save the Data photo</h5>
+                                                                <h5>Additional per sheet 2500</h5>
+                                                                <h5>&nbsp;</h5>
+                                                            </center>
                                                         </p>
                                                         <br/>
                                                     </div>
@@ -95,14 +97,16 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
                                                     <div className="card-body">
                                                         <p className="card-text">
-                                                            <h4>Gold Package</h4>
-                                                            <h5>70page album</h5>
-                                                            <h5>Out Shoot</h5>
-                                                            <h5>Couple Frame(16*24)</h5>
-                                                            <h5>Signature Board</h5>
-                                                            <h5>highlights photo</h5>
-                                                            <h5>Save the Data(video or Photo)</h5>
-                                                            <h5>Additional per sheet 2500</h5>
+                                                            <center>
+                                                                <h4>Gold Package</h4>
+                                                                <h5>70page album</h5>
+                                                                <h5>Out Shoot</h5>
+                                                                <h5>Couple Frame(16*24)</h5>
+                                                                <h5>Signature Board</h5>
+                                                                <h5>highlights photo</h5>
+                                                                <h5>Save the Data(video or Photo)</h5>
+                                                                <h5>Additional per sheet 2500</h5>
+                                                            </center>
                                                         </p>
                                                         <br/>
                                                     </div>
@@ -118,16 +122,17 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280"src={diamondPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
-
                                                         <p className="card-text">
-                                                            <h4>Dimand Package</h4>
-                                                            <h5>70page album</h5>
-                                                            <h5>Out Shoot</h5>
-                                                            <h5>Couple Frame(16*24)</h5>
-                                                            <h5>Signature Board</h5>
-                                                            <h5>highlights photo</h5>
-                                                            <h5>Save the Data(video or Photo)</h5>
-                                                            <h5>Additional per sheet 2500</h5>
+                                                            <center>
+                                                                <h4>Dimand Package</h4>
+                                                                <h5>70page album</h5>
+                                                                <h5>Out Shoot</h5>
+                                                                <h5>Couple Frame(16*24)</h5>
+                                                                <h5>Signature Board</h5>
+                                                                <h5>highlights photo</h5>
+                                                                <h5>Save the Data(video or Photo)</h5>
+                                                                <h5>Additional per sheet 2500</h5>
+                                                            </center>
                                                         </p>
                                                         <br/>
                                                     </div>
@@ -157,16 +162,17 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280" src={platinumPhoto}></img>
                                                     <div className="card-body">
                                                         <div className="card-body">
-
                                                             <p className="card-text">
-                                                                <h4>Plantinum Package</h4>
-                                                                <h5>70page album</h5>
-                                                                <h5>Out Shoot</h5>
-                                                                <h5>Couple Frame(16*24)</h5>
-                                                                <h5>Signature Board</h5>
-                                                                <h5>highlights photo</h5>
-                                                                <h5>Save the Data(video or Photo)</h5>
-                                                                <h5>Additional per sheet 2500</h5>
+                                                                <center>
+                                                                    <h4>Plantinum Package</h4>
+                                                                    <h5>70page album</h5>
+                                                                    <h5>Out Shoot</h5>
+                                                                    <h5>Couple Frame(16*24)</h5>
+                                                                    <h5>Signature Board</h5>
+                                                                    <h5>highlights photo</h5>
+                                                                    <h5>Save the Data(video or Photo)</h5>
+                                                                    <h5>Additional per sheet 2500</h5>
+                                                                </center>
                                                             </p>
                                                             <br/>
                                                         </div>
