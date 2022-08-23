@@ -45,6 +45,7 @@ import Customer from './UIStructure/Customer'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import AdminDashboard from "./AdminDashboard";
 
 function App() {
   return (
@@ -110,6 +111,7 @@ function App() {
               <Route exact path="/ViewPackagesPurperty" element={ <ViewPackagesPurperty/> } />
               <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
               <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
+              <Route exact path="/AdminDashboard" element={ <AdminDashboard/> } />
           </Routes>
 
 
