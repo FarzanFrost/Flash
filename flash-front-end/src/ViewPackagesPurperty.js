@@ -12,7 +12,7 @@ const Vieweventdetailsforadmin = () => {
     const style1 = {
 
         backgroundColor: '#767676',
-        height:'450px'
+        height:'95px'
     };
 
 
@@ -35,6 +35,7 @@ const Vieweventdetailsforadmin = () => {
                     <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
                         <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
                                 data-bs-toggle="dropdown">
+                            <option value="All">All</option>
                             <option value="All">Wedding</option>
                             <option value="eventname">Birthday</option>
                             <option value="Date">Puperty</option>
