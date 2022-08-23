@@ -17,6 +17,14 @@ const Header = () => {
                         <i className="bi bi-list"></i>
                     </button>
                     <img src={FlashLogo} alt="logo" height="80px" width="80px"/>
+
+                    <li className="nav-item pb-2">
+                        <a href="" className="nav-link text-white " data-bs-toggle="pill">
+                            <i className="bi bi-eye bi me-2"></i>
+                            View Bookings
+                        </a>
+                    </li>
+
                     <a className="nav-item nav-link active  m-3 pb-3 pe-5 ps-5" href="#" >Studio Flash <span className="sr-only"></span></a>
                     <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-5" href="#" >Home <span className="sr-only"></span></a>
                     <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
@@ -24,6 +32,7 @@ const Header = () => {
                     <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
                     <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
                     <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
+
 
 
                 </div>
