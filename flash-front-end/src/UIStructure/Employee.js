@@ -3,7 +3,6 @@ import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import ChangePassword from "../ChangePassword";
 import ViewPhotos from "../ViewPhotos";
-import ViewPackagesBirthday from "../ViewPackagesBirthday";
 import NewEventBooking from "../NewEventBooking";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
 

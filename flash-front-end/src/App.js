@@ -46,6 +46,7 @@ import Manager from "./UIStructure/Manager";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import ViewFiles from "./ViewFiles";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
+import ManagerDashboard from "./ManagerDashboard";
 
 
 function App() {
@@ -111,6 +112,7 @@ function App() {
               <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
               <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
               <Route exact path="/AdminDashboard" element={ <AdminDashboard/> } />
+              <Route exact path="/ManagerDashboard" element={ <ManagerDashboard/> } />
               <Route exact path="/ViewFiles" element={ <ViewFiles/> } />
               <Route exact path="/Folder" element={ <SelectImageContextProviderInterface/> } />
           </Routes>

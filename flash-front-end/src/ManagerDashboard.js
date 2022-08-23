@@ -8,7 +8,7 @@ const ManagerDashboard = () =>{
     return(
         <div className="h-100">
 
-            <div className="container-fluid py-4 bg-info">
+            <div className="container-fluid py-4">
 
                 <div className="btn-toolbar mb-2 mb-2 justify-content-md-end rounded-2">
 
@@ -20,9 +20,9 @@ const ManagerDashboard = () =>{
 
                 <div className="row">  {/*start the row*/}
 
-                    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> {/*start one container*/}
+                    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4 "> {/*start one container*/}
 
-                        <div className="card">
+                        <div className="card shadow rounded-3">
 
                             <div className="card-body p-3">
 
@@ -63,7 +63,7 @@ const ManagerDashboard = () =>{
 
                     <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> {/*start one container*/}
 
-                        <div className="card">
+                        <div className="card shadow rounded-3">
 
                             <div className="card-body p-3">
 
@@ -104,7 +104,7 @@ const ManagerDashboard = () =>{
 
                     <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> {/*start one container*/}
 
-                        <div className="card">
+                        <div className="card shadow rounded-3">
 
                             <div className="card-body p-3">
 
@@ -145,7 +145,7 @@ const ManagerDashboard = () =>{
 
                     <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> {/*start one container*/}
 
-                        <div className="card">
+                        <div className="card shadow rounded-3">
 
                             <div className="card-body p-3">
 
@@ -212,6 +212,66 @@ const ManagerDashboard = () =>{
                         </div>
 
                     </div>
+
+                </div>
+
+                <div className="table-responsive"> {/*table start*/}
+
+                    <table className="table table-striped table-sm text-center">
+
+                        <thead>
+                        <tr>
+                            <th scope="col">Event</th>
+                            <th scope="col">Total Count</th>
+                            <th scope="col">Finish Events</th>
+                            <th scope="col">Pending Events</th>
+                            <th scope="col">Working Employees</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>Wedding</td>
+                            <td>27</td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>56</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wedding</td>
+                            <td>27</td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>56</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wedding</td>
+                            <td>27</td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>56</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wedding</td>
+                            <td>27</td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>56</td>
+                        </tr>
+
+                        <tr>
+                            <td>Wedding</td>
+                            <td>27</td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>56</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
 
                 </div>
 
