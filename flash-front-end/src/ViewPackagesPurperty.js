@@ -74,14 +74,17 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
                                                     <div className="card-body">
                                                         <p className="card-text">
-                                                            <h4>Silver Package</h4>
-                                                            <h5>1 Photographers</h5>
-                                                            <h5>1 Videographers</h5>
-                                                            <h5>70 pages 12X30 AlbumGlass top wood</h5>
-                                                            <h5>1 Signature frame</h5>
-                                                            <h5>1 12x18 frame</h5>
-                                                            <h5>1 Blu-rays</h5>
-                                                            <h5>2 DVD's</h5>
+                                                            <center>
+                                                                <h4>Silver Package</h4>
+                                                                <h5>1 Photographers</h5>
+                                                                <h5>1 Videographers</h5>
+                                                                <h5>70 pages 12X30 AlbumGlass top wood</h5>
+                                                                <h5>1 Signature frame</h5>
+                                                                <h5>1 12x18 frame</h5>
+                                                                <h5>1 Blu-rays</h5>
+                                                                <h5>2 DVD's</h5>
+                                                            </center>
+
                                                             <h5>&nbsp;</h5>
                                                             <h5>&nbsp;</h5>
                                                             <h5>&nbsp;</h5>
@@ -106,17 +109,20 @@ const Vieweventdetailsforadmin = () => {
                                                     <div className="card-body">
                                                     <div className="card-body">
                                                         <p className="card-text">
-                                                            <h4>Gold Package</h4>
-                                                            <h5>2 Photographers</h5>
-                                                            <h5>2 Videographers</h5>
-                                                            <h5>80 pages 12X30 AlbumGlass top wood</h5>
-                                                            <h5>20	pages 8X24 Preshoot album</h5>
-                                                            <h5>1 Signature frame</h5>
-                                                            <h5>100	Thank you cards</h5>
-                                                            <h5>1 12x18 frame</h5>
-                                                            <h5>2 Blu-rays</h5>
-                                                            <h5>2 DVD's</h5>
-                                                            <h5>1 Pen drive</h5>
+                                                            <center>
+                                                                <h4>Gold Package</h4>
+                                                                <h5>2 Photographers</h5>
+                                                                <h5>2 Videographers</h5>
+                                                                <h5>80 pages 12X30 AlbumGlass top wood</h5>
+                                                                <h5>20	pages 8X24 Preshoot album</h5>
+                                                                <h5>1 Signature frame</h5>
+                                                                <h5>100	Thank you cards</h5>
+                                                                <h5>1 12x18 frame</h5>
+                                                                <h5>2 Blu-rays</h5>
+                                                                <h5>2 DVD's</h5>
+                                                                <h5>1 Pen drive</h5>
+                                                            </center>
+
                                                             <h5>&nbsp;</h5>
                                                             <h6>This package includes the following activities:</h6>
                                                             <h5>Full day coverage</h5>
@@ -137,20 +143,22 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280"src={diamondPhoto}></img>
                                                     <div className="card-body">
                                                     <div className="card-body">
-
                                                         <p className="card-text">
-                                                            <h4>Dimand Package</h4>
-                                                            <h5>2 Photographers</h5>
-                                                            <h5>2 Videographers</h5>
-                                                            <h5>120 pages 12X30 AlbumGlass top wood</h5>
-                                                            <h5>40	pages 8X24 Preshoot album</h5>
-                                                            <h5>1 Signature frame</h5>
-                                                            <h5>150	Thank you cards</h5>
-                                                            <h5>2 12x18 frame</h5>
-                                                            <h5>2 Blu-rays</h5>
-                                                            <h5>2 DVD's</h5>
-                                                            <h5>1 Pen drive</h5>
-                                                            <h5>&nbsp;</h5>
+                                                            <center>
+                                                                <h4>Dimand Package</h4>
+                                                                <h5>2 Photographers</h5>
+                                                                <h5>2 Videographers</h5>
+                                                                <h5>120 pages 12X30 AlbumGlass top wood</h5>
+                                                                <h5>40	pages 8X24 Preshoot album</h5>
+                                                                <h5>1 Signature frame</h5>
+                                                                <h5>150	Thank you cards</h5>
+                                                                <h5>2 12x18 frame</h5>
+                                                                <h5>2 Blu-rays</h5>
+                                                                <h5>2 DVD's</h5>
+                                                                <h5>1 Pen drive</h5>
+                                                                <h5>&nbsp;</h5>
+                                                            </center>
+
                                                             <h6>This package includes the following activities:</h6>
                                                             <h5>Full day coverage</h5>
                                                             <h5>Ceremony</h5>
@@ -182,19 +190,21 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="img-fluid" alt="100%x280" src={platinumPhoto}></img>
                                                     <div className="card-body">
                                                         <div className="card-body">
-
                                                             <p className="card-text">
-                                                                <h4>Plantinum Package</h4>
-                                                                <h5>2 Photographers</h5>
-                                                                <h5>2 Videographers</h5>
-                                                                <h5>150 pages 12X30 AlbumGlass top wood</h5>
-                                                                <h5>50	pages 8X24 Preshoot album</h5>
-                                                                <h5>1 Signature frame</h5>
-                                                                <h5>150	Thank you cards</h5>
-                                                                <h5>2 12x18 frame</h5>
-                                                                <h5>2 Blu-rays</h5>
-                                                                <h5>2 DVD's</h5>
-                                                                <h5>1 Pen drive</h5>
+                                                                <center>
+                                                                    <h4>Plantinum Package</h4>
+                                                                    <h5>2 Photographers</h5>
+                                                                    <h5>2 Videographers</h5>
+                                                                    <h5>150 pages 12X30 AlbumGlass top wood</h5>
+                                                                    <h5>50	pages 8X24 Preshoot album</h5>
+                                                                    <h5>1 Signature frame</h5>
+                                                                    <h5>150	Thank you cards</h5>
+                                                                    <h5>2 12x18 frame</h5>
+                                                                    <h5>2 Blu-rays</h5>
+                                                                    <h5>2 DVD's</h5>
+                                                                    <h5>1 Pen drive</h5>
+                                                                </center>
+
                                                                 <h5>&nbsp;</h5>
                                                                 <h6>This package includes the following activities:</h6>
                                                                 <h5>Full day coverage</h5>
