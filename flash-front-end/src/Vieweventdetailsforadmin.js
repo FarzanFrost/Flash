@@ -29,6 +29,7 @@ const Vieweventdetailsforadmin = () => {
 
 
     <div className=" row">
+        <h2 className="text-center mt-3 pb-3">Employee Details</h2>
         <div className="col-md-6">
             <div className="position-relative mx-5 m-2 border-dark border-4" style={{ width: '48rem',left:'16rem'}}>
                 <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput" placeholder="Example input"></input>
