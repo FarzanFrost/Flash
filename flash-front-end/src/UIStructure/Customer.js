@@ -11,7 +11,6 @@ import EventSelection from "../EventSelection";
 import NewEventBooking from "../NewEventBooking";
 import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
-import ViewPackagesBirthday from "../ViewPackagesBirthday";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
 
@@ -58,12 +57,13 @@ const Customer = () => {
                         </button>
                         <img src={FlashLogo} alt="logo" height="80px" width="80px"/>
                         <a className="nav-item nav-link active  m-3 pb-3 pe-5 ps-5" href="#" >Studio Flash <span className="sr-only"></span></a>
-                        <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-5" href="#" >Home <span className="sr-only"></span></a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
+                        <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-5" href="#" > <span className="sr-only"></span></a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#"></a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#"></a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#"></a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">Home</a>
 
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
 
 
