@@ -46,7 +46,7 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="w-100 p-3 pb-0" src={wedding}></img>
                                                     <div className="card-body">
                                                         <div className="text-center">
-                                                            <a href="#" className="btn" style={{...style3}}>Packages</a>
+                                                            <a href="ViewPackages" className="btn" style={{...style3}}>Packages</a>
                                                         </div>
                                                     </div>
                                                 </div>
