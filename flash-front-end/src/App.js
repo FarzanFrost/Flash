@@ -14,7 +14,6 @@ import ViewEventsForCustomer from "./ViewEventsForCustomer";
 import Vieweventdetailsforadmin from "./Vieweventdetailsforadmin";
 import Sample from "./Sample";
 import AddEmployee from "./AddEmployee";
-
 import LandingPage from "./LandingPage";
 import ResetPasswordContextProviderInterface from "./ResetPasswordContextProviderInterface";
 import EditEmployee from "./EditEmployee";
@@ -82,7 +81,7 @@ function App() {
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
               <Route exact path="/Sample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
-
+             
               <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
               <Route exact path="/OldHeader" element={ <OldHeader/> } />
               <Route exact path="/Header" element={ <Header/> } />
