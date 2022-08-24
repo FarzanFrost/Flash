@@ -19,10 +19,10 @@ const Vieweventdetailsforadmin = () => {
 
     return (
 
-        <div style={{...style1}}>
+        <div className="h-100" >
 
-            <center>
-                <div className="col-6">
+            <center style={{...style1}}>
+                <div className="col-6" >
                     <h3 className="mb-2">Files </h3>
                 </div>
             </center>
