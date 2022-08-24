@@ -23,7 +23,7 @@ const MoreDetailsOfEventsForAdmin = () => {
 
     return (
 
-        <div style={{...style1}}>
+        <div>
             <OldHeader/>
 
             <div class="p-5">
@@ -53,62 +53,190 @@ const MoreDetailsOfEventsForAdmin = () => {
                         </div>
 
                     </div>
-
                 </div>
 
+                    <div className="row">
 
-                {/*carousal*/}
-                <div id="carouselExampleCaptions" className="carousel slide m-3" data-bs-ride="false">
+                        <div className="col-md-4 mb-3">
+                            <div className="card border-light border-5 shadow-lg">
+                                <div className="card-body">
 
-                    <div className="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                                className="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                    </div>
+                                    <div className="container">
+                                        <h2 style={{textAlign: "Center"}}>Birthday party</h2>
+                                        <div className="row">
+                                            <div className="col-6 col-sm-4">Booking ID</div>
+                                            <div className="col-6 col-sm-5">47</div>
 
-                    <div className="carousel-inner w-10 " style={{}}>
-                        <div className="carousel-item active">
-                            <div className="col-md-4 mb-3">
-                                <div className="card border-light border-5">
-                                    <div className="card-body">
+                                            <div className="w-100 d-none d-md-block"></div>
 
-                                            <p className="card-text">
-                                                <h5>Booking ID:23</h5>
-                                                <h5>Event Name:Wedding</h5>
-                                                <h5>Customer Name:Lavanesh</h5>
-                                                <h5>Location:Kandy</h5>
-                                                <h5>Package chose:Silver</h5>
-                                                <h5>Total price: Rs.150 000</h5>
-                                                <h5>Review: Best service</h5>
-                                            </p>
+                                            <div className="col-6 col-sm-4">Event Date</div>
+                                            <div className="col-6 col-sm-5">2022-09-01</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Customer</div>
+                                            <div className="col-6 col-sm-5">Prasad</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Package</div>
+                                            <div className="col-6 col-sm-5">Platinum</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Total Price</div>
+                                            <div className="col-6 col-sm-5">Rs.170 000</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Location</div>
+                                            <div className="col-6 col-sm-5">Kandy</div>
+
+                                        </div>
+
                                     </div>
+
+                                    <br/>
+                                    {/*<div className="container shadow p-3  bg-white rounded ">*/}
+                                    {/*    <div className="row">*/}
+                                    {/*        <div className="col-6 col-sm-4">Review</div>*/}
+                                    {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
+                                    {/*    </div>*/}
+
+                                    {/*</div>*/}
+
                                 </div>
+
                             </div>
+
                         </div>
+
+                        <div className="col-md-4 mb-3 shadow-lg">
+                            <div className="card border-light border-5">
+                                <div className="card-body">
+
+                                    <div className="container">
+                                        <h2 style={{textAlign: "Center"}}>Wedding</h2>
+                                        <div className="row">
+                                            <div className="col-6 col-sm-4">Booking ID</div>
+                                            <div className="col-6 col-sm-5">15</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Event Date</div>
+                                            <div className="col-6 col-sm-5">2022-08-07</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Customer</div>
+                                            <div className="col-6 col-sm-5">John</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Package</div>
+                                            <div className="col-6 col-sm-5">Gold</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Total Price</div>
+                                            <div className="col-6 col-sm-5">Rs.200 000</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Location</div>
+                                            <div className="col-6 col-sm-5">Colombo</div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <br/>
+
+                                    {/*<div className="container shadow p-3  bg-white rounded ">*/}
+                                    {/*    <div className="row">*/}
+                                    {/*        <div className="col-6 col-sm-4">Review</div>*/}
+                                    {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
+                                    {/*    </div>*/}
+
+                                    {/*</div>*/}
+
+                                </div>
+
+                                {/*<div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">*/}
+                                {/*    <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Booking</a>*/}
+                                {/*    <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>*/}
+                                {/*</div>*/}
+
+                            </div>
+
+                        </div>
+
+
+                        <div className="col-md-4 mb-3 shadow-lg">
+                            <div className="card border-light border-5">
+                                <div className="card-body">
+
+                                    <div className="container">
+                                        <h2 style={{textAlign: "Center"}}>Birthday party</h2>
+                                        <div className="row">
+                                            <div className="col-6 col-sm-4">Booking ID</div>
+                                            <div className="col-6 col-sm-5">7</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Event Date</div>
+                                            <div className="col-6 col-sm-5">2020-07-01</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Customer</div>
+                                            <div className="col-6 col-sm-5">Jane</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Package</div>
+                                            <div className="col-6 col-sm-5">Platinum</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Total Price</div>
+                                            <div className="col-6 col-sm-5">Rs.170 000</div>
+
+                                            <div className="w-100 d-none d-md-block"></div>
+
+                                            <div className="col-6 col-sm-4">Location</div>
+                                            <div className="col-6 col-sm-5">Mathale</div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <br/>
+                                    {/*<div className="container shadow p-3  bg-white rounded ">*/}
+                                    {/*    <div className="row">*/}
+                                    {/*        <div className="col-6 col-sm-4">Review</div>*/}
+                                    {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
+                                    {/*    </div>*/}
+
+                                    {/*</div>*/}
+
+                                </div>
+
+                                {/*<div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">*/}
+                                {/*    <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Booking</a>*/}
+                                {/*    <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>*/}
+                                {/*</div>*/}
+
+                            </div>
+
+                        </div>
+
                     </div>
-                    {/*End of item*/}
-
-
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                            data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
-                {/*End of carousal*/}
 
             </div>
 
             <OldFooter/>
-
 
         </div>
 
