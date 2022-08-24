@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
@@ -11,13 +11,16 @@ import EventSelection from "../EventSelection";
 import NewEventBooking from "../NewEventBooking";
 import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
+import ViewPackagesBirthday from "../ViewPackagesBirthday";
+import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
-
 
 
 const Customer = () => {
 
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
+
+    const { authenticated , authenticateUser } = useContext( AuthenticationContext )
 
     const showHideSideNav = () => {
 
@@ -35,7 +38,9 @@ const Customer = () => {
 
     const [ contentVisible , setContentVisible ] = useState( 0 )
 
-    return(
+    authenticateUser()
+
+    return  (
 
         <div>
 

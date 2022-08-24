@@ -3,10 +3,13 @@ import {Link} from "react-router-dom";
 import loginPhoto from "./Images/backgroudphotoLogin.jpg";
 import {ReactLinkContext} from "./ContextFiles/ReactLinkContext";
 import validator from "validator";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const Signup = () => {
 
     const { LoginLink } = useContext( ReactLinkContext )
+
+    const { signUp } = useContext( AuthenticationContext )
 
     const [ isPasswordHidden , setIsPasswordHidden ] = useState( true )
 
@@ -37,6 +40,8 @@ const Signup = () => {
     const [ emailStatus , setEmailStatus ] = useState( false )
 
     const [ emailErrorMessage , setEmailErrorMessage ] = useState( '' )
+
+    const [ gender , setGender ] = useState( null )
 
     const showHidePassword = () => {
 
@@ -100,6 +105,14 @@ const Signup = () => {
             setEmailStatus(false)
             setEmailErrorMessage( 'Invalid email' )
         }
+
+    }
+
+    const selectGender = ( event ) => { setGender( event.target.value ) }
+
+    const createUser = () => {
+
+        signUp( { email , password , firstName , lastName , nicNumber , contactNumber , gender } )
 
     }
 
@@ -218,10 +231,10 @@ const Signup = () => {
                                                         Select Gender
 
                                                     </span>
-                                                        <input type="radio" className="btn-check" name="options" id="genderMale" autoComplete="off"/>
+                                                        <input type="radio" className="btn-check" name="options" id="genderMale" autoComplete="off" value="male" onChange={ selectGender }/>
                                                         <label htmlFor="genderMale" className="btn btn-outline-dark"> Male </label>
 
-                                                        <input type="radio" className="btn-check" name="options" id="genderFemale" autoComplete="off"/>
+                                                        <input type="radio" className="btn-check" name="options" id="genderFemale" autoComplete="off" value="female" onChange={ selectGender }/>
                                                         <label htmlFor="genderFemale" className="btn btn-outline-dark"> Female </label>
 
                                                     </div>
@@ -347,7 +360,7 @@ const Signup = () => {
 
                                                         <div className="d-flex align-items-center justify-content-center pb-4">
 
-                                                            <button className="btn btn-dark btn-block" type="submit">
+                                                            <button className="btn btn-dark btn-block" type="button" onClick={ createUser }>
 
                                                                 Signup
 

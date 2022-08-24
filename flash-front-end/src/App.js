@@ -39,6 +39,7 @@ import Admin from './UIStructure/Admin'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import CustomerAuthenticationContextProviderInterface from "./UIStructure/CustomerAuthenticationContextProviderInterface";
 import Calender from "./Calender";
 import AdminDashboard from "./AdminDashboard";
 import Employee from "./UIStructure/Employee";
@@ -49,7 +50,6 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import ManagerDashboard from "./ManagerDashboard";
 import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
-
 
 
 function App() {
@@ -93,6 +93,7 @@ function App() {
               <Route exact path="/MoreDetailsOfEventsForAdmin" element={ <MoreDetailsOfEventsForAdmin/> } />
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
+              <Route exact path="/Customer" element={ <CustomerAuthenticationContextProviderInterface/> } />
               <Route exact path="/Customer" element={ <Customer/> } />
               <Route exact path="/Employee" element={ <Employee/> } />
               <Route exact path="/Manager" element={ <Manager/> } />
