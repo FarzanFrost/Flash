@@ -40,6 +40,7 @@ import Admin from './UIStructure/Admin'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import Calender from "./Calender";
 import AdminDashboard from "./AdminDashboard";
 import Employee from "./UIStructure/Employee";
 import Manager from "./UIStructure/Manager";
@@ -47,6 +48,7 @@ import SelectImageContextProviderInterface from "./SelectImageContextProviderInt
 import ViewFiles from "./ViewFiles";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import ManagerDashboard from "./ManagerDashboard";
+
 
 
 function App() {
@@ -111,6 +113,7 @@ function App() {
               <Route exact path="/ViewPackages" element={ <ViewPackagesPurperty/> } />
               <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
               <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
+              <Route exact path="/Calender" element={ <Calender/> } />
               <Route exact path="/AdminDashboard" element={ <AdminDashboard/> } />
               <Route exact path="/ManagerDashboard" element={ <ManagerDashboard/> } />
               <Route exact path="/ViewFiles" element={ <ViewFiles/> } />
