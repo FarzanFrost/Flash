@@ -11,6 +11,7 @@ import EventSelection from "../EventSelection";
 import NewEventBooking from "../NewEventBooking";
 import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
+import ViewPackagesPurperty from "../ViewPackagesPurperty";
 
 
 
@@ -122,6 +123,13 @@ const Customer = () => {
                                     </a>
                                 </li>
 
+                                <li className="nav-item pb-2">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 5 ) }>
+                                        <i className="bi bi-person bi me-2"></i>
+                                        Profile
+                                    </a>
+                                </li>
+
                             </ul>
 
                         </div>
@@ -143,6 +151,7 @@ const Customer = () => {
                     {/*<SelectImageContextProviderInterface/>*/ }{/*no need*/}
                     { contentVisible === 2 && <ViewEventsForCustomer/>}{/*change event UI*/}{/*view books*/}
                     {/*<ViewPackagesBirthday/>*/}{/*no need*/}
+                    {contentVisible === 5 && <ViewPackagesPurperty/>}
 
 
 

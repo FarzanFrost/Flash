@@ -7,7 +7,7 @@ import prizegiving from './Images/prizegiving.jpg'
 import pubertyceremony from './Images/puberty-ceremony.jpg'
 import housewarming from './Images/housewarming.jpg'
 import gettogether from './Images/gettogether.jpg'
-const Vieweventdetailsforadmin = () => {
+const EventSelection = () => {
 
     const style1 = {
 
@@ -23,18 +23,17 @@ const Vieweventdetailsforadmin = () => {
 
     return (
 
-        <div style={{...style1}}>
+        <div className="h-100" >
 
-            <center>
-                <div className="col-6">
+            <center style={{...style1}}>
+                <div className="col-6" >
                     <h1 className="mb-2">Events</h1>
                 </div>
             </center>
 
-            <section className="pt-5 pb-5">
+            <section className=" pt-5 pb-5">
                 <div className=" container">
                     <div className="row">
-
                         <div className="col-12">
                             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                                 <div className="carousel-inner">
@@ -46,7 +45,7 @@ const Vieweventdetailsforadmin = () => {
                                                     <img className="w-100 p-3 pb-0" src={wedding}></img>
                                                     <div className="card-body">
                                                         <div className="text-center">
-                                                            <a href="#" className="btn" style={{...style3}}>Packages</a>
+                                                            <a href="ViewPackages" className="btn" style={{...style3}}>Packages</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -115,10 +114,6 @@ const Vieweventdetailsforadmin = () => {
                     </div>
                 </div>
             </section>
-
-
-
-
         </div>
 
     )
@@ -128,4 +123,4 @@ const Vieweventdetailsforadmin = () => {
 
 
 
-export default Vieweventdetailsforadmin
+export default EventSelection

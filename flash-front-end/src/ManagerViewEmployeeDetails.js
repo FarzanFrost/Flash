@@ -2,20 +2,20 @@ import  React from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
+import { useState } from 'react';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 
 
 const ManagerViewEmployeeDetails = () => {
 
-    const NewEmployee = () => {
 
-    }
+    const style3 = {
 
-    return (
-        <div className='container mt-4 '>
-            <div className='bg-image'   >
-                <img className="h-auto w-100" src={ loginPhoto } alt="Camera"/>
-
-                <div  style={ { position : "absolute" , top : 0 } }>
+        backgroundColor:'black',
+        color:'white'
+    };
 
 
                     <div className=" row ">
@@ -26,40 +26,66 @@ const ManagerViewEmployeeDetails = () => {
                         </div>
 
 
-                        <div className="col-md-6 mt-5" >
+    const [show, setShow] = useState(false);
 
-                            <div className="dropdown position-relative mx-5 m-2" style={{ left:'16rem'}}>
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const NewEmployee = () => {
 
-                                <select class="btn btn-dark dropdown-toggle" type="button" id="Filter"
-                                        data-bs-toggle="dropdown">
-                                    <option value="All">All</option>
-                                    <option value="Firstname">Firstname</option>
-                                    <option value="Lastname">Lastname</option>
-                                    <option value="NIC">NIC</option>
-                                    <option value="Gender">Gender</option>
-                                    <option value="Address">Address</option>
-                                    <option value="Contact No">Contact No</option>
-                                    <option value="Type">Type</option>
-                                    <option value="Salary">Salary</option>
-                                    <option value="Emails">Emails</option>
 
-                                </select>
+    }
+
+    return (
+        <div className="h-100">
+
+            <div className='container'>
+
+                <div className="pt-4" >
+
+                    <div className="card border-dark border-0 rounded-5 shadow mt-3 mx-5 " style={{backgroundColor: '#d7d7d7'}}>
+
+                        <h2 className="text-center mt-3" >Employee Details</h2>
+
+                        <div className="row">
+                            <div className="col-xs-8 col-xs-offset-2">
+                                <div className="input-group">
+                                    <div className="input-group-btn search-panel">
+
+                                        <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"
+                                                data-bs-toggle="dropdown">
+                                            <option value="All">All</option>
+                                            <option value="Firstname">Firstname</option>
+                                            <option value="Lastname">Lastname</option>
+                                            <option value="NIC">NIC</option>
+                                            <option value="Gender">Gender</option>
+                                            <option value="Address">Address</option>
+                                            <option value="Contact No">Contact No</option>
+                                            <option value="Type">Type</option>
+                                            <option value="Salary">Salary</option>
+                                            <option value="Emails">Emails</option>
+
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="search_param" value="all" id="search_param"></input>
+                                    <input type="text" className="form-control" name="x"
+                                           placeholder="Search term..."></input>
+                                    <span className="input-group-btn">
+                    <button className="btn btn-default" type="button"><span
+                        className="glyphicon glyphicon-search"></span></button>
+                </span>
+                                </div>
                             </div>
-
                         </div>
 
-                    </div>
-
-                    <div className="d-flex align-items-center justify-content-end px-xl-5 pt-3">
-                        <button onClick={ NewEmployee }
-                                className="btn btn-dark btn-block">
-                            <i className="bi bi-plus"></i> Add Employee
-                        </button>
-                    </div>
 
 
-                    <div className="card bg-light border-dark border-4 mt-3 mx-5" style={{width: '75rem',height:'40rem'}}>
-                        <div className="card-body ">
+                        <div className="card-body pb-5">
+<div className="text-end">
+    <a href="#" className="btn" style={{...style3}} >Add Employee</a><br/>
+
+</div>
+                        <br/>
+
                             <div className="table-responsive ">
                                 <table className="table table-dark table-striped align-middle">
 
@@ -87,7 +113,26 @@ const ManagerViewEmployeeDetails = () => {
                                         <th scope="col">Male</th>
                                         <th scope="col">0774053110</th>
                                         <th scope="col">Photographer</th>
-                                        <th scope="col"><button className="btn btn-outline-light btn-block">More</button></th>
+                                        <th scope="col">
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Review</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
+                                        </th>
 
 
                                     </tr>
@@ -98,7 +143,26 @@ const ManagerViewEmployeeDetails = () => {
                                         <th scope="col">Male</th>
                                         <th scope="col">0774053110</th>
                                         <th scope="col">Photographer</th>
-                                        <th scope="col"><button className="btn btn-outline-light btn-block">More</button></th>
+                                        <th scope="col">
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Review</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
+                                        </th>
 
                                     </tr>
                                     <tr>
@@ -108,17 +172,40 @@ const ManagerViewEmployeeDetails = () => {
                                         <th scope="col">Male</th>
                                         <th scope="col">0774053110</th>
                                         <th scope="col">Photographer</th>
-                                        <th scope="col"><button className="btn btn-outline-light btn-block">More</button></th>
+                                        <th scope="col">
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Review</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
+                                        </th>
 
                                     </tr>
                                     </tbody>
                                 </table>
                             </div>
 
-                        </div>
+                        </div> {/*end table*/}
+
+
                     </div>
                 </div>
+
             </div>
+
         </div>
 
 
