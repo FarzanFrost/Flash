@@ -11,6 +11,11 @@ import Modal from "react-bootstrap/Modal";
 const ManagerViewEmployeeDetails = () => {
 
 
+    const style3 = {
+
+        backgroundColor:'black',
+        color:'white'
+    };
 
 
     const [show, setShow] = useState(false);
@@ -66,10 +71,13 @@ const ManagerViewEmployeeDetails = () => {
 
 
 
-
-
-
                         <div className="card-body pb-5">
+<div className="text-end">
+    <a href="#" className="btn" style={{...style3}} >Add Employee</a><br/>
+
+</div>
+                        <br/>
+
                             <div className="table-responsive ">
                                 <table className="table table-dark table-striped align-middle">
 
