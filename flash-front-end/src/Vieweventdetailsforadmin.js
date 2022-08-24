@@ -29,6 +29,7 @@ const Vieweventdetailsforadmin = () => {
 
 
     <div className=" row">
+        <h2 className="text-center mt-3 pb-3">Employee Details</h2>
         <div className="col-md-6">
             <div className="position-relative mx-5 m-2 border-dark border-4" style={{ width: '48rem',left:'16rem'}}>
                 <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput" placeholder="Example input"></input>
@@ -61,11 +62,7 @@ const Vieweventdetailsforadmin = () => {
                 {/*    <h3 className="mb-2" >Event details </h3>*/}
                 {/*</div>*/}
 
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                        data-bs-slide="prev" style={{ height:'50rem'}}>
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                </button>
+
                 <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
                         data-bs-slide="next" style={{ height:'50rem'}}>
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>

@@ -15,14 +15,38 @@ const Vieweventdetailsforadmin = () => {
 
     return (
 
-        <div style={{...style1}}>
-            <section className="pt-5 pb-5">
+        <div className="h-100" >
+<div style={{...style1}}>
+            <div className=" row" >
+                <div className="col-md-6">
+                    <div className="position-relative mx-5 m-2 border-dark border-4"
+                         style={{width: '44rem', left: '10rem'}}>
+                        <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
+                               placeholder="Example input"></input>
+                    </div>
+                </div>
+
+
+                <div className="col-md-6">
+                    <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
+                        <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
+                                data-bs-toggle="dropdown">
+                            <option value="All">All</option>
+                            <option value="Date">Date</option>
+                            <option value="Size">Size</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <section className="pt-9 pb-4">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
                             <form method="post" action="#" id="#">
                                 <div className="form-group files">
-                                    <label>Upload Your Images </label>
+                                    <center><label>Upload Your Images</label></center>
                                     <input type="file" className="form-control" multiple=""></input>
                                 </div>
                             </form>
@@ -30,12 +54,12 @@ const Vieweventdetailsforadmin = () => {
                     </div>
                 </div>
             </section>
-
+</div>
 
             <section className="pt-5 pb-5">
                 <div className=" container">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-6 pt-3 pb-0">
                             <h3 className="mb-2">Upload Photos </h3>
                         </div>
 

@@ -23,80 +23,168 @@ const ViewEventsForCustomer = () => {
 
     return (
 
-        <div style={{...style1}}>
+        // <div style={{...style1}}>
 
             <div class="p-5">
 
                 <h2 className="m-3 p-2" style={{textAlign: "Center"}}>View All Booked Events</h2>
 
-                {/*carousal*/}
-                <div id="carouselExampleCaptions" className="carousel slide m-3" data-bs-ride="false">
+                <div className="row">
 
-                            <div className="col-md-4 mb-3">
-                                <div className="card border-light border-5">
-                                    <div className="card-body">
+                    <div className="col-md-4 mb-3">
+                        <div className="card border-light border-5 shadow-lg">
+                            <div className="card-body">
 
-                                        <div className="container">
-                                            <div className="row">
-                                                <div className="col-6 col-sm-4">Booking ID</div>
-                                                <div className="col-6 col-sm-6">14</div>
-
-
-                                                <div className="w-100 d-none d-md-block"></div>
-
-                                                <div className="col-6 col-sm-4">Event Date</div>
-                                                <div className="col-6 col-sm-6">2021-8-12</div>
-
-                                                <div className="w-100 d-none d-md-block"></div>
-
-                                                <div className="col-6 col-sm-4">Event Name</div>
-                                                <div className="col-6 col-sm-6">Wedding</div>
-
-                                                <div className="w-100 d-none d-md-block"></div>
-
-                                                <div className="col-6 col-sm-4">Package choosed</div>
-                                                <div className="col-6 col-sm-6">Silver</div>
-
-                                                <div className="w-100 d-none d-md-block"></div>
-
-                                                <div className="col-6 col-sm-4">Total Price</div>
-                                                <div className="col-6 col-sm-6">Rs.150 000</div>
-
-                                            </div>
-                                            <a href="#" className="btn bg-dark text-light" >Edit Booking</a>
-                                        </div>
+                                <div className="container">
+                                    <h2 style={{textAlign: "Center"}}>Birthday party</h2>
+                                    <div className="row">
+                                        <div className="col-6 col-sm-4">Booking ID</div>
+                                        <div className="col-6 col-sm-5">47</div>
 
 
-                                            {/*<p className="card-text">*/}
-                                                {/*<h5>Booking ID:14</h5>*/}
-                                                {/*<h5>Event Date:2021-8-12</h5>*/}
-                                                {/*<h5>Event Name:Wedding</h5>*/}
-                                                {/*<h5>Package chose:Silver</h5>*/}
-                                                {/*<h5>Total price: Rs.150 000</h5>*/}
+                                        <div className="w-100 d-none d-md-block"></div>
 
+                                        <div className="col-6 col-sm-4">Event Date</div>
+                                        <div className="col-6 col-sm-5">2022-09-01</div>
 
+                                        <div className="w-100 d-none d-md-block"></div>
 
-                                        <br/>
-                                                <div class="container">
-                                                        <div className="row">
-                                                            <div className="col-6 col-sm-4">Review</div>
-                                                            <div className="col-6 col-sm-6">Best Service</div>
-                                                        </div>
-                                                            <a href="#" className="btn bg-dark text-light"  >Edit Review</a><br/><br/>
+                                        <div className="col-6 col-sm-4">Package</div>
+                                        <div className="col-6 col-sm-5">Platinum</div>
 
-                                                </div>
-                                            {/*</p>*/}
+                                        <div className="w-100 d-none d-md-block"></div>
 
+                                        <div className="col-6 col-sm-4">Total Price</div>
+                                        <div className="col-6 col-sm-5">Rs.170 000</div>
 
                                     </div>
+
                                 </div>
+
+                                <br/>
+                                {/*<div className="container shadow p-3  bg-white rounded ">*/}
+                                {/*    <div className="row">*/}
+                                {/*        <div className="col-6 col-sm-4">Review</div>*/}
+                                {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
+                                {/*    </div>*/}
+
+                                {/*</div>*/}
+
                             </div>
 
-                </div>
+                            <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
+                            <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div className="col-md-4 mb-3 shadow-lg">
+                        <div className="card border-light border-5">
+                            <div className="card-body">
+
+                                <div className="container">
+                                    <h2 style={{textAlign: "Center"}}>Wedding</h2>
+                                    <div className="row">
+                                        <div className="col-6 col-sm-4">Booking ID</div>
+                                        <div className="col-6 col-sm-5">15</div>
+
+
+                                        <div className="w-100 d-none d-md-block"></div>
+
+                                        <div className="col-6 col-sm-4">Event Date</div>
+                                        <div className="col-6 col-sm-5">2022-08-07</div>
+
+                                        <div className="w-100 d-none d-md-block"></div>
+
+                                        <div className="col-6 col-sm-4">Package</div>
+                                        <div className="col-6 col-sm-5">Gold</div>
+
+                                        <div className="w-100 d-none d-md-block"></div>
+
+                                        <div className="col-6 col-sm-4">Total Price</div>
+                                        <div className="col-6 col-sm-5">Rs.250 000</div>
+
+                                    </div>
+
+                                </div>
+
+                                <br/>
+                                <div className="container shadow p-3  bg-white rounded ">
+                                    <div className="row">
+                                        <div className="col-6 col-sm-4">Review</div>
+                                        <div className="col-6 col-sm-6">Best quality</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
+                                <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
+                                <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div className="col-md-4 mb-3 shadow-lg">
+                        <div className="card border-light border-5">
+                            <div className="card-body">
+
+                                <div className="container">
+                                    <h2 style={{textAlign: "Center"}}>Birthday party</h2>
+                                    <div className="row">
+                                        <div className="col-6 col-sm-4">Booking ID</div>
+                                        <div className="col-6 col-sm-5">7</div>
+
+
+                                        <div className="w-100 d-none d-md-block"></div>
+
+                                        <div className="col-6 col-sm-4">Event Date</div>
+                                        <div className="col-6 col-sm-5">2020-07-16</div>
+
+                                        <div className="w-100 d-none d-md-block"></div>
+
+                                        <div className="col-6 col-sm-4">Package</div>
+                                        <div className="col-6 col-sm-5">Silver</div>
+
+                                        <div className="w-100 d-none d-md-block"></div>
+
+                                        <div className="col-6 col-sm-4">Total Price</div>
+                                        <div className="col-6 col-sm-5">Rs.100 000</div>
+
+                                    </div>
+
+                                </div>
+
+                                <br/>
+                                <div className="container shadow p-3  bg-white rounded ">
+                                    <div className="row">
+                                        <div className="col-6 col-sm-4">Review</div>
+                                        <div className="col-6 col-sm-6">Best quality service in fair price</div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
+                                <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
+                                <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
             </div>
-
-    </div>
+            </div>
+    // </div>
 
     )
 }
