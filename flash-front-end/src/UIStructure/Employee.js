@@ -8,6 +8,7 @@ import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import EmployeeWorkView from "../EmployeeWorkView";
 import ViewFiles from "../ViewFiles";
 import Calender from "../Calender";
+import EventSelection from "../EventSelection";
 
 
 const Employee = () => {
@@ -129,7 +130,7 @@ const Employee = () => {
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
                     {/*<ViewPackagesBirthday/>*/} {/*want to change this ui*/}
-                    { contentVisible === 0 && <ViewPackagesPurperty/>}{/*events*/}
+                    { contentVisible === 0 && <EventSelection/>}{/*events*/}
                     { contentVisible === 1 && <EmployeeWorkView/>}{/*events*/}
                     { contentVisible === 2 && <Calender/>}{/*events*/}
                     { contentVisible === 3 && <ViewFiles/>}{/*events*/}
