@@ -1,17 +1,22 @@
 import React from 'react'
 import ReactLinkContextProvider from './ContextFiles/ReactLinkContext'
 import Signup from "./Signup";
+import AuthenticationContextProvider from "./ContextFiles/Authentication/AuthenticationContextProvider";
 const SignContextProviderInterface = () => {
 
     return(
 
         <div>
 
-            <ReactLinkContextProvider>
+            <AuthenticationContextProvider>
 
-                <Signup/>
+                <ReactLinkContextProvider>
 
-            </ReactLinkContextProvider>
+                    <Signup/>
+
+                </ReactLinkContextProvider>
+
+            </AuthenticationContextProvider>
 
 
         </div>

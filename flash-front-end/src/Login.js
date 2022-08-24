@@ -20,7 +20,7 @@ const Login = () => {
 
     const [ password , setPassword ] = useState( '' )
 
-    const username = 'in28minutes';
+    // const username = 'in28minutes';
 
     const showHidePassword = () => {
 
@@ -139,7 +139,7 @@ const Login = () => {
 
                                                         <div className="d-flex align-items-center justify-content-center pb-4">
 
-                                                            <button className="btn btn-dark btn-block" type="button" onClick={ () => login( username , password ) }>
+                                                            <button className="btn btn-dark btn-block" type="button" onClick={ () => login( email , password ) }>
 
                                                                 Login
 
