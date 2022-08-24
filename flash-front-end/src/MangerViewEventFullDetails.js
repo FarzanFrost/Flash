@@ -3,86 +3,189 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 
 
 const ManagerViewEventFullDetails = () => {
 
-
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const style3 = {
 
         backgroundColor:'black',
         color:'white'
     };
+
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const NewEmployee = () => {
+
+
+    }
+
     return (
-        <div className='container mt-4 '>
-            <div className='bg-image'   >
-                <img className="mh-100 w-100" src={ loginPhoto } alt="Camera"/>
+        <div className="h-100">
 
-                <div  style={ { position : "absolute" , top : 0 } }>
+            <div className='container'>
 
-                    <div className='container mt-5 align-items-center'>
-                    <div className="row mx-4 my-xxl-5">
-                        <div className="col-sm-6 ">
-                            <div className="card border-dark border-5 rounded-3"  style={{width: '30rem', height:'20rem'}}>
-                                <div className="card-body">
-                                    <h5 className="card-title text-center">Event details</h5>
-                                    <p className="card-text">
-                                        <h4>Event Name:Birthday</h4>
-                                        <h4>Event Date</h4>
-                                    </p>
+                <div className="pt-4" >
 
+                    <div className="card border-dark border-0 rounded-5 shadow mt-3 mx-5 " style={{backgroundColor: '#d7d7d7'}}>
+
+                        <h2 className="text-center mt-3" >Event Details</h2>
+
+                        <div className="row">
+                            <div className="col-xs-8 col-xs-offset-2">
+                                <div className="input-group">
+                                    <div className="input-group-btn search-panel">
+
+                                        <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"
+                                                data-bs-toggle="dropdown">
+                                            <option value="All">All</option>
+                                            <option value="Wedding">Event Id</option>
+                                            <option value="Birthday">Event</option>
+                                            <option value="Puperty">Date</option>
+                                            <option value="Gettogether">Booking Date</option>
+                                            <option value="Housewarming">status</option>
+                                            <option value="PrizeGiving">More</option>
+
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="search_param" value="all" id="search_param"></input>
+                                    <input type="text" className="form-control" name="x"
+                                           placeholder="Search term..."></input>
+                                    <span className="input-group-btn">
+                    <button className="btn btn-default" type="button"><span
+                        className="glyphicon glyphicon-search"></span></button>
+                </span>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-sm-6">
-                            <div className="card border-dark border-5 rounded-3"  style={{width: '40rem', height:'20rem'}}>
-                                <div className="card-body">
-                                    <h5 className="card-title text-center">Assign Employee Details</h5>
 
-                                    <p className="card-text">
-                                        <h4>Employee 1</h4>
-                                        <h4>Employee 2</h4>
-                                        <h4>Employee 3</h4>
-                                    </p>
-                                    <Button className="align-items-end"  variant="dark " onClick={handleShow}>
-                                        Delete
-                                    </Button>
-`
-                                    <Modal show={show} onHide={handleClose}>
-                                        <Modal.Header closeButton>
-                                            <Modal.Title>Delete</Modal.Title>
-                                        </Modal.Header>
-                                        <Modal.Body>Do you want to delete this event details</Modal.Body>
-                                        <Modal.Footer>
-                                            <Button variant="dark" onClick={handleClose}>
-                                             Delete
+
+
+                        <div className="card-body pb-5">
+
+                            <div className="table-responsive ">
+                                <table className="table table-dark table-striped align-middle">
+
+                                    <thead className="align-middle">
+
+                                    {/*<thead>*/}
+
+                                    <tr>
+                                        <th scope="col">Event Id</th>
+                                        <th scope="col">Event</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Booking Date</th>
+                                        <th scope="col">status</th>
+                                        <th scope="col-2">More</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="col">E01</th>
+                                        <th scope="col">Birthday</th>
+                                        <th scope="col">2022-10-26</th>
+                                        <th scope="col">2022-11-18</th>
+                                        <th scope="col">Pending</th>
+
+                                        <th scope="col">
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
                                             </Button>
-                                            <Button variant="dark" onClick={handleClose}>
-                                                Cancel
+
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Event full Details</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
+                                        </th>
+
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">E01</th>
+                                        <th scope="col">Birthday</th>
+                                        <th scope="col">2022-10-26</th>
+                                        <th scope="col">2022-11-18</th>
+                                        <th scope="col">Pending</th>
+                                        <th scope="col">
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
                                             </Button>
-                                        </Modal.Footer>
-                                    </Modal>
 
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Event Full Details</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>Details</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
+                                        </th>
 
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">E01</th>
+                                        <th scope="col">Birthday</th>
+                                        <th scope="col">2022-10-26</th>
+                                        <th scope="col">2022-11-18</th>
+                                        <th scope="col">Pending</th>
+                                        <th scope="col">
+                                            <Button variant="light" onClick={handleShow}>
+                                                Details
+                                            </Button>
 
-                                </div>
+                                            <Modal show={show} onHide={handleClose}>
+                                                <Modal.Header closeButton>
+                                                    <Modal.Title>Event Full Details</Modal.Title>
+                                                </Modal.Header>
+                                                <Modal.Body>Details...</Modal.Body>
+                                                <Modal.Footer>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        Delete Review
+                                                    </Button>
+                                                    <Button variant="dark" onClick={handleClose}>
+                                                        close
+                                                    </Button>
+                                                </Modal.Footer>
+                                            </Modal>
+                                        </th>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                        </div>
+
+                        </div> {/*end table*/}
+
+
                     </div>
+                </div>
 
-                    </div>
-
-
-                            </div>
-
-                        </div>
+            </div>
 
         </div>
 

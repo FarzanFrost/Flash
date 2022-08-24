@@ -151,7 +151,7 @@ const Manager = () => {
                     {/*<EditPackage/>*/} {/*no need*/}
                     { contentVisible === 6 && <ManagerViewAllReviews/>} {/*reviews*/}
                     { contentVisible === 5 && <ManagerViewEmployeeDetails/>}{/*employee details*/} {/*want to add some options in uis*/}
-                    { contentVisible === 3 && <ManagerViewEmployeeDetails/>} {/*events*/}
+                    { contentVisible === 3 && <ManagerViewEventFullDetails/>} {/*events*/}
                     {/*<NewPackage/>*/}{/*no need*/}{/*want to do view packages page for manager*/}
                     { contentVisible === 1 && <ViewPackagesPurperty/>}{/*packages*/}
 

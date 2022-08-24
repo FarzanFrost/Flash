@@ -18,14 +18,6 @@ const ManagerViewEmployeeDetails = () => {
     };
 
 
-                    <div className=" row ">
-                        <div className="col-md-6 mt-5">
-                            <div className="position-relative mx-5 m-2 h-100">
-                                <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput" placeholder="Example input"></input>
-                            </div>
-                        </div>
-
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
