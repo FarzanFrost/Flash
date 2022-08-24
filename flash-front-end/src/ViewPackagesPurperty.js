@@ -28,7 +28,7 @@ const Vieweventdetailsforadmin = () => {
 
             <div className=" row">
                 <div className="col-md-6">
-                    <div className="position-relative mx-5 m-2 border-dark border-4"
+                    <div className=" mx-5 m-2 border-dark border-4"
                          style={{width: '48rem', left: '16rem'}}>
                         <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
                                placeholder="Example input"></input>
@@ -55,12 +55,8 @@ const Vieweventdetailsforadmin = () => {
 
 
             <section className="pt-6 pb-5">
-                <div className=" container">
+                <div className=" container ">
                     <div className="row">
-
-
-
-
 
 
                         <div className="col-12">
