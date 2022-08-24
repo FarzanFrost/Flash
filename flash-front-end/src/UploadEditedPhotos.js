@@ -15,12 +15,12 @@ const Vieweventdetailsforadmin = () => {
 
     return (
 
-        <div style={{...style1}}>
-
-            <div className=" row">
+        <div className="h-100" >
+<div style={{...style1}}>
+            <div className=" row" >
                 <div className="col-md-6">
                     <div className="position-relative mx-5 m-2 border-dark border-4"
-                         style={{width: '48rem', left: '16rem'}}>
+                         style={{width: '44rem', left: '10rem'}}>
                         <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
                                placeholder="Example input"></input>
                     </div>
@@ -40,7 +40,7 @@ const Vieweventdetailsforadmin = () => {
 
             </div>
 
-            <section className="pt-5 pb-5">
+            <section className="pt-9 pb-4">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -54,12 +54,12 @@ const Vieweventdetailsforadmin = () => {
                     </div>
                 </div>
             </section>
-
+</div>
 
             <section className="pt-5 pb-5">
                 <div className=" container">
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-6 pt-3 pb-0">
                             <h3 className="mb-2">Upload Photos </h3>
                         </div>
 
