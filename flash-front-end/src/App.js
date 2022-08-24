@@ -48,6 +48,7 @@ import SelectImageContextProviderInterface from "./SelectImageContextProviderInt
 import ViewFiles from "./ViewFiles";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import ManagerDashboard from "./ManagerDashboard";
+import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
 
 
@@ -119,6 +120,7 @@ function App() {
               <Route exact path="/ManagerDashboard" element={ <ManagerDashboard/> } />
               <Route exact path="/ViewFiles" element={ <ViewFiles/> } />
               <Route exact path="/Folder" element={ <SelectImageContextProviderInterface/> } />
+              <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
               <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
           </Routes>
 

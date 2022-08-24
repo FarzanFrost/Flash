@@ -3,6 +3,7 @@ import employee from './Images/employee logo.png'
 import client from './Images/client logo.jpg'
 import event from './Images/event logo.png'
 import income from './Images/income logo.jpg'
+import pic from "./Images/graph.jpg";
 
 const ManagerDashboard = () =>{
     return(
@@ -202,8 +203,10 @@ const ManagerDashboard = () =>{
 
                                 <div className="chart">
 
-                                    <canvas id="chart-line" className="my-4 w-100 chartjs-render-monitor"
-                                            style={{height: "375px", width: "669px", display: "block", boxSizing: "border-box" }}/>
+                                    {/*<canvas id="chart-line" className="my-4 w-100 chartjs-render-monitor"*/}
+                                    {/*        style={{height: "375px", width: "669px", display: "block", boxSizing: "border-box" }}/>*/}
+
+                                    <img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>
 
                                 </div>
 

@@ -5,6 +5,8 @@ import MoreDetailsOfEventsForAdmin from "../MoreDetailsOfEventsForAdmin";
 import Vieweventdetailsforadmin from "../Vieweventdetailsforadmin";
 import AdminViewAllReviews from "../AdminViewAllReviews";
 import AdminViewEmployeeDetailspage from "../AdminViewEmployeeDetailspage";
+import ManagerDashboard from "../ManagerDashboard";
+import AdminDashboard from "../AdminDashboard";
 
 
 const Customer = () => {
@@ -80,41 +82,47 @@ const Customer = () => {
                             <hr />
 
                             <ul className="nav nav-pills flex-column mb-auto">
-
                                 <li className="nav-item pb-2">
                                     <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
-                                        <i className="bi bi-grid bi me-2"></i>
-                                        Events
+                                        <i className="bi bi-speedometer2 bi me-2"></i>
+                                        Dashboard
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
-                                        <i className="bi bi-window-desktop bi me-2"></i>
-                                        Book Here
+                                    <a href="" className="nav-link text-white"  data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
+                                        <i className="bi bi-grid bi me-2"></i>
+                                        Event
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
                                     <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
-                                        <i className="bi bi-window-desktop bi me-2"></i>
-                                        View Bookings
+                                        <i className="bi bi-eye bi me-2"></i>
+                                        Reviews
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
                                     <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
-                                        <i className="bi bi-chat-dots bi me-2"></i>
-                                        Post Reviews
+                                        <i className="bi bi-people-fill bi me-2"></i>
+                                        Employee Details
                                     </a>
                                 </li>
 
-                                <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>
-                                        <i className="bi bi-person bi me-2"></i>
-                                        Profile
-                                    </a>
-                                </li>
+                                {/*<li className="nav-item pb-2">*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>*/}
+                                {/*        <i className="bi bi-chat-dots bi me-2"></i>*/}
+                                {/*        Post Reviews*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
+
+                                {/*<li className="nav-item pb-2">*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>*/}
+                                {/*        <i className="bi bi-person bi me-2"></i>*/}
+                                {/*        Profile*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
 
                             </ul>
 
@@ -126,8 +134,12 @@ const Customer = () => {
                 {/*side nav ends*/}
 
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
-                    <Vieweventdetailsforadmin/>
-                    <MoreDetailsOfEventsForAdmin/>
+                    { contentVisible === 0 && <AdminDashboard/>}
+                    { contentVisible === 1 && <Vieweventdetailsforadmin/>}
+                    { contentVisible === 2 && <AdminViewAllReviews/>}
+                    { contentVisible === 3 && <AdminViewEmployeeDetailspage/>}
+                    {/*<Vieweventdetailsforadmin/>*/}
+                    {/*<MoreDetailsOfEventsForAdmin/>*/}
                 </div>
 
             </div>
