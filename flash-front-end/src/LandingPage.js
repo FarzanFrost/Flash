@@ -10,7 +10,7 @@ import FlashLogo from './Images/FlashLogo.png';
 
 const LandingPage = () => {
     return (
-        <div style={{backgroundColor:"rgba(255,212,181,0.91)"}}>
+        <div>
             <OldHeader />
 
             <div class="p-5">
@@ -75,10 +75,13 @@ const LandingPage = () => {
                 {/*End of carousal*/}
 
                 {/*About Us*/}
-                <div className="p-5">
-                    <h2 className="m-3 p-2" style={{textAlign: "Center"}}>About Us</h2>
-                    <h3 className="m-3 p-2 col-12" style={{textAlign: "Center"}}>We are specialized in Wedding photography,
-                        Commercial photography, Fashion photography and many more..</h3>
+                <div className="container">
+                    <h3 className="text-justify m-2 p-2" style={{textAlign: "Center" }}>About Us</h3>
+                    <h5 className="m-3 p-2 col-12" style={{textAlign: "Center"}}>Welcome to StudioFlash.
+                        We believe Photography is an art, an art for which we are ever enthusiastic in making sure that the magical
+                        memories of the most important day of your life, are not forgotten. Our professional photographers are dedicated to
+                        imprinting the beautiful moments of your special day. Let’s capture CANDID, ARTISTIC & JOYFUL memories with StudioFlash on your
+                        special day.</h5>
                 </div>
             </div>
 
