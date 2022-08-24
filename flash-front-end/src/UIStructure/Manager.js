@@ -113,12 +113,12 @@ const Manager = () => {
                                     </a>
                                 </li>
 
-                                <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>
-                                        <i className="bi bi-chat-square-dots bi me-2"></i>
-                                        Chat with Flash
-                                    </a>
-                                </li>
+                                {/*<li className="nav-item pb-2">*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>*/}
+                                {/*        <i className="bi bi-chat-square-dots bi me-2"></i>*/}
+                                {/*        Chat with Flash*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
 
                                 <li className="nav-item pb-2">
                                     <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 5 ) }>
