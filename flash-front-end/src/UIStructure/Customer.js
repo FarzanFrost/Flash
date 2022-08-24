@@ -57,6 +57,7 @@ const Customer = () => {
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
+
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
 
@@ -104,7 +105,7 @@ const Customer = () => {
 
                                 <li className="nav-item pb-2">
                                     <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
-                                        <i className="bi bi-window-desktop bi me-2"></i>
+                                        <i className="bi bi-eye bi me-2"></i>
                                         View Bookings
                                     </a>
                                 </li>
@@ -123,12 +124,12 @@ const Customer = () => {
                                     </a>
                                 </li>
 
-                                <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 5 ) }>
-                                        <i className="bi bi-person bi me-2"></i>
-                                        Profile
-                                    </a>
-                                </li>
+                                {/*<li className="nav-item pb-2">*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 5 ) }>*/}
+                                {/*        <i className="bi bi-person bi me-2"></i>*/}
+                                {/*        Profile*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
 
                             </ul>
 

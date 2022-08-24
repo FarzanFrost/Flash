@@ -17,7 +17,6 @@ const ManagerViewEmployeeDetails = () => {
         color:'white'
     };
 
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
