@@ -32,19 +32,19 @@ public class Greeting {
     CustomerRepository customerRepository;
 
     @GetMapping("/Greetings")
-    public List<Event> greetMessage(){
+    public Optional<Login> greetMessage(){
 
-        List<Event> events = eventRepository.findAll();
-
-        Package aPackage = packageRepository.findByEvents( events.get( 0 ) );
+//        List<Event> events = eventRepository.findAll();
+//
+//        Package aPackage = packageRepository.findByEvents( events.get( 0 ) );
 
 //        List<Login> logins = loginRepository.findAll();
 
-//        Optional<Login> login = loginRepository.findById( "farzan@gmail.com" );
+        Optional<Login> login = loginRepository.findById( "f@gmail.com" );
 
 //        Customer customer = customerRepository.findByLogin( login );
 
-        return events ;
+        return login ;
 
     }
 
