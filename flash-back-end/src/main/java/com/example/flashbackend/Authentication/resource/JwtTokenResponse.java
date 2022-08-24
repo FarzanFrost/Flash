@@ -1,4 +1,4 @@
-package com.example.flashbackend.Authentication;
+package com.example.flashbackend.Authentication.resource;
 
 import java.io.Serializable;
 

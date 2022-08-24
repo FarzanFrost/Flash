@@ -1,5 +1,7 @@
-package com.example.flashbackend.Authentication;
+package com.example.flashbackend.Authentication.resource;
 
+import com.example.flashbackend.Authentication.JwtTokenUtil;
+import com.example.flashbackend.Authentication.JwtUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -37,6 +39,7 @@ public class JwtAuthenticationRestController {
 
     authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
+//    final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
     final UserDetails userDetails = jwtInMemoryUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
     final String token = jwtTokenUtil.generateToken(userDetails);
