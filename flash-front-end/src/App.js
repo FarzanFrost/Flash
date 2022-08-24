@@ -40,12 +40,17 @@ import Admin from './UIStructure/Admin'
 import ViewPackagesPurperty from "./ViewPackagesPurperty";
 import CustomerNav from "./CustomerNav";
 import EmployeeNav from "./EmployeeNav";
+import Calender from "./Calender";
 import AdminDashboard from "./AdminDashboard";
 import Employee from "./UIStructure/Employee";
 import Manager from "./UIStructure/Manager";
 import SelectImageContextProviderInterface from "./SelectImageContextProviderInterface";
 import ViewFiles from "./ViewFiles";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
+import ManagerDashboard from "./ManagerDashboard";
+import CustomerChat from "./CustomerChat";
+import EmployeeWorkView from "./EmployeeWorkView";
+
 
 
 function App() {
@@ -110,9 +115,13 @@ function App() {
               <Route exact path="/ViewPackages" element={ <ViewPackagesPurperty/> } />
               <Route exact path="/CustomerNav" element={ <CustomerNav/> } />
               <Route exact path="/EmployeeNav" element={ <EmployeeNav/> } />
+              <Route exact path="/Calender" element={ <Calender/> } />
               <Route exact path="/AdminDashboard" element={ <AdminDashboard/> } />
+              <Route exact path="/ManagerDashboard" element={ <ManagerDashboard/> } />
               <Route exact path="/ViewFiles" element={ <ViewFiles/> } />
               <Route exact path="/Folder" element={ <SelectImageContextProviderInterface/> } />
+              <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
+              <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
           </Routes>
 
 

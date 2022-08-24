@@ -8,6 +8,9 @@ import ManagerViewAllReviews from "../ManagerViewAllReviews";
 import ManagerViewEmployeeDetails from "../ManagerViewEmployeeDetails";
 import ManagerViewEventFullDetails from "../MangerViewEventFullDetails";
 import NewPackage from "../NewPackage";
+import CustomerProfile from "../CustomerProfile";
+import ViewPackagesPurperty from "../ViewPackagesPurperty";
+import ManagerDashboard from "../ManagerDashboard";
 
 
 const Manager = () => {
@@ -26,6 +29,9 @@ const Manager = () => {
         }
 
     }
+
+    const [ contentVisible , setContentVisible ] = useState( 0 )
+
     return(
 
         <div>
@@ -80,49 +86,49 @@ const Manager = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page">
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
                                         <i className="bi bi-speedometer2 bi me-2"></i>
                                         Dashboard
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
                                         <i className="bi bi-bag bi me-2"></i>
                                         Packages
                                     </a>
                                 </li>
 
-                                <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
-                                        <i className="bi bi-file-earmark-bar-graph bi me-2"></i>
-                                        Generate Reports
-                                    </a>
-                                </li>
+                                {/*<li className="nav-item pb-2">*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>*/}
+                                {/*        <i className="bi bi-file-earmark-bar-graph bi me-2"></i>*/}
+                                {/*        Generate Reports*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
                                         <i className="bi bi-eye bi me-2"></i>
                                         View Events
                                     </a>
                                 </li>
 
-                                <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
-                                        <i className="bi bi-chat-square-dots bi me-2"></i>
-                                        Chat
-                                    </a>
-                                </li>
+                                {/*<li className="nav-item pb-2">*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>*/}
+                                {/*        <i className="bi bi-chat-square-dots bi me-2"></i>*/}
+                                {/*        Chat with Flash*/}
+                                {/*    </a>*/}
+                                {/*</li>*/}
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 5 ) }>
                                         <i className="bi bi-people-fill bi me-2"></i>
                                         Employee Details
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 6 ) }>
                                         <i className="bi bi-window-stack bi me-2"></i>
                                         Reviews
                                     </a>
@@ -139,13 +145,15 @@ const Manager = () => {
 
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
+                    { contentVisible === 0 && <ManagerDashboard/>}{/*packages*/}
                     {/*<AddEmployee/>*/} {/*no need*/}
                     {/*<EditEmployee/>*/} {/*no need*/}
                     {/*<EditPackage/>*/} {/*no need*/}
-                    {/*<ManagerViewAllReviews/>*/} {/*reviews*/}
-                    {/*<ManagerViewEmployeeDetails/>*/} {/*employee details*/} {/*want to add some options in uis*/}
-                    {/*<ManagerViewEventFullDetails/>*/} {/*events*/}
+                    { contentVisible === 6 && <ManagerViewAllReviews/>} {/*reviews*/}
+                    { contentVisible === 5 && <ManagerViewEmployeeDetails/>}{/*employee details*/} {/*want to add some options in uis*/}
+                    { contentVisible === 3 && <ManagerViewEmployeeDetails/>} {/*events*/}
                     {/*<NewPackage/>*/}{/*no need*/}{/*want to do view packages page for manager*/}
+                    { contentVisible === 1 && <ViewPackagesPurperty/>}{/*packages*/}
 
                 </div>
 

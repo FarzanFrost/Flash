@@ -5,7 +5,7 @@ import event from './Images/event logo.png'
 import income from './Images/income logo.jpg'
 import pic from "./Images/graph.jpg";
 
-const AdminDashboard = () =>{
+const ManagerDashboard = () =>{
     return(
         <div className="h-100">
 
@@ -284,4 +284,4 @@ const AdminDashboard = () =>{
     )
 }
 
-export default AdminDashboard
+export default ManagerDashboard
