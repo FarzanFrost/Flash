@@ -3,7 +3,8 @@ import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import ChangePassword from "../ChangePassword";
 import ViewPhotos from "../ViewPhotos";
-import ViewPackagesBirthday from "../ViewPackagesBirthday";
+import NewEventBooking from "../NewEventBooking";
+import ViewPackagesPurperty from "../ViewPackagesPurperty";
 
 
 const Employee = () => {
@@ -22,6 +23,9 @@ const Employee = () => {
         }
 
     }
+
+    const [ contentVisible , setContentVisible ] = useState( 0 )
+
     return(
 
         <div>
@@ -76,21 +80,21 @@ const Employee = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page">
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
                                         <i className="bi bi-grid bi me-2"></i>
                                         Events
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
                                         <i className="bi bi-eye bi me-2"></i>
                                         View Works
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
                                         <i className="bi bi-calendar3 bi me-2"></i>
                                         Calendar
                                     </a>
@@ -122,6 +126,7 @@ const Employee = () => {
                 <div className={ isSideNavVisible ? "col-10" : "col-12" }>
 
                     {/*<ViewPackagesBirthday/>*/} {/*want to change this ui*/}
+                    { contentVisible === 0 && <ViewPackagesPurperty/>}{/*events*/}
                     {/*<ViewPhotos/>*/} {/*want to change this ui and make a folder structure*/}
 
                 </div>
