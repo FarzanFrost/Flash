@@ -100,7 +100,7 @@ const EventSelection = () => {
                                                     <img className="w-100 p-3 pb-0" src={gettogether}></img>
                                                     <div className="card-body">
                                                         <div className="text-center">
-                                                            <a href="#" className="btn" style={{...style3}}>Packages</a>
+                                                            <button className="btn" style={{...style3}} >Packages</button>
                                                         </div>
                                                     </div>
                                                 </div>

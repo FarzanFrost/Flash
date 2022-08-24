@@ -5,6 +5,9 @@ import ChangePassword from "../ChangePassword";
 import ViewPhotos from "../ViewPhotos";
 import NewEventBooking from "../NewEventBooking";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
+import EmployeeWorkView from "../EmployeeWorkView";
+import ViewFiles from "../ViewFiles";
+import Calender from "../Calender";
 
 
 const Employee = () => {
@@ -100,12 +103,12 @@ const Employee = () => {
                                     </a>
                                 </li>
 
-                                {/*<li className="nav-item pb-2">*/}
-                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill">*/}
-                                {/*        <i className="bi bi-chat-dots bi me-2"></i>*/}
-                                {/*        Post Reviews*/}
-                                {/*    </a>*/}
-                                {/*</li>*/}
+                                <li className="nav-item pb-2">
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
+                                        <i className="bi bi-chat-dots bi me-2"></i>
+                                        Add Photos
+                                    </a>
+                                </li>
 
                                 {/*<li className="nav-item pb-2">*/}
                                 {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill">*/}
@@ -127,6 +130,9 @@ const Employee = () => {
 
                     {/*<ViewPackagesBirthday/>*/} {/*want to change this ui*/}
                     { contentVisible === 0 && <ViewPackagesPurperty/>}{/*events*/}
+                    { contentVisible === 1 && <EmployeeWorkView/>}{/*events*/}
+                    { contentVisible === 2 && <Calender/>}{/*events*/}
+                    { contentVisible === 3 && <ViewFiles/>}{/*events*/}
                     {/*<ViewPhotos/>*/} {/*want to change this ui and make a folder structure*/}
 
                 </div>

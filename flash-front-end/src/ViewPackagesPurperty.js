@@ -28,8 +28,8 @@ const Vieweventdetailsforadmin = () => {
 
             <div className=" row">
                 <div className="col-md-6">
-                    <div className="position-relative mx-5 m-2 border-dark border-4"
-                         style={{width: '44rem', left: '10rem'}}>
+                    <div className=" mx-5 m-2 border-dark border-4"
+                         style={{width: '48rem', left: '16rem'}}>
                         <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
                                placeholder="Example input"></input>
                     </div>
@@ -54,10 +54,10 @@ const Vieweventdetailsforadmin = () => {
             </div>
 
 
-                <section className=" pt-6 pb-5">
-                <div className=" container">
-                    <div className="row">
 
+            <section className="pt-6 pb-5">
+                <div className=" container ">
+                    <div className="row">
                         <div className="col-12">
                             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
 
