@@ -6,6 +6,9 @@ import loginPhoto from "./Images/backgroudphoto.jpg";
 
 const ManagerViewEmployeeDetails = () => {
 
+    const NewEmployee = () => {
+
+    }
 
     return (
         <div className='container mt-4 '>
@@ -47,67 +50,65 @@ const ManagerViewEmployeeDetails = () => {
 
                     </div>
 
+                    <div className="d-flex align-items-center justify-content-end px-xl-5 pt-3">
+                        <button onClick={ NewEmployee }
+                                className="btn btn-dark btn-block">
+                            <i className="bi bi-plus"></i> Add Employee
+                        </button>
+                    </div>
 
-                    <div className="card bg-light border-dark border-4 mt-5 mx-5" style={{width: '75rem',height:'40rem'}}>
+
+                    <div className="card bg-light border-dark border-4 mt-3 mx-5" style={{width: '75rem',height:'40rem'}}>
                         <div className="card-body ">
                             <div className="table-responsive ">
-                                <table className="table table-dark table-striped align-middle"
-                                >
-                                    <thead>
+                                <table className="table table-dark table-striped align-middle">
+
+                                    <thead className="align-middle">
+
+                                    {/*<thead>*/}
+
                                     <tr>
                                         <th scope="col">NO</th>
                                         <th scope="col">Firstname</th>
-                                        <th scope="col">Lastname</th>
                                         <th scope="col">NIC</th>
                                         <th scope="col">Gender</th>
-                                        <th scope="col">Address</th>
                                         <th scope="col">Contact No</th>
                                         <th scope="col">Type</th>
-                                        <th scope="col">Salary</th>
-                                        <th scope="col">Emails</th>
+                                        <th scope="col-2">More</th>
 
 
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <th scope="col">NO</th>
-                                        <th scope="col">Firstname</th>
-                                        <th scope="col">Lastname</th>
-                                        <th scope="col">NIC</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Salary</th>
-                                        <th scope="col">Emails</th>
+                                        <th scope="col">01</th>
+                                        <th scope="col">Nirmalan</th>
+                                        <th scope="col">955978844V</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">0774053110</th>
+                                        <th scope="col">Photographer</th>
+                                        <th scope="col"><button className="btn btn-outline-light btn-block">More</button></th>
+
 
                                     </tr>
                                     <tr>
-                                        <th scope="col">NO</th>
-                                        <th scope="col">Firstname</th>
-                                        <th scope="col">Lastname</th>
-                                        <th scope="col">NIC</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Salary</th>
-                                        <th scope="col">Emails</th>
+                                        <th scope="col">01</th>
+                                        <th scope="col">Nirmalan</th>
+                                        <th scope="col">955978844V</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">0774053110</th>
+                                        <th scope="col">Photographer</th>
+                                        <th scope="col"><button className="btn btn-outline-light btn-block">More</button></th>
 
                                     </tr>
                                     <tr>
-                                        <th scope="col">NO</th>
-                                        <th scope="col">Firstname</th>
-                                        <th scope="col">Lastname</th>
-                                        <th scope="col">NIC</th>
-                                        <th scope="col">Gender</th>
-                                        <th scope="col">Address</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Type</th>
-                                        <th scope="col">Salary</th>
-                                        <th scope="col">Emails</th>
-
+                                        <th scope="col">01</th>
+                                        <th scope="col">Nirmalan</th>
+                                        <th scope="col">955978844V</th>
+                                        <th scope="col">Male</th>
+                                        <th scope="col">0774053110</th>
+                                        <th scope="col">Photographer</th>
+                                        <th scope="col"><button className="btn btn-outline-light btn-block">More</button></th>
 
                                     </tr>
                                     </tbody>
