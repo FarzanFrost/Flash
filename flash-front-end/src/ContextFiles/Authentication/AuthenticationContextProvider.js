@@ -139,9 +139,19 @@ const AuthenticationContextProvider = ( props ) => {
 
     }
 
+    /*change later*/
+
+    const [ contentVisible , setContentVisible ] = useState( 0 )
+
+    const changeContentVisible = ( value ) => {
+
+        setContentVisible( value )
+
+    }
+
     return(
 
-        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp } }>
+        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible } }>
 
             { props.children }
 

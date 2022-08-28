@@ -85,7 +85,7 @@ function App() {
               <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
               <Route exact path="/OldHeader" element={ <OldHeader/> } />
               <Route exact path="/Header" element={ <Header/> } />
-              <Route exact path="/LandingPage" element={ <LandingPage/> } />
+              <Route exact path="/" element={ <LandingPage/> } />
               <Route exact path="/ContactUs" element={ <ContactUs/> } />
               <Route exact path="/Footer" element={ <Footer/> } />
               <Route exact path="/OldFooter" element={ <OldFooter/> } />

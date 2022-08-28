@@ -27,7 +27,7 @@ const EventSelection = () => {
 
             <center style={{...style1}}>
                 <div className="col-6" >
-                    <h1 className="mb-2">Events</h1>
+                    <h1 className="mb-2">Event Packages</h1>
                 </div>
             </center>
 
