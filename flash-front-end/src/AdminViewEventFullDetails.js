@@ -8,7 +8,6 @@ import Modal from "react-bootstrap/Modal";
 
 
 
-
 const AdminViewEventFullDetails = () => {
 
 
@@ -41,7 +40,7 @@ const AdminViewEventFullDetails = () => {
 
                         <div className="row">
                             <div className="col-xs-8 col-xs-offset-2">
-                                <div className="input-group">
+                                <div className="input-group ">
                                     <div className="input-group-btn search-panel">
 
                                         <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"
@@ -52,10 +51,11 @@ const AdminViewEventFullDetails = () => {
                                             <option value="Puperty">Date</option>
                                             <option value="Gettogether">Booking Date</option>
                                             <option value="Housewarming">status</option>
-                                            <option value="PrizeGiving">More</option>
+
 
                                         </select>
                                     </div>
+
                                     <input type="hidden" name="search_param" value="all" id="search_param"></input>
                                     <input type="text" className="form-control" name="x"
                                            placeholder="Search term..."></input>
@@ -159,14 +159,76 @@ const AdminViewEventFullDetails = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Event Full Details</Modal.Title>
                                                 </Modal.Header>
-                                                <Modal.Body>Details...</Modal.Body>
+                                                <Modal.Body>
+
+                                                    <div className="card-body pb-lg-5">
+
+                                                        <div className="table-responsive ">
+                                                            <table className="table table-dark table-striped align-middle">
+
+                                                                <thead className="align-middle">
+
+                                                                {/*<thead>*/}
+
+                                                                <tr>
+                                                                    <th scope="col">Event Id</th>
+                                                                    <th scope="col">Event</th>
+                                                                    <th scope="col">Date</th>
+                                                                    <th scope="col">Booking Date</th>
+                                                                    <th scope="col">status</th>
+                                                                    <th scope="col">Event Location</th>
+                                                                    <th scope="col">Allocated Employees</th>
+
+
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <th scope="col">E01</th>
+                                                                    <th scope="col">Birthday</th>
+                                                                    <th scope="col">2022-10-26</th>
+                                                                    <th scope="col">2022-11-18</th>
+                                                                    <th scope="col">Pending</th>
+                                                                    <th scope="col">Colombo</th>
+                                                                    <th scope="col">raj,kamal</th>
+
+
+
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="col">E01</th>
+                                                                    <th scope="col">Birthday</th>
+                                                                    <th scope="col">2022-10-26</th>
+                                                                    <th scope="col">2022-11-18</th>
+                                                                    <th scope="col">Pending</th>
+                                                                    <th scope="col">Colombo</th>
+                                                                    <th scope="col">raj,kamal</th>
+
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="col">E01</th>
+                                                                    <th scope="col">Birthday</th>
+                                                                    <th scope="col">2022-10-26</th>
+                                                                    <th scope="col">2022-11-18</th>
+                                                                    <th scope="col">Pending</th>
+                                                                    <th scope="col">Colombo</th>
+                                                                    <th scope="col">raj,kamal</th>
+
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </Modal.Body>
                                                 <Modal.Footer>
                                                     <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
+                                                        Delete Event
                                                     </Button>
                                                     <Button variant="dark" onClick={handleClose}>
                                                         close
