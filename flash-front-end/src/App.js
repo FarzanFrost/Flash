@@ -50,6 +50,7 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import ManagerDashboard from "./ManagerDashboard";
 import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
+import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
 
 
 function App() {
@@ -107,6 +108,7 @@ function App() {
               <Route exact path="/EditPackage" element={ <EditPackage/> } />
               <Route exact path="/AdminViewAllReviews" element={ <AdminViewAllReviews/> } />
               <Route exact path="/ManagerViewEventFullDetails" element={ <ManagerViewEventFullDetails/> } />
+              <Route exact path="/AdminViewEventFullDetails" element={ <AdminViewEventFullDetails/> } />
               <Route exact path="/ManagerViewEmployeeDetails" element={ <ManagerViewEmployeeDetails/> } />
               <Route exact path="/ManagerViewAllReviews" element={ <ManagerViewAllReviews/> } />
               <Route exact path="/NewEventBooking" element={ <NewEventBooking/> } />
