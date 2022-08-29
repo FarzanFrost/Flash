@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect } from 'react'
 import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
@@ -13,13 +13,16 @@ import ResetPasswordContextProviderInterface from "../ResetPasswordContextProvid
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
+import {useLocation} from "react-router-dom";
 
 
 const Customer = () => {
 
+    const location = useLocation()
+
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
-    const { authenticated , authenticateUser , contentVisible , changeContentVisible } = useContext( AuthenticationContext )
+    const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
 
     const showHideSideNav = () => {
 
@@ -36,7 +39,7 @@ const Customer = () => {
     }
 
 
-    authenticateUser()
+    authenticateUser('customer', location.authenticated , location.userDetailsAfterAuthentication );
 
     return  (
 
@@ -63,7 +66,7 @@ const Customer = () => {
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">Home</a>
 
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#" onClick={ () => { location.state = null; logout() } }>Sign Out</a>
 
 
                     </div>

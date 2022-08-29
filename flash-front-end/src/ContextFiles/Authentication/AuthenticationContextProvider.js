@@ -1,19 +1,33 @@
 import react, {createContext, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const AuthenticationContext = createContext( undefined )
 
 const AuthenticationContextProvider = ( props ) => {
 
+    const navigate = useNavigate()
+
     const serverLink = 'http://localhost:8080'
 
-    const [ authenticated , setAuthenticated ] = useState( true )
+    let authenticated  = false
 
-    const [ userDetailsAfterAuthentication , setUserDetailsAfterAuthentication ] = useState( null )
+    let userDetailsAfterAuthentication = null
 
-    const authenticateUser = () => {
+    const authenticateUser = ( userType , setAuthenticated , setUserDetailsAfterAuthentication ) => {
 
-        if ( !authenticated ){ window.history.pushState(null, null, "/Login");window.location.reload() }
+        authenticated = setAuthenticated;
+        userDetailsAfterAuthentication = setUserDetailsAfterAuthentication;
+
+        if ( !authenticated ){ navigate("/Login") }
+        else{
+
+            if ( userType === 'customer' ){ if ( userDetailsAfterAuthentication.customer === null  ){ logout(); navigate("/Login") } }
+            else if( userType === 'admin' ){ if ( userDetailsAfterAuthentication.employee.type !== 'admin' ){ logout(); navigate("/Login") } }
+            else if( userType === 'manager' ){ if ( userDetailsAfterAuthentication.employee.type !== 'manager' ){ navigate("/Login") } }
+            else if( userType === 'employee' ){ if ( userDetailsAfterAuthentication.employee.type !== 'employee' ){ navigate("/Login") } }
+
+        }
 
     }
 
@@ -52,23 +66,8 @@ const AuthenticationContextProvider = ( props ) => {
             ( response ) => {
 
                 storeSessionJWT( username , response.data.token )
-                setAuthenticated( true )
+                authenticated= true
                 getUserDetailsAfterAuthenticated( username )
-                /*axios.get( 'http://localhost:8080/Greetings' ).then(
-
-                    ( response ) => {
-
-                        console.log( response.data )
-
-                    }
-
-                ).catch(
-
-                    () => {
-
-                        alert( "ERROR!!! 2" )
-
-                    })*/
 
             }).catch(
 
@@ -84,8 +83,8 @@ const AuthenticationContextProvider = ( props ) => {
 
         axios.get( serverLink + '/getUserDetails/' + email ).then(
 
-            ( response ) => { /*console.log(response.data);*/setUserDetailsAfterAuthentication( response.data );
-                window.history.pushState(null, null, "/Customer");window.location.reload()
+            ( response ) => {authenticated = true; userDetailsAfterAuthentication =  response.data;
+                navigate("/Customer" , { state : { authenticated , userDetailsAfterAuthentication} })
             }
 
         ).catch(
@@ -135,7 +134,8 @@ const AuthenticationContextProvider = ( props ) => {
     const logout = () => {
 
         sessionStorage.removeItem( 'authenticatedUser' );
-        setAuthenticated( false );
+        authenticated= false ;
+        userDetailsAfterAuthentication= null ;
 
     }
 
@@ -151,7 +151,7 @@ const AuthenticationContextProvider = ( props ) => {
 
     return(
 
-        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible } }>
+        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout } }>
 
             { props.children }
 
