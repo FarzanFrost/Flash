@@ -25,7 +25,7 @@ const AuthenticationContextProvider = ( props ) => {
             if ( userType === 'customer' ){ if ( userDetailsAfterAuthentication.customer === null  ){ logout(); navigate("/Login") } }
             else if( userType === 'admin' ){ if ( userDetailsAfterAuthentication.employee.type !== 'admin' ){ logout(); navigate("/Login") } }
             else if( userType === 'manager' ){ if ( userDetailsAfterAuthentication.employee.type !== 'manager' ){ navigate("/Login") } }
-            else if( userType === 'employee' ){ if ( userDetailsAfterAuthentication.employee.type !== 'employee' ){ navigate("/Login") } }
+            else if( userType === 'employee' ){ if ( userDetailsAfterAuthentication.employee.type !== 'photographer' || userDetailsAfterAuthentication.employee.type !== 'videographer' || userDetailsAfterAuthentication.employee.type !== 'editor' ){ navigate("/Login") } }
 
         }
 
@@ -84,7 +84,12 @@ const AuthenticationContextProvider = ( props ) => {
         axios.get( serverLink + '/getUserDetails/' + email ).then(
 
             ( response ) => {authenticated = true; userDetailsAfterAuthentication =  response.data;
-                navigate("/Customer" , { state : { authenticated , userDetailsAfterAuthentication} })
+
+                if ( userDetailsAfterAuthentication.customer !== null ){ navigate("/Customer" , { state : { authenticated , userDetailsAfterAuthentication} }) }
+                else if( userDetailsAfterAuthentication.employee.type === 'admin' ){ navigate("/Admin" , { state : { authenticated , userDetailsAfterAuthentication} }) }
+                else if( userDetailsAfterAuthentication.employee.type === 'manager' ){ navigate("/Manager" , { state : { authenticated , userDetailsAfterAuthentication} }) }
+                else if( userDetailsAfterAuthentication.employee.type !== 'photographer' || userDetailsAfterAuthentication.employee.type !== 'videographer' || userDetailsAfterAuthentication.employee.type !== 'editor' ){ navigate("/Employee" , { state : { authenticated , userDetailsAfterAuthentication} }) }
+
             }
 
         ).catch(
