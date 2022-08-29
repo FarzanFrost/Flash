@@ -159,7 +159,7 @@ const ManagerViewEventFullDetails = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Event Full Details</Modal.Title>
                                                 </Modal.Header>
