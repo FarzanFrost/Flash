@@ -3,9 +3,6 @@ import SelectImageContextProviderInterface from "../SelectImageContextProviderIn
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
-import CardDetail from "../CardDetail";
-import ChangeBooking from "../ChangeBooking";
-import ChangePassword from "../ChangePassword";
 import CustomerProfile from "../CustomerProfile";
 import EventSelection from "../EventSelection";
 import NewEventBooking from "../NewEventBooking";
