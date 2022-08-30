@@ -39,21 +39,6 @@ const ChangeBooking = () => {
                                                 <span className="col-sm-8 fw-bold">Wedding</span>
                                             </div>
 
-                                            {/*<div className="form-group row mt-3 mx-3">*/}
-                                            {/*    <label className="col-sm-4 col-form-label">Additional</label>*/}
-                                            {/*    <div className="col-sm-8">*/}
-                                            {/*        <select className="form-select">*/}
-                                            {/*            <option>Wedding Only</option>*/}
-                                            {/*            <option>Reception Only</option>*/}
-                                            {/*            <option>Registration Only</option>*/}
-                                            {/*            <option>Wedding with Reception</option>*/}
-                                            {/*            <option>Wedding with Registration</option>*/}
-                                            {/*            <option>Registration with Reception</option>*/}
-                                            {/*            <option>Wedding with both ceremony</option>*/}
-                                            {/*        </select>*/}
-                                            {/*    </div>*/}
-                                            {/*</div>*/}
-
                                             <div className="form-group row mt-3 mx-3">
                                                 <label className="col-sm-4 col-form-label">Date</label>
                                                 <div className="col-sm-8">
