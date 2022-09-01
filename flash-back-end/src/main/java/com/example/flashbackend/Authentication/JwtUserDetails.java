@@ -22,7 +22,15 @@ public class JwtUserDetails implements UserDetails {
 
   public JwtUserDetails(Login login){
 
-    id = login.getCustomer().getCustomerID();
+    if ( login.getCustomer() != null ){
+
+      id = login.getCustomer().getCustomerID();
+
+    }else{
+
+      id = login.getEmployee().getEmployeeID();
+
+    }
     username = login.getEmail();
     password = login.getPassword();
 
