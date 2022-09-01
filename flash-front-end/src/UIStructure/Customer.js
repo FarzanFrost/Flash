@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useEffect } from 'react'
 import SelectImageContextProviderInterface from "../SelectImageContextProviderInterface";
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
@@ -13,13 +13,16 @@ import ResetPasswordContextProviderInterface from "../ResetPasswordContextProvid
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
+import {useLocation} from "react-router-dom";
 
 
 const Customer = () => {
 
+    const location = useLocation()
+
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
-    const { authenticated , authenticateUser } = useContext( AuthenticationContext )
+    const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
 
     const showHideSideNav = () => {
 
@@ -35,9 +38,8 @@ const Customer = () => {
 
     }
 
-    const [ contentVisible , setContentVisible ] = useState( 0 )
 
-    authenticateUser()
+    authenticateUser('customer', location.authenticated , location.userDetailsAfterAuthentication );
 
     return  (
 
@@ -64,7 +66,7 @@ const Customer = () => {
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">Home</a>
 
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Book Now</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#" onClick={ () => { location.state = null; logout() } }>Sign Out</a>
 
 
                     </div>
@@ -95,35 +97,35 @@ const Customer = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => changeContentVisible( 0 ) }>
                                         <i className="bi bi-grid bi me-2"></i>
-                                        Events
+                                        Event Packages
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 1 ) }>
                                         <i className="bi bi-window-desktop bi me-2"></i>
                                         Book Here
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 2 ) }>
                                         <i className="bi bi-eye bi me-2"></i>
                                         View Bookings
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 3 ) }>
                                         <i className="bi bi-chat-dots bi me-2"></i>
-                                        Post Reviews
+                                        Event Reviews
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 4 ) }>
                                         <i className="bi bi-person bi me-2"></i>
                                         Profile
                                     </a>
@@ -154,7 +156,7 @@ const Customer = () => {
                     { contentVisible === 3 && <EventReviewsCustomerContextProviderInterface/>}{/*post reviews*/}
                     { contentVisible === 0 && <EventSelection/>}{/*events*/}
                     { contentVisible === 1 && <NewEventBooking/>}{/*book here*/}
-                    {/*<SelectImageContextProviderInterface/>*/ }{/*no need*/}
+                    { contentVisible === 6 && <SelectImageContextProviderInterface/> }{/*no need*/}
                     { contentVisible === 2 && <ViewEventsForCustomer/>}{/*change event UI*/}{/*view books*/}
                     {/*<ViewPackagesBirthday/>*/}{/*no need*/}
                     {contentVisible === 5 && <ViewPackagesPurperty/>}

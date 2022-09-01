@@ -1,8 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import OldHeader from "./oldHeader";
 import OldFooter from "./oldFooter";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const ViewEventsForCustomer = () => {
 
@@ -20,6 +21,9 @@ const ViewEventsForCustomer = () => {
         backgroundColor:'#4B2000',
         color:'white'
     };
+
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
 
     return (
 
@@ -73,7 +77,9 @@ const ViewEventsForCustomer = () => {
                             </div>
 
                             <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
-                            <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
+                                <a  className="btn bg-dark text-light m-2 p-2" style={{...style3}} onClick={ () => changeContentVisible( 6 ) }>View Gallery</a>
+                                <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
+                                <a href="#" className="btn bg-dark text-light m-2 p-2">Add Review</a><br/><br/>
                             </div>
 
                         </div>
@@ -122,6 +128,7 @@ const ViewEventsForCustomer = () => {
                             </div>
 
                             <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
+                                <a  className="btn bg-dark text-light m-2 p-2" style={{...style3}} onClick={ () => changeContentVisible( 6 ) }>View Gallery</a>
                                 <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
                                 <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>
                             </div>
@@ -173,6 +180,7 @@ const ViewEventsForCustomer = () => {
                             </div>
 
                             <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
+                                <a  className="btn bg-dark text-light m-2 p-2" style={{...style3}} onClick={ () => changeContentVisible( 6 ) }>View Gallery</a>
                                 <a href="#" className="btn bg-dark text-light m-2 p-2" >Edit Booking</a>
                                 <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>
                             </div>
