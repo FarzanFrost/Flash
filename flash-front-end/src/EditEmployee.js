@@ -67,9 +67,6 @@ const EditEmployee = () => {
                                                         required
                                                     />
                                                 </div>
-                                                {/*<div className="col-sm-1">*/}
-                                                {/*    <button><i className="bi bi-pencil-fill"></i></button>*/}
-                                                {/*</div>*/}
 
                                             </div>
 

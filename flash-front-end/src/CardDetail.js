@@ -92,7 +92,7 @@ const CardDetail = () => {
                                                             name="group1"
                                                             type="radio"
                                                         />
-                                                        <div className="col-sm-5">
+                                                        <div className="col-sm-8">
                                                             <img src={ visa } className="img-fluid rounded-3 h-100" alt="Events"/>
                                                         </div>
                                                     </div>
@@ -105,7 +105,7 @@ const CardDetail = () => {
                                                             type="radio"
                                                         />
 
-                                                        <div className="col-sm-5">
+                                                        <div className="col-sm-8">
                                                             <img src={ master } className="img-fluid rounded-3 h-100" alt="Events"/>
                                                         </div>
                                                     </div>
@@ -118,7 +118,7 @@ const CardDetail = () => {
                                                             type="radio"
                                                         />
 
-                                                        <div className="col-sm-5">
+                                                        <div className="col-sm-8">
                                                             <img src={ express } className="img-fluid rounded-3 h-100" alt="Events"/>
                                                         </div>
                                                     </div>
@@ -131,7 +131,7 @@ const CardDetail = () => {
                                                             type="radio"
                                                         />
 
-                                                        <div className="col-sm-5">
+                                                        <div className="col-sm-8">
                                                             <img src={ discover } className="img-fluid rounded-3 h-100" alt="Events"/>
                                                         </div>
                                                     </div>

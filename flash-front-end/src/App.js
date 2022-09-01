@@ -81,7 +81,6 @@ function App() {
               <Route exact path="/Vieweventdetailsforadmin" element={ <Vieweventdetailsforadmin/> } />
               <Route exact path="/Sample" element={ <Sample/> } />
               <Route exact path="/AddEmployee" element={ <AddEmployee/> } />
-             
               <Route exact path="/AdminViewEmployeeDetailspage" element={ <AdminViewEmployeeDetailspage/> } />
               <Route exact path="/OldHeader" element={ <OldHeader/> } />
               <Route exact path="/Header" element={ <Header/> } />
@@ -108,7 +107,7 @@ function App() {
               <Route exact path="/AdminViewAllReviews" element={ <AdminViewAllReviews/> } />
               <Route exact path="/ManagerViewEventFullDetails" element={ <ManagerViewEventFullDetails/> } />
               <Route exact path="/ManagerViewEmployeeDetails" element={ <ManagerViewEmployeeDetails/> } />
-              <Route exact path="/ManagerViewAllReviews" element={ <ManagerViewAllReviews/> } />
+              <Route exact path="/ManagerViewEventFullDetails" element={ <ManagerViewAllReviews/> } />
               <Route exact path="/NewEventBooking" element={ <NewEventBooking/> } />
               <Route exact path="/CardDetail" element={ <CardDetail/> } />
               <Route exact path="/ChangeBooking" element={ <ChangeBooking/> } />
