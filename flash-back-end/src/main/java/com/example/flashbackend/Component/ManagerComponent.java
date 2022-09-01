@@ -1,10 +1,10 @@
 package com.example.flashbackend.Component;
 
-import com.example.flashbackend.DAO.CustomerRepository;
-import com.example.flashbackend.DAO.EmployeeRepository;
-import com.example.flashbackend.DAO.EventRepository;
-import com.example.flashbackend.DAO.PackageRepository;
+import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.Entity.Employee;
+import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
+import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -24,6 +24,9 @@ public class ManagerComponent {
 
     @Autowired
     PackageRepository packageRepository;
+
+    @Autowired
+    ReviewsRepository reviewsRepository;
 
     public long getEmployeeCount(){
 
@@ -46,6 +49,24 @@ public class ManagerComponent {
     public List<Package> getPackages(){
 
         return packageRepository.findAll();
+
+    }
+
+    public List<Event> getEvents(){
+
+        return eventRepository.findAll();
+
+    }
+
+    public List<Employee> getEmployees(){
+
+        return employeeRepository.findAll();
+
+    }
+
+    public List<Reviews> getReviews(){
+
+        return reviewsRepository.findAll();
 
     }
 

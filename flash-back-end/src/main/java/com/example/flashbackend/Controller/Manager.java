@@ -1,7 +1,10 @@
 package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.Component.ManagerComponent;
+import com.example.flashbackend.Entity.Employee;
+import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
+import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,10 +40,31 @@ public class Manager {
 
     }
 
-    @GetMapping("/getPackages")
+    @GetMapping("/Packages")
     public List<Package> getpackages(){
 
         return managerComponent.getPackages();
+
+    }
+
+    @GetMapping( "/Events" )
+    public List<Event> getEvents(){
+
+        return managerComponent.getEvents();
+
+    }
+
+    @GetMapping("/Employees")
+    public List<Employee> getEmployees(){
+
+        return managerComponent.getEmployees();
+
+    }
+
+    @GetMapping("/Reviews")
+    public List<Reviews> getReviews(){
+
+        return managerComponent.getReviews();
 
     }
 
