@@ -8,7 +8,7 @@ import Modal from "react-bootstrap/Modal";
 
 
 
-const ManagerViewEventFullDetails = () => {
+const AdminViewEventFullDetails = () => {
 
 
     const style3 = {
@@ -258,4 +258,4 @@ const ManagerViewEventFullDetails = () => {
 
 }
 
-export default ManagerViewEventFullDetails
+export default AdminViewEventFullDetails

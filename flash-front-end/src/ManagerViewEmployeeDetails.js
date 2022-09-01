@@ -109,11 +109,69 @@ const ManagerViewEmployeeDetails = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
-                                                    <Modal.Title>Review</Modal.Title>
+                                                    <Modal.Title>Employee details</Modal.Title>
                                                 </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Body>
+                                                    <div className="card-body pb-lg-5">
+
+                                                        <div className="table-responsive ">
+                                                            <table className="table table-dark table-striped align-middle">
+
+                                                                <thead className="align-middle">
+
+                                                                {/*<thead>*/}
+
+                                                                <tr>
+                                                                    <th scope="col">NO</th>
+                                                                    <th scope="col">Firstname</th>
+                                                                    <th scope="col">NIC</th>
+                                                                    <th scope="col">Gender</th>
+                                                                    <th scope="col">Contact No</th>
+                                                                    <th scope="col">Type</th>
+
+
+
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <th scope="col">01</th>
+                                                                    <th scope="col">Nirmalan</th>
+                                                                    <th scope="col">955978844V</th>
+                                                                    <th scope="col">Male</th>
+                                                                    <th scope="col">0774053110</th>
+                                                                    <th scope="col">Photographer</th>
+
+
+
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="col">01</th>
+                                                                    <th scope="col">Nirmalan</th>
+                                                                    <th scope="col">955978844V</th>
+                                                                    <th scope="col">Male</th>
+                                                                    <th scope="col">0774053110</th>
+                                                                    <th scope="col">Photographer</th>
+
+
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="col">01</th>
+                                                                    <th scope="col">Nirmalan</th>
+                                                                    <th scope="col">955978844V</th>
+                                                                    <th scope="col">Male</th>
+                                                                    <th scope="col">0774053110</th>
+                                                                    <th scope="col">Photographer</th>
+
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </Modal.Body>
                                                 <Modal.Footer>
                                                     <Button variant="dark" onClick={handleClose}>
                                                         Delete Review
@@ -139,11 +197,73 @@ const ManagerViewEmployeeDetails = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Review</Modal.Title>
                                                 </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Body>
+                                                    <Modal.Body>
+                                                        <div className="card-body pb-lg-5">
+
+                                                            <div className="table-responsive ">
+                                                                <table className="table table-dark table-striped align-middle">
+
+                                                                    <thead className="align-middle">
+
+                                                                    {/*<thead>*/}
+
+                                                                    <tr>
+                                                                        <th scope="col">NO</th>
+                                                                        <th scope="col">Firstname</th>
+                                                                        <th scope="col">NIC</th>
+                                                                        <th scope="col">Gender</th>
+                                                                        <th scope="col">Contact No</th>
+                                                                        <th scope="col">Type</th>
+
+
+
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="col">01</th>
+                                                                        <th scope="col">Nirmalan</th>
+                                                                        <th scope="col">955978844V</th>
+                                                                        <th scope="col">Male</th>
+                                                                        <th scope="col">0774053110</th>
+                                                                        <th scope="col">Photographer</th>
+
+
+
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">01</th>
+                                                                        <th scope="col">Nirmalan</th>
+                                                                        <th scope="col">955978844V</th>
+                                                                        <th scope="col">Male</th>
+                                                                        <th scope="col">0774053110</th>
+                                                                        <th scope="col">Photographer</th>
+
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">01</th>
+                                                                        <th scope="col">Nirmalan</th>
+                                                                        <th scope="col">955978844V</th>
+                                                                        <th scope="col">Male</th>
+                                                                        <th scope="col">0774053110</th>
+                                                                        <th scope="col">Photographer</th>
+
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </Modal.Body>
+
+
+                                                </Modal.Body>
                                                 <Modal.Footer>
                                                     <Button variant="dark" onClick={handleClose}>
                                                         Delete Review
@@ -168,11 +288,72 @@ const ManagerViewEmployeeDetails = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Review</Modal.Title>
                                                 </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Body>
+                                                    <Modal.Body>
+                                                        <div className="card-body pb-lg-5">
+
+                                                            <div className="table-responsive ">
+                                                                <table className="table table-dark table-striped align-middle">
+
+                                                                    <thead className="align-middle">
+
+                                                                    {/*<thead>*/}
+
+                                                                    <tr>
+                                                                        <th scope="col">NO</th>
+                                                                        <th scope="col">Firstname</th>
+                                                                        <th scope="col">NIC</th>
+                                                                        <th scope="col">Gender</th>
+                                                                        <th scope="col">Contact No</th>
+                                                                        <th scope="col">Type</th>
+
+
+
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <th scope="col">01</th>
+                                                                        <th scope="col">Nirmalan</th>
+                                                                        <th scope="col">955978844V</th>
+                                                                        <th scope="col">Male</th>
+                                                                        <th scope="col">0774053110</th>
+                                                                        <th scope="col">Photographer</th>
+
+
+
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">01</th>
+                                                                        <th scope="col">Nirmalan</th>
+                                                                        <th scope="col">955978844V</th>
+                                                                        <th scope="col">Male</th>
+                                                                        <th scope="col">0774053110</th>
+                                                                        <th scope="col">Photographer</th>
+
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="col">01</th>
+                                                                        <th scope="col">Nirmalan</th>
+                                                                        <th scope="col">955978844V</th>
+                                                                        <th scope="col">Male</th>
+                                                                        <th scope="col">0774053110</th>
+                                                                        <th scope="col">Photographer</th>
+
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </Modal.Body>
+
+                                                </Modal.Body>
                                                 <Modal.Footer>
                                                     <Button variant="dark" onClick={handleClose}>
                                                         Delete Review
