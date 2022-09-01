@@ -1,6 +1,6 @@
 package com.example.flashbackend.Controller;
 
-import com.example.flashbackend.DAO.EmployeeRepository;
+import com.example.flashbackend.Component.ManagerComponent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Manager {
 
     @Autowired
-    EmployeeRepository employeeRepository;
+    ManagerComponent managerComponent;
 
     @GetMapping("/employeeCount")
     public long getEmployeeCount(){
 
-        return employeeRepository.count();
+        return managerComponent.getEmployeeCount();
 
     }
 
