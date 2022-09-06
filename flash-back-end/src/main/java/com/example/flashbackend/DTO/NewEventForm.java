@@ -1,5 +1,7 @@
 package com.example.flashbackend.DTO;
 
+import com.example.flashbackend.Entity.Event;
+
 import java.sql.Date;
 import java.sql.Time;
 
