@@ -1,14 +1,9 @@
 import React, {useState} from 'react'
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
-import AddEmployee from "../AddEmployee";
-import EditEmployee from "../EditEmployee";
-import EditPackage from "../EditPackage";
 import ManagerViewAllReviews from "../ManagerViewAllReviews";
 import ManagerViewEmployeeDetails from "../ManagerViewEmployeeDetails";
 import ManagerViewEventFullDetails from "../MangerViewEventFullDetails";
-import NewPackage from "../NewPackage";
-import CustomerProfile from "../CustomerProfile";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import ManagerDashboard from "../ManagerDashboard";
 
