@@ -2,10 +2,13 @@ package com.example.flashbackend.DTO;
 
 import com.example.flashbackend.Entity.Event;
 
+import java.math.BigInteger;
 import java.sql.Date;
 import java.sql.Time;
 
 public class NewEventForm {
+
+    private BigInteger EventID;
 
     private String event;
 
@@ -20,7 +23,8 @@ public class NewEventForm {
     private String packageName;
     public NewEventForm(){}
 
-    public NewEventForm(String event, Date date, Time startTime, Time endTime, String address, String packageName) {
+    public NewEventForm(BigInteger EventID, String event, Date date, Time startTime, Time endTime, String address, String packageName) {
+        this.EventID = EventID;
         this.event = event;
         this.date = date;
         this.startTime = startTime;
