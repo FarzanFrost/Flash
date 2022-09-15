@@ -20,6 +20,7 @@ public class Event {
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private BigInteger EventID;
 
+    private String EventName;
 
     private String Status;
 
@@ -70,7 +71,8 @@ public class Event {
 
     public Event(){}
 
-    public Event(String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, Integer extraPage, String category, boolean delivered) {
+    public Event(String eventName, String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, Integer extraPage, String category, boolean delivered) {
+        EventName = eventName;
         Status = status;
         AdvanceAmount = advanceAmount;
         EventDate = eventDate;
@@ -90,6 +92,14 @@ public class Event {
 
     public void setEventID(BigInteger eventID) {
         EventID = eventID;
+    }
+
+    public String getEventName() {
+        return EventName;
+    }
+
+    public void setEventName(String eventName) {
+        EventName = eventName;
     }
 
     public String getStatus() {
