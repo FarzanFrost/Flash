@@ -18,6 +18,9 @@ import {Form} from "react-bootstrap";
 // }
 
 const EditEmployee = () => {
+    const msg = (a) => {
+        alert(a);
+    }
     return(
         <div className="h-100">
 
@@ -276,7 +279,7 @@ const EditEmployee = () => {
                                                     </button>
 
                                                     <button type="submit" variant="secondary"
-                                                            className="btn btn-danger btn-block">
+                                                            className="btn btn-danger btn-block" onClick={() => msg("Are you confirm to delete")}>
                                                         Delete
                                                     </button>
                                                 </div>
