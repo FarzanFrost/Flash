@@ -1,11 +1,13 @@
 package com.example.flashbackend.Controller;
 
+import com.example.flashbackend.Entity.Package;
+import com.example.flashbackend.Entity.Reviews;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import com.example.flashbackend.Component.CustomerComponent;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.flashbackend.Entity.Event;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 
@@ -13,10 +15,22 @@ import java.util.List;
 @CrossOrigin( origins = "http://localhost:3000")
 public class Customer {
 
-//    @GetMapping("/getEvents")
-    @GetMapping("/Events")
+    @Autowired
+    CustomerComponent customerComponent;
+
+    @GetMapping("/Allevent")
 
     public List<Event> getEvents(){
-        return CustomerComponent.getEvents();
+        return customerComponent.getEvents();
     }
+
+//    @GetMapping("/AllPackages")
+//    public List<Package> getPackages(){
+//        return customerComponent.getPackages();
+//    }
+//
+//    @GetMapping("/AllReviews")
+//    public List<Reviews> getReviews(){
+//        return customerComponent.getReviews();
+//    }
 }
