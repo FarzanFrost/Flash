@@ -29,8 +29,9 @@ public class Customer {
         return customerComponent.getPackages();
     }
 
-//    @GetMapping("/AllReviews")
-//    public List<Reviews> getReviews(){
-//        return customerComponent.getReviews();
-//    }
+    @GetMapping("/AllReviews")
+    public List<Reviews> getReviews(){
+        return customerComponent.getReviews();
+    }
+
 }
