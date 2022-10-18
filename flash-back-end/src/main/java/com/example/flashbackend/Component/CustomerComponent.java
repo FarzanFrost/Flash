@@ -16,10 +16,10 @@ public class CustomerComponent {
 
 //    @Autowired
 //    CustomerRepository CustomerRepository;
-//
-//    @Autowired
-//    PackageRepository PackageRepository;
-//
+
+    @Autowired
+    PackageRepository PackageRepository;
+
 //    @Autowired
 //    ReviewsRepository ReviewsRepository;
 
@@ -33,10 +33,10 @@ public class CustomerComponent {
 
     }
 
-//    public List<Package> getPackages(){
-//        return PackageRepository.findAll();
-//    }
-//
+    public List<Package> getPackages(){
+        return PackageRepository.findAll();
+    }
+
 //    public List<Reviews> getReviews(){
 //        return ReviewsRepository.findAll();
 //    }
