@@ -20,8 +20,8 @@ public class CustomerComponent {
     @Autowired
     PackageRepository PackageRepository;
 
-//    @Autowired
-//    ReviewsRepository ReviewsRepository;
+    @Autowired
+    ReviewsRepository ReviewsRepository;
 
 //    public Optional<Customer> getCustomer(){
 //        Optional<Customer> customer = CustomerRepository.findById( "1" );
@@ -37,7 +37,8 @@ public class CustomerComponent {
         return PackageRepository.findAll();
     }
 
-//    public List<Reviews> getReviews(){
-//        return ReviewsRepository.findAll();
-//    }
+    public List<Reviews> getReviews(){
+        return ReviewsRepository.findAll();
+    }
+
 }
