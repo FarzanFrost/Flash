@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ReviewsRepository extends CrudRepository<Reviews, BigInteger> {
 
-//    @Override
-//    List<Reviews> findAll();
+    @Override
+    List<Reviews> findAll();
 }
