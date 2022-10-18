@@ -24,11 +24,11 @@ public class Customer {
         return customerComponent.getEvents();
     }
 
-//    @GetMapping("/AllPackages")
-//    public List<Package> getPackages(){
-//        return customerComponent.getPackages();
-//    }
-//
+    @GetMapping("/AllPackages")
+    public List<Package> getPackages(){
+        return customerComponent.getPackages();
+    }
+
 //    @GetMapping("/AllReviews")
 //    public List<Reviews> getReviews(){
 //        return customerComponent.getReviews();
