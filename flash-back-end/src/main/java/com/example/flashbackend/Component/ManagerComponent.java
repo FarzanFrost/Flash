@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @Component
@@ -82,6 +83,12 @@ public class ManagerComponent {
 
         loginRepository.insertIntoLogin(login.getEmail(), encodedPassword , login.getSaltkey(), null , employee.getEmployeeID() , login.getDateTime());
 
+        return "done";
+    }
+
+    public String deleteReview(BigInteger reviewId ){
+
+        reviewsRepository.deleteById( reviewId );
         return "done";
     }
 
