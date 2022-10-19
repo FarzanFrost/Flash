@@ -1,11 +1,10 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
-import com.example.flashbackend.Entity.Employee;
-import com.example.flashbackend.Entity.Event;
+import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
-import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -27,6 +26,9 @@ public class ManagerComponent {
 
     @Autowired
     ReviewsRepository reviewsRepository;
+
+    @Autowired
+    LoginRepository loginRepository;
 
     public long getEmployeeCount(){
 
@@ -68,6 +70,19 @@ public class ManagerComponent {
 
         return reviewsRepository.findAll();
 
+    }
+
+    public String addNewEmployee(Employee employee , Login login){
+
+        employeeRepository.save( employee );
+
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+
+        String encodedPassword = bCryptPasswordEncoder.encode( login.getPassword() );
+
+        loginRepository.insertIntoLogin(login.getEmail(), encodedPassword , login.getSaltkey(), null , employee.getEmployeeID() , login.getDateTime());
+
+        return "done";
     }
 
 }

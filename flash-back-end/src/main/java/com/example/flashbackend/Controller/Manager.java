@@ -1,15 +1,13 @@
 package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.Component.ManagerComponent;
-import com.example.flashbackend.Entity.Employee;
-import com.example.flashbackend.Entity.Event;
+import com.example.flashbackend.DTO.AddEmployee;
+import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
-import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -65,6 +63,19 @@ public class Manager {
     public List<Reviews> getReviews(){
 
         return managerComponent.getReviews();
+
+    }
+
+    @PostMapping("/addEmployee")
+    public String addEmployee(@RequestBody AddEmployee addEmployee){
+
+        System.out.println( " " + addEmployee.getContactNo() + " " + addEmployee.getFirstName() + " " + addEmployee.getLastName() + " " + addEmployee.getNic() );
+
+        Employee employee = new Employee( addEmployee.getFirstName() , addEmployee.getLastName() , addEmployee.getGender() , addEmployee.getType() , addEmployee.getProfilePic() , addEmployee.getNic() , addEmployee.getContactNo() , addEmployee.getAddress() );
+
+        Login login = new Login( addEmployee.getEmail() , addEmployee.getPassword() , "faranfrost" , new Timestamp(System.currentTimeMillis()) );
+
+        return managerComponent.addNewEmployee( employee , login );
 
     }
 
