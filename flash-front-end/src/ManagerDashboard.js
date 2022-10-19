@@ -5,6 +5,17 @@ import event from './Images/event logo.png'
 import income from './Images/income logo.jpg'
 import pic from "./Images/graph.jpg";
 import axios from "axios";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import { Line } from "react-chartjs-2";
 
 const ManagerDashboard = () =>{
 
@@ -15,6 +26,35 @@ const ManagerDashboard = () =>{
     const [totalEmployeeCount , setTotalEmployeeCount] = useState( 0 )
 
     const [totalEventsCount , setTotalEventsCount] = useState( 0 )
+
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        Title,
+        Tooltip,
+        Legend
+    );
+
+    const data = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [
+            {
+                label: "First dataset",
+                data: [33, 53, 85, 41, 44, 65],
+                fill: true,
+                backgroundColor: "rgba(75,192,192,0.2)",
+                borderColor: "rgba(75,192,192,1)"
+            },
+            {
+                label: "Second dataset",
+                data: [33, 25, 35, 51, 54, 76],
+                fill: false,
+                borderColor: "#742774"
+            }
+        ]
+    };
 
     useEffect( () => {
 
@@ -268,12 +308,14 @@ const ManagerDashboard = () =>{
 
                             <div className="card-body p-3">
 
-                                <div className="chart">
+                                <div className="chart" >
 
                                     {/*<canvas id="chart-line" className="my-4 w-100 chartjs-render-monitor"*/}
                                     {/*        style={{height: "375px", width: "669px", display: "block", boxSizing: "border-box" }}/>*/}
 
-                                    <img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>
+                                    {/*<img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>*/}
+
+                                    <Line data={data} />
 
                                 </div>
 

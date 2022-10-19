@@ -7,6 +7,7 @@ import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -76,6 +77,13 @@ public class Manager {
         Login login = new Login( addEmployee.getEmail() , addEmployee.getPassword() , "faranfrost" , new Timestamp(System.currentTimeMillis()) );
 
         return managerComponent.addNewEmployee( employee , login );
+
+    }
+
+    @PostMapping("/deleteReview")
+    public String deleteReview( @RequestBody BigInteger reviewId ){
+
+        return managerComponent.deleteReview( reviewId );
 
     }
 
