@@ -314,7 +314,8 @@ INSERT INTO Login ( Email, Password , Saltkey , DateTime , CustomerID )
 VALUES( 'thinesh@gmail.com' , 'Thinesh123' , 'haha' , '2008-01-01 00:00:03' , 2 );
 
 
-
+INSERT INTO Login ( Email, Password , Saltkey , DateTime , EmployeeID ) 
+VALUES( 'farzanE@gmail.com' , 'Farzan1@3' , 'haha' , '2008-01-01 00:00:03' , 1 );
 
 
 
