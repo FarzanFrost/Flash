@@ -35,7 +35,7 @@ public class Employee {
     @OneToOne( mappedBy = "employee" )
     private Login login;
 
-    @OneToMany( mappedBy = "employee" )
+    @OneToMany( mappedBy = "EmployeeID" )
     private List<Attendance> attendances;
 
     @ManyToMany

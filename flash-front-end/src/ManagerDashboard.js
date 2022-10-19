@@ -1,11 +1,78 @@
-import React from 'react'
+import React, {useState , useEffect } from 'react'
 import employee from './Images/employee logo.png'
 import client from './Images/client logo.jpg'
 import event from './Images/event logo.png'
 import income from './Images/income logo.jpg'
 import pic from "./Images/graph.jpg";
+import axios from "axios";
 
 const ManagerDashboard = () =>{
+
+    const serverLink = 'http://localhost:8080'
+
+    const [totalClientsCount , setTotalClientsCount] = useState( 0 )
+
+    const [totalEmployeeCount , setTotalEmployeeCount] = useState( 0 )
+
+    const [totalEventsCount , setTotalEventsCount] = useState( 0 )
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/customerCount' ).then(
+
+            ( response ) => {
+
+                console.log( response.data )
+                setTotalClientsCount( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! get userCount ") }
+
+        )
+
+    } ,[])
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/employeeCount' ).then(
+
+            ( response ) => {
+
+                console.log( response.data )
+                setTotalEmployeeCount( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! get userCount ") }
+
+        )
+
+    } ,[])
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/eventCount' ).then(
+
+            ( response ) => {
+
+                console.log( response.data )
+                setTotalEventsCount( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! get userCount ") }
+
+        )
+
+    } ,[])
+
     return(
         <div className="h-100">
 
@@ -37,7 +104,7 @@ const ManagerDashboard = () =>{
                                                 Total Employees
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                255
+                                                { totalEmployeeCount }
                                             </h5>
 
                                         </div>
@@ -78,7 +145,7 @@ const ManagerDashboard = () =>{
                                                 Total Events
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                182
+                                                { totalEventsCount }
                                             </h5>
 
                                         </div>
@@ -119,7 +186,7 @@ const ManagerDashboard = () =>{
                                                 Total Clients
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                343
+                                                { totalClientsCount }
                                             </h5>
 
                                         </div>

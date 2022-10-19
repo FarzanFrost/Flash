@@ -36,7 +36,7 @@ const Customer = () => {
     }
 
 
-    authenticateUser('customer', location.authenticated , location.userDetailsAfterAuthentication );
+    //authenticateUser('customer', location.authenticated , location.userDetailsAfterAuthentication );
 
     return  (
 
