@@ -41,9 +41,9 @@ public class CustomerComponent {
         return ReviewsRepository.findAll();
     }
 
-//    public String addNewEvent(Event event){
-//        eventRepository.save( event );
-//         return "done";
-//    }
+    public String addNewEvent(Event event){
+        eventRepository.save( event );
+         return "done";
+    }
 
 }
