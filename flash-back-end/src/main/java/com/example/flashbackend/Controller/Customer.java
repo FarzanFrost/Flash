@@ -35,7 +35,9 @@ public class Customer {
 
 //    @PostMapping("/NewEvent")
 //    public String addEvent(@RequestBody AddEvent addEvent){
-//        Event event = new Event(addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getCustomerId(), addEvent.getPackageId(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered() );
+//        //String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, Integer extraPage, String category, boolean delivered
+//        Event event = new Event(  addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getCustomerId(), addEvent.getPackageId(),  addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered() );
+//
 //        return customerComponent.addNewEvent( event );
 //    }
 
