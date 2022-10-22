@@ -1,15 +1,17 @@
-import  React from 'react'
+import React, {useContext} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 
 const ManagerViewEmployeeDetails = () => {
 
+    const { changeContentVisible } = useContext( AuthenticationContext )
 
     const style3 = {
 
@@ -72,7 +74,7 @@ const ManagerViewEmployeeDetails = () => {
 
                         <div className="card-body pb-5">
 <div className="text-end">
-    <a href="#" className="btn" style={{...style3}} >Add Employee</a><br/>
+    <a href="#" className="btn" style={{...style3}} onClick={ () => changeContentVisible( 7 ) }>Add Employee</a><br/>
 
 </div>
                         <br/>

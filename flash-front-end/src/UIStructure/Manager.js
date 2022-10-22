@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import ManagerViewAllReviews from "../ManagerViewAllReviews";
@@ -6,6 +6,8 @@ import ManagerViewEmployeeDetails from "../ManagerViewEmployeeDetails";
 import ManagerViewEventFullDetails from "../MangerViewEventFullDetails";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import ManagerDashboard from "../ManagerDashboard";
+import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
+import AddEmployee from "../AddEmployee";
 
 
 const Manager = () => {
@@ -25,7 +27,7 @@ const Manager = () => {
 
     }
 
-    const [ contentVisible , setContentVisible ] = useState( 0 )
+    const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
 
     return(
 
@@ -81,49 +83,49 @@ const Manager = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => changeContentVisible( 0 ) }>
                                         <i className="bi bi-speedometer2 bi me-2"></i>
                                         Dashboard
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 1 ) }>
                                         <i className="bi bi-bag bi me-2"></i>
                                         Packages
                                     </a>
                                 </li>
 
                                 {/*<li className="nav-item pb-2">*/}
-                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 2 ) }>*/}
                                 {/*        <i className="bi bi-file-earmark-bar-graph bi me-2"></i>*/}
                                 {/*        Generate Reports*/}
                                 {/*    </a>*/}
                                 {/*</li>*/}
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 3 ) }>
                                         <i className="bi bi-eye bi me-2"></i>
                                         View Events
                                     </a>
                                 </li>
 
                                 {/*<li className="nav-item pb-2">*/}
-                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 4 ) }>*/}
+                                {/*    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 4 ) }>*/}
                                 {/*        <i className="bi bi-chat-square-dots bi me-2"></i>*/}
                                 {/*        Chat with Flash*/}
                                 {/*    </a>*/}
                                 {/*</li>*/}
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 5 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 5 ) }>
                                         <i className="bi bi-people-fill bi me-2"></i>
                                         Employee Details
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 6 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 6 ) }>
                                         <i className="bi bi-window-stack bi me-2"></i>
                                         Reviews
                                     </a>
@@ -149,6 +151,7 @@ const Manager = () => {
                     { contentVisible === 3 && <ManagerViewEventFullDetails/>} {/*events*/}
                     {/*<NewPackage/>*/}{/*no need*/}{/*want to do view packages page for manager*/}
                     { contentVisible === 1 && <ViewPackagesPurperty/>}{/*packages*/}
+                    { contentVisible === 7 && <AddEmployee/>}{/*packages*/}
 
                 </div>
 
