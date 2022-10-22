@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
@@ -6,12 +6,15 @@ import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
 
 
 
 const ManagerViewEmployeeDetails = () => {
 
     const { changeContentVisible } = useContext( AuthenticationContext )
+
+    const serverLink = 'http://localhost:8080'
 
     const style3 = {
 
@@ -21,12 +24,29 @@ const ManagerViewEmployeeDetails = () => {
 
     const [show, setShow] = useState(false);
 
+    const [ employeeDetails , setEmployeeDetails ] = useState( null )
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const NewEmployee = () => {
 
+    useEffect( () => {
 
-    }
+        axios.get( serverLink + '/Employees' ).then(
+
+            ( response ) => {
+
+                setEmployeeDetails( response.data )
+                console.log( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! employee details ") }
+
+        )
+
+    } ,[])
 
     return (
         <div className="h-100">
