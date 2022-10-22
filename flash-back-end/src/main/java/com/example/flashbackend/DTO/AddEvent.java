@@ -1,8 +1,9 @@
 package com.example.flashbackend.DTO;
 
 import java.math.BigInteger;
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
+
 
 public class AddEvent {
     private Date eventDate;
@@ -13,7 +14,7 @@ public class AddEvent {
 
     private String status;
 
-    private Float advancedAmount;
+    private String advancedAmount;
 
     private BigInteger customerId;
 
@@ -29,9 +30,13 @@ public class AddEvent {
 
     private String category;
 
-    private Integer delivered;
+    private Boolean delivered;
 
-    public AddEvent (Date eventDate, Time startTime, Time endTime, String status, Float advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Integer delivered){
+    private BigInteger customerId;
+
+    private BigInteger packageId;
+
+    public AddEvent (Date eventDate, Time startTime, Time endTime, String status, String advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Integer delivered){
         this.eventDate = eventDate;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -79,7 +84,7 @@ public class AddEvent {
 //        this.status = status;
 //    }
 
-    public Float getAdvancedAmount() {
+    public String getAdvancedAmount() {
         return advancedAmount;
     }
 
@@ -143,7 +148,7 @@ public class AddEvent {
 //        this.category = category;
 //    }
 
-    public Integer getDelivered() {
+    public Boolean getDelivered() {
         return delivered;
     }
 
