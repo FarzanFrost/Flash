@@ -2,6 +2,7 @@ package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.Component.ManagerComponent;
 import com.example.flashbackend.DTO.AddEmployee;
+import com.example.flashbackend.DTO.AddPackages;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,6 +85,13 @@ public class Manager {
     public String deleteReview( @RequestBody BigInteger reviewId ){
 
         return managerComponent.deleteReview( reviewId );
+
+    }
+
+    @PostMapping("/addPackage")
+    public String addPackage(@RequestBody AddPackages addPackages ){
+
+        return managerComponent.addPackage( addPackages );
 
     }
 
