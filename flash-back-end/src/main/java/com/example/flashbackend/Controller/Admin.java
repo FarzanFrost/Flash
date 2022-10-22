@@ -1,6 +1,4 @@
 package com.example.flashbackend.Controller;
 
-public class Review {
-
+public class Admin {
 }
-
