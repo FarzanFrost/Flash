@@ -26,6 +26,12 @@ public class EventForm {
 
     private String longitude;
 
+    private Integer extraPage;
+
+    private String category;
+
+    private Integer delivered;
+
     public Time getStartTime() {
         return startTime;
     }
@@ -121,12 +127,6 @@ public class EventForm {
     public void setDelivered(Integer delivered) {
         this.delivered = delivered;
     }
-
-    private Integer extraPage;
-
-    private String category;
-
-    private Integer delivered;
 
     public Date getEventDate() {
         return eventDate;
