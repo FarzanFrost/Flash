@@ -21,10 +21,10 @@ public class Attendance {
 
     private String Present;
 
-    @ManyToOne
-    @JoinColumn( name = "EventID" )
-    @JsonIgnore
-    private Employee employee;
+//    @ManyToOne
+//    @JoinColumn( name = "EmployeeID" )
+//    @JsonIgnore
+//    private Employee employee;
 
     public Attendance(){}
 
@@ -58,11 +58,11 @@ public class Attendance {
         Present = present;
     }
 
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
+//    public Employee getEmployee() {
+//        return employee;
+//    }
+//
+//    public void setEmployee(Employee employee) {
+//        this.employee = employee;
+//    }
 }

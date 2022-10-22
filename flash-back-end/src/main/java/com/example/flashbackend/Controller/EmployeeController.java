@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-public class Employee {
+public class EmployeeController {
 
     @Autowired
     EmployeeComponent employeeComponent;

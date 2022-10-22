@@ -1,0 +1,322 @@
+CREATE DATABASE FlashDB;
+
+USE FlashDB;
+
+CREATE TABLE Chat(
+    ChatID BIGINT NOT NULL AUTO_INCREMENT,
+	CustomerID BIGINT NOT NULL,
+	DateTime TIMESTAMP NOT NULL,
+	IsMessageFromManager BOOLEAN NOT NULL,
+    Content VARCHAR(500),   
+    PRIMARY KEY(ChatID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Login(
+    Email VARCHAR(400) NOT NULL,
+    Password VARCHAR(200) NOT NULL,
+	Saltkey VARCHAR(25) NOT NULL,
+	CustomerID BIGINT,
+	EmployeeID BIGINT,
+	DateTime TIMESTAMP NOT NULL,
+    PRIMARY KEY(Email)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Employee(
+    EmployeeID BIGINT NOT NULL AUTO_INCREMENT,
+    FirstName VARCHAR(20) NOT NULL,
+    LastName VARCHAR(20) NOT NULL,
+	Gender ENUM('Male','Female') NOT NULL,
+	Type varchar(20) NOT NULL,
+    ProfilePic BIGINT,
+    NIC varchar(20) NOT NULL,
+	ContactNo VARCHAR(20) NOT NULL,
+    Address VARCHAR(150),	
+    PRIMARY KEY(EmployeeID)
+    )ENGINE = INNODB;
+
+CREATE TABLE Attendance(
+	EmployeeID BIGINT NOT NULL,
+    Date DATE NOT NULL,
+    Present ENUM('Present','Absent') NOT NULL,	
+    CONSTRAINT PK_Attendence PRIMARY KEY(EmployeeID,Date)
+    )ENGINE = INNODB;
+	
+CREATE TABLE GalleryImages(
+	EventID BIGINT NOT NULL,
+   ImageID BIGINT NOT NULL AUTO_INCREMENT,
+   PRIMARY KEY(ImageID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Package(
+	PackageID BIGINT NOT NULL AUTO_INCREMENT,
+    Frame VARCHAR(30) NOT NULL,
+    Videographer INT NOT NULL,
+	Photographer INT NOT NULL,
+	Calender BOOLEAN NOT NULL,
+	Name VARCHAR(20) NOT NULL,
+	Pages INT NOT NULL,
+	ExtraPagesPrice FLOAT,
+	OutshootType VARCHAR(20) NOT NULL,
+	SignatureFrame BOOLEAN NOT NULL,
+	AlbumDesign VARCHAR(20),
+	TotalPayment VARCHAR(20) NOT NULL,
+	EventType VARCHAR(20) NOT NULL,	
+	Additional VARCHAR(40),
+    PRIMARY KEY(PackageID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Portfolio(
+	PortfolioID BIGINT NOT NULL AUTO_INCREMENT,
+    Location VARCHAR(30) NOT NULL,
+    MessageContent VARCHAR(20) NOT NULL,
+	ContentType VARCHAR(20) NOT NULL,
+    PRIMARY KEY(PortfolioID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Discounts(
+	DiscountsID BIGINT NOT NULL AUTO_INCREMENT,
+    SerialNo VARCHAR(30) NOT NULL,
+	CustomerID BIGINT NOT NULL,
+    Percentage INT NOT NULL,
+	Used BOOLEAN NOT NULL,
+    PRIMARY KEY(DiscountsID)
+    )ENGINE = INNODB;
+
+CREATE TABLE Customer(
+	CustomerID BIGINT NOT NULL AUTO_INCREMENT,
+    FirstName VARCHAR(30) NOT NULL,
+    LastName VARCHAR(20) NOT NULL,
+	Gender ENUM('Male','Female') NOT NULL,
+	NIC VARCHAR(20) NOT NULL,
+	ContactNo VARCHAR(20),
+	CardNo INT,
+	CVCNo INT,
+	ExpiaryDate DATE,
+	CardType VARCHAR(20),
+    PRIMARY KEY(CustomerID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Event(
+    EventID BIGINT NOT NULL AUTO_INCREMENT,
+    Status 	VARCHAR(30) NOT NULL,
+    AdvanceAmount FLOAT NOT NULL,
+	PackageID BIGINT NOT NULL,
+	CustomerID BIGINT NOT NULL,
+	EventDate DATE NOT NULL,
+    StartTime Time NOT NULL,
+	EndTime Time NOT NULL,
+    Address varchar(20) NOT NULL,
+	Latitude VARCHAR(20) NOT NULL,
+    Longitude VARCHAR(20) NOT NULL,
+	ExtraPage INT NOT NULL,
+	Category VARCHAR(30) NOT NULL,
+	Delivered BOOLEAN NOT NULL,
+    PRIMARY KEY(EventID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Folder(
+    FolderID BIGINT NOT NULL AUTO_INCREMENT,
+	EventID BIGINT NOT NULL,
+    Name VARCHAR(20) NOT NULL,	
+    PRIMARY KEY(FolderID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE FolderImages(
+	ImageID BIGINT NOT NULL,
+	FolderID BIGINT NOT NULL,
+	CONSTRAINT PK_FolderImages PRIMARY KEY(ImageID,FolderID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE ReviewRelationship(
+    ReviewsID BIGINT NOT NULL,
+	CustomerID BIGINT NOT NULL,
+	EventID BIGINT NOT NULL,
+	CONSTRAINT PK_ReviewRelationship PRIMARY KEY(ReviewsID,CustomerID,EventID)
+    )ENGINE = INNODB;
+	
+CREATE TABLE Reviews(
+    ReviewsID BIGINT NOT NULL AUTO_INCREMENT,
+    Comment VARCHAR(20) NOT NULL,
+	DateTime TIMESTAMP NOT NULL,
+	Rate INT NOT NULL,
+	Deleted BOOLEAN NOT NULL,
+    PRIMARY KEY(ReviewsID)
+    )ENGINE = INNODB;
+
+CREATE TABLE EventRelationship(
+    EventID BIGINT NOT NULL,
+	EmployeeID BIGINT NOT NULL,
+	CONSTRAINT PK_EventRelationship PRIMARY KEY(EventID,EmployeeID)
+    )ENGINE = INNODB;
+
+
+ALTER TABLE Chat
+   ADD FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID);
+   
+ALTER TABLE Login
+   ADD FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID),
+   ADD FOREIGN KEY(EmployeeID) REFERENCES Employee(EmployeeID);
+   
+ALTER TABLE Attendence  
+   ADD FOREIGN KEY(EmployeeID) REFERENCES Employee(EmployeeID);  
+   
+
+ALTER TABLE GalleryImages
+   ADD FOREIGN KEY(EventID) REFERENCES Event(EventID);
+   
+ALTER TABLE Discounts
+   ADD FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID);
+   
+ALTER TABLE Event
+   ADD FOREIGN KEY(PackageID) REFERENCES Package(PackageID);
+   
+ALTER TABLE Folder
+   ADD FOREIGN KEY(EventID) REFERENCES Event(EventID);
+   
+   
+ALTER TABLE FolderImages
+   ADD FOREIGN KEY(ImageID) REFERENCES GalleryImages(ImageID),
+   ADD FOREIGN KEY(FolderID) REFERENCES Folder(FolderID);
+   
+ALTER TABLE ReviewRelationship
+   ADD FOREIGN KEY(ReviewsID) REFERENCES Reviews(ReviewsID),
+   ADD FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID),
+   ADD FOREIGN KEY(EventID) REFERENCES Event(EventID);
+
+ALTER TABLE EventRelationship
+   ADD FOREIGN KEY(EventID) REFERENCES Event(EventID),
+   ADD FOREIGN KEY(EmployeeID) REFERENCES Employee(EmployeeID);
+
+INSERT INTO Customer ( FirstName , LastName , Gender , NIC , ContactNo,CardNo,CVCNo,ExpiaryDate,CardType ) 
+VALUES( 'Farzan' , 'Frost' , 'Male' , 123456789 , 987654321,123654789,456,'2008-08-22','Visa' );
+
+INSERT INTO Customer ( FirstName , LastName , Gender , NIC , ContactNo,CardNo,CVCNo,ExpiaryDate,CardType ) 
+VALUES( 'Thinesh' , 'kanth' , 'Male' , 123085647947 , 56231478935,123654789,876,'2008-08-23','Visa' );
+
+
+
+INSERT INTO Chat (CustomerID, DateTime , IsMessageFromManager , Content) 
+VALUES( 1,'2008-01-01 00:00:01' , 1 , 'hi I need to change the pacakage date' );
+
+INSERT INTO Chat ( CustomerID,DateTime , IsMessageFromManager , Content) 
+VALUES( 2,'2008-01-01 00:00:02' , 1 , 'tell me' );
+
+
+
+INSERT INTO Employee ( Firstname, Lastname , Gender , Type , Profilepic, NIC, ContactNo, Address ) 
+VALUES( 'Thinesh' , 'kanth' , 'Male' , 'photographer' , 20008457 , '200000301256', 0123654789, 'batticaloa' );
+
+INSERT INTO Employee ( Firstname, Lastname , Gender , Type , Profilepic, NIC, ContactNo, Address ) 
+VALUES( 'rahu' , 'ram' , 'Male' , 'photographer' , 10008447 , '100000304256', 0123657789, 'Jaffna' );
+
+
+INSERT INTO Customer ( FirstName , LastName , Gender , NIC , ContactNo,CardNo,CVCNo,ExpiaryDate,CardType ) 
+VALUES( 'Farzan' , 'Frost' , 'Male' , 123456789 , 987654321,123654789,456,'2008-02-25','Visa' );
+
+INSERT INTO Customer ( FirstName , LastName , Gender , NIC , ContactNo,CardNo,CVCNo,ExpiaryDate,CardType ) 
+VALUES( 'Thinesh' , 'kanth' , 'Male' , 123085647947 , 56231478935,123654789,876,'2020--08-24','Visa' );
+
+INSERT INTO Package ( Frame , Videographer ,Photographer ,Calender ,Name ,Pages ,ExtraPagesPrice ,OutshootType ,SignatureFrame ,AlbumDesign ,TotalPayment ,EventType ,Additional )
+VALUES( 'hi',1,2,true,'farzan',3,12.5,'not sure',false,'high',300000,'Wedding','nothing');
+
+INSERT INTO Package ( Frame , Videographer ,Photographer ,Calender ,Name ,Pages ,ExtraPagesPrice ,OutshootType ,SignatureFrame ,AlbumDesign ,TotalPayment ,EventType ,Additional )
+VALUES( 'heloo',2,3,true,'thinesh',3,12.8,' sure',false,'high',28500,'Wedding','nothing');
+
+
+
+INSERT INTO Event (Status ,AdvanceAmount ,PackageID , CustomerID ,EventDate ,StartTime ,EndTime ,Address ,Latitude ,Longitude ,ExtraPage ,Category ,Delivered  ) 
+VALUES( 'in progress',200.00,1,1,'2022-01-18','23:32:11','23:32:11','asdfasdfasdf',35.5654,65.45,5,'not sure',0
+ );
+
+
+INSERT INTO Event (Status ,AdvanceAmount ,PackageID , CustomerID ,EventDate ,StartTime ,EndTime ,Address ,Latitude ,Longitude ,ExtraPage ,Category ,Delivered  ) 
+VALUES( 'not in progress',2000.00,1,1,'2023-01-18','28:32:11','28:32:11','trinco',34.5654,74.45,8,'sure',0
+ );
+
+
+
+INSERT INTO Attendance ( EmployeeID, Date,Present ) 
+VALUES( 1 , '2008-10-18','Present' );
+
+INSERT INTO Attendance ( EmployeeID, Date,Present  ) 
+VALUES( 2, '2008-07-12' ,'Present');
+
+
+
+INSERT INTO GalleryImages ( EventID  ) 
+VALUES( 3 );
+
+INSERT INTO GalleryImages ( EventID  ) 
+VALUES( 4 );
+
+
+
+INSERT INTO portfolio ( Location, MessageContent , ContentType) 
+VALUES( 'batticaloa' , 'hiii' , 'wedding' );
+
+INSERT INTO portfolio ( Location, MessageContent , ContentType) 
+VALUES( 'trinco' , 'hiii' , 'birthday' );
+
+INSERT INTO Discounts ( SerialNo, CustomerID , Percentage,Used) 
+VALUES( 1,2,54, 1);
+
+INSERT INTO Discounts ( SerialNo, CustomerID , Percentage,Used) 
+VALUES( 1,1,74,1 );
+
+
+
+
+INSERT INTO Folder ( EventID, Name) 
+VALUES( 3,'thinesh' );
+
+
+INSERT INTO Folder ( EventID, Name) 
+VALUES( 4,'nitharsha' );
+
+
+
+
+INSERT INTO FolderImages ( ImageID,FolderID) 
+VALUES( 3,3 );
+
+INSERT INTO FolderImages ( ImageID,FolderID) 
+VALUES( 4,4);
+
+
+
+INSERT INTO Reviews (ReviewsID, Comment,DateTime,Rate,Deleted) 
+VALUES( 1,'cool','2008-01-01 00:00:03',3,1);
+
+INSERT INTO Reviews (ReviewsID, Comment,DateTime,Rate,Deleted) 
+VALUES( 2,'cool','2008-01-06 00:00:05',2,1);
+
+
+
+INSERT INTO ReviewRelationship (ReviewsID, CustomerID,EventID) 
+VALUES( 1,2,3);
+
+INSERT INTO ReviewRelationship (ReviewsID, CustomerID,EventID) 
+VALUES( 1,1,4);
+
+
+INSERT INTO EventRelationship (EventID, EmployeeID) 
+VALUES( 3,1);
+
+INSERT INTO EventRelationship (EventID, EmployeeID) 
+VALUES( 4,2);
+
+
+
+INSERT INTO Login ( Email, Password , Saltkey , DateTime , CustomerID ) 
+VALUES( 'farzan@gmail.com' , 'Frost123' , 'hehe' , '2008-01-01 00:00:01' , 1 );
+
+INSERT INTO Login ( Email, Password , Saltkey , DateTime , CustomerID ) 
+VALUES( 'thinesh@gmail.com' , 'Thinesh123' , 'haha' , '2008-01-01 00:00:03' , 2 );
+
+
+INSERT INTO Login ( Email, Password , Saltkey , DateTime , EmployeeID ) 
+VALUES( 'farzanE@gmail.com' , 'Farzan1@3' , 'haha' , '2008-01-01 00:00:03' , 1 );
+
+
+
+

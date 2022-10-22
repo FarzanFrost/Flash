@@ -141,6 +141,7 @@ const AuthenticationContextProvider = ( props ) => {
         sessionStorage.removeItem( 'authenticatedUser' );
         authenticated= false ;
         userDetailsAfterAuthentication= null ;
+        navigate("/Login");
 
     }
 
