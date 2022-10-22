@@ -30,12 +30,12 @@ public class Employee {
 
 
 
-    @GetMapping("/filterevent/{email}")
-
-    public Optional<Event> getFilterEvent(@PathVariable String email) {
-        Optional<Event> Event = eventRepository.findById(email);
-        return Event;
-    }
+//    @GetMapping("/filterevent/{email}")
+//
+//    public Optional<Event> getFilterEvent(@PathVariable String email) {
+//        Optional<Event> Event = eventRepository.findById(email);
+//        return Event;
+//    }
 
 
 
