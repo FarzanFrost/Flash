@@ -21,9 +21,9 @@ public interface EventRepository extends JpaRepository<Event, BigInteger> {
     List<Event> findAll();
 
     @Modifying
-    @Query( value = "INSERT INTO event ( Status, AdvancedAmount, PackageID, CustomerID, EventDate, StartTime, EndTime, Address, Latitude, Longitude, ExtraPage, Category, Delivered) VALUES ( :status, :advancedAmount, :packageId, :customerId, :eventDate, :startTime, :endTime, :address, :latitude, :longitude, :extraPage, :category, :delivered);" , nativeQuery = true)
+    @Query( value = "INSERT INTO event ( Status, AdvancedAmount, EventDate, StartTime, EndTime,  Address, Latitude, Longitude, ExtraPage, Category, Delivered, PackageID, CustomerID) VALUES ( :status, :advancedAmount, :eventDate, :startTime, :endTime, :address, :latitude, :longitude, :extraPage, :category, :delivered, :packageId, :customerId);" , nativeQuery = true)
     @Transactional
-    void insertEvent(@Param("status") String status , @Param("advancedAmount") Float advancedAmount , @Param("packageId") BigInteger packageId, @Param("customerId") BigInteger customerId, @Param("eventDate") Date eventDate, @Param("startTime") Time startTime, @Param("endTime") Time endTime, @Param("address") String address, @Param("latitude") String latitude, @Param("longitude") String longitude, @Param("extraPage") Integer extraPage, @Param("category") String category, @Param("delivered") Boolean delivered);
+    void insertEvent(@Param("status") String status , @Param("advancedAmount") String advancedAmount , @Param("eventDate") Date eventDate, @Param("startTime") Time startTime, @Param("endTime") Time endTime, @Param("address") String address, @Param("latitude") String latitude, @Param("longitude") String longitude, @Param("extraPage") Integer extraPage, @Param("category") String category, @Param("delivered") Boolean delivered, @Param("packageId") BigInteger packageId, @Param("customerId") BigInteger customerId);
 
 
 //    @Override
