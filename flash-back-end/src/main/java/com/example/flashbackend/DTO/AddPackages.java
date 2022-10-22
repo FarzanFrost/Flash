@@ -22,13 +22,13 @@ public class AddPackages {
 
     private String albumDesign;
 
-    private String totalPayment;
+    private float totalPayment;
 
     private String eventType;
 
     private String additional;
 
-    public AddPackages(String frame, int videographer, int photographer, boolean calender, String name, int pages, float extraPagesPrice, String outShootType, boolean signatureFrame, String albumDesign, String totalPayment, String eventType, String additional) {
+    public AddPackages(String frame, int videographer, int photographer, boolean calender, String name, int pages, float extraPagesPrice, String outShootType, boolean signatureFrame, String albumDesign, float totalPayment, String eventType, String additional) {
         this.frame = frame;
         this.videographer = videographer;
         this.photographer = photographer;
@@ -84,7 +84,7 @@ public class AddPackages {
         return albumDesign;
     }
 
-    public String getTotalPayment() {
+    public float getTotalPayment() {
         return totalPayment;
     }
 

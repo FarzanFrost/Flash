@@ -1,6 +1,7 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.DTO.AddPackages;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,15 @@ public class ManagerComponent {
 
         reviewsRepository.deleteById( reviewId );
         return "done";
+    }
+
+    public String addPackage( AddPackages addPackages ){
+
+        Package aPackage = new Package( addPackages.getFrame() , addPackages.getVideographer() , addPackages.getPhotographer() , addPackages.isCalender() , addPackages.getName() , addPackages.getPages() , addPackages.getExtraPagesPrice() , addPackages.getOutShootType() , addPackages.isSignatureFrame() , addPackages.getAlbumDesign() , addPackages.getTotalPayment() , addPackages.getEventType() , addPackages.getAdditional() );
+        packageRepository.save( aPackage );
+
+        return "done";
+
     }
 
 }
