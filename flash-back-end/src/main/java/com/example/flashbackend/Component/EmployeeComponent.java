@@ -20,9 +20,9 @@ public class EmployeeComponent {
         return eventRepository.findAll();
     }
 
-    public List<Event>getFilterEvent(String email){
-        return (List<Event>) eventRepository.findById(email).get();
-    }
+//    public List<Event>getFilterEvent(String email){
+//        return (List<Event>) eventRepository.findById(email).get();
+//    }
 
 
 }
