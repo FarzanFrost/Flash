@@ -13,6 +13,9 @@ public interface EventRepository extends CrudRepository<Event, BigInteger> {
     @Override
     List<Event> findAll();
 
+//    @Override
+//    Optional<Event> findById(String email);
 
-    Optional<Event> findById(String email);
-}
+
+    }
+
