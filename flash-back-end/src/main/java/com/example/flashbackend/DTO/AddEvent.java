@@ -16,10 +16,6 @@ public class AddEvent {
 
     private String advancedAmount;
 
-    private BigInteger customerId;
-
-    private BigInteger packageId;
-
     private String address;
 
     private String latitude;
@@ -36,20 +32,20 @@ public class AddEvent {
 
     private BigInteger packageId;
 
-    public AddEvent (Date eventDate, Time startTime, Time endTime, String status, String advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Integer delivered){
+    public AddEvent (Date eventDate, Time startTime, Time endTime, String status, String advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Boolean delivered){
         this.eventDate = eventDate;
         this.startTime = startTime;
         this.endTime = endTime;
         this.status = status;
         this.advancedAmount = advancedAmount;
-        this.customerId = customerId;
-        this.packageId = packageId;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
         this.extraPage = extraPage;
         this.category = category;
         this.delivered = delivered;
+        this.customerId = customerId;
+        this.packageId = packageId;
     }
 
     public Date getEventDate() {
