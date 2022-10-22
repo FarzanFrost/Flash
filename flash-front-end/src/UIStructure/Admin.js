@@ -137,7 +137,7 @@ const Customer = () => {
                     { contentVisible === 0 && <AdminDashboard/>}
                     { contentVisible === 1 && <Vieweventdetailsforadmin/>}
                     { contentVisible === 2 && <AdminViewAllReviews/>}
-                    { contentVisible === 3 && <AdminViewEmployeeDetailspage/>}
+                    { contentVisible === 3 && <AdminViewEmployeeDetailspage/>}npm install @azure/storage-blob
                     {/*<Vieweventdetailsforadmin/>*/}
                     {/*<MoreDetailsOfEventsForAdmin/>*/}
                 </div>
