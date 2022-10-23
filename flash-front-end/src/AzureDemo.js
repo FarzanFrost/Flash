@@ -1,6 +1,7 @@
 // azure sample
 
 import React, {useState} from 'react'
+import {BlobServiceClient, ContainerClient} from "@azure/storage-blob";
 
 const AzureDemo = () => {
 
