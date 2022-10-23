@@ -2,6 +2,7 @@ package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
+import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.DTO.AddEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,16 +36,13 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-    @PostMapping("/NewEvent")
-    public String addEvent(@RequestBody AddEvent addEvent){
-        //String status, String advanceAmount, Date eventDate, Time startTime, Time endTime, String address, String latitude, String longtitude, Integer extraPage, String category, boolean delivered
-        Event event = new Event(  addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered() );
+    @PostMapping("/newEvent")
+    public String addEvent(){
+        Event event = new Event();
+        Customer customer = new Customer();
+        Package packages = new Package();
 
-        Customer customer = new Customer(addEvent.getCustomerId());
-
-        Package packages = new Package(addEvent.getPackageId());
-
-        return customerComponent.addNewEvent( event, customer, packages );
+        return customerComponent.addNewEvent(event, customer, packages);
     }
 
 }
