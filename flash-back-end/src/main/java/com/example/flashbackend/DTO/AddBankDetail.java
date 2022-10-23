@@ -12,6 +12,13 @@ public class AddBankDetail {
 
     private String cardType;
 
+    public AddBankDetail(Integer cardNo, Integer cvcNo, Date expiaryDate, String cardType){
+        this.cardNo = cardNo;
+        this.cvcNo = cvcNo;
+        this.expiaryDate = expiaryDate;
+        this.cardType = cardType;
+    }
+
     public Integer getCardNo() {
         return cardNo;
     }
