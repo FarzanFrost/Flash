@@ -51,6 +51,9 @@ import ManagerDashboard from "./ManagerDashboard";
 import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
 import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
+// azure
+import azureDemo from "./AzureDemo";
+import AzureDemo from "./AzureDemo";
 import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
 
 
@@ -124,6 +127,8 @@ function App() {
               <Route exact path="/Folder" element={ <SelectImageContextProviderInterface/> } />
               <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
               <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
+              {/*azure sample*/}
+              <Route exact path="/AzureDemo" element={<AzureDemo/>}/>
           </Routes>
 
 
