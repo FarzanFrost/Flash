@@ -51,7 +51,7 @@ import ManagerDashboard from "./ManagerDashboard";
 import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
 import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
-
+import EmployeeSelectImageContextProviderInterface from "./EmployeeSelectImageContextProviderInterface";
 
 function App() {
   return (
@@ -123,6 +123,7 @@ function App() {
               <Route exact path="/Folder" element={ <SelectImageContextProviderInterface/> } />
               <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
               <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
+              <Route exact path="/EmployeeFolder" element={ <EmployeeSelectImageContextProviderInterface/> } />
           </Routes>
 
 
