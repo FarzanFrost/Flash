@@ -1,6 +1,7 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
@@ -52,8 +53,10 @@ public class CustomerComponent {
        return "done";
     }
 
-    public String addReview(Reviews reviews){
-
+    public String addReview(AddReview addReview){
+        Reviews reviews = new Reviews(addReview.getComment(), addReview.getDateTime(), addReview.getRate(), addReview.getDeleted());
+        ReviewsRepository.save(reviews);
+        return "done";
     }
 
 }
