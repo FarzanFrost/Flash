@@ -9,6 +9,7 @@ import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Component
@@ -43,19 +44,18 @@ public class CustomerComponent {
         return ReviewsRepository.findAll();
     }
 
-    public String addNewEvent(Event event, Customer customer, Package packages){
-        eventRepository.insertEvent( event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), customer.getCustomerID(), packages.getPackageID() );
-        return "done";
-    }
+//    public String addNewEvent(Event event, Customer customer, Package packages){
+//        eventRepository.insertEvent( event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), customer.getCustomerID(), packages.getPackageID() );
+//        return "done";
+//    }
 
-    public String addBankDetail(Customer customer){
-       customerRepository.save(customer);
-       return "done";
-    }
+//    public String addBankDetail(Customer customer){
+//       customerRepository.save(customer);
+//       return "done";
+//    }
 
-    public String addReview(AddReview addReview){
-        Reviews reviews = new Reviews(addReview.getComment(), addReview.getDateTime(), addReview.getRate(), addReview.getDeleted());
-        ReviewsRepository.save(reviews);
+    public String addReview(Reviews reviews){
+        ReviewsRepository.save( reviews );
         return "done";
     }
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
 import com.example.flashbackend.Entity.Event;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -51,9 +52,10 @@ public class CustomerController {
 //        return customerComponent.addBankDetail( customer );
 //    }
 
-    @PostMapping("/addReview")
+    @PostMapping("/newReview")
     public String addReviews(@RequestBody AddReview addReview){
-        return customerComponent.addReview( addReview );
+        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
+        return customerComponent.addReview( reviews );
     }
 
 }
