@@ -36,7 +36,7 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-    @PostMapping("/newEvent")
+    @PostMapping("/NewEvent")
     public String addEvent(){
         Event event = new Event();
         Customer customer = new Customer();
