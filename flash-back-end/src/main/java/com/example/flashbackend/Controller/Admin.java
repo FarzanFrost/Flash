@@ -1,5 +1,6 @@
 package com.example.flashbackend.Controller;
 
+import com.example.flashbackend.Component.AdminEventComponent;
 import com.example.flashbackend.Component.AdminReviewComponent;
 import com.example.flashbackend.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class Admin {
     @Autowired
     AdminReviewComponent AdminReviewComponent;
 
+    @Autowired
+    AdminEventComponent AdminEventComponent;
+
     @GetMapping("/AdminViewReviews")
     public List<Reviews> getReviews(){
 
@@ -26,6 +30,11 @@ public class Admin {
     @PostMapping("/AdmindeleteReview")
         public String deleteReview(@RequestBody BigInteger reviewId) {
             return AdminReviewComponent.deleteReview(reviewId);
-        }
+    }
+
+//    @GetMapping("/AdminViewEvents")
+//    public List<Events> getEvents(){
+//        return AdminEventComponent.getEvents();
+//    }
 
 }
