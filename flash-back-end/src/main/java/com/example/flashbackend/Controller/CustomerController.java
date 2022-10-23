@@ -36,18 +36,18 @@ public class CustomerController {
     }
 
     @PostMapping("/NewEvent")
-    public String addEvent(){
-        Event event = new Event();
-        Customer customer = new Customer();
-        Package packages = new Package();
+    public String addEvent(@RequestBody AddEvent addEvent){
+//        Event event = new Event();
+//        Customer customer = new Customer();
+//        Package packages = new Package();
 
-        return customerComponent.addNewEvent(event, customer, packages);
+        return customerComponent.addNewEvent( addEvent );
     }
 
-//    @PostMapping("/newBank")
-//    public String addBank(@RequestBody AddBankDetail addBank){
-//        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
-//        return customerComponent.addBankDetail( customer );
-//    }
+    @PostMapping("/newBank")
+    public String addBank(@RequestBody AddBankDetail addBank){
+        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
+        return customerComponent.addBankDetail( customer );
+    }
 
 }
