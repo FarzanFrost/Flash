@@ -1,11 +1,8 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
-import com.example.flashbackend.DTO.AddPackages;
 import com.example.flashbackend.Entity.*;
-import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.math.BigInteger;
@@ -27,6 +24,7 @@ public class AdminEventComponent {
     }
 
     public String deleteEvent(BigInteger eventId) {
+
         eventRepository.deleteById(eventId);
         return "done";
     }
