@@ -32,9 +32,9 @@ public class Admin {
             return AdminReviewComponent.deleteReview(reviewId);
     }
 
-//    @GetMapping("/AdminViewEvents")
-//    public List<Events> getEvents(){
-//        return AdminEventComponent.getEvents();
-//    }
+    @GetMapping("/AdminViewEvents")
+    public List<Event> getEvents(){
+        return AdminEventComponent.getEvents();
+    }
 
 }

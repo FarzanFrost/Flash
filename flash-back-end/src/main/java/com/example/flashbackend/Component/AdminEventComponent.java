@@ -25,7 +25,7 @@ public class AdminEventComponent {
         return eventRepository.count();
     }
 
-    public List<Event> getevents(){
+    public List<Event> getEvents(){
         return eventRepository.findAll();
     }
 
