@@ -17,9 +17,6 @@ public class AdminEventComponent {
     @Autowired
     EventRepository eventRepository;
 
-//    public static List<Events> getEvents() {
-//    }
-
     public long getEventCount(){
 
         return eventRepository.count();

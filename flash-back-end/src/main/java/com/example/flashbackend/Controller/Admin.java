@@ -37,4 +37,9 @@ public class Admin {
         return AdminEventComponent.getEvents();
     }
 
+    @GetMapping("/AdminEventCount")
+    public long getEventCount(){
+        return AdminEventComponent.getEventCount();
+    }
+
 }
