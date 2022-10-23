@@ -1,6 +1,7 @@
 package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.DTO.AddBankDetail;
+import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
 import com.example.flashbackend.Entity.Customer;
@@ -49,5 +50,10 @@ public class CustomerController {
 //        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
 //        return customerComponent.addBankDetail( customer );
 //    }
+
+    @PostMapping("/addReview")
+    public String addReviews(@RequestBody AddReview addReview){
+        return customerComponent.addReview( addReview );
+    }
 
 }
