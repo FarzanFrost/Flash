@@ -27,7 +27,7 @@ public class Admin {
         return AdminReviewComponent.getReviews();
     }
 
-    @PostMapping("/AdmindeleteReview")
+    @PostMapping("/AdminDeleteReview")
         public String deleteReview(@RequestBody BigInteger reviewId) {
             return AdminReviewComponent.deleteReview(reviewId);
     }
@@ -40,6 +40,11 @@ public class Admin {
     @GetMapping("/AdminEventCount")
     public long getEventCount(){
         return AdminEventComponent.getEventCount();
+    }
+
+    @PostMapping("/AdminDeleteEvent")
+    public String deleteEvent(@RequestBody BigInteger eventId) {
+        return AdminEventComponent.deleteEvent(eventId);
     }
 
 }

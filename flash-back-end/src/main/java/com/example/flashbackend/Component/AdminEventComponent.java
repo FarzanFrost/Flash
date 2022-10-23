@@ -26,5 +26,10 @@ public class AdminEventComponent {
         return eventRepository.findAll();
     }
 
+    public String deleteEvent(BigInteger eventId) {
+        eventRepository.deleteById(eventId);
+        return "done";
+    }
+
 }
 
