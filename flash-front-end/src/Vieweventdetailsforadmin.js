@@ -36,8 +36,6 @@ const Vieweventdetailsforadmin = () => {
             </div>
        </div>
 
-
-
         <div className="col-md-6" >
 
             <div className="dropdown position-relative mx-5 m-2" style={{ left:'16rem'}}>
@@ -91,9 +89,10 @@ const Vieweventdetailsforadmin = () => {
                                                 <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
                                                 <a href="#" className="btn" style={{...style3}}>Edit details</a>
                                             </div>
-                                            <div className="card-footer bg-dark text-center">
-                                                <small className="text-muted">Last updated 3 mins ago</small>
-                                            </div>
+
+                                            {/*<div className="card-footer bg-dark text-center">*/}
+                                            {/*    <small className="text-muted">Last updated 3 mins ago</small>*/}
+                                            {/*</div>*/}
 
                                                 </div>
 
@@ -113,9 +112,10 @@ const Vieweventdetailsforadmin = () => {
                                                 <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
                                                 <a href="#" className="btn" style={{...style3}}>Edit details</a>
                                             </div>
-                                            <div className="card-footer bg-dark text-center">
-                                                <small className="text-muted">Last updated 3 mins ago</small>
-                                            </div>
+
+                                            {/*<div className="card-footer bg-dark text-center">*/}
+                                            {/*    <small className="text-muted">Last updated 3 mins ago</small>*/}
+                                            {/*</div>*/}
 
                                                 </div>
                                         </div>
@@ -134,9 +134,10 @@ const Vieweventdetailsforadmin = () => {
                                                 <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
                                                 <a href="#" className="btn" style={{...style3}}>Edit details</a>
                                             </div>
-                                            <div className="card-footer bg-dark text-center">
-                                                <small className="text-muted">Last updated 3 mins ago</small>
-                                            </div>
+
+                                            {/*<div className="card-footer bg-dark text-center">*/}
+                                            {/*    <small className="text-muted">Last updated 3 mins ago</small>*/}
+                                            {/*</div>*/}
 
                                         </div>
                                         </div>
@@ -160,9 +161,10 @@ const Vieweventdetailsforadmin = () => {
                                                 <a href="#" className="btn" style={{...style3}} >View Review</a><br/><br/>
                                                 <a href="#" className="btn" style={{...style3}}>Edit details</a>
                                             </div>
-                                            <div className="card-footer bg-dark text-center">
-                                                <small className="text-muted">Last updated 3 mins ago</small>
-                                            </div>
+
+                                            {/*<div className="card-footer bg-dark text-center">*/}
+                                            {/*    <small className="text-muted">Last updated 3 mins ago</small>*/}
+                                            {/*</div>*/}
 
                                         </div>
                                         </div>
