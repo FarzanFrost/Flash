@@ -52,4 +52,8 @@ public class CustomerComponent {
        return "done";
     }
 
+    public String addReview(){
+        
+    }
+
 }
