@@ -9,7 +9,7 @@ import EmployeeWorkView from "../EmployeeWorkView";
 import ViewFiles from "../ViewFiles";
 import Calender from "../Calender";
 import EventSelection from "../EventSelection";
-
+import EmployeeSelectImageContextProviderInterface from "../EmployeeSelectImageContextProviderInterface";
 
 const Employee = () => {
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
@@ -133,7 +133,7 @@ const Employee = () => {
                     { contentVisible === 0 && <EventSelection/>}{/*events*/}
                     { contentVisible === 1 && <EmployeeWorkView/>}{/*events*/}
                     { contentVisible === 2 && <Calender/>}{/*events*/}
-                    { contentVisible === 3 && <ViewFiles/>}{/*events*/}
+                    { contentVisible === 3 && <EmployeeSelectImageContextProviderInterface/>}{/*events*/}
                     {/*<ViewPhotos/>*/} {/*want to change this ui and make a folder structure*/}
 
                 </div>
