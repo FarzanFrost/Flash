@@ -52,6 +52,10 @@ import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
 import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
 import EmployeeSelectImageContextProviderInterface from "./EmployeeSelectImageContextProviderInterface";
+// azure
+import azureDemo from "./AzureDemo";
+import AzureDemo from "./AzureDemo";
+import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
 
 function App() {
   return (
@@ -94,9 +98,9 @@ function App() {
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Customer" element={ <CustomerAuthenticationContextProviderInterface/> } />
-              <Route exact path="/Customer" element={ <Customer/> } />
+              {/*<Route exact path="/Customer" element={ <Customer/> } />*/}
               <Route exact path="/Employee" element={ <Employee/> } />
-              <Route exact path="/Manager" element={ <Manager/> } />
+              <Route exact path="/Manager" element={ <ManagerAuthenticationContextProviderInterface/> } />
               <Route exact path="/Admin" element={ <Admin/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
@@ -124,6 +128,8 @@ function App() {
               <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
               <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
               <Route exact path="/EmployeeFolder" element={ <EmployeeSelectImageContextProviderInterface/> } />
+              {/*azure sample*/}
+              <Route exact path="/AzureDemo" element={<AzureDemo/>}/>
           </Routes>
 
 

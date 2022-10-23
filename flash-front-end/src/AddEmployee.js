@@ -1,22 +1,56 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import bgpic from './Images/photographer.jpg'
+import axios from "axios";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
-const EmpForm = () => {
+const AddEmployee = () => {
+
+    const serverLink = 'http://localhost:8080'
+
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
     const [firstName,setFirstName] = useState('')
     const [lastName,setLastName] = useState('')
     const [nic,setNic] = useState('')
     const [gender,setGender] = useState('')
     const [address,setAddress] = useState('')
-    const [contact,setContact] = useState('')
-    const [type,setType] = useState('')
-    const [salary,setSalary] = useState('')
+    const [contactNo,setContactNo] = useState('')
+    const [type,setType] = useState('Photographer')
+    const [profilePic,setProfilePic] = useState('')
     const [email,setEmail] = useState('')
     const [uname,setUname] = useState('')
     const [password,setPassword] = useState('')
 
-}
+    const selectType = ( event ) => { setType( event.target.value ) }
 
-const AddEmployee = () => {
+    const addEmployee = () => {
+
+        const data = {
+
+            firstName,lastName,gender,type,profilePic,nic,contactNo,address,email,password
+
+        }
+
+        axios.post( serverLink + '/addEmployee' , data ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    changeContentVisible( 5 )
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add employee") }
+
+        )
+
+    }
+
     return(
         <div className="h-100">
 
@@ -49,11 +83,11 @@ const AddEmployee = () => {
                                                     <label className="col-sm-3 col-form-label">First Name</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            // value={ firstName }
+                                                            value={ firstName }
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter First Name"
-                                                            // onChange={ (e) => setFirstName( e.target.value )}
+                                                            onChange={ (e) => setFirstName( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -65,11 +99,11 @@ const AddEmployee = () => {
                                                     <label className="col-sm-3 col-form-label">Last Name</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            // value={lastName}
+                                                            value={lastName}
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter Last Name"
-                                                            // onChange={ (e) => setLastName( e.target.value )}
+                                                            onChange={ (e) => setLastName( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -81,11 +115,11 @@ const AddEmployee = () => {
                                                     <label className="col-sm-3 col-form-label">NIC</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            // value={nic}
+                                                            value={nic}
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter NIC"
-                                                            // onChange={ (e) => setNic( e.target.value )}
+                                                            onChange={ (e) => setNic( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -97,11 +131,11 @@ const AddEmployee = () => {
                                                     <label className="col-sm-3 col-form-label">Gender</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            //value={last name}
+                                                            value={gender}
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter Gender"
-                                                            //onChange={ (e) => setName( e.target.value )}
+                                                            onChange={ (e) => setGender( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -113,11 +147,11 @@ const AddEmployee = () => {
                                                     <label className="col-sm-3 col-form-label">Address</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            //value={last name}
+                                                            value={address}
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter Address"
-                                                            //onChange={ (e) => setName( e.target.value )}
+                                                            onChange={ (e) => setAddress( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -129,11 +163,11 @@ const AddEmployee = () => {
                                                     <label className="col-sm-3 col-form-label">Contact No</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            //value={last name}
+                                                            value={contactNo}
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter Contact No"
-                                                            //onChange={ (e) => setName( e.target.value )}
+                                                            onChange={ (e) => setContactNo( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -144,7 +178,7 @@ const AddEmployee = () => {
                                                 <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">Type</label>
                                                     <div className="col-sm-8">
-                                                        <select className="form-select">
+                                                        <select className="form-select" onChange={ selectType }>
                                                             <option>Photographer</option>
                                                             <option>Videographer</option>
                                                             <option>Editor</option>
@@ -153,7 +187,7 @@ const AddEmployee = () => {
 
                                                 </div>
 
-                                                <div className="form-group row mt-3 mx-3">
+                                               {/* <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">Salary</label>
                                                     <div className="col-sm-8">
                                                         <input
@@ -165,19 +199,19 @@ const AddEmployee = () => {
                                                             autoFocus
                                                             required
                                                         />
-                                                    </div>
+                                                    </div>*/}
 
-                                                </div>
+                                                {/*</div>*/}
 
                                                 <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">Email</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            //value={last name}
+                                                            value={email}
                                                             className="form-control"
                                                             type="text"
                                                             placeholder="Enter Email"
-                                                            //onChange={ (e) => setName( e.target.value )}
+                                                            onChange={ (e) => setEmail( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -185,7 +219,7 @@ const AddEmployee = () => {
 
                                                 </div>
 
-                                                <div className="form-group row mt-3 mx-3">
+                                                {/*<div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">User Name</label>
                                                     <div className="col-sm-8">
                                                         <input
@@ -199,17 +233,17 @@ const AddEmployee = () => {
                                                         />
                                                     </div>
 
-                                                </div>
+                                                </div>*/}
 
                                                 <div className="form-group row mt-3 mx-3">
                                                     <label className="col-sm-3 col-form-label">Password</label>
                                                     <div className="col-sm-8">
                                                         <input
-                                                            //value={last name}
+                                                            value={password}
                                                             className="form-control"
                                                             type="password"
                                                             placeholder="Enter password"
-                                                            //onChange={ (e) => setName( e.target.value )}
+                                                            onChange={ (e) => setPassword( e.target.value )}
                                                             autoFocus
                                                             required
                                                         />
@@ -227,15 +261,15 @@ const AddEmployee = () => {
                                                             placeholder="Upload"
                                                             //onChange={ (e) => setName( e.target.value )}
                                                             autoFocus
-                                                            required
+                                                            // required
                                                         />
                                                     </div>
 
                                                 </div>
 
                                                 <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
-                                                    <button type="submit"
-                                                            className="btn btn-dark btn-block">
+                                                    <button type="button"
+                                                            className="btn btn-dark btn-block" onClick={addEmployee}>
                                                         ADD
                                                     </button>
                                                 </div>
