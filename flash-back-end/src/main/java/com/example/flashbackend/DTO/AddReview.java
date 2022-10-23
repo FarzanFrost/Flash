@@ -11,4 +11,28 @@ public class AddReview {
     private Integer rate;
 
     private Boolean deleted;
+
+    public AddReview(String comment, Timestamp dateTime, Integer rate, Boolean deleted){
+        this.comment = comment;
+        this.dateTime = dateTime;
+        this.rate = rate;
+        this.deleted = deleted;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public Timestamp getDateTime() {
+        return dateTime;
+    }
+
+    public Integer getRate() {
+        return rate;
+    }
+
+    public Boolean getDeleted() {
+        return deleted;
+    }
+
 }
