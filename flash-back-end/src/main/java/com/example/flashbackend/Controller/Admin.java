@@ -17,13 +17,13 @@ public class Admin {
     @Autowired
     AdminReviewComponent AdminReviewComponent;
 
-    @GetMapping("/AdminReviews")
+    @GetMapping("/AdminViewReviews")
     public List<Reviews> getReviews(){
 
         return AdminReviewComponent.getReviews();
     }
 
-    @PostMapping("/deleteReview")
+    @PostMapping("/AdmindeleteReview")
         public String deleteReview(@RequestBody BigInteger reviewId) {
             return AdminReviewComponent.deleteReview(reviewId);
         }
