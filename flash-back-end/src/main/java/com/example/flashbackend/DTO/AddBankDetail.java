@@ -6,15 +6,15 @@ public class AddBankDetail {
 
     private Integer cardNo;
 
-    private Integer cvcNo;
+    private Integer CVCNo;
 
     private Date expiaryDate;
 
     private String cardType;
 
-    public AddBankDetail(Integer cardNo, Integer cvcNo, Date expiaryDate, String cardType){
+    public AddBankDetail(Integer cardNo, Integer CVCNo, Date expiaryDate, String cardType){
         this.cardNo = cardNo;
-        this.cvcNo = cvcNo;
+        this.CVCNo = CVCNo;
         this.expiaryDate = expiaryDate;
         this.cardType = cardType;
     }
@@ -23,8 +23,8 @@ public class AddBankDetail {
         return cardNo;
     }
 
-    public Integer getCvcNo() {
-        return cvcNo;
+    public Integer getCVCNo() {
+        return CVCNo;
     }
 
     public Date getExpiaryDate() {

@@ -1,5 +1,6 @@
 package com.example.flashbackend.Controller;
 
+import com.example.flashbackend.DTO.AddBankDetail;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
 import com.example.flashbackend.Entity.Customer;
@@ -8,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
 import com.example.flashbackend.Entity.Event;
-
-
 
 import java.util.List;
 
@@ -44,5 +43,11 @@ public class CustomerController {
 
         return customerComponent.addNewEvent(event, customer, packages);
     }
+
+//    @PostMapping("/newBank")
+//    public String addBank(@RequestBody AddBankDetail addBank){
+//        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
+//        return customerComponent.addBankDetail( customer );
+//    }
 
 }
