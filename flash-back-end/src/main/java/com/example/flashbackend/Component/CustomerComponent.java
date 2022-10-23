@@ -52,8 +52,8 @@ public class CustomerComponent {
        return "done";
     }
 
-    public String addReview(){
-        
+    public String addReview(Reviews reviews){
+
     }
 
 }
