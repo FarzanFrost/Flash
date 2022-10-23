@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
 import com.example.flashbackend.Entity.Event;
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -45,6 +46,11 @@ public class CustomerController {
 //
 //        return customerComponent.addNewEvent( addEvent );
 //    }
+
+    @PostMapping("updateEvent")
+    public String updateEvent(@RequestBody AddEvent addEvent){
+        return customerComponent.updateEvent( addEvent );
+    }
 
 //    @PostMapping("/newBank")
 //    public String addBank(@RequestBody AddBankDetail addBank){
