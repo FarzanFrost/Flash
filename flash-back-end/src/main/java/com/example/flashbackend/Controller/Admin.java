@@ -3,10 +3,10 @@ package com.example.flashbackend.Controller;
 import com.example.flashbackend.Component.AdminReviewComponent;
 import com.example.flashbackend.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.util.List;
 
 @RestController
@@ -19,6 +19,13 @@ public class Admin {
 
     @GetMapping("/AdminReviews")
     public List<Reviews> getReviews(){
+
         return AdminReviewComponent.getReviews();
     }
+
+    @PostMapping("/deleteReview")
+        public String deleteReview(@RequestBody BigInteger reviewId) {
+            return AdminReviewComponent.deleteReview(reviewId);
+        }
+
 }
