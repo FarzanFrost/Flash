@@ -17,7 +17,7 @@ public class Admin {
     @Autowired
     AdminReviewComponent AdminReviewComponent;
 
-    @GetMapping("/Reviews")
+    @GetMapping("/AdminReviews")
     public List<Reviews> getReviews(){
         return AdminReviewComponent.getReviews();
     }

@@ -4,7 +4,7 @@ import OldFooter from "./oldFooter";
 
 const ContactUs = () => {
     return (
-        <div style={{backgroundColor:"rgba(255,212,181,0.91)"}}>
+        <div>
             <OldHeader />
 
             {/*Start of form*/}
