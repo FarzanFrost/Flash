@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin( origins = "http://localhost:3000")
-public class Customer {
+public class CustomerController {
 
     @Autowired
     CustomerComponent customerComponent;
