@@ -1,6 +1,7 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
@@ -14,8 +15,8 @@ public class CustomerComponent {
     @Autowired
     EventRepository eventRepository;
 
-//    @Autowired
-//    CustomerRepository CustomerRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
     @Autowired
     PackageRepository PackageRepository;
@@ -39,6 +40,16 @@ public class CustomerComponent {
 
     public List<Reviews> getReviews(){
         return ReviewsRepository.findAll();
+    }
+
+    public String addNewEvent(Event event, Customer customer, Package packages){
+        eventRepository.insertEvent( event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), customer.getCustomerID(), packages.getPackageID() );
+        return "done";
+    }
+
+    public String addBankDetail(Customer customer){
+       customerRepository.save(customer);
+       return "done";
     }
 
 }

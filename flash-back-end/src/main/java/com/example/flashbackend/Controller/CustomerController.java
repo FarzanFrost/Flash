@@ -1,19 +1,20 @@
 package com.example.flashbackend.Controller;
 
+import com.example.flashbackend.DTO.AddBankDetail;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
+import com.example.flashbackend.Entity.Customer;
+import com.example.flashbackend.DTO.AddEvent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import com.example.flashbackend.Entity.Event;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin( origins = "http://localhost:3000")
-public class Customer {
+public class CustomerController {
 
     @Autowired
     CustomerComponent customerComponent;
@@ -33,5 +34,20 @@ public class Customer {
     public List<Reviews> getReviews(){
         return customerComponent.getReviews();
     }
+
+    @PostMapping("/NewEvent")
+    public String addEvent(){
+        Event event = new Event();
+        Customer customer = new Customer();
+        Package packages = new Package();
+
+        return customerComponent.addNewEvent(event, customer, packages);
+    }
+
+//    @PostMapping("/newBank")
+//    public String addBank(@RequestBody AddBankDetail addBank){
+//        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
+//        return customerComponent.addBankDetail( customer );
+//    }
 
 }
