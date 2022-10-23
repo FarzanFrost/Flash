@@ -15,8 +15,8 @@ public class CustomerComponent {
     @Autowired
     EventRepository eventRepository;
 
-//    @Autowired
-//    CustomerRepository CustomerRepository;
+    @Autowired
+    CustomerRepository customerRepository;
 
     @Autowired
     PackageRepository PackageRepository;
@@ -45,6 +45,11 @@ public class CustomerComponent {
     public String addNewEvent(Event event, Customer customer, Package packages){
         eventRepository.insertEvent( event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), customer.getCustomerID(), packages.getPackageID() );
         return "done";
+    }
+
+    public String addBankDetail(Customer customer){
+       customerRepository.save(customer);
+       return "done";
     }
 
 }
