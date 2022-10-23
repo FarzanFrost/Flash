@@ -54,6 +54,7 @@ import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
 // azure
 import azureDemo from "./AzureDemo";
 import AzureDemo from "./AzureDemo";
+import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
 
 
 function App() {
@@ -97,9 +98,9 @@ function App() {
               <Route exact path="/ResetPassword" element={ <ResetPasswordContextProviderInterface/> } />
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Customer" element={ <CustomerAuthenticationContextProviderInterface/> } />
-              <Route exact path="/Customer" element={ <Customer/> } />
+              {/*<Route exact path="/Customer" element={ <Customer/> } />*/}
               <Route exact path="/Employee" element={ <Employee/> } />
-              <Route exact path="/Manager" element={ <Manager/> } />
+              <Route exact path="/Manager" element={ <ManagerAuthenticationContextProviderInterface/> } />
               <Route exact path="/Admin" element={ <Admin/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
