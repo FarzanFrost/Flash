@@ -1,6 +1,7 @@
 package com.example.flashbackend.Controller;
 
 
+import com.example.flashbackend.Component.AdminEmployeeDetailsComponent;
 import com.example.flashbackend.Component.ManagerComponent;
 import com.example.flashbackend.DTO.AddEmployee;
 import com.example.flashbackend.Entity.*;
@@ -16,4 +17,10 @@ import java.util.List;
 @CrossOrigin( origins = "http://localhost:3000")
 public class AdminEmployeeDetails {
 
+    @Autowired
+    AdminEmployeeDetailsComponent adminEmployeeDetailsComponent;
+    @GetMapping("/AdminEmployees")
+    public List<Employee> getEmployees(){
+        return adminEmployeeDetailsComponent.getEmployees();
+    }
 }
