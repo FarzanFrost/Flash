@@ -49,6 +49,11 @@ public class CustomerComponent {
 //        return "done";
 //    }
 
+    public String updateEvent(Event event, Package packages){
+        eventRepository.updateEvent(event.getEventID(), event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), packages.getPackageID());
+        return "done";
+    }
+
 //    public String addBankDetail(Customer customer){
 //       customerRepository.save(customer);
 //       return "done";
