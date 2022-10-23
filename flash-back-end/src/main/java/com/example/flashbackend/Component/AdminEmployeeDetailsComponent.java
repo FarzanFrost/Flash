@@ -13,5 +13,12 @@ import java.util.List;
 
 @Component
 public class AdminEmployeeDetailsComponent {
-    
+    @Autowired
+    EmployeeRepository employeeRepository;
+
+    public List<Employee> getEmployees(){
+
+        return employeeRepository.findAll();
+
+    }
 }
