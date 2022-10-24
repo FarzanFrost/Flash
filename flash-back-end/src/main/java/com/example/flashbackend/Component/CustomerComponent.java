@@ -46,7 +46,7 @@ public class CustomerComponent {
     }
 
     public String addNewEvent( AddEvent addevent ){
-        eventRepository.insertEvent( addevent.getStatus(), addevent.getAdvancedAmount(), addevent.getEventDate(), addevent.getStartTime(), addevent.getEndTime(), addevent.getAddress(), addevent.getLatitude(), addevent.getLongitude(), addevent.getExtraPage(), addevent.getCategory(), addevent.isDelivered(), addevent.getCustomerID(), packages.getPackageID() );
+        eventRepository.insertEvent( addevent.getStatus(), addevent.getAdvancedAmount(), addevent.getEventDate(), addevent.getStartTime(), addevent.getEndTime(), addevent.getAddress(), addevent.getLatitude(), addevent.getLongitude(), addevent.getExtraPage(), addevent.getCategory(), addevent.getDelivered(), addevent.getCustomerId(), addevent.getPackageId() );
         return "done";
     }
 
