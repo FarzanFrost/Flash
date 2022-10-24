@@ -1,6 +1,7 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.DTO.AddBankDetail;
 import com.example.flashbackend.DTO.AddEvent;
 import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Customer;
@@ -49,15 +50,15 @@ public class CustomerComponent {
         return "done";
     }
 
-//    public String updateEvent( AddEvent addEvent){
-//        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
-//        return "done";
-//    }
+    public String updateEvent( AddEvent addEvent){
+        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
+        return "done";
+    }
 
-//    public String addBankDetail(Customer customer){
-//       customerRepository.save(customer);
-//       return "done";
-//    }
+    public String addBankDetail( AddBankDetail addBankDetail){
+       customerRepository.updateCustomer( addBankDetail.getFirstName(), addBankDetail.getLastName(), addBankDetail.getGender(), addBankDetail.getNIC(), addBankDetail.getContactNo(), addBankDetail.getCardNo(), addBankDetail.getCVCNo(), addBankDetail.getExpiaryDate(), addBankDetail.getCardType() );
+       return "done";
+    }
 
     public String addReview(Reviews reviews){
         ReviewsRepository.save( reviews );
