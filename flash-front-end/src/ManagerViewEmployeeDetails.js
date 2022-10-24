@@ -164,7 +164,7 @@ const ManagerViewEmployeeDetails = () => {
 
                                                         <Modal show={show} onHide={handleClose} size="lg">
                                                             <Modal.Header closeButton>
-                                                                <Modal.Title>Review</Modal.Title>
+                                                                <Modal.Title>Employee</Modal.Title>
                                                             </Modal.Header>
                                                             <Modal.Body>
                                                                 <Modal.Body>
