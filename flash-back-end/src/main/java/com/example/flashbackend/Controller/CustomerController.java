@@ -38,25 +38,22 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-//    @PostMapping("/NewEvent")
-//    public String addEvent(@RequestBody AddEvent addEvent){
-////        Event event = new Event();
-////        Customer customer = new Customer();
-////        Package packages = new Package();
-//
-//        return customerComponent.addNewEvent( addEvent );
-//    }
+    @PostMapping("/NewEvent")
+    public String addEvent(@RequestBody AddEvent addEvent){
+
+        return customerComponent.addNewEvent( addEvent );
+    }
 
     @PostMapping("updateEvent")
     public String updateEvent(@RequestBody AddEvent addEvent){
         return customerComponent.updateEvent( addEvent );
     }
 
-//    @PostMapping("/newBank")
-//    public String addBank(@RequestBody AddBankDetail addBank){
-//        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
-//        return customerComponent.addBankDetail( customer );
-//    }
+    @PostMapping("/newBank")
+    public String addBank(@RequestBody AddBankDetail addBank){
+        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
+        return customerComponent.addBankDetail( customer );
+    }
 
     @PostMapping("/newReview")
     public String addReviews(@RequestBody AddReview addReview){
