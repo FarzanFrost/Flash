@@ -28,7 +28,7 @@ public interface EventRepository extends JpaRepository<Event, BigInteger> {
     @Modifying
     @Query( value = "UPDATE event SET Status = :status , AdvancedAmount = :advancedAmount, EventDate = :eventDate, StartTime = :startTime, EndTime = :endTime,  Address = :address, Latitude = :latitude, Longitude = :longitude, ExtraPage = :extraPage, Category = :category, Delivered = :delivered, PackageID = :packageId, CustomerID = :customerId WHERE EventID = :eventId;" , nativeQuery = true)
     @Transactional
-    void updateEvent(@Param("eventId") BigInteger eventId, @Param("status") String status , @Param("advancedAmount") String advancedAmount , @Param("eventDate") Date eventDate, @Param("startTime") Time startTime, @Param("endTime") Time endTime, @Param("address") String address, @Param("latitude") String latitude, @Param("longitude") String longitude, @Param("extraPage") Integer extraPage, @Param("category") String category, @Param("delivered") Boolean delivered, @Param("packageId") BigInteger packageId);
+    void updateEvent(@Param("status") String status , @Param("advancedAmount") String advancedAmount , @Param("eventDate") Date eventDate, @Param("startTime") Time startTime, @Param("endTime") Time endTime, @Param("address") String address, @Param("latitude") String latitude, @Param("longitude") String longitude, @Param("extraPage") Integer extraPage, @Param("category") String category, @Param("delivered") Boolean delivered, @Param("packageId") BigInteger packageId, @Param("eventId") BigInteger eventId);
 
 
 //    @Override
