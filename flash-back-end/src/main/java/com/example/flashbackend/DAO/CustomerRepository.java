@@ -20,9 +20,9 @@ public interface CustomerRepository extends JpaRepository< Customer , BigInteger
     List<Customer> findAll();
 
     @Modifying
-    @Query( value = "UPDATE customer SET FirstName = :firstName, LastName = :lastName, Gender = :gender, NIC = :nic, ContactNo = :contactNo, CardNo = :cardNo, CVCNo = :cvcNo, ExpiaryDate = :expiaryDate, CardType = :cardType WHERE CustoerID = :customerId", nativeQuery = true)
+    @Query( value = "UPDATE customer SET FirstName = :firstName, LastName = :lastName, Gender = :gender, NIC = :nic, ContactNo = :contactNo, CardNo = :cardNo, CVCNo = :cvcNo, ExpiaryDate = :expiaryDate, CardType = :cardType WHERE CustomerID = :customerId", nativeQuery = true)
     @Transactional
-    void updateCustomer(@Param("firstName") String firstName, @Param("lastName") String lastName, @Param("gender") String gender, @Param("nic") String nic, @Param("contactNo") String contactNo, @Param("cardNo") Integer cardNo, @Param("cvcNo") Integer cvcNo, @Param("expiaryDate") Date expiaryDate, @Param("cardType") String cardType, @Param("customerId") BigInteger customerId);
+    void updateCustomer(@Param("firstName") String firstName, @Param("lastName") String lastName, @Param("gender") String gender, @Param("nic") String nic, @Param("contactNo") String contactNo, @Param("cardNo") Integer cardNo, @Param("cvcNo") Integer cvcNo, @Param("expiaryDate") Date expiaryDate, @Param("cardType") String cardType);
 
 //    @Override
 //    Optional<Customer> findByCustomerID(1) ;
