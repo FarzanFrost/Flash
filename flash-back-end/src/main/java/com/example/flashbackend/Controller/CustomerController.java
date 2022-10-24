@@ -38,11 +38,11 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-//    @PostMapping("/Booking")
-//    public String addEvent(@RequestBody AddEvent addEvent){
-//
-//        return customerComponent.addNewEvent( addEvent );
-//    }
+    @PostMapping("/Booking")
+    public String addEvent(@RequestBody AddEvent addEvent){
+
+        return customerComponent.addNewEvent( addEvent );
+    }
 
 //    @PostMapping("updateEvent")
 //    public String updateEvent(@RequestBody AddEvent addEvent){
