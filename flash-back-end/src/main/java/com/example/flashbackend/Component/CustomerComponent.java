@@ -45,24 +45,24 @@ public class CustomerComponent {
         return ReviewsRepository.findAll();
     }
 
-    public String addNewEvent( AddEvent addevent ){
-        eventRepository.insertEvent( addevent.getStatus(), addevent.getAdvancedAmount(), addevent.getEventDate(), addevent.getStartTime(), addevent.getEndTime(), addevent.getAddress(), addevent.getLatitude(), addevent.getLongitude(), addevent.getExtraPage(), addevent.getCategory(), addevent.getDelivered(), addevent.getCustomerId(), addevent.getPackageId() );
-        return "done";
-    }
+//    public String addNewEvent( AddEvent addEvent ){
+//        eventRepository.insertEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId() );
+//        return "done";
+//    }
 
-    public String updateEvent( AddEvent addEvent){
-        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
-        return "done";
-    }
+//    public String updateEvent( AddEvent addEvent){
+//        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
+//        return "done";
+//    }
 
 //    public String addBankDetail(Customer customer){
 //       customerRepository.save(customer);
 //       return "done";
 //    }
 
-    public String addReview(Reviews reviews){
-        ReviewsRepository.save( reviews );
-        return "done";
-    }
+//    public String addReview(Reviews reviews){
+//        ReviewsRepository.save( reviews );
+//        return "done";
+//    }
 
 }

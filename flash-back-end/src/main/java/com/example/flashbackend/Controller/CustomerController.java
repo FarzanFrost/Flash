@@ -38,17 +38,17 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-    @PostMapping("/NewEvent")
-    public String addEvent(@RequestBody AddEvent addEvent){
+//    @PostMapping("/Booking")
+//    public String addEvent(@RequestBody AddEvent addEvent){
+//
+//        return customerComponent.addNewEvent( addEvent );
+//    }
 
-        return customerComponent.addNewEvent( addEvent );
-    }
-
-    @PostMapping("updateEvent")
-    public String updateEvent(@RequestBody AddEvent addEvent){
-
-        return customerComponent.updateEvent( addEvent );
-    }
+//    @PostMapping("updateEvent")
+//    public String updateEvent(@RequestBody AddEvent addEvent){
+//
+//        return customerComponent.updateEvent( addEvent );
+//    }
 
 //    @PostMapping("/newBank")
 //    public String addBank(@RequestBody AddBankDetail addBank){
@@ -56,10 +56,10 @@ public class CustomerController {
 //        return customerComponent.addBankDetail( customer );
 //    }
 
-    @PostMapping("/newReview")
-    public String addReviews(@RequestBody AddReview addReview){
-        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
-        return customerComponent.addReview( reviews );
-    }
+//    @PostMapping("/newReview")
+//    public String addReviews(@RequestBody AddReview addReview){
+//        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
+//        return customerComponent.addReview( reviews );
+//    }
 
 }
