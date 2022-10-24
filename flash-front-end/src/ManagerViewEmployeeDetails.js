@@ -31,6 +31,28 @@ const ManagerViewEmployeeDetails = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const deleteEmployee = ( id ) => {
+
+        axios.post( serverLink + '/deleteEmployee' , id-- ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    setShow(false);
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add employee") }
+
+        )
+
+    }
+
     useEffect( () => {
 
         axios.get( serverLink + '/Employees' ).then(
@@ -195,8 +217,8 @@ const ManagerViewEmployeeDetails = () => {
 
                                                             </Modal.Body>
                                                             <Modal.Footer>
-                                                                <Button variant="dark" onClick={handleClose}>
-                                                                    Delete Review
+                                                                <Button variant="dark" onClick={ () => deleteEmployee( employee.employeeID ) }>
+                                                                    Delete Employee
                                                                 </Button>
                                                                 <Button variant="dark" onClick={handleClose}>
                                                                     close
