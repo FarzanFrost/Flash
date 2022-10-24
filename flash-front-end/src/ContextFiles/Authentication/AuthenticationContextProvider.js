@@ -14,6 +14,8 @@ const AuthenticationContextProvider = ( props ) => {
 
     let userDetailsAfterAuthentication = null
 
+    const [ packagesDetail , setPackageDetail ] = useState( null )
+
     const authenticateUser = ( userType , setAuthenticated , setUserDetailsAfterAuthentication ) => {
 
         authenticated = setAuthenticated;
@@ -155,9 +157,15 @@ const AuthenticationContextProvider = ( props ) => {
 
     }
 
+    const changePackageDetails = ( value ) => {
+
+        setPackageDetail( value )
+
+    }
+
     return(
 
-        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout } }>
+        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout , packagesDetail , changePackageDetails } }>
 
             { props.children }
 
