@@ -7,7 +7,13 @@ import prizegiving from './Images/prizegiving.jpg'
 import pubertyceremony from './Images/puberty-ceremony.jpg'
 import housewarming from './Images/housewarming.jpg'
 import gettogether from './Images/gettogether.jpg'
+import {useContext} from "react";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+
 const EventSelection = () => {
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
+
 
     const style1 = {
 
@@ -45,7 +51,7 @@ const EventSelection = () => {
                                                     <img className="w-100 p-3 pb-0" src={wedding}></img>
                                                     <div className="card-body">
                                                         <div className="text-center">
-                                                            <a href="ViewPackages" className="btn" style={{...style3}}>Packages</a>
+                                                            <a href="#" className="btn" style={{...style3}} onClick={ () => changeContentVisible(7)}>Packages</a>
                                                         </div>
                                                     </div>
                                                 </div>
