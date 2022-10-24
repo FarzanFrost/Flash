@@ -27,10 +27,9 @@ public class CustomerComponent {
     @Autowired
     ReviewsRepository ReviewsRepository;
 
-//    public Optional<Customer> getCustomer(){
-//        Optional<Customer> customer = CustomerRepository.findById( "1" );
-//        return customer;
-//    }
+    public List<Customer> getCustomer(){
+        return customerRepository.findAll();
+    }
 
     public List<Event> getEvents(){
         return eventRepository.findAll();
@@ -60,9 +59,9 @@ public class CustomerComponent {
 //       return "done";
 //    }
 
-//    public String addReview(Reviews reviews){
-//        ReviewsRepository.save( reviews );
-//        return "done";
-//    }
+    public String addReview(Reviews reviews){
+        ReviewsRepository.save( reviews );
+        return "done";
+    }
 
 }
