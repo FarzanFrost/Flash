@@ -158,10 +158,13 @@ const ManagerViewEmployeeDetails = () => {
                                                                                 <tr>
                                                                                     <th scope="col">NO</th>
                                                                                     <th scope="col">Firstname</th>
+                                                                                    <th scope="col">Lastname</th>
+                                                                                    <th scope="col">email</th>
                                                                                     <th scope="col">NIC</th>
                                                                                     <th scope="col">Gender</th>
                                                                                     <th scope="col">Contact No</th>
                                                                                     <th scope="col">Type</th>
+                                                                                    <th scope="col">Joined Date & Time</th>
 
 
 
@@ -171,10 +174,13 @@ const ManagerViewEmployeeDetails = () => {
                                                                                 <tr>
                                                                                     <th scope="col">{ employeeCount }</th>
                                                                                     <th scope="col">{ employee.firstName }</th>
+                                                                                    <th scope="col">{ employee.lastName }</th>
+                                                                                    <th scope="col">{ employee.login.email }</th>
                                                                                     <th scope="col">{ employee.nic }</th>
                                                                                     <th scope="col">{ employee.gender }</th>
                                                                                     <th scope="col">{ employee.contactNo }</th>
                                                                                     <th scope="col">{ employee.type }</th>
+                                                                                    <th scope="col">{ employee.login.dateTime }</th>
 
 
 
