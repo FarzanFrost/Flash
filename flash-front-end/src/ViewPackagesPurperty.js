@@ -27,7 +27,7 @@ const Vieweventdetailsforadmin = () => {
             </center>
 
             <div className=" row">
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <div className=" mx-5 m-2 border-dark border-4"
                          style={{width: '48rem', left: '16rem'}}>
                         <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
@@ -36,7 +36,7 @@ const Vieweventdetailsforadmin = () => {
                 </div>
 
 
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
                         <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
                                 data-bs-toggle="dropdown">
