@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import pic from './Images/eventcollection.png';
-
-const editPack = () =>{
-
-}
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const EditPackage = () => {
+
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
     return (
         <div className="h-100">
 
@@ -281,14 +281,19 @@ const EditPackage = () => {
 
                                             <div>
                                                 <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
-                                                    <button type="submit" variant="primary"
+                                                    <button type="button" variant="primary"
                                                             className="btn btn-dark btn-block px-3" >
                                                         Change
                                                     </button>
 
-                                                    <button type="submit" variant="secondary"
+                                                    <button type="button" variant="secondary"
                                                             className="btn btn-danger btn-block">
                                                         Delete
+                                                    </button>
+
+                                                    <button type="button" variant="secondary"
+                                                            className="btn btn-dark btn-block" onClick={ () => changeContentVisible( 1 ) }>
+                                                        Close
                                                     </button>
                                                 </div>
 
