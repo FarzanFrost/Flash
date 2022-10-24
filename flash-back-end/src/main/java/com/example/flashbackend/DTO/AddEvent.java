@@ -49,8 +49,8 @@ public class AddEvent {
     }
 
 
-//    public AddEvent() {
-//    }
+    public AddEvent() {
+    }
 
     public Date getEventDate() {
         return eventDate;
