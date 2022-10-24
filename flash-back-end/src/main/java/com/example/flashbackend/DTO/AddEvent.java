@@ -48,6 +48,10 @@ public class AddEvent {
         this.packageId = packageId;
     }
 
+
+    public AddEvent() {
+    }
+
     public Date getEventDate() {
         return eventDate;
     }
