@@ -268,13 +268,13 @@ const AddEmployee = () => {
                                                 </div>
 
                                                 <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
-                                                    <button type="button mx-3"
-                                                            className="btn btn-dark btn-block" onClick={addEmployee}>
+                                                    <button type="button"
+                                                            className="btn btn-dark btn-block mx-3" onClick={addEmployee}>
                                                         ADD
                                                     </button>
 
-                                                    <button type="button mx-3"
-                                                            className="btn btn-dark btn-block" onClick={ () => changeContentVisible( 5 )}>
+                                                    <button type="button"
+                                                            className="btn btn-dark btn-block mx-3" onClick={ () => changeContentVisible( 5 )}>
                                                         close
                                                     </button>
                                                 </div>

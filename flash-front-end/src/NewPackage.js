@@ -1,12 +1,16 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import pic from './Images/eventcollection.png';
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const newPack = () =>{
 
 }
 
 const NewPackage = () => {
+
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
     return (
         <div className="h-100">
 
@@ -284,9 +288,14 @@ const NewPackage = () => {
                                         </div>
 
                                         <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
-                                            <button type="submit"
-                                                    className="btn btn-dark btn-block">
+                                            <button type="button"
+                                                    className="btn btn-dark btn-block mx-3">
                                                 ADD
+                                            </button>
+
+                                            <button type="button"
+                                                    className="btn btn-dark btn-block mx-3" onClick={ () => changeContentVisible( 1 ) }>
+                                                close
                                             </button>
                                         </div>
 
