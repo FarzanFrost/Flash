@@ -15,7 +15,11 @@ const Vieweventdetailsforadmin = () => {
         height:'110px'
     };
 
+    const style3 = {
 
+        backgroundColor:'#767676',
+        color:'white',
+    };
 
     return (
 
@@ -27,7 +31,7 @@ const Vieweventdetailsforadmin = () => {
             </center>
 
             <div className=" row">
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <div className=" mx-5 m-2 border-dark border-4"
                          style={{width: '48rem', left: '16rem'}}>
                         <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
@@ -36,7 +40,8 @@ const Vieweventdetailsforadmin = () => {
                 </div>
 
 
-                <div className="col-md-6">
+                <div className="col-md-4">
+                    <div className=" row">
                     <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
                         <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
                                 data-bs-toggle="dropdown">
@@ -48,6 +53,10 @@ const Vieweventdetailsforadmin = () => {
                             <option value="Housewarming">House warming</option>
                             <option value="PrizeGiving">Prize Giving</option>
                         </select>
+                        <div className="btn ">
+                            <button className="btn btn-dark"  >Add Packages</button>
+                        </div>
+                    </div>
                     </div>
                 </div>
 
@@ -86,9 +95,15 @@ const Vieweventdetailsforadmin = () => {
                                                             <h5>&nbsp;</h5>
                                                         </p>
                                                         <center><h5>Total payment:</h5></center>
+
                                                     </div>
                                                         <div className="card-footer bg-dark text-center" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 125,000.00</h5></small>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
                                                         </div>
                                                 </div>
                                                 </div>
@@ -118,6 +133,11 @@ const Vieweventdetailsforadmin = () => {
                                                     </div>
                                                         <div className="card-footer bg-dark text-center" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 135,000.00</h5></small>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
                                                         </div>
                                                 </div>
                                                 </div>
@@ -149,6 +169,11 @@ const Vieweventdetailsforadmin = () => {
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 225,000.00</h5></small>
                                                         </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
+                                                        </div>
                                                 </div>
                                                 </div>
                                             </div>
@@ -177,6 +202,11 @@ const Vieweventdetailsforadmin = () => {
                                                         </div>
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 300,000.00</h5></small>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -208,6 +238,11 @@ const Vieweventdetailsforadmin = () => {
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 125,000.00</h5></small>
                                                         </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -238,6 +273,11 @@ const Vieweventdetailsforadmin = () => {
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 135,000.00</h5></small>
                                                         </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -265,6 +305,11 @@ const Vieweventdetailsforadmin = () => {
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 225,000.00</h5></small>
                                                         </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -291,6 +336,11 @@ const Vieweventdetailsforadmin = () => {
                                                         </div>
                                                         <div className="card-footer bg-dark text-center rounded-3 " >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 300,000.00</h5></small>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -320,6 +370,11 @@ const Vieweventdetailsforadmin = () => {
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 125,000.00</h5></small>
                                                         </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -347,6 +402,11 @@ const Vieweventdetailsforadmin = () => {
                                                         </div>
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 135,000.00</h5></small>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -376,6 +436,11 @@ const Vieweventdetailsforadmin = () => {
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 225,000.00</h5></small>
                                                         </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -403,6 +468,11 @@ const Vieweventdetailsforadmin = () => {
                                                         </div>
                                                         <div className="card-footer bg-dark text-center rounded-3" >
                                                             <small className="text-muted"><h5 className="text-light">Rs. 300,000.00</h5></small>
+                                                        </div>
+                                                        <div className="card-body">
+                                                            <div className="text-center">
+                                                                <button className="btn" style={{...style3}} >Edit</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
