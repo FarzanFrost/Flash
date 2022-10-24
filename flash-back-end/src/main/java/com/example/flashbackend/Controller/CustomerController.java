@@ -46,6 +46,7 @@ public class CustomerController {
 
     @PostMapping("updateEvent")
     public String updateEvent(@RequestBody AddEvent addEvent){
+
         return customerComponent.updateEvent( addEvent );
     }
 
