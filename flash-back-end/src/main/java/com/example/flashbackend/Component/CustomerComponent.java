@@ -1,6 +1,7 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.DTO.AddEvent;
 import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.Entity.Event;
@@ -44,10 +45,10 @@ public class CustomerComponent {
         return ReviewsRepository.findAll();
     }
 
-//    public String addNewEvent(Event event, Customer customer, Package packages){
-//        eventRepository.insertEvent( event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), customer.getCustomerID(), packages.getPackageID() );
-//        return "done";
-//    }
+    public String addNewEvent( AddEvent addevent ){
+        eventRepository.insertEvent( addevent.getStatus(), addevent.getAdvancedAmount(), addevent.getEventDate(), addevent.getStartTime(), addevent.getEndTime(), addevent.getAddress(), addevent.getLatitude(), addevent.getLongitude(), addevent.getExtraPage(), addevent.getCategory(), addevent.isDelivered(), addevent.getCustomerID(), packages.getPackageID() );
+        return "done";
+    }
 
     public String updateEvent(Event event, Package packages){
         eventRepository.updateEvent(event.getEventID(), event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), packages.getPackageID());
