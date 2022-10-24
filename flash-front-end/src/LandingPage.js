@@ -86,7 +86,7 @@ const LandingPage = () => {
                                 aria-label="Slide 3"></button>
                     </div>
 
-                    <div className="container m-lg-5">
+                    <div className="container">
                     <div className="carousel-inner w-10 " >
                         <div className="carousel-item active" >
                             <img src={event} className="img-fluid d-block w-100 p-5"  alt="..." />
