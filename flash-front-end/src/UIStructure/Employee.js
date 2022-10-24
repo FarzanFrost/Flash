@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import ChangePassword from "../ChangePassword";
@@ -10,6 +10,7 @@ import ViewFiles from "../ViewFiles";
 import Calender from "../Calender";
 import EventSelection from "../EventSelection";
 import EmployeeSelectImageContextProviderInterface from "../EmployeeSelectImageContextProviderInterface";
+import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 
 const Employee = () => {
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
@@ -28,7 +29,7 @@ const Employee = () => {
 
     }
 
-    const [ contentVisible , setContentVisible ] = useState( 0 )
+    const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
 
     return(
 
@@ -84,28 +85,28 @@ const Employee = () => {
                             <ul className="nav nav-pills flex-column mb-auto">
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => changeContentVisible( 0 ) }>
                                         <i className="bi bi-grid bi me-2"></i>
                                         Events
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 1 ) }>
                                         <i className="bi bi-eye bi me-2"></i>
                                         View Works
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 2 ) }>
                                         <i className="bi bi-calendar3 bi me-2"></i>
                                         Calendar
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 3 ) }>
                                         <i className="bi bi-chat-dots bi me-2"></i>
                                         Add Photos
                                     </a>
@@ -134,6 +135,7 @@ const Employee = () => {
                     { contentVisible === 1 && <EmployeeWorkView/>}{/*events*/}
                     { contentVisible === 2 && <Calender/>}{/*events*/}
                     { contentVisible === 3 && <EmployeeSelectImageContextProviderInterface/>}{/*events*/}
+                    { contentVisible === 7 && <ViewPackagesPurperty/>}{/*events*/}
                     {/*<ViewPhotos/>*/} {/*want to change this ui and make a folder structure*/}
 
                 </div>
