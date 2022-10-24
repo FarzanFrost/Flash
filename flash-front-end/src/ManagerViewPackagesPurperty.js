@@ -13,7 +13,7 @@ const Vieweventdetailsforadmin = () => {
 
     const serverLink = 'http://localhost:8080'
 
-    const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible , changePackageDetails } = useContext( AuthenticationContext )
 
     const style1 = {
 
@@ -57,8 +57,9 @@ const Vieweventdetailsforadmin = () => {
 
     }
 
-    const editPackagesButton = () => {
+    const editPackagesButton = ( value ) => {
 
+        changePackageDetails( value )
         changeContentVisible( 9 )
 
     }
@@ -154,7 +155,7 @@ const Vieweventdetailsforadmin = () => {
                                                                     </div>
                                                                     <div className="card-body">
                                                                         <div className="text-center">
-                                                                            <button className="btn" style={{...style3}} type="button" onClick={ () => editPackagesButton() }>Edit</button>
+                                                                            <button className="btn" style={{...style3}} type="button" onClick={ () => editPackagesButton( packageDetails ) }>Edit</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
