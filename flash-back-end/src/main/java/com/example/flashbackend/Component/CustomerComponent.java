@@ -45,10 +45,10 @@ public class CustomerComponent {
         return ReviewsRepository.findAll();
     }
 
-//    public String addNewEvent( AddEvent addEvent ){
-//        eventRepository.insertEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId() );
-//        return "done";
-//    }
+    public String addNewEvent( AddEvent addEvent ){
+        eventRepository.insertEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId() );
+        return "done";
+    }
 
 //    public String updateEvent( AddEvent addEvent){
 //        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
