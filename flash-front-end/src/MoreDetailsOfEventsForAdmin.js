@@ -97,13 +97,6 @@ const MoreDetailsOfEventsForAdmin = () => {
                                     </div>
 
                                     <br/>
-                                    {/*<div className="container shadow p-3  bg-white rounded ">*/}
-                                    {/*    <div className="row">*/}
-                                    {/*        <div className="col-6 col-sm-4">Review</div>*/}
-                                    {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
-                                    {/*    </div>*/}
-
-                                    {/*</div>*/}
 
                                 </div>
 
