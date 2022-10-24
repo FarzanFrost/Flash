@@ -50,11 +50,10 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import ManagerDashboard from "./ManagerDashboard";
 import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
+import CloudinaryDemo from "./CloudinaryDemo";
 import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
 import EmployeeSelectImageContextProviderInterface from "./EmployeeSelectImageContextProviderInterface";
-// azure
-import azureDemo from "./AzureDemo";
-import AzureDemo from "./AzureDemo";
+
 import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
 
 function App() {
@@ -128,8 +127,9 @@ function App() {
               <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
               <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
               <Route exact path="/EmployeeFolder" element={ <EmployeeSelectImageContextProviderInterface/> } />
-              {/*azure sample*/}
-              <Route exact path="/AzureDemo" element={<AzureDemo/>}/>
+              <Route exact path="/CloudinaryDemo" element={ <CloudinaryDemo/> } />
+
+
           </Routes>
 
 
