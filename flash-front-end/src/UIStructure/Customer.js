@@ -4,13 +4,14 @@ import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import EventReviewsCustomerContextProviderInterface from "../EventReviewsCustomerContextProviderInterface";
 import CustomerProfile from "../CustomerProfile";
-import EventSelection from "../EventSelection";
+import EventSelection from "../CustomerEventSelection";
 import NewEventBooking from "../NewEventBooking";
 import ResetPasswordContextProviderInterface from "../ResetPasswordContextProviderInterface";
 import ViewEventsForCustomer from "../ViewEventsForCustomer";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import {useLocation} from "react-router-dom";
+import CustomerViewPackagesPurperty from "../CustomerViewPackagesPurperty";
 
 
 const Customer = () => {
@@ -156,7 +157,7 @@ const Customer = () => {
                     { contentVisible === 6 && <SelectImageContextProviderInterface/> }{/*no need*/}
                     { contentVisible === 2 && <ViewEventsForCustomer/>}{/*change event UI*/}{/*view books*/}
                     {/*<ViewPackagesBirthday/>*/}{/*no need*/}
-                    {contentVisible === 5 && <ViewPackagesPurperty/>}
+                    {contentVisible === 7 && <CustomerViewPackagesPurperty/>}
 
 
 

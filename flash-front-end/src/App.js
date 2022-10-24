@@ -56,6 +56,8 @@ import EmployeeSelectImageContextProviderInterface from "./EmployeeSelectImageCo
 import azureDemo from "./AzureDemo";
 import AzureDemo from "./AzureDemo";
 import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
+import EmployeeAuthenticationContextProviderInterface
+    from "./UIStructure/EmployeeAuthenticationContextProviderInterface";
 
 function App() {
   return (
@@ -99,7 +101,7 @@ function App() {
               <Route exact path="/EditEmployee" element={ <EditEmployee/> } />
               <Route exact path="/Customer" element={ <CustomerAuthenticationContextProviderInterface/> } />
               {/*<Route exact path="/Customer" element={ <Customer/> } />*/}
-              <Route exact path="/Employee" element={ <Employee/> } />
+              <Route exact path="/Employee" element={ <EmployeeAuthenticationContextProviderInterface/> } />
               <Route exact path="/Manager" element={ <ManagerAuthenticationContextProviderInterface/> } />
               <Route exact path="/Admin" element={ <Admin/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
@@ -130,6 +132,7 @@ function App() {
               <Route exact path="/EmployeeFolder" element={ <EmployeeSelectImageContextProviderInterface/> } />
               {/*azure sample*/}
               <Route exact path="/AzureDemo" element={<AzureDemo/>}/>
+
           </Routes>
 
 

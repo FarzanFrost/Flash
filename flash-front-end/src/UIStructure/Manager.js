@@ -8,6 +8,7 @@ import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import ManagerDashboard from "../ManagerDashboard";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 import AddEmployee from "../AddEmployee";
+import ManagerViewPackagesPurperty from "../ManagerViewPackagesPurperty";
 
 
 const Manager = () => {
@@ -150,7 +151,7 @@ const Manager = () => {
                     { contentVisible === 5 && <ManagerViewEmployeeDetails/>}{/*employee details*/} {/*want to add some options in uis*/}
                     { contentVisible === 3 && <ManagerViewEventFullDetails/>} {/*events*/}
                     {/*<NewPackage/>*/}{/*no need*/}{/*want to do view packages page for manager*/}
-                    { contentVisible === 1 && <ViewPackagesPurperty/>}{/*packages*/}
+                    { contentVisible === 1 && <ManagerViewPackagesPurperty/>}{/*packages*/}
                     { contentVisible === 7 && <AddEmployee/>}{/*packages*/}
 
                 </div>
