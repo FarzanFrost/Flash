@@ -50,8 +50,8 @@ public class CustomerComponent {
         return "done";
     }
 
-    public String updateEvent(Event event, Package packages){
-        eventRepository.updateEvent(event.getEventID(), event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), packages.getPackageID());
+    public String updateEvent( AddEvent addEvent){
+        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
         return "done";
     }
 
