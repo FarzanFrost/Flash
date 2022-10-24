@@ -95,4 +95,11 @@ public class Manager {
 
     }
 
+    @PostMapping( "/deleteEmployee" )
+    public String deleteEmployee( @RequestBody BigInteger employeeId ){
+
+        return managerComponent.deleteEmployee( employeeId );
+
+    }
+
 }

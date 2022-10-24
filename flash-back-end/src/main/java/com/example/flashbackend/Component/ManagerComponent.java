@@ -102,4 +102,11 @@ public class ManagerComponent {
 
     }
 
+    public String deleteEmployee( BigInteger employeeId ){
+
+        employeeRepository.deleteById( employeeId );
+        return "done";
+
+    }
+
 }
