@@ -10,6 +10,7 @@ import {AuthenticationContext} from "../ContextFiles/Authentication/Authenticati
 import AddEmployee from "../AddEmployee";
 import ManagerViewPackagesPurperty from "../ManagerViewPackagesPurperty";
 import NewPackage from "../NewPackage";
+import EditPackage from "../EditPackage";
 
 
 const Manager = () => {
@@ -146,7 +147,7 @@ const Manager = () => {
 
                     { contentVisible === 0 && <ManagerDashboard/>}{/*packages*/}
                     {/*<EditEmployee/>*/} {/*no need*/}
-                    {/*<EditPackage/>*/} {/*no need*/}
+                    { contentVisible === 9 && <EditPackage/> }
                     { contentVisible === 6 && <ManagerViewAllReviews/>} {/*reviews*/}
                     { contentVisible === 5 && <ManagerViewEmployeeDetails/>}{/*employee details*/} {/*want to add some options in uis*/}
                     { contentVisible === 3 && <ManagerViewEventFullDetails/>} {/*events*/}

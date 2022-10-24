@@ -57,6 +57,12 @@ const Vieweventdetailsforadmin = () => {
 
     }
 
+    const editPackagesButton = () => {
+
+        changeContentVisible( 9 )
+
+    }
+
     return (
 
         <div className="h-100" >
@@ -148,7 +154,7 @@ const Vieweventdetailsforadmin = () => {
                                                                     </div>
                                                                     <div className="card-body">
                                                                         <div className="text-center">
-                                                                            <button className="btn" style={{...style3}} >Edit</button>
+                                                                            <button className="btn" style={{...style3}} type="button" onClick={ () => editPackagesButton() }>Edit</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
