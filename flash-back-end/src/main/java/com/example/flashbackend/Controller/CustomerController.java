@@ -38,6 +38,11 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
+    @GetMapping("/Customers")
+    public List<Customer> getCustomers(){
+        return customerComponent.getCustomer();
+    }
+
     @PostMapping("/Booking")
     public String addEvent(@RequestBody AddEvent addEvent){
 
@@ -56,10 +61,10 @@ public class CustomerController {
 //        return customerComponent.addBankDetail( customer );
 //    }
 
-//    @PostMapping("/newReview")
-//    public String addReviews(@RequestBody AddReview addReview){
-//        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
-//        return customerComponent.addReview( reviews );
-//    }
+    @PostMapping("/newReview")
+    public String addReviews(@RequestBody AddReview addReview){
+        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
+        return customerComponent.addReview( reviews );
+    }
 
 }
