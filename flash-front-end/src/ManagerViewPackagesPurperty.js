@@ -1,13 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import sliverPhoto from './Images/silver-package.png'
 import goldPhoto from './Images/gold-package_.png'
 import diamondPhoto from './Images/diamond-package.png'
 import platinumPhoto from './Images/platinum-package.png'
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 const Vieweventdetailsforadmin = () => {
+
+    const { changeContentVisible } = useContext( AuthenticationContext )
 
     const style1 = {
 
@@ -54,7 +57,7 @@ const Vieweventdetailsforadmin = () => {
                             <option value="PrizeGiving">Prize Giving</option>
                         </select>
                         <div className="btn ">
-                            <button className="btn btn-dark"  >Add Packages</button>
+                            <button className="btn btn-dark" type="button" onClick={ () => changeContentVisible( 8 ) }>Add Packages</button>
                         </div>
                     </div>
                     </div>
