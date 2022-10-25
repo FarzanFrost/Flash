@@ -13,4 +13,11 @@ import java.util.List;
 
 @Component
 public class AdminDashboardComponent {
+    @Autowired
+    EmployeeRepository employeeRepository;
+
+    public long getEmployeeCount(){
+        return employeeRepository.count();
+    }
+    
 }
