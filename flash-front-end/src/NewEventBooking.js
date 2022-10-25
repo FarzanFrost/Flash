@@ -1,12 +1,55 @@
 import React, {useState, useContext} from 'react';
 import pic from './Images/booking.jpeg';
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
 
 const NewEventBooking = () => {
+
+    const serverLink = 'http://localhost:8080'
 
     const { userDetailsAfterAuthentication } = useContext( AuthenticationContext )
 
     const { changeContentVisible } = useContext( AuthenticationContext )
+
+    const [ eventType , setEventType ] = useState( 'Wedding' )
+
+    const [ date , setDate ] = useState( '' )
+
+    const [ startTime , setStartTime ] = useState( '' )
+
+    const [ endTime , setEndTime ] = useState( '' )
+
+    const [ address , setAddress ] = useState( '' )
+
+    const [ packages , setPackages ] = useState( 'Gold' )
+
+    const NewEvent = () => {
+
+        const data = {
+            eventType,
+            date,
+            startTime,
+            endTime,
+            address,
+            packages
+        }
+
+        axios.post( serverLink + '/Booking' , data).then(
+            ( response ) => {
+
+                if (response.data === "done" ){
+
+                    changeContentVisible( 1 )
+                }
+
+            }
+
+        ).catch(
+
+            () => {alert("Error!!! Add new booking ")}
+        )
+
+    }
 
     return (
         <div className="h-100">
@@ -43,7 +86,7 @@ const NewEventBooking = () => {
                                             <div className="form-group row mt-3 mx-3">
                                                 <label className="col-sm-4 col-form-label">Event Type</label>
                                                 <div className="col-sm-8">
-                                                    <select className="form-select">
+                                                    <select className="form-select" onChange={ ( e ) => setEventType( e.target.value ) }>
                                                         <option>Wedding</option>
                                                         <option>Birthday</option>
                                                         <option>Puberty</option>
@@ -73,11 +116,11 @@ const NewEventBooking = () => {
                                                 <label className="col-sm-4 col-form-label">Date</label>
                                                 <div className="col-sm-8">
                                                     <input
-                                                        // value="70"
+                                                        value= { date }
                                                         className="form-control"
                                                         type="Date"
                                                         placeholder="Enter the Date"
-                                                        // onChange={ (e) => setFirstName( e.target.value )}
+                                                        onChange={ (e) => setDate( e.target.value )}
                                                         autoFocus
                                                         required
                                                     />
@@ -88,11 +131,11 @@ const NewEventBooking = () => {
                                                 <label className="col-sm-4 col-form-label">Start Time</label>
                                                 <div className="col-sm-8">
                                                     <input
-                                                        // value="70"
+                                                        value= {startTime}
                                                         className="form-control"
                                                         type="Time"
                                                         placeholder="Enter the Start Time"
-                                                        // onChange={ (e) => setFirstName( e.target.value )}
+                                                        onChange={ (e) => setStartTime( e.target.value )}
                                                         autoFocus
                                                         required
                                                     />
@@ -103,11 +146,11 @@ const NewEventBooking = () => {
                                                 <label className="col-sm-4 col-form-label">End Time</label>
                                                 <div className="col-sm-8">
                                                     <input
-                                                        // value="70"
+                                                        value={ endTime }
                                                         className="form-control"
                                                         type="Time"
                                                         placeholder="Enter the End Time"
-                                                        // onChange={ (e) => setFirstName( e.target.value )}
+                                                        onChange={ (e) => setEndTime( e.target.value )}
                                                         autoFocus
                                                         required
                                                     />
@@ -118,11 +161,11 @@ const NewEventBooking = () => {
                                                 <label className="col-sm-4 col-form-label">Address</label>
                                                 <div className="col-sm-8">
                                                     <input
-                                                        // value="70"
+                                                        value= { address }
                                                         className="form-control"
                                                         type="Text"
                                                         placeholder="Enter the Address"
-                                                        // onChange={ (e) => setFirstName( e.target.value )}
+                                                        onChange={ (e) => setAddress( e.target.value )}
                                                         autoFocus
                                                         required
                                                     />
@@ -132,7 +175,7 @@ const NewEventBooking = () => {
                                             <div className="form-group row mt-3 mx-3">
                                                 <label className="col-sm-4 col-form-label">Package</label>
                                                 <div className="col-sm-8">
-                                                    <select className="form-select">
+                                                    <select className="form-select" onChange={ (e) => setPackages( e.target.value )}>
                                                         <option>Platinum</option>
                                                         <option>Diamond</option>
                                                         <option>Silver</option>
@@ -143,12 +186,12 @@ const NewEventBooking = () => {
 
                                             <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
                                                 <button type="submit" variant="primary"
-                                                        className="btn btn-dark btn-block px-3" >
+                                                        className="btn btn-dark btn-block px-3" onClick={NewEvent}>
                                                     Book
                                                 </button>
 
                                                 <button type="submit" variant="secondary"
-                                                        className="btn btn-danger btn-block">
+                                                        className="btn btn-danger btn-block" onClick={ () => changeContentVisible( 1 ) }>
                                                     Cancel
                                                 </button>
                                             </div>
