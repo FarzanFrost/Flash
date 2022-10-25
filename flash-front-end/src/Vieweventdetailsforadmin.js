@@ -1,14 +1,28 @@
-import  React from 'react'
+import React, {useContext, useEffect} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+// import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+
+
 
 
 const Vieweventdetailsforadmin = () => {
 
+    // const { changeContentVisible } = useContext( AuthenticationContext )
+
+    const serverLink = 'http://localhost:8080';
+
+    const [show, setShow] = useState(false);
+
+    const [ adminEvent , setadminEvent ] = useState( null )
+
+    // let eventCount  = 1
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
         const style3 = {
 
@@ -17,14 +31,6 @@ const Vieweventdetailsforadmin = () => {
         };
 
 
-        const [show, setShow] = useState(false);
-
-        const handleClose = () => setShow(false);
-        const handleShow = () => setShow(true);
-        const NewEmployee = () => {
-
-
-        }
 
         return (
             <div className="h-100">
