@@ -2,6 +2,7 @@ package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
 import com.example.flashbackend.DTO.AddPackages;
+import com.example.flashbackend.DTO.EditPackages;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,6 +99,27 @@ public class ManagerComponent {
         Package aPackage = new Package( addPackages.getFrame() , addPackages.getVideographer() , addPackages.getPhotographer() , addPackages.isCalender() , addPackages.getName() , addPackages.getPages() , addPackages.getExtraPagesPrice() , addPackages.getOutShootType() , addPackages.isSignatureFrame() , addPackages.getAlbumDesign() , addPackages.getTotalPayment() , addPackages.getEventType() , addPackages.getAdditional() );
         packageRepository.save( aPackage );
 
+        return "done";
+
+    }
+
+    public String deleteEmployee( BigInteger employeeId ){
+
+        employeeRepository.deleteById( employeeId );
+        return "done";
+
+    }
+
+    public String editPackage(EditPackages editPackages){
+
+        packageRepository.update( editPackages.getFrame() , editPackages.getVideographer() , editPackages.getPhotographer(), editPackages.isCalender(), editPackages.getName() , editPackages.getPages(), editPackages.getExtraPagesPrice(), editPackages.getOutShootType() , editPackages.isSignatureFrame(), editPackages.getAlbumDesign() , editPackages.getTotalPayment() , editPackages.getEventType() , editPackages.getAdditional() , editPackages.getPackageID() );
+        return "done";
+
+    }
+
+    public String deletePackage( BigInteger packageId ){
+
+        packageRepository.deleteById( packageId );
         return "done";
 
     }
