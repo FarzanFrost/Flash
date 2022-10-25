@@ -116,6 +116,28 @@ const EditPackage = () => {
 
     }
 
+    const deletePackage = () => {
+
+        axios.post( serverLink + '/deletePackage' , {packageID} ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    changeContentVisible( 1 )
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! delete packages") }
+
+        )
+
+    }
+
     return (
         <div className="h-100">
 
@@ -512,7 +534,7 @@ const EditPackage = () => {
                                                     </button>
 
                                                     <button type="button" variant="secondary"
-                                                            className="btn btn-danger btn-block">
+                                                            className="btn btn-danger btn-block" onClick={ deletePackage }>
                                                         Delete
                                                     </button>
 
