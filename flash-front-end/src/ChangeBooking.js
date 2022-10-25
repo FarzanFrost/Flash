@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import pic from './Images/booking.jpeg';
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const ChangeBooking = () => {
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
     return (
         <div className="h-100">
 
@@ -27,7 +30,7 @@ const ChangeBooking = () => {
 
                                     <div className="col-lg-7 rounded-3" >
                                         <div className="d-grid d-md-flex justify-content-md-end mt-3 mx-3">
-                                            <button className="btn btn-dark btn-block px-3">Packages</button>
+                                            <button className="btn btn-dark btn-block px-3" onClick={ () => changeContentVisible( 7 ) }>Packages</button>
                                         </div>
 
                                         <form className="container rounded-3 mb-0 bg-opacity-25 p-lg-3 mt-0" >
