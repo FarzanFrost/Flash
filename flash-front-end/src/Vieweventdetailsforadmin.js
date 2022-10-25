@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import axios from "axios";
 // import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
@@ -30,7 +31,24 @@ const Vieweventdetailsforadmin = () => {
             color:'white'
         };
 
+    useEffect( () => {
 
+        axios.get( serverLink + '/Employees' ).then(
+
+            ( response ) => {
+
+                setadminEvent( response.data )
+                console.log( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! employee details ") }
+
+        )
+
+    } ,[])
 
         return (
             <div className="h-100">
