@@ -89,6 +89,7 @@ const Vieweventdetailsforadmin = () => {
                                         </tr>
                                         </thead>
                                         <tbody>
+
                                         <tr>
                                             <th scope="col">E01</th>
                                             <th scope="col">Birthday</th>
@@ -117,124 +118,6 @@ const Vieweventdetailsforadmin = () => {
                                                 </Modal>
                                             </th>
 
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">E01</th>
-                                            <th scope="col">Birthday</th>
-                                            <th scope="col">2022-10-26</th>
-                                            <th scope="col">2022-11-18</th>
-                                            <th scope="col">Pending</th>
-                                            <th scope="col">
-                                                <Button variant="light" onClick={handleShow}>
-                                                    Details
-                                                </Button>
-
-                                                <Modal show={show} onHide={handleClose}>
-                                                    <Modal.Header closeButton>
-                                                        <Modal.Title>Event Full Details</Modal.Title>
-                                                    </Modal.Header>
-                                                    <Modal.Body>Details</Modal.Body>
-                                                    <Modal.Footer>
-                                                        <Button variant="dark" onClick={handleClose}>
-                                                            Delete Review
-                                                        </Button>
-                                                        <Button variant="dark" onClick={handleClose}>
-                                                            close
-                                                        </Button>
-                                                    </Modal.Footer>
-                                                </Modal>
-                                            </th>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">E01</th>
-                                            <th scope="col">Birthday</th>
-                                            <th scope="col">2022-10-26</th>
-                                            <th scope="col">2022-11-18</th>
-                                            <th scope="col">Pending</th>
-                                            <th scope="col">
-                                                <Button variant="light" onClick={handleShow}>
-                                                    Details
-                                                </Button>
-
-                                                <Modal show={show} onHide={handleClose} size="lg">
-                                                    <Modal.Header closeButton>
-                                                        <Modal.Title>Event Full Details</Modal.Title>
-                                                    </Modal.Header>
-                                                    <Modal.Body>
-
-                                                        <div className="card-body pb-lg-5">
-
-                                                            <div className="table-responsive ">
-                                                                <table className="table table-dark table-striped align-middle">
-
-                                                                    <thead className="align-middle">
-
-                                                                    {/*<thead>*/}
-
-                                                                    <tr>
-                                                                        <th scope="col">Event Id</th>
-                                                                        <th scope="col">Event</th>
-                                                                        <th scope="col">Date</th>
-                                                                        <th scope="col">Booking Date</th>
-                                                                        <th scope="col">status</th>
-                                                                        <th scope="col">Event Location</th>
-                                                                        <th scope="col">Allocated Employees</th>
-
-
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    <tr>
-                                                                        <th scope="col">E01</th>
-                                                                        <th scope="col">Birthday</th>
-                                                                        <th scope="col">2022-10-26</th>
-                                                                        <th scope="col">2022-11-18</th>
-                                                                        <th scope="col">Pending</th>
-                                                                        <th scope="col">Colombo</th>
-                                                                        <th scope="col">raj,kamal</th>
-
-
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="col">E01</th>
-                                                                        <th scope="col">Birthday</th>
-                                                                        <th scope="col">2022-10-26</th>
-                                                                        <th scope="col">2022-11-18</th>
-                                                                        <th scope="col">Pending</th>
-                                                                        <th scope="col">Colombo</th>
-                                                                        <th scope="col">raj,kamal</th>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="col">E01</th>
-                                                                        <th scope="col">Birthday</th>
-                                                                        <th scope="col">2022-10-26</th>
-                                                                        <th scope="col">2022-11-18</th>
-                                                                        <th scope="col">Pending</th>
-                                                                        <th scope="col">Colombo</th>
-                                                                        <th scope="col">raj,kamal</th>
-
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </Modal.Body>
-                                                    <Modal.Footer>
-                                                        <Button variant="dark" onClick={handleClose}>
-                                                            Delete Event
-                                                        </Button>
-                                                        <Button variant="dark" onClick={handleClose}>
-                                                            close
-                                                        </Button>
-                                                    </Modal.Footer>
-                                                </Modal>
-                                            </th>
 
                                         </tr>
                                         </tbody>
