@@ -18,7 +18,7 @@ const AdminViewAllReviews = () => {
 
     const [ adminReview , setadminReview ] = useState( null )
 
-    let reviewCount  = 1
+    // let reviewCount  = 1
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
