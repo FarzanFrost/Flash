@@ -8,6 +8,9 @@ import Modal from 'react-bootstrap/Modal';
 
 
 const AdminViewAllReviews = () => {
+
+    const serverLink = 'http://localhost:8080'
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -58,9 +61,9 @@ const AdminViewAllReviews = () => {
                             <div className="table-responsive ">
                                 <table className="table table-dark table-striped align-middle">
 
-                                    <thead className="align-middle">
-
                                     {/*<thead>*/}
+
+                                    <thead className="align-middle">
 
                                     <tr>
                                         <th scope="col">Reviewer</th>
@@ -68,9 +71,9 @@ const AdminViewAllReviews = () => {
                                         <th scope="col">Rating</th>
                                         <th scope="col">Details</th>
 
-
                                     </tr>
                                     </thead>
+
                                     <tbody>
                                     <tr>
                                         <th scope="col">Thinesh</th>
@@ -98,62 +101,6 @@ const AdminViewAllReviews = () => {
                                             </Modal>
                                         </th>
 
-
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Thinesh</th>
-                                        <th scope="col">E101</th>
-                                        <th scope="col">5</th>
-                                        <th scope="col">
-
-                                            <Button variant="light" onClick={handleShow}>
-                                                Details
-                                            </Button>
-
-                                            <Modal show={show} onHide={handleClose}>
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Review</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
-                                                    </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        close
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-                                        </th>
-
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Thinesh</th>
-                                        <th scope="col">E101</th>
-                                        <th scope="col">5</th>
-                                        <th scope="col">
-
-                                            <Button variant="light" onClick={handleShow}>
-                                                Details
-                                            </Button>
-
-                                            <Modal show={show} onHide={handleClose}>
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Review</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
-                                                    </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        close
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-                                        </th>
 
 
                                     </tr>

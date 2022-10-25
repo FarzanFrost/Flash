@@ -1,5 +1,4 @@
 package com.example.flashbackend.Controller;
-
 import com.example.flashbackend.Component.AdminEventComponent;
 import com.example.flashbackend.Component.AdminReviewComponent;
 import com.example.flashbackend.Entity.*;
@@ -34,6 +33,7 @@ public class Admin {
 
     @GetMapping("/AdminViewEvents")
     public List<Event> getEvents(){
+
         return AdminEventComponent.getEvents();
     }
 
