@@ -1,17 +1,16 @@
-import React, {useContext, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
-import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+// import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 const AdminViewAllReviews = () => {
 
-    const { changeContentVisible } = useContext( AuthenticationContext )
+    // const { changeContentVisible } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080';
 
@@ -61,7 +60,7 @@ const AdminViewAllReviews = () => {
                                 <div className="input-group">
                                     <div className="input-group-btn search-panel">
 
-                                        <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"
+                                        <select className="btn btn-dark dropdown-toggle"   type="button" id="Filter"
                                                 data-bs-toggle="dropdown">
                                             <option value="All">All</option>
                                             <option value="Today">Today</option>
