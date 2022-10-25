@@ -16,8 +16,15 @@ public class AdminDashboardComponent {
     @Autowired
     EmployeeRepository employeeRepository;
 
+    @Autowired
+    EventRepository eventRepository;
+
     public long getEmployeeCount(){
         return employeeRepository.count();
     }
-    
+
+    public long getEventCount(){
+        return eventRepository.count();
+    }
+
 }
