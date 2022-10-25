@@ -1,6 +1,7 @@
 package com.example.flashbackend.Controller;
 
 
+import com.example.flashbackend.Component.AdminDashboardComponent;
 import com.example.flashbackend.Component.AdminEmployeeDetailsComponent;
 import com.example.flashbackend.Component.ManagerComponent;
 import com.example.flashbackend.DTO.AddEmployee;
@@ -16,4 +17,15 @@ import java.util.List;
 @RestController
 @CrossOrigin( origins = "http://localhost:3000")
 public class AdminDashboard {
+
+    @Autowired
+    AdminDashboardComponent adminDashboardComponent;
+
+    @GetMapping("/adminDashboardEmployeeCount")
+    public long getEmployeeCount(){
+
+        return adminDashboardComponent.getEmployeeCount();
+
+    }
+
 }
