@@ -117,4 +117,11 @@ public class ManagerComponent {
 
     }
 
+    public String deletePackage( BigInteger packageId ){
+
+        packageRepository.deleteById( packageId );
+        return "done";
+
+    }
+
 }
