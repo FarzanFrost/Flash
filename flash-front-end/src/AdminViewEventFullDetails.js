@@ -49,7 +49,7 @@ const AdminViewEventFullDetails = () => {
                                             <option value="Event Id">Event Id</option>
                                             <option value="Event">Event</option>
                                             <option value="Date">Date</option>
-                                            <option value="BookingDate">Booking Date</option>
+                                            <option value="Booking date">Booking Date</option>
                                             <option value="Status">status</option>
 
 
