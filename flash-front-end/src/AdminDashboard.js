@@ -12,7 +12,6 @@ const AdminDashboard = () =>{
     const serverLink = 'http://localhost:8080'
 
     const [totalEmployeeCount , setTotalEmployeeCount] = useState( 0 )
-
     useEffect( () => {
         axios.get( serverLink + '/adminDashboardEmployeeCount' ).then(
             ( response ) => {
@@ -25,12 +24,23 @@ const AdminDashboard = () =>{
     } ,[])
 
     const [totalEventsCount , setTotalEventsCount] = useState( 0 )
-
     useEffect( () => {
         axios.get( serverLink + '/adminDashboardEventCount' ).then(
             ( response ) => {
                 console.log( response.data )
                 setTotalEventsCount( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! get userCount ") }
+        )
+    } ,[])
+
+    const [totalClientsCount , setTotalClientsCount] = useState( 0 )
+    useEffect( () => {
+        axios.get( serverLink + '/adminDashboardCustomerCount' ).then(
+            ( response ) => {
+                console.log( response.data )
+                setTotalClientsCount( response.data )
             }
         ).catch(
             () => { alert( "Error!!! get userCount ") }
@@ -150,7 +160,7 @@ const AdminDashboard = () =>{
                                                 Total Clients
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                343
+                                                { totalClientsCount }
                                             </h5>
 
                                         </div>
