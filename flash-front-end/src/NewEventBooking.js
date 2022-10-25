@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import pic from './Images/booking.jpeg';
-import {useContext} from "@types/react";
+import {useContext} from "react";
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const NewEventBooking = () => {
@@ -13,6 +13,7 @@ const NewEventBooking = () => {
             <section className="h-100">
 
                 <div className="container py-5 h-100">
+
 
                     <div className="row d-flex justify-content-center align-items-center h-100">
 
