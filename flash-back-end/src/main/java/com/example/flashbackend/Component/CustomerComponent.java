@@ -3,6 +3,7 @@ package com.example.flashbackend.Component;
 import com.example.flashbackend.DAO.*;
 import com.example.flashbackend.DTO.AddBankDetail;
 import com.example.flashbackend.DTO.AddEvent;
+import com.example.flashbackend.DTO.EditEvent;
 import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.Entity.Event;
@@ -51,8 +52,8 @@ public class CustomerComponent {
         return "done";
     }
 
-    public String updateEvent( AddEvent addEvent){
-        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
+    public String updateEvent( EditEvent editEvent){
+        eventRepository.updateEvent( editEvent.getStatus(), editEvent.getAdvancedAmount(), editEvent.getEventDate(), editEvent.getStartTime(), editEvent.getEndTime(), editEvent.getAddress(), editEvent.getLatitude(), editEvent.getLongitude(), editEvent.getExtraPage(), editEvent.getCategory(), editEvent.getDelivered(), editEvent.getCustomerId(), editEvent.getPackageId());
         return "done";
     }
 
