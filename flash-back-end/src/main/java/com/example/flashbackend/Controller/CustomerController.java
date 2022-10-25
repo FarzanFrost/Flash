@@ -73,4 +73,11 @@ public class CustomerController {
 
     }
 
+    @PostMapping("/deleteReviews")
+    public String deleteReview( @RequestBody BigInteger reviewId ){
+
+        return customerComponent.deleteReview( reviewId );
+
+    }
+
 }
