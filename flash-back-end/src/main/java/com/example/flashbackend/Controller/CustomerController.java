@@ -66,4 +66,11 @@ public class CustomerController {
         return customerComponent.addReview( reviews );
     }
 
+    @PostMapping("/deleteCustomer")
+    public String deleteCustomer( @RequestBody BigInteger customerId ){
+
+        return customerComponent.deleteCustomer( customerId );
+
+    }
+
 }
