@@ -9,6 +9,8 @@ import platinumPhoto from './Images/platinum-package.png'
 
 const Vieweventdetailsforadmin = () => {
 
+    const serverLink = 'http://localhost:8080'
+
     const style1 = {
 
         backgroundColor: '#767676',
