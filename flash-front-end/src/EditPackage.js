@@ -67,7 +67,7 @@ const EditPackage = () => {
 
         , [] )
 
-    console.log( "extra" , extraPagePrice )
+    console.log( "packageid" , packageID )
 
     return (
         <div className="h-100">
