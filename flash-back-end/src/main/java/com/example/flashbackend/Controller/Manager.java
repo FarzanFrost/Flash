@@ -3,6 +3,7 @@ package com.example.flashbackend.Controller;
 import com.example.flashbackend.Component.ManagerComponent;
 import com.example.flashbackend.DTO.AddEmployee;
 import com.example.flashbackend.DTO.AddPackages;
+import com.example.flashbackend.DTO.DeletePackage;
 import com.example.flashbackend.DTO.EditPackages;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
@@ -107,6 +108,13 @@ public class Manager {
     public String editPackage(@RequestBody EditPackages editPackages){
 
         return managerComponent.editPackage( editPackages );
+
+    }
+
+    @PostMapping( "/deletePackage" )
+    public String deletePackage(@RequestBody DeletePackage deletePackage){
+
+        return managerComponent.deletePackage( deletePackage.getPackageID() );
 
     }
 
