@@ -1,18 +1,12 @@
 package com.example.flashbackend.Controller;
 
-import com.example.flashbackend.DTO.AddBankDetail;
-import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
-import com.example.flashbackend.Entity.Customer;
-import com.example.flashbackend.DTO.AddEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
 import com.example.flashbackend.Entity.Event;
 
-import java.math.BigInteger;
-import java.sql.Timestamp;
 import java.util.List;
 
 @RestController

@@ -30,6 +30,8 @@ public interface EventRepository extends JpaRepository<Event, BigInteger> {
     @Transactional
     void updateEvent(@Param("status") String status , @Param("advancedAmount") String advancedAmount , @Param("eventDate") Date eventDate, @Param("startTime") Time startTime, @Param("endTime") Time endTime, @Param("address") String address, @Param("latitude") String latitude, @Param("longitude") String longitude, @Param("extraPage") Integer extraPage, @Param("category") String category, @Param("delivered") Boolean delivered, @Param("packageId") BigInteger packageId, @Param("eventId") BigInteger eventId);
 
+    List<Event> findByDate(java.sql.Date date);
+
 
 //    @Override
 //    Optional<Event> findById(String email);

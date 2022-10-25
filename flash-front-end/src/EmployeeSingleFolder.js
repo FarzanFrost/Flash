@@ -45,7 +45,7 @@ const SingleFolder = () => {
 
                 <div>
                     <img src={url}/>
-                    
+
                 </div>
             </div>
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
