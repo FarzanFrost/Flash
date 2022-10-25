@@ -2,6 +2,7 @@ package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.DTO.AddBankDetail;
 import com.example.flashbackend.DTO.AddReview;
+import com.example.flashbackend.DTO.EditEvent;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
 import com.example.flashbackend.Entity.Customer;
@@ -50,9 +51,9 @@ public class CustomerController {
     }
 
     @PostMapping("updateEvent")
-    public String updateEvent(@RequestBody AddEvent addEvent){
+    public String updateEvent(@RequestBody EditEvent editEvent){
 
-        return customerComponent.updateEvent( addEvent );
+        return customerComponent.updateEvent( editEvent );
     }
 
     @PostMapping("/updateBank")
