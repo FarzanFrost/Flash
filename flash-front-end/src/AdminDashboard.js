@@ -4,8 +4,26 @@ import client from './Images/client logo.jpg'
 import event from './Images/event logo.png'
 import income from './Images/income logo.jpg'
 import pic from "./Images/graph.jpg";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const AdminDashboard = () =>{
+
+    const serverLink = 'http://localhost:8080'
+
+    const [totalEmployeeCount , setTotalEmployeeCount] = useState( 0 )
+
+    useEffect( () => {
+        axios.get( serverLink + '/adminDashboardEmployeeCount' ).then(
+            ( response ) => {
+                console.log( response.data )
+                setTotalEmployeeCount( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! get userCount ") }
+        )
+    } ,[])
+
     return(
         <div className="h-100">
 
@@ -37,7 +55,7 @@ const AdminDashboard = () =>{
                                                 Total Employees
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                255
+                                                { totalEmployeeCount }
                                             </h5>
 
                                         </div>
