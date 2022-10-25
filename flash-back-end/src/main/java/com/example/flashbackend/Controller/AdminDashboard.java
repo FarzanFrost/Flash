@@ -31,4 +31,9 @@ public class AdminDashboard {
         return adminDashboardComponent.getEventCount();
     }
 
+    @GetMapping("/adminDashboardCustomerCount")
+    public long getCustomerCount(){
+        return adminDashboardComponent.getCustomerCount();
+    }
+
 }
