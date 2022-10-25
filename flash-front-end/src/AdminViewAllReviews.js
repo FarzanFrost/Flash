@@ -139,7 +139,6 @@ const AdminViewAllReviews = () => {
                                         </th>
 
 
-
                                     </tr>
 
                                             )

@@ -121,11 +121,11 @@ const Vieweventdetailsforadmin = () => {
                                                 ( event ) => (
 
                                         <tr>
-                                            <th scope="col">E01</th>
-                                            <th scope="col">Birthday</th>
-                                            <th scope="col">2022-10-26</th>
-                                            <th scope="col">2022-11-18</th>
-                                            <th scope="col">Pending</th>
+                                            <th scope="col">{event}</th>
+                                            <th scope="col">{event}</th>
+                                            <th scope="col">{event}</th>
+                                            <th scope="col">{event}</th>
+                                            <th scope="col">{event}</th>
 
                                             <th scope="col">
                                                 <Button variant="light" onClick={handleShow}>
@@ -136,7 +136,7 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Header closeButton>
                                                         <Modal.Title>Event full Details</Modal.Title>
                                                     </Modal.Header>
-                                                    <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                    <Modal.Body>{event}</Modal.Body>
                                                     <Modal.Footer>
                                                         <Button variant="dark" onClick={handleClose}>
                                                             Delete Review
