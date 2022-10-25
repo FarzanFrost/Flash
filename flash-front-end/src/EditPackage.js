@@ -2,8 +2,12 @@ import React, {useContext, useEffect, useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import pic from './Images/eventcollection.png';
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
+
 
 const EditPackage = () => {
+
+    const serverLink = 'http://localhost:8080'
 
     const { changeContentVisible , changePackageDetails , packagesDetail } = useContext( AuthenticationContext )
 
@@ -68,6 +72,49 @@ const EditPackage = () => {
         , [] )
 
     console.log( "packageid" , packageID )
+
+    const editPackage = () => {
+
+        const frame = frameLength + "x" + frameWidth
+
+        const data = {
+
+            packageID,
+            frame,
+            videographer,
+            photographer,
+            calender,
+            name,
+            pages,
+            extraPagePrice,
+            outShootType,
+            signatureFrame,
+            albumDesign,
+            totalPayment,
+            eventType,
+            additional
+
+        }
+
+        axios.post( serverLink + '/editPackage' , data ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    changeContentVisible( 1 )
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! edit packages") }
+
+        )
+
+    }
 
     return (
         <div className="h-100">
@@ -207,6 +254,7 @@ const EditPackage = () => {
                                                     {
 
                                                         signatureFrame ? <Form.Check
+                                                            value={ true }
                                                             inline
                                                             label="Yes"
                                                             name="group1"
@@ -214,6 +262,7 @@ const EditPackage = () => {
                                                             checked
                                                             onChange={ ( e ) => setSignatureFrame( true ) }
                                                         /> : <Form.Check
+                                                            value={ true }
                                                             inline
                                                             label="Yes"
                                                             name="group1"
@@ -226,6 +275,7 @@ const EditPackage = () => {
                                                     {
 
                                                         !signatureFrame ? <Form.Check
+                                                            value={ false }
                                                             inline
                                                             label="No"
                                                             name="group1"
@@ -233,6 +283,7 @@ const EditPackage = () => {
                                                             checked
                                                             onChange={ ( e ) => setSignatureFrame( false ) }
                                                         /> : <Form.Check
+                                                            value={ false }
                                                             inline
                                                             label="No"
                                                             name="group1"
@@ -285,6 +336,7 @@ const EditPackage = () => {
                                                     {
 
                                                         packagesDetail.calender ? <Form.Check
+                                                            value={ true }
                                                             inline
                                                             label="Yes"
                                                             name="group2"
@@ -292,6 +344,7 @@ const EditPackage = () => {
                                                             checked
                                                             onChange={ ( e ) => setCalender( e.target.value ) }
                                                         /> : <Form.Check
+                                                            value={ true }
                                                             inline
                                                             label="Yes"
                                                             name="group2"
@@ -304,6 +357,7 @@ const EditPackage = () => {
                                                     {
 
                                                         !packagesDetail.calender ? <Form.Check
+                                                            value={ false }
                                                             inline
                                                             label="No"
                                                             name="group2"
@@ -311,6 +365,7 @@ const EditPackage = () => {
                                                             checked
                                                             onChange={ ( e ) => setCalender( e.target.value ) }
                                                         /> : <Form.Check
+                                                            value={ false }
                                                             inline
                                                             label="No"
                                                             name="group2"
@@ -452,7 +507,7 @@ const EditPackage = () => {
                                             <div>
                                                 <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
                                                     <button type="button" variant="primary"
-                                                            className="btn btn-dark btn-block px-3" >
+                                                            className="btn btn-dark btn-block px-3" onClick={ editPackage } >
                                                         Change
                                                     </button>
 
