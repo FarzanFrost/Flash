@@ -1,20 +1,48 @@
-import  React from 'react'
+import React, {useContext, useEffect} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axios from "axios";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 const AdminViewAllReviews = () => {
 
-    const serverLink = 'http://localhost:8080'
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
+    const serverLink = 'http://localhost:8080';
 
     const [show, setShow] = useState(false);
 
+    const [ adminReview , setadminReview ] = useState( null )
+
+    let reviewCount  = 1
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/Admin' ).then(
+
+            ( response ) => {
+
+                setadminReview( response.data )
+                console.log( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! Reviews ") }
+
+        )
+
+    } ,[])
 
     return (
 
@@ -53,11 +81,14 @@ const AdminViewAllReviews = () => {
                         </div>
 
 
-
-
-
-
                         <div className="card-body pb-5">
+
+                            {/*<div className="text-end">*/}
+                            {/*    <a href="#" className="btn" style={{...style3}} onClick={ () => changeContentVisible( 7 ) }>Add Employee</a><br/>*/}
+
+                            {/*</div>*/}
+                            {/*<br/>*/}
+
                             <div className="table-responsive ">
                                 <table className="table table-dark table-striped align-middle">
 
@@ -75,10 +106,17 @@ const AdminViewAllReviews = () => {
                                     </thead>
 
                                     <tbody>
+
+                                    { adminReview !== null &&
+
+                                        adminReview.map(
+
+                                            ( review ) => (
+
                                     <tr>
-                                        <th scope="col">Thinesh</th>
-                                        <th scope="col">E101</th>
-                                        <th scope="col">5</th>
+                                        <th scope="col">{  }</th>
+                                        <th scope="col">{ review }</th>
+                                        <th scope="col">{ review.rate}</th>
                                         <th scope="col">
 
                                             <Button variant="light" onClick={handleShow}>
@@ -89,7 +127,7 @@ const AdminViewAllReviews = () => {
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Review</Modal.Title>
                                                 </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
+                                                <Modal.Body>{ review.comment }</Modal.Body>
                                                 <Modal.Footer>
                                                     <Button variant="dark" onClick={handleClose}>
                                                         Delete Review
@@ -104,6 +142,12 @@ const AdminViewAllReviews = () => {
 
 
                                     </tr>
+
+                                            )
+
+                                        )
+
+                                    }
                                     </tbody>
                                 </table>
                             </div>
