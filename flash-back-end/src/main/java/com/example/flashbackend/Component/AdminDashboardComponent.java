@@ -19,12 +19,19 @@ public class AdminDashboardComponent {
     @Autowired
     EventRepository eventRepository;
 
+    @Autowired
+    CustomerRepository customerRepository;
+
     public long getEmployeeCount(){
         return employeeRepository.count();
     }
 
     public long getEventCount(){
         return eventRepository.count();
+    }
+
+    public long getCustomerCount(){
+        return customerRepository.count();
     }
 
 }
