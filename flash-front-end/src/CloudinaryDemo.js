@@ -33,9 +33,9 @@
 //
 // export default CloudinaryDemo
 
-
-
 import React, { useState } from 'react'
+
+
 const CloudinaryDemo = () => {
     const [image, setImage ] = useState("");
     const [ url, setUrl ] = useState("");
