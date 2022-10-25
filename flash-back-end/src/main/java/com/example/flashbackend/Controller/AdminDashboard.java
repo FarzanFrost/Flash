@@ -23,9 +23,12 @@ public class AdminDashboard {
 
     @GetMapping("/adminDashboardEmployeeCount")
     public long getEmployeeCount(){
-
         return adminDashboardComponent.getEmployeeCount();
+    }
 
+    @GetMapping("/adminDashboardEventCount")
+    public long getEventCount(){
+        return adminDashboardComponent.getEventCount();
     }
 
 }
