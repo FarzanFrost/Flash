@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import pic from './Images/booking.jpeg';
-import {useContext} from "@types/react";
+import {useContext} from "react";
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const NewEventBooking = () => {
