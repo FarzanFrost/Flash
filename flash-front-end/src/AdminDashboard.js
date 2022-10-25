@@ -24,6 +24,19 @@ const AdminDashboard = () =>{
         )
     } ,[])
 
+    const [totalEventsCount , setTotalEventsCount] = useState( 0 )
+
+    useEffect( () => {
+        axios.get( serverLink + '/adminDashboardEventCount' ).then(
+            ( response ) => {
+                console.log( response.data )
+                setTotalEventsCount( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! get userCount ") }
+        )
+    } ,[])
+
     return(
         <div className="h-100">
 
@@ -96,7 +109,7 @@ const AdminDashboard = () =>{
                                                 Total Events
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                182
+                                                { totalEventsCount }
                                             </h5>
 
                                         </div>
