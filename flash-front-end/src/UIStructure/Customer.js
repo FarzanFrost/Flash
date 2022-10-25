@@ -12,6 +12,7 @@ import {AuthenticationContext} from "../ContextFiles/Authentication/Authenticati
 import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import {useLocation} from "react-router-dom";
 import CustomerViewPackagesPurperty from "../CustomerViewPackagesPurperty";
+import ChangeBooking from "../ChangeBooking";
 
 
 const Customer = () => {
@@ -158,6 +159,8 @@ const Customer = () => {
                     { contentVisible === 2 && <ViewEventsForCustomer/>}{/*change event UI*/}{/*view books*/}
                     {/*<ViewPackagesBirthday/>*/}{/*no need*/}
                     {contentVisible === 7 && <CustomerViewPackagesPurperty/>}
+                    {contentVisible === 8 && <ChangeBooking/>}
+                    {contentVisible === 9 && <CustomerViewPackagesPurperty/>}
 
 
 
