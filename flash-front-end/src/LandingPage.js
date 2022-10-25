@@ -75,7 +75,7 @@ const LandingPage = () => {
                     photography, Fashion photography and many more..</h5>
 
                 {/*carousal*/}
-                <div id="carouselExampleCaptions" className="carousel slide m-3" data-bs-ride="false">
+                <div id="carouselExampleCaptions" className="carousel slide m-5" data-bs-ride="false">
 
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
@@ -101,7 +101,8 @@ const LandingPage = () => {
                             <img src={event2} className="img-fluid d-block w-100 p-5"  alt="..." />
                                 <div className="carousel-caption d-md-block">
                                     <h5>Gatherings</h5>
-                                    <p>Some representative placeholder content for the second slide.</p>
+                                    <p>Not only is gathering together enjoyable, but it also nurtures our most important relationships and promotes a sense of belonging and community.
+                                        A simple meal shared with friends or family can leave you feeling incredibly inspired, rejuvenated and connected.</p>
                                 </div>
                         </div>
 
@@ -109,7 +110,8 @@ const LandingPage = () => {
                             <img src={event3} className="img-fluid d-block w-100 p-5"  alt="..." />
                                 <div className="carousel-caption d-md-block ">
                                     <h5>Birthday Party</h5>
-                                    <p>Some representative placeholder content for the third slide.</p>
+                                    <p>Birthdays are a chance to celebrate, commemorate past years and what's to come, and connect with friends.
+                                        Make your birthday matter with Flash.</p>
                                 </div>
                         </div>
                     </div>

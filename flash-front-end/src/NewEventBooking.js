@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import pic from './Images/booking.jpeg';
+import {useContext} from "@types/react";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const NewEventBooking = () => {
+
+    const { userDetailsAfterAuthentication } = useContext( AuthenticationContext )
+
     return (
         <div className="h-100">
 
