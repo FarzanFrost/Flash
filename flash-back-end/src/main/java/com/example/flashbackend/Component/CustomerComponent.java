@@ -79,11 +79,11 @@ public class CustomerComponent {
         return "done";
     }
 
-    public String deleteEvent( BigInteger eventId ){
-
-        eventRepository.deleteById( eventId );
-        return "done";
-
-    }
+//    public String deleteEvent( BigInteger eventId ){
+//
+//        eventRepository.deleteById( eventId );
+//        return "done";
+//
+//    }
 
 }

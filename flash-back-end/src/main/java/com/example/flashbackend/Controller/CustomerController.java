@@ -78,11 +78,11 @@ public class CustomerController {
 
     }
 
-    @PostMapping( "/deleteEvent" )
-    public String deletePackage(@RequestBody DeleteEvent deleteEvent){
-
-        return customerComponent.deleteEvent( deleteEvent.getEventID() );
-
-    }
+//    @PostMapping( "/deleteEvent" )
+//    public String deletePackage(@RequestBody DeleteEvent deleteEvent){
+//
+//        return customerComponent.deleteEvent( deleteEvent.getEventID() );
+//
+//    }
 
 }
