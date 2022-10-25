@@ -17,7 +17,7 @@ public interface PackageRepository extends JpaRepository<Package , BigInteger> {
     @Override
     List<Package> findAll();
 
-    Package findByEvents(List<Event> events);
+    Package findByEvents(Event event);
 
     @Modifying
     @Query( value = "UPDATE package SET Frame = :frame , Videographer = :videographer, Photographer = :photographer, Calender = :calender, Name = :name,  Pages = :pages, ExtraPagePrice = :extraPagePrice, OutshootType = :outshootType, SignatureFrame = :signatureFrame, AlbumDesign = :albumDesign, TotalPayment = :totalPayment,  EventType = :eventType, Additional = :additional WHERE PackageID = :packageId;" , nativeQuery = true)
