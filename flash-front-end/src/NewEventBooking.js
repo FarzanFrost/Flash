@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react';
 import pic from './Images/booking.jpeg';
-import {useContext} from "react";
 
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
