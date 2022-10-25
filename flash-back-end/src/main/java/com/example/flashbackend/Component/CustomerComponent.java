@@ -1,6 +1,9 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.DTO.AddBankDetail;
+import com.example.flashbackend.DTO.AddEvent;
+import com.example.flashbackend.DTO.AddReview;
 import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
@@ -8,6 +11,8 @@ import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Component
@@ -24,10 +29,9 @@ public class CustomerComponent {
     @Autowired
     ReviewsRepository ReviewsRepository;
 
-//    public Optional<Customer> getCustomer(){
-//        Optional<Customer> customer = CustomerRepository.findById( "1" );
-//        return customer;
-//    }
+    public List<Customer> getCustomer(){
+        return customerRepository.findAll();
+    }
 
     public List<Event> getEvents(){
         return eventRepository.findAll();
@@ -42,14 +46,30 @@ public class CustomerComponent {
         return ReviewsRepository.findAll();
     }
 
-    public String addNewEvent(Event event, Customer customer, Package packages){
-        eventRepository.insertEvent( event.getStatus(), event.getAdvanceAmount(), event.getEventDate(), event.getStartTime(), event.getEndTime(), event.getAddress(), event.getLatitude(), event.getLongitude(), event.getExtraPage(), event.getCategory(), event.isDelivered(), customer.getCustomerID(), packages.getPackageID() );
+    public String addNewEvent( AddEvent addEvent ){
+        eventRepository.insertEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId() );
         return "done";
     }
 
-    public String addBankDetail(Customer customer){
-       customerRepository.save(customer);
+    public String updateEvent( AddEvent addEvent){
+        eventRepository.updateEvent( addEvent.getStatus(), addEvent.getAdvancedAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId());
+        return "done";
+    }
+
+    public String addBankDetail( AddBankDetail addBankDetail){
+       customerRepository.updateCustomer( addBankDetail.getFirstName(), addBankDetail.getLastName(), addBankDetail.getGender(), addBankDetail.getNIC(), addBankDetail.getContactNo(), addBankDetail.getCardNo(), addBankDetail.getCVCNo(), addBankDetail.getExpiaryDate(), addBankDetail.getCardType() );
        return "done";
+    }
+
+    public String addReview(Reviews reviews){
+        ReviewsRepository.save( reviews );
+        return "done";
+    }
+
+    public String deleteCustomer(BigInteger customerId ){
+
+        customerRepository.deleteById( customerId );
+        return "done";
     }
 
 }

@@ -165,7 +165,7 @@ const AuthenticationContextProvider = ( props ) => {
 
     return(
 
-        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout , packagesDetail , changePackageDetails } }>
+        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout , packagesDetail , changePackageDetails , userDetailsAfterAuthentication } }>
 
             { props.children }
 
