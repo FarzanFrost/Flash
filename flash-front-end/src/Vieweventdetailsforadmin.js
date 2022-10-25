@@ -46,10 +46,10 @@ const Vieweventdetailsforadmin = () => {
                                                     data-bs-toggle="dropdown">
                                                 <option value="All">All</option>
                                                 <option value="Wedding">Event Id</option>
-                                                <option value="Birthday">Event</option>
-                                                <option value="Puperty">Date</option>
-                                                <option value="Gettogether">Booking Date</option>
-                                                <option value="Housewarming">status</option>
+                                                <option value="EventId">Event</option>
+                                                <option value="Date">Date</option>
+                                                <option value="BookingDate">Booking Date</option>
+                                                <option value="status">status</option>
 
 
                                             </select>
@@ -167,7 +167,6 @@ export default Vieweventdetailsforadmin
 //
 // <div style={{...style1}}>
 //
-//
 //     <div className=" row">
 //         <h2 className="text-center mt-3 pb-3">Events</h2>
 //         <div className="col-md-6">
@@ -199,8 +198,6 @@ export default Vieweventdetailsforadmin
 //                 {/*<div className="col-6">*/}
 //                 {/*    <h3 className="mb-2" >Event details </h3>*/}
 //                 {/*</div>*/}
-//
-//
 //                 <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
 //                         data-bs-slide="next" style={{ height:'50rem'}}>
 //                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
@@ -318,8 +315,6 @@ export default Vieweventdetailsforadmin
 //             </div>
 //         </div>
 //     </section>
-//
-//
 //
 // </div>
 //
