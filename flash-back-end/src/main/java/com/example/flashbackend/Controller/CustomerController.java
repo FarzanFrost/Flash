@@ -38,28 +38,39 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-//    @PostMapping("/Booking")
-//    public String addEvent(@RequestBody AddEvent addEvent){
-//
-//        return customerComponent.addNewEvent( addEvent );
-//    }
+    @GetMapping("/Customers")
+    public List<Customer> getCustomers(){
+        return customerComponent.getCustomer();
+    }
 
-//    @PostMapping("updateEvent")
-//    public String updateEvent(@RequestBody AddEvent addEvent){
-//
-//        return customerComponent.updateEvent( addEvent );
-//    }
+    @PostMapping("/Booking")
+    public String addEvent(@RequestBody AddEvent addEvent){
 
-//    @PostMapping("/newBank")
-//    public String addBank(@RequestBody AddBankDetail addBank){
-//        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
-//        return customerComponent.addBankDetail( customer );
-//    }
+        return customerComponent.addNewEvent( addEvent );
+    }
 
-//    @PostMapping("/newReview")
-//    public String addReviews(@RequestBody AddReview addReview){
-//        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
-//        return customerComponent.addReview( reviews );
-//    }
+    @PostMapping("updateEvent")
+    public String updateEvent(@RequestBody AddEvent addEvent){
+
+        return customerComponent.updateEvent( addEvent );
+    }
+
+    @PostMapping("/updateBank")
+    public String addBank(@RequestBody AddBankDetail addBankDetail){
+        return customerComponent.addBankDetail( addBankDetail );
+    }
+
+    @PostMapping("/newReview")
+    public String addReviews(@RequestBody AddReview addReview){
+        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
+        return customerComponent.addReview( reviews );
+    }
+
+    @PostMapping("/deleteCustomer")
+    public String deleteCustomer( @RequestBody BigInteger customerId ){
+
+        return customerComponent.deleteCustomer( customerId );
+
+    }
 
 }
