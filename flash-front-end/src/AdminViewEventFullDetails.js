@@ -46,11 +46,11 @@ const AdminViewEventFullDetails = () => {
                                         <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"
                                                 data-bs-toggle="dropdown">
                                             <option value="All">All</option>
-                                            <option value="Wedding">Event Id</option>
-                                            <option value="Birthday">Event</option>
-                                            <option value="Puperty">Date</option>
-                                            <option value="Gettogether">Booking Date</option>
-                                            <option value="Housewarming">status</option>
+                                            <option value="Event Id">Event Id</option>
+                                            <option value="Event">Event</option>
+                                            <option value="Date">Date</option>
+                                            <option value="BookingDate">Booking Date</option>
+                                            <option value="Status">status</option>
 
 
                                         </select>
