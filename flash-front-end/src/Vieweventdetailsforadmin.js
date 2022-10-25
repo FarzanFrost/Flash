@@ -114,6 +114,12 @@ const Vieweventdetailsforadmin = () => {
                                         </thead>
                                         <tbody>
 
+                                        { adminEvent !== null &&
+
+                                            adminEvent.map(
+
+                                                ( event ) => (
+
                                         <tr>
                                             <th scope="col">E01</th>
                                             <th scope="col">Birthday</th>
@@ -142,8 +148,13 @@ const Vieweventdetailsforadmin = () => {
                                                 </Modal>
                                             </th>
 
-
                                         </tr>
+
+                                                )
+
+                                            )
+
+                                        }
                                         </tbody>
                                     </table>
                                 </div>
