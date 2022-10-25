@@ -72,4 +72,10 @@ public class CustomerComponent {
         return "done";
     }
 
+    public String deleteReview(BigInteger reviewId ){
+
+        ReviewsRepository.deleteById( reviewId );
+        return "done";
+    }
+
 }
