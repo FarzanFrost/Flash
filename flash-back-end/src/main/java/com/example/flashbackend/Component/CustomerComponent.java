@@ -11,6 +11,7 @@ import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -62,6 +63,12 @@ public class CustomerComponent {
 
     public String addReview(Reviews reviews){
         ReviewsRepository.save( reviews );
+        return "done";
+    }
+
+    public String deleteCustomer(BigInteger customerId ){
+
+        customerRepository.deleteById( customerId );
         return "done";
     }
 
