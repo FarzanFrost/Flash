@@ -3,6 +3,7 @@ package com.example.flashbackend.Controller;
 import com.example.flashbackend.Component.ManagerComponent;
 import com.example.flashbackend.DTO.AddEmployee;
 import com.example.flashbackend.DTO.AddPackages;
+import com.example.flashbackend.DTO.EditPackages;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -99,6 +100,13 @@ public class Manager {
     public String deleteEmployee( @RequestBody BigInteger employeeId ){
 
         return managerComponent.deleteEmployee( employeeId );
+
+    }
+
+    @PostMapping( "/editPackage" )
+    public String editPackage(@RequestBody EditPackages editPackages){
+
+        return managerComponent.editPackage( editPackages );
 
     }
 
