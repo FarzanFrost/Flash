@@ -1,11 +1,9 @@
 package com.example.flashbackend.Controller;
 
-import com.example.flashbackend.DTO.AddBankDetail;
-import com.example.flashbackend.DTO.AddReview;
+import com.example.flashbackend.DTO.*;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
 import com.example.flashbackend.Entity.Customer;
-import com.example.flashbackend.DTO.AddEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
@@ -50,9 +48,9 @@ public class CustomerController {
     }
 
     @PostMapping("updateEvent")
-    public String updateEvent(@RequestBody AddEvent addEvent){
+    public String updateEvent(@RequestBody EditEvent editEvent){
 
-        return customerComponent.updateEvent( addEvent );
+        return customerComponent.updateEvent( editEvent );
     }
 
     @PostMapping("/updateBank")
@@ -72,5 +70,19 @@ public class CustomerController {
         return customerComponent.deleteCustomer( customerId );
 
     }
+
+    @PostMapping("/deleteReviews")
+    public String deleteReview( @RequestBody BigInteger reviewId ){
+
+        return customerComponent.deleteReview( reviewId );
+
+    }
+
+//    @PostMapping( "/deleteEvent" )
+//    public String deletePackage(@RequestBody DeleteEvent deleteEvent){
+//
+//        return customerComponent.deleteEvent( deleteEvent.getEventID() );
+//
+//    }
 
 }
