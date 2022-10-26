@@ -10,19 +10,19 @@ const NewEventBooking = () => {
 
     const location = useLocation()
 
-    const { changeContentVisible, userDetailsAfterAuthentication, packagesDetail } = useContext( AuthenticationContext )
+    const { changeContentVisible, userDetailsAfterAuthentication } = useContext( AuthenticationContext )
 
     const customerDetail = location.state.userDetailsAfterAuthentication
 
     const customerID = customerDetail.customer.customerID
 
-    const packageID = packagesDetail.packageID
+    //const packageID = packagesDetail.packageID
 
-    console.log("id", packageID)
+    //console.log("id", packageID)
 
-    const [ eventType , setEventType ] = useState( 'Wedding' )
+    const [ category , setCategory ] = useState( 'Wedding' )
 
-    const [ date , setDate ] = useState( '' )
+    const [ eventDate , setEventDate ] = useState( '' )
 
     const [ startTime , setStartTime ] = useState( '' )
 
@@ -32,34 +32,34 @@ const NewEventBooking = () => {
 
     const [ packages , setPackages ] = useState( 'Gold' )
 
-    //const [allPackage, setAllPackage] = useState(null)
+    const [allPackage, setAllPackage] = useState(null)
 
-    // useEffect( () => {
-    //
-    //     axios.get(serverLink + '/AllPackages').then(
-    //         (response) => {
-    //
-    //             setAllPackage(response.data)
-    //             console.log("data", response.data.packageID)
-    //         }
-    //     ).catch(
-    //         () => {alert("Error!!! All Packages")}
-    //     )
-    //
-    // }, [])
+    useEffect( () => {
+
+        axios.get(serverLink + '/AllPackages').then(
+            (response) => {
+
+                setAllPackage(response.data)
+                console.log("data", response.data.packageID)
+            }
+        ).catch(
+            () => {alert("Error!!! All Packages")}
+        )
+
+    }, [])
 
     const NewEvent = () => {
 
         const data = {
 
-            eventType,
-            date,
+            category,
+            eventDate,
             startTime,
             endTime,
             address,
             packages,
             customerID,
-            packageID
+            //packageID
         }
 
         axios.post( serverLink + '/bookings' , data).then(
@@ -116,7 +116,7 @@ const NewEventBooking = () => {
                                             <div className="form-group row mt-3 mx-3">
                                                 <label className="col-sm-4 col-form-label">Event Type</label>
                                                 <div className="col-sm-8">
-                                                    <select className="form-select" onChange={ ( e ) => setEventType( e.target.value ) }>
+                                                    <select className="form-select" onChange={ ( e ) => setCategory( e.target.value ) }>
                                                         <option>Wedding</option>
                                                         <option>Birthday</option>
                                                         <option>Puberty</option>
@@ -146,11 +146,11 @@ const NewEventBooking = () => {
                                                 <label className="col-sm-4 col-form-label">Date</label>
                                                 <div className="col-sm-8">
                                                     <input
-                                                        value= { date }
+                                                        value= { eventDate }
                                                         className="form-control"
                                                         type="Date"
                                                         placeholder="Enter the Date"
-                                                        onChange={ (e) => setDate( e.target.value )}
+                                                        onChange={ (e) => setEventDate( e.target.value )}
                                                         autoFocus
                                                         required
                                                     />
@@ -202,25 +202,23 @@ const NewEventBooking = () => {
                                                 </div>
                                             </div>
 
-                                            {
-                                                packagesDetail.map(
-                                                    (packagesDetail) => (
-
                                                         <div className="form-group row mt-3 mx-3">
                                                             <label className="col-sm-4 col-form-label">Package</label>
                                                             <div className="col-sm-8">
                                                                 <select className="form-select"
                                                                         onChange={(e) => setPackages(e.target.value)}>
+                                                                    {
+                                                                        allPackage.map(
+                                                                            (packagesDetail) => (
                                                                     <option>{packagesDetail.name}</option>
-                                                                    {/*<option>Diamond</option>*/}
-                                                                    {/*<option>Silver</option>*/}
-                                                                    {/*<option>Gold</option>*/}
+                                                                            )
+
+                                                                        )
+                                                                    }
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                    )
-                                                )
-                                            }
+
 
                                             <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
                                                 <button type="submit" variant="primary"

@@ -25,15 +25,15 @@ const ViewEventsForCustomer = () => {
         color:'white'
     };
 
-    const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible, eventDetails, assignEventDetails } = useContext( AuthenticationContext )
 
-    const [eventDetails, setEventDetails] = useState(null)
+    //const [eventDetails, setEventDetails] = useState(null)
 
     useEffect( () => {
         axios.get( serverLink + '/Allevent').then(
             ( response ) => {
 
-                setEventDetails( response.data )
+                assignEventDetails( response.data )
                 console.log( response.data )
 
             }

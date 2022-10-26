@@ -1,10 +1,7 @@
 package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
-import com.example.flashbackend.DTO.AddBankDetail;
-import com.example.flashbackend.DTO.AddEvent;
-import com.example.flashbackend.DTO.EditEvent;
-import com.example.flashbackend.DTO.AddReview;
+import com.example.flashbackend.DTO.*;
 import com.example.flashbackend.Entity.Customer;
 import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.Entity.Package;
@@ -61,8 +58,8 @@ public class CustomerComponent {
        return "done";
     }
 
-    public String UpdateCustomer( AddBankDetail updateCustomer){
-        customerRepository.updateCustomer( updateCustomer.getFirstName(), updateCustomer.getLastName(), updateCustomer.getGender(), updateCustomer.getNIC(), updateCustomer.getContactNo() );
+    public String UpdateCustomer( EditCustomer editCustomer){
+        customerRepository.updateCustomer( editCustomer.getCustomerID(), editCustomer.getFirstName(), editCustomer.getLastName(), editCustomer.getGender(), editCustomer.getNic(), editCustomer.getContactNo() );
         return "done";
     }
 
