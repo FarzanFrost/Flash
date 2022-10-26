@@ -23,6 +23,27 @@ const AdminViewAllReviews = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const deleteAdminReview = ( id ) => {
+
+        axios.post( serverLink + '/deleteAdminReview' , id-- ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    setShow(false);
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! in deleting review") }
+
+        )
+
+    }
 
     useEffect( () => {
 
@@ -72,9 +93,10 @@ const AdminViewAllReviews = () => {
                                     <input type="text" className="form-control" name="x"
                                            placeholder="Search term..."></input>
                                     <span className="input-group-btn">
-                    <button className="btn btn-default" type="button"><span
+                    <button className="btn btn-default" type="button">
+                        <span
                         className="glyphicon glyphicon-search"></span></button>
-                </span>
+                        </span>
                                 </div>
                             </div>
                         </div>
@@ -128,7 +150,7 @@ const AdminViewAllReviews = () => {
                                                 </Modal.Header>
                                                 <Modal.Body>{ review.comment }</Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
+                                                    <Button variant="dark" onClick={ () => deleteAdminReview( review.reviewsID )}>
                                                         Delete Review
                                                     </Button>
                                                     <Button variant="dark" onClick={handleClose}>
