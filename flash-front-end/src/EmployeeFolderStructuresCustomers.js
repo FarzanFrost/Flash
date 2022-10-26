@@ -62,11 +62,11 @@ const FolderStructuresCustomers = () => {
                 <div className="m-auto">
                     Click on a folder, and start selecting images...
                 </div>
-                <div>
-                    <button className="btn btn-outline-light" onClick={ createNewFolder }>
-                        <i className="bi bi-plus"></i> New Folder
-                    </button>
-                </div>
+                {/*<div>*/}
+                {/*    <button className="btn btn-outline-light" onClick={ createNewFolder }>*/}
+                {/*        <i className="bi bi-plus"></i> New Folder*/}
+                {/*    </button>*/}
+                {/*</div>*/}
             </div>
 
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center pt-5">
