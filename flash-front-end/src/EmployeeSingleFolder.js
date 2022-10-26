@@ -58,7 +58,7 @@ const SingleFolder = () => {
 
                 if ( response.data === "done" ){
 
-                    changeContentVisible( 1 )
+                    // changeContentVisible( 1 )
 
                 }
 
