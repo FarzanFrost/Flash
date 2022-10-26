@@ -8,11 +8,17 @@ const SingleFolder = () => {
 
     const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns} = useContext( SelectImageContext )
 
+    const serverLink = 'http://localhost:8080'
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
 
     const [image, setImage ] = useState("");
 
-    const[eventID,setEventID]=useState("");
-    const [ imageUrl, setImageUrl ] = useState("");
+    const[eventID,setEventID]=useState(currentFolderName );
+    // const [ imageUrl, setImageUrl ] = useState("");
+
+    let imageUrl = ""
+
     const uploadImage = () => {
         const data = new FormData()
         data.append("file", image)
@@ -24,8 +30,10 @@ const SingleFolder = () => {
         })
             .then(resp => resp.json())
             .then(data => {
-                setImageUrl(data.imageUrl)
-                setEventID(data.eventID)
+                console.log( "data image " , data.url.toString() )
+                imageUrl = data.url.toString()
+                setEventID(eventID)
+                AddPhotos()
 
             })
             .catch(err => console.log(err))
@@ -34,9 +42,8 @@ const SingleFolder = () => {
 
     const AddPhotos = () => {
 
+        console.log("image url" , imageUrl);
 
-        const serverLink = 'http://localhost:8080'
-        const { changeContentVisible } = useContext( AuthenticationContext )
         const data = {
 
             eventID,
