@@ -15,9 +15,9 @@ public interface FolderRepository extends CrudRepository<Folder , BigInteger> {
 
 
     @Modifying
-    @Query( value = "INSERT INTO event (  EventID, Name) VALUES (  :eventID, :name );" , nativeQuery = true)
+    @Query( value = "INSERT INTO Folder (EventID,Name) VALUES (  :eventID, :name );" , nativeQuery = true)
     @Transactional
-    void insertFolder( @Param("eventID") int eventID , @Param("name") String name);
+    void insertFolder( @Param("eventID") BigInteger eventID , @Param("name") String name);
 }
 
 
