@@ -47,6 +47,15 @@ public class AddEvent {
         this.packageId = packageId;
     }
 
+    public AddEvent(Date eventDate, Time startTime, Time endTime, String address, String category, BigInteger customerId, BigInteger packageId) {
+        this.eventDate = eventDate;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.address = address;
+        this.category = category;
+        this.customerId = customerId;
+        this.packageId = packageId;
+    }
 
     public AddEvent() {
     }
