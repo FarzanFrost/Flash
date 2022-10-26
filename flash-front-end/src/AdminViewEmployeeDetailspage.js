@@ -37,7 +37,7 @@ const AdminViewEmployeeDetailspage = () => {
                 }
             }
         ).catch(
-            () => { alert( "Error!!! add employee") }
+            () => { alert( "Error!!! delete employee") }
         )
     }
 
