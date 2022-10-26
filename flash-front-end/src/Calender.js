@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import * as events from "events";
 import Button from "react-bootstrap/Button";
+import isBtcAddress from "validator/es/lib/isBtcAddress";
 
 
 
@@ -17,7 +18,6 @@ const Calender = () => {
     const [show, setShow] = useState(false);
 
     const [ eventDetails , setEventDetails ] = useState( null )
-
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -47,7 +47,8 @@ const Calender = () => {
         (events)=>{
             const calenderview={
                 "title":events.category,
-                "date":events.eventDate
+                "date":events.eventDate,
+                "address":events.address
 
 
             }
@@ -66,7 +67,15 @@ console.log(calenderdetails)
         plugins={[ dayGridPlugin ]}
         initialView="dayGridMonth"
         weekends={true}
+        eventClick={
+            function(arg){
+                alert(arg.event.title)
+                alert(arg.event.start)
+            }
+        }
      events={calenderdetails}
+
+
 />
 
 
