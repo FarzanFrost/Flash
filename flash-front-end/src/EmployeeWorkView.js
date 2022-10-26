@@ -73,15 +73,19 @@ const EmployeeWorkView = () => {
                                         { eventDetails!== null &&
                                             eventDetails.map(
                                                 (events)=>(
+                                                   // if(EventDate=='10-10-2021')
+                                      //  {
+                                            <tr>
+                                            <th scope="col">{events.EventID}</th>
+                                            <th scope="col">{events.packageID}</th>
+                                            <th scope="col">{events.EventDate}</th>
+                                            <th scope="col">{events.StartTime}</th>
+                                            <th scope="col">{events.EndTime}</th>
+                                            <th scope="col">{events.Address}</th>
+                                            </tr>
 
-                                                    <tr>
-                                                        <th scope="col">{events.EventID}</th>
-                                                        <th scope="col">{events.packageID}</th>
-                                                        <th scope="col">{events.EventDate}</th>
-                                                        <th scope="col">{events.StartTime}</th>
-                                                        <th scope="col">{events.EndTime}</th>
-                                                        <th scope="col">{events.Address}</th>
-                                                    </tr>
+                                      //  }
+
                                                 )
                                             )
                                         }
