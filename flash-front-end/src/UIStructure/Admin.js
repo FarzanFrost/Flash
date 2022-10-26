@@ -9,7 +9,7 @@ import ManagerDashboard from "../ManagerDashboard";
 import AdminDashboard from "../AdminDashboard";
 
 
-const Customer = () => {
+const Admin = () => {
 
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
@@ -152,4 +152,4 @@ const Customer = () => {
 
 }
 
-export default Customer
+export default Admin
