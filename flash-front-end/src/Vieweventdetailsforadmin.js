@@ -143,10 +143,10 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Body><Modal.Title>Latitude:</Modal.Title>{event.latitude}</Modal.Body>
                                                     <Modal.Footer>
                                                         <Button variant="dark" onClick={handleClose}>
-                                                            Delete Review
+                                                            Delete Event
                                                         </Button>
                                                         <Button variant="dark" onClick={handleClose}>
-                                                            close
+                                                            Close
                                                         </Button>
                                                     </Modal.Footer>
                                                 </Modal>
