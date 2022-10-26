@@ -103,10 +103,11 @@ const Vieweventdetailsforadmin = () => {
 
                                         <tr>
                                             <th scope="col">Event Id</th>
-                                            <th scope="col">Event</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Booking Date</th>
-                                            <th scope="col">status</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Event Date</th>
+                                            <th scope="col">PackageID</th>
+                                            <th scope="col">CustomerID</th>
+                                            <th scope="col">Address</th>
                                             <th scope="col-2">More</th>
 
 
@@ -121,10 +122,10 @@ const Vieweventdetailsforadmin = () => {
                                                 ( event ) => (
 
                                         <tr>
-                                            <th scope="col">{event}</th>
-                                            <th scope="col">{event}</th>
-                                            <th scope="col">{event}</th>
-                                            <th scope="col">{event}</th>
+                                            <th scope="col">{event.eventID}</th>
+                                            <th scope="col">{event.status}</th>
+                                            <th scope="col">{event.EventDate}</th>
+                                            <th scope="col">{event.Address}</th>
                                             <th scope="col">{event}</th>
 
                                             <th scope="col">
