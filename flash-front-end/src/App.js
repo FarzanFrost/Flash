@@ -57,6 +57,7 @@ import EmployeeSelectImageContextProviderInterface from "./EmployeeSelectImageCo
 import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
 import EmployeeAuthenticationContextProviderInterface
     from "./UIStructure/EmployeeAuthenticationContextProviderInterface";
+import AdminAuthenticationContextProviderInterface from "./UIStructure/AdminAuthenticationContextProviderInterface";
 
 function App() {
   return (
@@ -102,7 +103,7 @@ function App() {
               {/*<Route exact path="/Customer" element={ <Customer/> } />*/}
               <Route exact path="/Employee" element={ <EmployeeAuthenticationContextProviderInterface/> } />
               <Route exact path="/Manager" element={ <ManagerAuthenticationContextProviderInterface/> } />
-              <Route exact path="/Admin" element={ <Admin/> } />
+              <Route exact path="/Admin" element={ <AdminAuthenticationContextProviderInterface/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
               <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
