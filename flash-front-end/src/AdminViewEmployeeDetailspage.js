@@ -7,11 +7,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import {useEffect} from "react";
 import axios from "axios";
+import {useContext} from "react";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 
 const AdminViewEmployeeDetailspage = () => {
 
+    const { changeContentVisible } = useContext( AuthenticationContext )
     const serverLink = 'http://localhost:8080'
     const [ employeeDetails , setEmployeeDetails ] = useState( null )
     useEffect( () => {
@@ -25,6 +28,18 @@ const AdminViewEmployeeDetailspage = () => {
         )
     } ,[])
     let employeeCount  = 1
+
+    const deleteEmployee = ( id ) => {
+        axios.post( serverLink + '/adminDeleteEmployee' , id-- ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! add employee") }
+        )
+    }
 
     const style3 = {
 
@@ -87,7 +102,7 @@ const AdminViewEmployeeDetailspage = () => {
 
                         <div className="card-body pb-5">
                             <div className="text-end">
-                                <a href="#" className="btn" style={{...style3}} >Add Employee</a><br/>
+                                <a href="#" className="btn" style={{...style3}} onClick={ () => changeContentVisible( 8 ) } >Add Employee</a><br/>
 
                             </div>
                             <br/>
@@ -176,7 +191,7 @@ const AdminViewEmployeeDetailspage = () => {
 
                                                             </Modal.Body>
                                                             <Modal.Footer>
-                                                                <Button variant="dark" onClick={handleClose}>
+                                                                <Button variant="dark" onClick={() => deleteEmployee( employee.employeeID ) }>
                                                                     Delete Review
                                                                 </Button>
                                                                 <Button variant="dark" onClick={handleClose}>
