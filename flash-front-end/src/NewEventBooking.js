@@ -10,19 +10,19 @@ const NewEventBooking = () => {
 
     const location = useLocation()
 
-    const { changeContentVisible, userDetailsAfterAuthentication, packagesDetail } = useContext( AuthenticationContext )
+    const { changeContentVisible, userDetailsAfterAuthentication } = useContext( AuthenticationContext )
 
     const customerDetail = location.state.userDetailsAfterAuthentication
 
     const customerID = customerDetail.customer.customerID
 
-    const packageID = packagesDetail.packageID
+    //const packageID = packagesDetail.packageID
 
-    console.log("id", packageID)
+    //console.log("id", packageID)
 
-    const [ eventType , setEventType ] = useState( 'Wedding' )
+    const [ category , setCategory ] = useState( 'Wedding' )
 
-    const [ date , setDate ] = useState( '' )
+    const [ eventDate , setEventDate ] = useState( '' )
 
     const [ startTime , setStartTime ] = useState( '' )
 
@@ -32,28 +32,28 @@ const NewEventBooking = () => {
 
     const [ packages , setPackages ] = useState( 'Gold' )
 
-    //const [allPackage, setAllPackage] = useState(null)
+    const [allPackage, setAllPackage] = useState(null)
 
-    // useEffect( () => {
-    //
-    //     axios.get(serverLink + '/AllPackages').then(
-    //         (response) => {
-    //
-    //             setAllPackage(response.data)
-    //             console.log("data", response.data.packageID)
-    //         }
-    //     ).catch(
-    //         () => {alert("Error!!! All Packages")}
-    //     )
-    //
-    // }, [])
+    useEffect( () => {
+
+        axios.get(serverLink + '/AllPackages').then(
+            (response) => {
+
+                setAllPackage(response.data)
+                console.log("data", response.data.packageID)
+            }
+        ).catch(
+            () => {alert("Error!!! All Packages")}
+        )
+
+    }, [])
 
     const NewEvent = () => {
 
         const data = {
 
-            eventType,
-            date,
+            category,
+            eventDate,
             startTime,
             endTime,
             address,
@@ -116,7 +116,7 @@ const NewEventBooking = () => {
                                             <div className="form-group row mt-3 mx-3">
                                                 <label className="col-sm-4 col-form-label">Event Type</label>
                                                 <div className="col-sm-8">
-                                                    <select className="form-select" onChange={ ( e ) => setEventType( e.target.value ) }>
+                                                    <select className="form-select" onChange={ ( e ) => setCategory( e.target.value ) }>
                                                         <option>Wedding</option>
                                                         <option>Birthday</option>
                                                         <option>Puberty</option>
@@ -146,11 +146,11 @@ const NewEventBooking = () => {
                                                 <label className="col-sm-4 col-form-label">Date</label>
                                                 <div className="col-sm-8">
                                                     <input
-                                                        value= { date }
+                                                        value= { eventDate }
                                                         className="form-control"
                                                         type="Date"
                                                         placeholder="Enter the Date"
-                                                        onChange={ (e) => setDate( e.target.value )}
+                                                        onChange={ (e) => setEventDate( e.target.value )}
                                                         autoFocus
                                                         required
                                                     />
@@ -203,7 +203,7 @@ const NewEventBooking = () => {
                                             </div>
 
                                             {
-                                                packagesDetail.map(
+                                                allPackage.map(
                                                     (packagesDetail) => (
 
                                                         <div className="form-group row mt-3 mx-3">
