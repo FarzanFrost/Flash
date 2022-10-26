@@ -23,9 +23,9 @@ const AdminViewAllReviews = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const deleteAdminReview = ( id ) => {
+    const AdminDeleteReview = ( id ) => {
 
-        axios.post( serverLink + '/deleteAdminReview' , id-- ).then(
+        axios.post( serverLink + '/AdminDeleteReview' , id-- ).then(
 
             ( response ) => {
 
@@ -144,13 +144,13 @@ const AdminViewAllReviews = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Review</Modal.Title>
                                                 </Modal.Header>
                                                 <Modal.Body>{ review.comment }</Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button variant="dark" onClick={ () => deleteAdminReview( review.reviewsID )}>
+                                                    <Button variant="dark" onClick={ () => AdminDeleteReview( review.reviewsID )}>
                                                         Delete Review
                                                     </Button>
                                                     <Button variant="dark" onClick={handleClose}>
@@ -172,7 +172,8 @@ const AdminViewAllReviews = () => {
                                 </table>
                             </div>
 
-                        </div> {/*end table*/}
+                        </div>
+
 
 
                     </div>
