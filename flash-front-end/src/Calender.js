@@ -44,8 +44,10 @@ const Calender = () => {
     eventDetails.map(
         (events)=>{
             const calenderview={
-                "title":events.title,
-                "date":events.date
+                "title":events.category,
+                "date":events.eventDate
+
+
             }
             calenderdetails.push(calenderview)
         }
@@ -53,18 +55,18 @@ const Calender = () => {
     )
     }
 
-
+console.log(calenderdetails)
         return (
 <div>
-
-
 
 
     <FullCalendar
         plugins={[ dayGridPlugin ]}
         initialView="dayGridMonth"
         weekends={true}
-        events={ calenderdetails }
+        events={calenderdetails}
+
+
     />
 
 
