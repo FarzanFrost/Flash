@@ -77,7 +77,7 @@ const EmployeeWorkView = () => {
                                       //  {
                                             <tr>
                                             <th scope="col">{events.eventID}</th>
-                                            <th scope="col">{events.packageID}</th>
+                                            <th scope="col">{events.category}</th>
                                             <th scope="col">{events.eventDate}</th>
                                             <th scope="col">{events.startTime}</th>
                                             <th scope="col">{events.endTime}</th>
@@ -120,16 +120,14 @@ const EmployeeWorkView = () => {
                                             eventDetails.map(
                                                 (events)=>(
 
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, College Road, Trincomalee</th>
-
-
-                                        </tr>
+                                                    <tr>
+                                                        <th scope="col">{events.eventID}</th>
+                                                        <th scope="col">{events.category}</th>
+                                                        <th scope="col">{events.eventDate}</th>
+                                                        <th scope="col">{events.startTime}</th>
+                                                        <th scope="col">{events.endTime}</th>
+                                                        <th scope="col">{events.address}</th>
+                                                    </tr>
 
                                                 )
                                             )
