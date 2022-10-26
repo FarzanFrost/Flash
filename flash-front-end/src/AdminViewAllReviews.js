@@ -96,7 +96,7 @@ const AdminViewAllReviews = () => {
                                     <thead className="align-middle">
 
                                     <tr>
-                                        {/*<th scope="col">Reviewer ID</th>*/}
+                                        <th scope="col">Reviewer ID</th>
                                         <th scope="col">Date Time</th>
                                         <th scope="col">Rating</th>
                                         <th scope="col">Comment</th>
