@@ -7,6 +7,9 @@ import AdminViewAllReviews from "../AdminViewAllReviews";
 import AdminViewEmployeeDetailspage from "../AdminViewEmployeeDetailspage";
 import ManagerDashboard from "../ManagerDashboard";
 import AdminDashboard from "../AdminDashboard";
+import AddEmployee from "../AddEmployee";
+import {useContext} from "react";
+import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 const Admin = () => {
@@ -27,7 +30,7 @@ const Admin = () => {
 
     }
 
-    const [ contentVisible , setContentVisible ] = useState( 0 )
+    const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
 
     return(
 
@@ -83,28 +86,28 @@ const Admin = () => {
 
                             <ul className="nav nav-pills flex-column mb-auto">
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => setContentVisible( 0 ) }>
+                                    <a href="" className="nav-link active text-white"  aria-current="page" onClick={ () => changeContentVisible( 0 ) }>
                                         <i className="bi bi-speedometer2 bi me-2"></i>
                                         Dashboard
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white"  data-bs-toggle="pill" onClick={ () => setContentVisible( 1 ) }>
+                                    <a href="" className="nav-link text-white"  data-bs-toggle="pill" onClick={ () => changeContentVisible( 1 ) }>
                                         <i className="bi bi-grid bi me-2"></i>
                                         Event
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 2 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 2 ) }>
                                         <i className="bi bi-eye bi me-2"></i>
                                         Reviews
                                     </a>
                                 </li>
 
                                 <li className="nav-item pb-2">
-                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => setContentVisible( 3 ) }>
+                                    <a href="" className="nav-link text-white" data-bs-toggle="pill" onClick={ () => changeContentVisible( 3 ) }>
                                         <i className="bi bi-people-fill bi me-2"></i>
                                         Employee Details
                                     </a>
@@ -137,9 +140,10 @@ const Admin = () => {
                     { contentVisible === 0 && <AdminDashboard/>}
                     { contentVisible === 1 && <Vieweventdetailsforadmin/>}
                     { contentVisible === 2 && <AdminViewAllReviews/>}
-                    { contentVisible === 3 && <AdminViewEmployeeDetailspage/>}npm install @azure/storage-blob
+                    { contentVisible === 3 && <AdminViewEmployeeDetailspage/>}
                     {/*<Vieweventdetailsforadmin/>*/}
                     {/*<MoreDetailsOfEventsForAdmin/>*/}
+                    { contentVisible === 8 && <AddEmployee/>}
                 </div>
 
             </div>
