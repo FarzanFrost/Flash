@@ -1,30 +1,21 @@
 package com.example.flashbackend.DTO;
 
-public class AddFolder {
+import java.math.BigInteger;
 
-    public int getFolderID() {
-        return folderID;
+public class AddFolder {
+    private BigInteger eventID;
+    private String name;
+
+    public AddFolder(BigInteger eventID, String name) {
+        this.eventID = eventID;
+        this.name = name;
     }
 
-    public int getEventID() {
+    public BigInteger getEventID() {
         return eventID;
     }
 
     public String getName() {
         return name;
     }
-
-    public AddFolder(int folderID, int eventID, String name) {
-        this.folderID=folderID;
-        this.eventID=eventID;
-        this.name=name;
-
-    }
-
-
-
-    private int folderID;
-    private int eventID;
-    private String name;
-
 }

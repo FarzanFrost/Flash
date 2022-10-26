@@ -76,12 +76,12 @@ const EmployeeWorkView = () => {
                                                    // if(EventDate=='10-10-2021')
                                       //  {
                                             <tr>
-                                            <th scope="col">{events.EventID}</th>
-                                            <th scope="col">{events.packageID}</th>
-                                            <th scope="col">{events.EventDate}</th>
-                                            <th scope="col">{events.StartTime}</th>
-                                            <th scope="col">{events.EndTime}</th>
-                                            <th scope="col">{events.Address}</th>
+                                            <th scope="col">{events.eventID}</th>
+                                            <th scope="col">{events.category}</th>
+                                            <th scope="col">{events.eventDate}</th>
+                                            <th scope="col">{events.startTime}</th>
+                                            <th scope="col">{events.endTime}</th>
+                                            <th scope="col">{events.address}</th>
                                             </tr>
 
                                       //  }
@@ -116,44 +116,22 @@ const EmployeeWorkView = () => {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, College Road, Trincomalee</th>
+                                        { eventDetails!== null &&
+                                            eventDetails.map(
+                                                (events)=>(
 
+                                                    <tr>
+                                                        <th scope="col">{events.eventID}</th>
+                                                        <th scope="col">{events.category}</th>
+                                                        <th scope="col">{events.eventDate}</th>
+                                                        <th scope="col">{events.startTime}</th>
+                                                        <th scope="col">{events.endTime}</th>
+                                                        <th scope="col">{events.address}</th>
+                                                    </tr>
 
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, Peris Road, Trincomalee</th>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, Peris Road, Trincomalee</th>
-
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, Peris Road, Trincomalee</th>
-
-                                        </tr>
+                                                )
+                                            )
+                                        }
                                         </tbody>
                                     </table>
                                 </div>

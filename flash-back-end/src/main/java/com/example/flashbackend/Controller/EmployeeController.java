@@ -1,7 +1,7 @@
 package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.Component.EmployeeComponent;
-import com.example.flashbackend.DTO.AddFolder;
+import com.example.flashbackend.DTO.*;
 import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.DAO.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,9 @@ public class EmployeeController {
 
     @Autowired
     EventRepository eventRepository ;
+
+    @Autowired
+    GalleryImagesRepository galleryImagesRepository;
 
     @GetMapping("/events")
 
@@ -45,6 +48,11 @@ public class EmployeeController {
     @PostMapping("/newfolder")
     public String addFolder(@RequestBody AddFolder addFolder){
         return employeeComponent.addFolder( addFolder );
+    }
+
+    @PostMapping("/addphotos")
+    public String addPhotos(@RequestBody AddPhotos addPhotos){
+        return employeeComponent.addPhotos( addPhotos );
     }
 
 

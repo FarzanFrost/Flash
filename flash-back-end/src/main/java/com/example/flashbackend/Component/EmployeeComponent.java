@@ -1,6 +1,6 @@
 package com.example.flashbackend.Component;
 import com.example.flashbackend.DAO.*;
-import com.example.flashbackend.DTO.AddFolder;
+import com.example.flashbackend.DTO.*;
 import com.example.flashbackend.Entity.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,11 @@ public class EmployeeComponent {
 
     @Autowired
     EventRepository eventRepository;
+    @Autowired
     FolderRepository folderRepository;
+
+    @Autowired
+    GalleryImagesRepository galleryImagesRepository;
 
     public List<Event>getEvents(){
         return eventRepository.findAll();
@@ -30,7 +34,13 @@ public class EmployeeComponent {
 //    }
 
     public String addFolder(AddFolder addfolder){
-        folderRepository.insertFolder( addfolder.getEventID(),addfolder.getName() );
+        folderRepository.insertFolder( addfolder.getEventID() , addfolder.getName() );
+        return "done";
+    }
+
+    public String addPhotos(AddPhotos addPhotos){
+        System.out.println( "hi how are ;you " + addPhotos.getImageUrl() );
+        galleryImagesRepository.insertPhotos( addPhotos.getEventID() , addPhotos.getImageUrl() );
         return "done";
     }
 
