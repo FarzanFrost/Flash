@@ -24,6 +24,28 @@ const AdminViewAllReviews = () => {
     const handleShow = () => setShow(true);
 
 
+    const deleteAdminReview = ( id ) => {
+
+        axios.post( serverLink + '/deleteAdminReview' , id-- ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    setShow(false);
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add review") }
+
+        )
+
+    }
+
     useEffect( () => {
 
         axios.get( serverLink + '/AdminViewReviews' ).then(

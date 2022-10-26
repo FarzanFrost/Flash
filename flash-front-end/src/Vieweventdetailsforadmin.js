@@ -140,13 +140,13 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Header closeButton>
                                                         <Modal.Title>Event full Details</Modal.Title>
                                                     </Modal.Header>
-                                                    <Modal.Body><Modal.Title>Start Time:</Modal.Title>{event.startTime}</Modal.Body>
-                                                    <Modal.Body><Modal.Title>End Time:</Modal.Title>{event.endTime}</Modal.Body>
-                                                    <Modal.Body><Modal.Title>Longitude:</Modal.Title>{event.longitude}</Modal.Body>
-                                                    <Modal.Body><Modal.Title>Latitude:</Modal.Title>{event.latitude}</Modal.Body>
+                                                    <Modal.Body><Modal.Dialog>Start Time:</Modal.Dialog>{event.startTime}</Modal.Body>
+                                                    <Modal.Body><Modal.Dialog>End Time:</Modal.Dialog>{event.endTime}</Modal.Body>
+                                                    <Modal.Body><Modal.Dialog>Longitude:</Modal.Dialog>{event.longitude}</Modal.Body>
+                                                    <Modal.Body><Modal.Dialog>Latitude:</Modal.Dialog>{event.latitude}</Modal.Body>
                                                     <Modal.Footer>
                                                         <Button variant="dark" onClick={handleClose}>
-                                                            Delete Review
+                                                            Delete Event
                                                         </Button>
                                                         <Button variant="dark" onClick={handleClose}>
                                                             close
