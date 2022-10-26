@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
+import {ModalHeader} from "react-bootstrap";
 // import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
@@ -25,15 +26,15 @@ const Vieweventdetailsforadmin = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-        const style3 = {
-
-            backgroundColor:'black',
-            color:'white'
-        };
+        // const style3 = {
+        //
+        //     backgroundColor:'black',
+        //     color:'white'
+        // };
 
     useEffect( () => {
 
-        axios.get( serverLink + '/Employees' ).then(
+        axios.get( serverLink + '/AdminViewEvents' ).then(
 
             ( response ) => {
 
@@ -44,7 +45,7 @@ const Vieweventdetailsforadmin = () => {
 
         ).catch(
 
-            () => { alert( "Error!!! employee details ") }
+            () => { alert( "Error!!! Admin display event details ") }
 
         )
 
@@ -105,9 +106,10 @@ const Vieweventdetailsforadmin = () => {
                                             <th scope="col">Event Id</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Event Date</th>
-                                            <th scope="col">PackageID</th>
-                                            <th scope="col">CustomerID</th>
+                                            <th scope="col">Event ID</th>
+                                            {/*<th scope="col">CustomerID</th>*/}
                                             <th scope="col">Address</th>
+                                            <th scope="col-2">Category</th>
                                             <th scope="col-2">More</th>
 
                                         </tr>
@@ -121,13 +123,13 @@ const Vieweventdetailsforadmin = () => {
                                                 ( event ) => (
 
                                         <tr>
-                                            <th scope="col">{event.eventId}</th>
+                                            <th scope="col">{event.eventID}</th>
                                             <th scope="col">{event.status}</th>
                                             <th scope="col">{event.eventDate}</th>
-                                            <th scope="col">{event.PackageId}</th>
+                                            <th scope="col">{event.eventID}</th>
                                             <th scope="col">{event.CustomerId}</th>
-                                            <th scope="col">{event.Address}</th>
-                                            <th scope="col">{event}</th>
+                                            <th scope="col">{event.address}</th>
+                                            {/*<th scope="col">{event}</th>*/}
 
                                             <th scope="col">
                                                 <Button variant="light" onClick={handleShow}>
@@ -138,7 +140,10 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Header closeButton>
                                                         <Modal.Title>Event full Details</Modal.Title>
                                                     </Modal.Header>
-                                                    <Modal.Body>{event}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>Start Time:</Modal.Title>{event.startTime}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>End Time:</Modal.Title>{event.endTime}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>Longitude:</Modal.Title>{event.longitude}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>Latitude:</Modal.Title>{event.latitude}</Modal.Body>
                                                     <Modal.Footer>
                                                         <Button variant="dark" onClick={handleClose}>
                                                             Delete Review
