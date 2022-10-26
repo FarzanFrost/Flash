@@ -12,16 +12,27 @@ const SingleFolder = () => {
     const { changeContentVisible } = useContext( AuthenticationContext )
 
 
-    const [image, setImage ] = useState("");
+    const [images, setImages ] = useState("");
 
     const[eventID,setEventID]=useState(currentFolderName );
     // const [ imageUrl, setImageUrl ] = useState("");
 
-    let imageUrl = ""
+    // let imageUrl = ""
 
-    const uploadImage = () => {
+    const uploadMultipleFiles = () => {
+
+        console.log( images )
+        for (let i = 0; i < images.length; i++) {
+
+            uploadImage( images[ i ] )
+
+        }
+
+    }
+
+    const uploadImage = ( oneImage ) => {
         const data = new FormData()
-        data.append("file", image)
+        data.append("file", oneImage )
         data.append("upload_preset", "lysvcak7")
         data.append("cloud_name", "dctlnle1w")
         fetch("  https://api.cloudinary.com/v1_1/dctlnle1w/image/upload", {
@@ -31,16 +42,16 @@ const SingleFolder = () => {
             .then(resp => resp.json())
             .then(data => {
                 console.log( "data image " , data.url.toString() )
-                imageUrl = data.url.toString()
-                setEventID(eventID)
-                AddPhotos()
+                const imageUrl = data.url.toString()
+                // setEventID(eventID)
+                AddPhotos( imageUrl )
 
             })
             .catch(err => console.log(err))
 
     }
 
-    const AddPhotos = () => {
+    const AddPhotos = ( imageUrl ) => {
 
         console.log("image url" , imageUrl);
 
@@ -88,8 +99,8 @@ const SingleFolder = () => {
                     Folder : { currentFolderName }
                 </div>
                 <div>
-                         <input className="btn btn-outline-primary me-1" type="file" id="myFile" name="filename" onChange= {(e)=> setImage(e.target.files[0])}/>
-                         <button className="btn btn-outline-primary" onClick={uploadImage}>Upload</button>
+                         <input className="btn btn-outline-primary me-1" type="file" id="myFile" name="filename" onChange= {(e)=> setImages(e.target.files)} multiple="multiple"/>
+                         <button className="btn btn-outline-primary" onClick={uploadMultipleFiles}>Upload</button>
                 </div>
             </div>
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
