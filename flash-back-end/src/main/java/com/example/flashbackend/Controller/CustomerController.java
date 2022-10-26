@@ -41,7 +41,7 @@ public class CustomerController {
         return customerComponent.getCustomer();
     }
 
-    @PostMapping("/Booking")
+    @PostMapping("/bookings")
     public String addEvent(@RequestBody AddEvent addEvent){
 
         return customerComponent.addNewEvent( addEvent );

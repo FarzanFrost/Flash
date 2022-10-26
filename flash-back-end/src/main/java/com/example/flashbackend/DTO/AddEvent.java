@@ -14,7 +14,7 @@ public class AddEvent {
 
     private String status;
 
-    private String advancedAmount;
+    private String advanceAmount;
 
     private String address;
 
@@ -32,12 +32,12 @@ public class AddEvent {
 
     private BigInteger packageId;
 
-    public AddEvent (Date eventDate, Time startTime, Time endTime, String status, String advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Boolean delivered){
+    public AddEvent (Date eventDate, Time startTime, Time endTime, String status, String advanceAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Boolean delivered){
         this.eventDate = eventDate;
         this.startTime = startTime;
         this.endTime = endTime;
         this.status = status;
-        this.advancedAmount = advancedAmount;
+        this.advanceAmount = advanceAmount;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -84,8 +84,8 @@ public class AddEvent {
 //        this.status = status;
 //    }
 
-    public String getAdvancedAmount() {
-        return advancedAmount;
+    public String getAdvanceAmount() {
+        return advanceAmount;
     }
 
 //    public void setAdvancedAmount(Float advancedAmount) {
