@@ -117,11 +117,12 @@ const Vieweventdetailsforadmin = () => {
 
                                         <tr>
                                             <th scope="col">Event ID</th>
+                                            <th scope="col">Category</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Event Date</th>
-                                            <th scope="col">Category</th>
                                             <th scope="col">Address</th>
-                                            <th scope="col-2">More</th>
+                                            <th scope="col">More</th>
+
 
                                         </tr>
                                         </thead>
@@ -136,10 +137,10 @@ const Vieweventdetailsforadmin = () => {
                                         <tr>
                                             <th scope="col">{event.eventID}</th>
                                             <th scope="col">{event.status}</th>
-                                            <th scope="col">{event.eventDate}</th>
                                             <th scope="col">{event.category}</th>
-                                            <th scope="col">{event.CustomerId}</th>
+                                            <th scope="col">{event.eventDate}</th>
                                             <th scope="col">{event.address}</th>
+
 
                                             <th scope="col">
                                                 <Button variant="light" onClick={handleShow}>

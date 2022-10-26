@@ -23,49 +23,7 @@ const AdminViewAllReviews = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const AdminDeleteReview = ( id ) => {
 
-        axios.post( serverLink + '/AdminDeleteReview' , id-- ).then(
-
-            ( response ) => {
-
-                if ( response.data === "done" ){
-
-                    setShow(false);
-
-                }
-
-            }
-
-        ).catch(
-
-            () => { alert( "Error!!! in deleting review") }
-
-        )
-
-    }
-
-    const deleteAdminReview = ( id ) => {
-
-        axios.post( serverLink + '/deleteAdminReview' , id-- ).then(
-
-            ( response ) => {
-
-                if ( response.data === "done" ){
-
-                    setShow(false);
-
-                }
-
-            }
-
-        ).catch(
-
-            () => { alert( "Error!!! add review") }
-
-        )
-
-    }
 
     useEffect( () => {
 
@@ -157,7 +115,7 @@ const AdminViewAllReviews = () => {
                                         <th scope="col">Reviewer ID</th>
                                         <th scope="col">Date Time</th>
                                         <th scope="col">Rating</th>
-                                        <th scope="col">Comment</th>
+                                        <th scope="col">More</th>
 
                                     </tr>
                                     </thead>
