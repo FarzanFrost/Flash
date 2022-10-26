@@ -118,7 +118,7 @@ const ManagerDashboard = () =>{
 
             <div className="container-fluid py-4">
 
-                <div className="btn-toolbar mb-2 mb-2 justify-content-md-end rounded-2">
+                <div className="btn-toolbar mb-2 mb-2 justify-content-md-end rounded-2 d-none">
 
                     <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle btn-dark text-white">
                         This week
@@ -251,7 +251,7 @@ const ManagerDashboard = () =>{
 
                     </div>
 
-                    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> {/*start one container*/}
+                    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4 d-none"> {/*start one container*/}
 
                         <div className="card shadow rounded-3">
 

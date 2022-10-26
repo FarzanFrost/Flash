@@ -1,15 +1,44 @@
-import react, {createContext, useState} from "react";
+import react, {createContext, useEffect, useState} from "react";
+import axios from "axios";
 
 export const SelectImageContext = createContext( undefined )
 
 const SelectImageContextProvider = ( props ) => {
 
-    const folderList = [ 'File name ID 101' , 'File name ID 102' , 'File name ID 103' ]
+    const serverLink = 'http://localhost:8080'
+
+    useEffect(
+
+        () => {
+
+            axios.get( serverLink + '/events' ).then(
+
+                ( response ) => {
+
+                    setFolderList( response.data )
+
+                }
+
+            ).catch(
+
+                () => {
+
+                    alert( "get events in employee" )
+
+                }
+
+            )
+
+        }
+
+    , [])
+
+    let [folderList , setFolderList ] = useState( [] )
     const [ isFolderOpen , setIsFolderOpen ] = useState( false );
     const [ currentFolderName , setCurrentFolderName ] = useState( '' )
-    const changeFolderOpenState = ( folderName ) => {
-        setCurrentFolderName( folderName )
-        if ( folderName !== "" ){
+    const changeFolderOpenState = ( folderId ) => {
+        setCurrentFolderName( folderId )
+        if ( folderId !== "" ){
             setIsFolderOpen( true )
         }else{
             setIsFolderOpen( false )

@@ -53,6 +53,8 @@ const FolderStructuresCustomers = () => {
 
     }
 
+    console.log( "folder creations : " , folderList )
+
     return(
 
         <div>
@@ -71,10 +73,10 @@ const FolderStructuresCustomers = () => {
                 {
                     folderList.map( ( folder ) => (
                         <div className="flex-row shadow p-2 border m-3 rounded-2 d-flex ">
-                            <div className="d-flex cursor-pointer" onClick={ () => changeFolderOpenState( folder ) } style={ { cursor : "pointer" } }>
+                            <div className="d-flex cursor-pointer" onClick={ () => changeFolderOpenState( folder.eventID ) } style={ { cursor : "pointer" } }>
                                 <i className="bi bi-folder my-auto mx-2"></i>
                                 <div className="m-auto">
-                                    { folder }
+                                    Folder : { folder.eventID }
                                 </div>
                             </div>
 

@@ -36,7 +36,7 @@ const SingleFolder = () => {
                     </button>
                 </div>
                 <div className="m-auto">
-                    { currentFolderName }
+                    Folder : { currentFolderName }
                 </div>
                 <div>
                          <input type="file" id="myFile" name="filename" onChange= {(e)=> setImage(e.target.files[0])}/>
