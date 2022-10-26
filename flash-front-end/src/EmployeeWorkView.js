@@ -74,6 +74,7 @@ const EmployeeWorkView = () => {
                                             eventDetails.map(
                                                 (events)=>(
 
+
                                       //  {
                                             <tr>
                                             <th scope="col">{events.eventID}</th>
