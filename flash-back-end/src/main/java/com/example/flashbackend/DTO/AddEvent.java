@@ -7,7 +7,6 @@ import java.sql.Time;
 
 public class AddEvent {
     private Date eventDate;
-
     private Time startTime;
 
     private Time endTime;
@@ -49,8 +48,10 @@ public class AddEvent {
     }
 
 
-//    public AddEvent() {
-//    }
+    public AddEvent() {
+    }
+
+
 
     public Date getEventDate() {
         return eventDate;
