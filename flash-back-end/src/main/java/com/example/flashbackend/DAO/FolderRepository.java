@@ -1,6 +1,7 @@
 package com.example.flashbackend.DAO;
 
 import com.example.flashbackend.Entity.Folder;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -11,7 +12,7 @@ import java.math.BigInteger;
 import java.sql.Time;
 import java.util.Date;
 
-public interface FolderRepository extends CrudRepository<Folder , BigInteger> {
+public interface FolderRepository extends JpaRepository<Folder , BigInteger> {
 
 
     @Modifying
