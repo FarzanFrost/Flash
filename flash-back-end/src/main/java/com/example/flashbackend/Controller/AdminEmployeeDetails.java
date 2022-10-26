@@ -2,10 +2,11 @@ package com.example.flashbackend.Controller;
 
 
 import com.example.flashbackend.Component.AdminEmployeeDetailsComponent;
+import com.example.flashbackend.DTO.DeleteEmployee;
 import com.example.flashbackend.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import com.example.flashbackend.Entity.Employee;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class AdminEmployeeDetails {
         return adminEmployeeDetailsComponent.getEmployees();
     }
     @PostMapping("/adminDeleteEmployee")
-    public String deleteEmployee( @RequestBody BigInteger employeeId ){
-        return adminEmployeeDetailsComponent.deleteEmployee( employeeId );
+    public String deleteEmployee( @RequestBody DeleteEmployee deleteEmployee ){
+        return adminEmployeeDetailsComponent.deleteEmployee( deleteEmployee.getEmployeeID() );
     }
 }

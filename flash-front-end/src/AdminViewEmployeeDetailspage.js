@@ -30,7 +30,8 @@ const AdminViewEmployeeDetailspage = () => {
     let employeeCount  = 1
 
     const deleteEmployee = ( id ) => {
-        axios.post( serverLink + '/adminDeleteEmployee' , id-- ).then(
+        console.log( id )
+        axios.post( serverLink + '/adminDeleteEmployee' , id ).then(
             ( response ) => {
                 if ( response.data === "done" ){
                     setShow(false);
