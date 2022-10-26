@@ -58,6 +58,11 @@ public class CustomerController {
         return customerComponent.addBankDetail( addBankDetail );
     }
 
+    @PostMapping("/updateCustomer")
+    public String updateCustomer(@RequestBody AddBankDetail updateCustomer){
+        return customerComponent.UpdateCustomer( updateCustomer );
+    }
+
     @PostMapping("/newReview")
     public String addReviews(@RequestBody AddReview addReview){
         Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
