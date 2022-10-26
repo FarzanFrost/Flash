@@ -11,9 +11,6 @@ const SelectImages = () => {
 
 
 
-
-
-
     return (
 
         <div>

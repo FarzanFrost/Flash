@@ -3,12 +3,14 @@ package com.example.flashbackend.Controller;
 import com.example.flashbackend.Component.EmployeeComponent;
 import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.DAO.*;
+import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +31,13 @@ public class EmployeeController {
     }
 
 
+//    @GetMapping("/filterEventById")
+//
+//    public List<Event>getFilterEvents()
+//    {
+//        Date date = new Date();
+//        return employeeComponent.getFilterEvents(2011-01-18);
+//    }
 
 //    @GetMapping("/filterevent/{email}")
 //

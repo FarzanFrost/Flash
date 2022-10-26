@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react';
 import pic from './Images/booking.jpeg';
-
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 import axios from "axios";
 
