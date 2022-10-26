@@ -22,6 +22,9 @@ public class AdminDashboardComponent {
     @Autowired
     CustomerRepository customerRepository;
 
+    @Autowired
+    LoginRepository loginRepository;
+
     public long getEmployeeCount(){
         return employeeRepository.count();
     }
@@ -32,6 +35,10 @@ public class AdminDashboardComponent {
 
     public long getCustomerCount(){
         return customerRepository.count();
+    }
+
+    public List<Login> getLoginDetails(){
+        return loginRepository.findAll();
     }
 
 }
