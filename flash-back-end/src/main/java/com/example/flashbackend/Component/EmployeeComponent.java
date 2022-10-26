@@ -12,6 +12,7 @@ public class EmployeeComponent {
 
     @Autowired
     EventRepository eventRepository;
+    @Autowired
     FolderRepository folderRepository;
 
     public List<Event>getEvents(){
@@ -30,7 +31,7 @@ public class EmployeeComponent {
 //    }
 
     public String addFolder(AddFolder addfolder){
-        folderRepository.insertFolder( addfolder.getEventID(),addfolder.getName() );
+        folderRepository.insertFolder( addfolder.getEventID() , addfolder.getName() );
         return "done";
     }
 
