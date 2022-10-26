@@ -26,7 +26,7 @@ const AdminViewAllReviews = () => {
 
     useEffect( () => {
 
-        axios.get( serverLink + '/Admin' ).then(
+        axios.get( serverLink + '/AdminViewReviews' ).then(
 
             ( response ) => {
 
@@ -113,7 +113,7 @@ const AdminViewAllReviews = () => {
                                             ( review ) => (
 
                                     <tr>
-                                        {/*<th scope="col">{ review.reviewsID }</th>*/}
+                                        <th scope="col">{ review.reviewsID }</th>
                                         <th scope="col">{ review.dateTime }</th>
                                         <th scope="col">{ review.rate}</th>
                                         <th scope="col">
