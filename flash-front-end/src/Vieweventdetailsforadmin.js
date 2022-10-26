@@ -33,7 +33,7 @@ const Vieweventdetailsforadmin = () => {
 
     useEffect( () => {
 
-        axios.get( serverLink + '/Employees' ).then(
+        axios.get( serverLink + '/AdminViewEvents' ).then(
 
             ( response ) => {
 
