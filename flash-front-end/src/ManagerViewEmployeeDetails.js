@@ -44,7 +44,7 @@ const ManagerViewEmployeeDetails = () => {
 
         ).catch(
 
-            () => { alert( "Error!!! employee details ") }
+            () => { alert( "Error!!! eventDetail error ") }
 
         )
 

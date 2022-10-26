@@ -31,8 +31,13 @@ public class EmployeeController {
     }
 
 
-    @GetMapping("/filterEventById")
-    public List<Event>getFilterEvents(){return employeeComponent.getFilterEvents();}
+//    @GetMapping("/filterEventById")
+//
+//    public List<Event>getFilterEvents()
+//    {
+//        Date date = new Date();
+//        return employeeComponent.getFilterEvents(2011-01-18);
+//    }
 
 //    @GetMapping("/filterevent/{email}")
 //

@@ -2,13 +2,44 @@ import  React from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
+import {useEffect, useState} from "react";
+import axios from "axios";
+
+
 
 
 const EmployeeWorkView = () => {
 
-    const Works = () => {
 
-    }
+
+    const serverLink = 'http://localhost:8080'
+    const [show, setShow] = useState(false);
+
+    const [ eventDetails , setEventDetails ] = useState( null )
+
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/events' ).then(
+
+            ( response ) => {
+
+                setEventDetails( response.data )
+                console.log( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! employee details ") }
+
+        )
+
+    } ,[])
 
     return (
         <div className="h-100">
@@ -39,44 +70,21 @@ const EmployeeWorkView = () => {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, College Road, Trincomalee</th>
+                                        { eventDetails!== null &&
+                                            eventDetails.map(
+                                                (events)=>(
 
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, Peris Road, Trincomalee</th>
-
-                                        </tr>
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, Peris Road, Trincomalee</th>
-
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="col">01</th>
-                                            <th scope="col">Get together</th>
-                                            <th scope="col">08/28/2022</th>
-                                            <th scope="col">09.00 AM</th>
-                                            <th scope="col">05.00 PM</th>
-                                            <th scope="col">12, Peris Road, Trincomalee</th>
-
-                                        </tr>
+                                                    <tr>
+                                                        <th scope="col">{events.EventID}</th>
+                                                        <th scope="col">{events.packageID}</th>
+                                                        <th scope="col">{events.EventDate}</th>
+                                                        <th scope="col">{events.StartTime}</th>
+                                                        <th scope="col">{events.EndTime}</th>
+                                                        <th scope="col">{events.Address}</th>
+                                                    </tr>
+                                                )
+                                            )
+                                        }
                                         </tbody>
                                     </table>
                                 </div>
