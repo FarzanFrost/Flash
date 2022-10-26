@@ -8,6 +8,9 @@ import axios from "axios";
 
 const Calender = () => {
 
+
+    const calenderdetails=[]
+
     const serverLink = 'http://localhost:8080'
     const [show, setShow] = useState(false);
 
@@ -37,22 +40,39 @@ const Calender = () => {
 
     } ,[])
 
+    { eventDetails!== null &&
+    eventDetails.map(
+        (events)=>{
+            const calenderview={
+                "title":events.title,
+                "date":events.date
+            }
+            calenderdetails.push(calenderview)
+        }
 
+    )
+    }
 
 
         return (
-            <FullCalendar
-                plugins={[ dayGridPlugin ]}
-                initialView="dayGridMonth"
-                weekends={false}
-                events={[
-                    {
-                        
-                        title: 'event 1', date: '2022-10-03'
-                    }
+<div>
 
-                ]}
-            />
+
+
+
+    <FullCalendar
+        plugins={[ dayGridPlugin ]}
+        initialView="dayGridMonth"
+        weekends={true}
+        events={ calenderdetails }
+    />
+
+
+</div>
+
+
+
+
 
     )
 
