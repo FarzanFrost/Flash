@@ -23,6 +23,9 @@ const Customer = () => {
 
     const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
 
+    console.log("details :", location.state.userDetailsAfterAuthentication)
+
+
     const showHideSideNav = () => {
 
         if ( isSideNavVisible ){
