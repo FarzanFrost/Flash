@@ -23,9 +23,9 @@ public class EmployeeComponent {
 
 
 
-    public List<Event>getFilterEvents(Date date) {
-
-        return eventRepository.findByDate(date);
-    }
+//    public List<Event>getFilterEvents(Date date) {
+//
+//        return eventRepository.findByDate(date);
+//    }
 
 }
