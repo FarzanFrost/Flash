@@ -17,14 +17,12 @@ public class AdminEmployeeDetailsComponent {
     EmployeeRepository employeeRepository;
 
     public List<Employee> getEmployees(){
-
         return employeeRepository.findAll();
-
     }
 
-    public String deleteEmployee(BigInteger reviewId ){
+    public String deleteEmployee(BigInteger employeeId ){
 
-        employeeRepository.deleteById( reviewId );
+        employeeRepository.deleteById( employeeId );
         return "done";
     }
 }

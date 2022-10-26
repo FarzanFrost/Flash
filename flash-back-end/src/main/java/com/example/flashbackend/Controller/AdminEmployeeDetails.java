@@ -20,7 +20,7 @@ public class AdminEmployeeDetails {
         return adminEmployeeDetailsComponent.getEmployees();
     }
     @PostMapping("/adminDeleteEmployee")
-    public String deleteEmployee( @RequestBody BigInteger reviewId ){
-        return adminEmployeeDetailsComponent.deleteEmployee( reviewId );
+    public String deleteEmployee( @RequestBody BigInteger employeeId ){
+        return adminEmployeeDetailsComponent.deleteEmployee( employeeId );
     }
 }
