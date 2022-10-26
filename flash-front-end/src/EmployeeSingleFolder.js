@@ -1,27 +1,81 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import { useState } from 'react';
 import {SelectImageContext} from "./ContextFiles/EmployeeSelectImageContext";
 import axios from "axios";
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import FolderStructuresCustomers from "./FolderStructuresCustomers";
 
 const SingleFolder = () => {
 
-    const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns} = useContext( SelectImageContext )
-
     const serverLink = 'http://localhost:8080'
+
+    const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns , ImageList} = useContext( SelectImageContext )
+
+    const [images, setImages ] = useState("");
+
+    const [ selectedImages , setSelectedImages ] = useState(ImageList);
+
+    const [ imageUploadStatus , setImageUploadStatus ] = useState( false )
+
     const { changeContentVisible } = useContext( AuthenticationContext )
 
+    // let { column1 , column2 , column3 } = null
 
-    const [image, setImage ] = useState("");
+    const selectImagesFromSource = () => {
+
+        axios.get( serverLink + '/getImagesByEventId/' + currentFolderName ).then(
+
+            ( response ) => {
+
+                setSelectedImages( response.data.galleryImages )
+                console.log( "images list",response.data.galleryImages )
+
+            }
+
+        ).catch(
+
+            () => {
+
+                alert("images selection")
+
+            }
+
+        )
+
+    }
+
+    useEffect(
+
+        () => {
+
+            selectImagesFromSource()
+
+        }
+
+    , [])
+
+    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( selectedImages )
 
     const[eventID,setEventID]=useState(currentFolderName );
     // const [ imageUrl, setImageUrl ] = useState("");
 
-    let imageUrl = ""
+    // let imageUrl = ""
 
-    const uploadImage = () => {
+    const uploadMultipleFiles = () => {
+
+        console.log( images )
+        for (let i = 0; i < images.length; i++) {
+
+            uploadImage( images[ i ] )
+
+        }
+        selectImagesFromSource()
+
+    }
+
+    const uploadImage = ( oneImage ) => {
         const data = new FormData()
-        data.append("file", image)
+        data.append("file", oneImage )
         data.append("upload_preset", "lysvcak7")
         data.append("cloud_name", "dctlnle1w")
         fetch("  https://api.cloudinary.com/v1_1/dctlnle1w/image/upload", {
@@ -31,16 +85,16 @@ const SingleFolder = () => {
             .then(resp => resp.json())
             .then(data => {
                 console.log( "data image " , data.url.toString() )
-                imageUrl = data.url.toString()
-                setEventID(eventID)
-                AddPhotos()
+                const imageUrl = data.url.toString()
+                // setEventID(eventID)
+                AddPhotos( imageUrl )
 
             })
             .catch(err => console.log(err))
 
     }
 
-    const AddPhotos = () => {
+    const AddPhotos = ( imageUrl ) => {
 
         console.log("image url" , imageUrl);
 
@@ -58,7 +112,7 @@ const SingleFolder = () => {
 
                 if ( response.data === "done" ){
 
-                    changeContentVisible( 1 )
+                    // changeContentVisible( 1 )
 
                 }
 
@@ -72,7 +126,7 @@ const SingleFolder = () => {
 
     }
 
-
+    console.log( "columns" , column1 , column2 ,column3 )
 
 
     return (
@@ -88,11 +142,86 @@ const SingleFolder = () => {
                     Folder : { currentFolderName }
                 </div>
                 <div>
-                         <input type="file" id="myFile" name="filename" onChange= {(e)=> setImage(e.target.files[0])}/>
-                         <button onClick={uploadImage}>Upload</button>
+                         <input className="btn btn-outline-primary me-1" type="file" id="myFile" name="filename" onChange= {(e)=> setImages(e.target.files)} multiple="multiple"/>
+                         <button className="btn btn-outline-primary" onClick={uploadMultipleFiles}>Upload</button>
                 </div>
             </div>
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
+
+                <div className="row">
+
+                    <div className="col  overflow-scroll" style={ { height : "665px" } }>
+
+                        <div className="row p-4">
+
+                            {column1 != null && <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+                                {
+                                    column1.map((image) => (
+
+                                        <div className="p-1 bg-dark mb-4 text-light">
+
+                                            <img
+                                                src={image.imageUrl}
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                        </div>
+
+                                    ))
+
+                                }
+
+                            </div>}
+
+                            {column2 != null && <div className="col-lg-4 mb-4 mb-lg-0">
+
+                                {
+                                    column2.map((image) => (
+
+                                        <div className="p-1 bg-dark mb-4 text-light">
+
+                                            <img
+                                                src={image.imageUrl}
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                        </div>
+
+                                    ))
+
+                                }
+
+                            </div>}
+
+                            {column3 != null && <div className="col-lg-4 mb-4 mb-lg-0 ">
+
+                                {
+                                    column3.map((image) => (
+
+                                        <div className="p-1 bg-dark mb-4 text-light">
+
+                                            <img
+                                                src={image.imageUrl}
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                        </div>
+
+                                    ))
+
+                                }
+
+                            </div>}
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
         </div>
