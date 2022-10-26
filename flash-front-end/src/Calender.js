@@ -3,10 +3,15 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'
 import {useEffect, useState} from "react";
 import axios from "axios";
+import * as events from "events";
+import Button from "react-bootstrap/Button";
 
 
 
 const Calender = () => {
+
+
+    const calenderdetails=[]
 
     const serverLink = 'http://localhost:8080'
     const [show, setShow] = useState(false);
@@ -37,23 +42,45 @@ const Calender = () => {
 
     } ,[])
 
+    { eventDetails!== null &&
+    eventDetails.map(
+        (events)=>{
+            const calenderview={
+                "title":events.category,
+                "date":events.eventDate
 
 
+            }
+            calenderdetails.push(calenderview)
+        }
 
+    )
+    }
+
+console.log(calenderdetails)
         return (
-            <FullCalendar
-                plugins={[ dayGridPlugin ]}
-                initialView="dayGridMonth"
-                weekends={false}
-                events={[
-                    {
+<div>
 
-                        
-                        title: 'event 1', date: '2022-10-03'
-                    }
 
-                ]}
-            />
+    <FullCalendar
+        plugins={[ dayGridPlugin ]}
+        initialView="dayGridMonth"
+        weekends={true}
+     events={calenderdetails}
+/>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
 
     )
 

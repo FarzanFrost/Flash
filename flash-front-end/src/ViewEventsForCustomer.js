@@ -67,16 +67,16 @@ const ViewEventsForCustomer = () => {
                                         <div className="card-body">
 
                                             <div className="container">
-                                                <h2 style={{textAlign: "Center"}}>{eventDetails.eventType}</h2>
+                                                <h2 style={{textAlign: "Center"}}>{eventDetails.category}</h2>
                                                 <div className="row">
                                                     <div className="col-6 col-sm-4">Booking ID</div>
-                                                    <div className="col-6 col-sm-5">{eventDetails.eventId}</div>
+                                                    <div className="col-6 col-sm-5">{eventDetails.eventID}</div>
 
 
                                                     <div className="w-100 d-none d-md-block"></div>
 
                                                     <div className="col-6 col-sm-4">Event Date</div>
-                                                    <div className="col-6 col-sm-5">{eventDetails.date}</div>
+                                                    <div className="col-6 col-sm-5">{eventDetails.eventDate}</div>
 
                                                     <div className="w-100 d-none d-md-block"></div>
 
@@ -85,8 +85,8 @@ const ViewEventsForCustomer = () => {
 
                                                     <div className="w-100 d-none d-md-block"></div>
 
-                                                    <div className="col-6 col-sm-4">Total Price</div>
-                                                    <div className="col-6 col-sm-5">Rs.{eventDetails.eventType}</div>
+                                                    <div className="col-6 col-sm-4">Address</div>
+                                                    <div className="col-6 col-sm-5">{eventDetails.address}</div>
 
                                                 </div>
 

@@ -4,17 +4,21 @@ import {AuthenticationContext} from "./ContextFiles/Authentication/Authenticatio
 import axios from "axios";
 
 const ChangeBooking = () => {
-    const { changeContentVisible, eventDetails } = useContext( AuthenticationContext )
+    const { changeContentVisible, eventDetails, setEventDetails } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080'
 
-    const [eventDetail, setEventDetail] = useState(null)
+    //const [eventDetail, setEventDetail] = useState(null)
+
+    //const eventID = eventDetails.eventId
+
+    console.log("bookings", eventDetails)
 
     const typeArray = [ 'Wedding' , 'Birthday' , 'Puberty' , 'Get together' , 'House warming' , 'Prize giving' ]
 
-    const [ eventType , setEventType ] = useState( 'Wedding' )
+    //const [ eventType , setEventType ] = useState( 'Wedding' )
 
-    const [ date , setDate ] = useState( '' )
+    const [ date , setDate ] = useState( eventDetails.date )
 
     const [ startTime , setStartTime ] = useState( '' )
 
@@ -24,11 +28,9 @@ const ChangeBooking = () => {
 
     const [ packages , setPackages ] = useState( 'Gold' )
 
-    const eventId = eventDetails.eventId
-
     useEffect(
         () => {
-            setEventType(eventDetails.eventType)
+
             setDate(eventDetails.date)
             setStartTime(eventDetails.startTime)
             setEndTime(eventDetails.endTime)
@@ -37,25 +39,26 @@ const ChangeBooking = () => {
         }, []
     )
 
-    console.log("eventId", eventId)
+    //console.log("eventId", eventID)
 
-    useEffect( () => {
-
-        axios.get( serverLink + '/Allevent').then(
-            (response) => {
-                setEventDetail(response.data)
-                console.log(response.data)
-            }
-        ).catch(
-            () => {alert("Error!!! All Events")}
-        )
-    })
+    // useEffect( () => {
+    //
+    //     axios.get( serverLink + '/Allevent').then(
+    //
+    //         (response) => {
+    //
+    //             setEventDetail(response.data)
+    //
+    //             console.log(response.data)
+    //         }
+    //     ).catch(
+    //         () => {alert("Error!!! All Events")}
+    //     )
+    // })
 
     const editEvent = () => {
         const data = {
 
-            eventId,
-            eventType,
             date,
             startTime,
             endTime,
@@ -115,7 +118,7 @@ const ChangeBooking = () => {
 
                                             <div className="form-group row mt-3 mx-3">
                                                 <span className="col-sm-4">Event Type </span>
-                                                <span className="col-sm-8 fw-bold">Wedding</span>
+                                                <span className="col-sm-8 fw-bold">{eventDetails.eventType}</span>
                                             </div>
 
                                             <div className="form-group row mt-3 mx-3">

@@ -7,7 +7,9 @@ import com.example.flashbackend.DAO.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -55,6 +57,12 @@ public class EmployeeController {
         return employeeComponent.addPhotos( addPhotos );
     }
 
+    @GetMapping("/getImagesByEventId/{eventId}")
+    public Optional<Event> getImagesByEventId(@PathVariable BigInteger eventId ){
+
+        return employeeComponent.getImagesByEventId( eventId );
+
+    }
 
 }
 

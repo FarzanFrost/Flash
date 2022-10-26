@@ -1,15 +1,24 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import pic from './Images/booking.jpeg';
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 import axios from "axios";
+import {useLocation} from "react-router-dom";
 
 const NewEventBooking = () => {
 
     const serverLink = 'http://localhost:8080'
 
-    const { userDetailsAfterAuthentication } = useContext( AuthenticationContext )
+    const location = useLocation()
 
-    const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible, userDetailsAfterAuthentication, packagesDetail } = useContext( AuthenticationContext )
+
+    const customerDetail = location.state.userDetailsAfterAuthentication
+
+    const customerID = customerDetail.customer.customerID
+
+    const packageID = packagesDetail.packageID
+
+    console.log("id", packageID)
 
     const [ eventType , setEventType ] = useState( 'Wedding' )
 
@@ -23,22 +32,40 @@ const NewEventBooking = () => {
 
     const [ packages , setPackages ] = useState( 'Gold' )
 
+    //const [allPackage, setAllPackage] = useState(null)
+
+    // useEffect( () => {
+    //
+    //     axios.get(serverLink + '/AllPackages').then(
+    //         (response) => {
+    //
+    //             setAllPackage(response.data)
+    //             console.log("data", response.data.packageID)
+    //         }
+    //     ).catch(
+    //         () => {alert("Error!!! All Packages")}
+    //     )
+    //
+    // }, [])
+
     const NewEvent = () => {
 
         const data = {
+
             eventType,
             date,
             startTime,
             endTime,
             address,
-            packages
+            packages,
+            customerID,
+            packageID
         }
 
-        axios.post( serverLink + '/Booking' , data).then(
+        axios.post( serverLink + '/bookings' , data).then(
             ( response ) => {
 
                 if (response.data === "done" ){
-
                     changeContentVisible( 1 )
                 }
 
@@ -50,6 +77,8 @@ const NewEventBooking = () => {
         )
 
     }
+
+
 
     return (
         <div className="h-100">
@@ -173,17 +202,25 @@ const NewEventBooking = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="form-group row mt-3 mx-3">
-                                                <label className="col-sm-4 col-form-label">Package</label>
-                                                <div className="col-sm-8">
-                                                    <select className="form-select" onChange={ (e) => setPackages( e.target.value )}>
-                                                        <option>Platinum</option>
-                                                        <option>Diamond</option>
-                                                        <option>Silver</option>
-                                                        <option>Gold</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                            {
+                                                packagesDetail.map(
+                                                    (packagesDetail) => (
+
+                                                        <div className="form-group row mt-3 mx-3">
+                                                            <label className="col-sm-4 col-form-label">Package</label>
+                                                            <div className="col-sm-8">
+                                                                <select className="form-select"
+                                                                        onChange={(e) => setPackages(e.target.value)}>
+                                                                    <option>{packagesDetail.name}</option>
+                                                                    {/*<option>Diamond</option>*/}
+                                                                    {/*<option>Silver</option>*/}
+                                                                    {/*<option>Gold</option>*/}
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                )
+                                            }
 
                                             <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
                                                 <button type="submit" variant="primary"

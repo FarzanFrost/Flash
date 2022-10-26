@@ -23,6 +23,49 @@ const AdminViewAllReviews = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const AdminDeleteReview = ( id ) => {
+
+        axios.post( serverLink + '/AdminDeleteReview' , id-- ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    setShow(false);
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! in deleting review") }
+
+        )
+
+    }
+
+    const deleteAdminReview = ( id ) => {
+
+        axios.post( serverLink + '/deleteAdminReview' , id-- ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    setShow(false);
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add review") }
+
+        )
+
+    }
 
     useEffect( () => {
 
@@ -86,9 +129,10 @@ const AdminViewAllReviews = () => {
                                     <input type="text" className="form-control" name="x"
                                            placeholder="Search term..."></input>
                                     <span className="input-group-btn">
-                    <button className="btn btn-default" type="button"><span
+                    <button className="btn btn-default" type="button">
+                        <span
                         className="glyphicon glyphicon-search"></span></button>
-                </span>
+                        </span>
                                 </div>
                             </div>
                         </div>
@@ -136,12 +180,13 @@ const AdminViewAllReviews = () => {
                                                 Details
                                             </Button>
 
-                                            <Modal show={show} onHide={handleClose}>
+                                            <Modal show={show} onHide={handleClose} size="lg">
                                                 <Modal.Header closeButton>
                                                     <Modal.Title>Review</Modal.Title>
                                                 </Modal.Header>
                                                 <Modal.Body>{ review.comment }</Modal.Body>
                                                 <Modal.Footer>
+
                                                     <Button variant="dark" onClick={() => deleteReview( review.reviewsID ) }>
                                                         Delete Review
                                                     </Button>
@@ -164,7 +209,8 @@ const AdminViewAllReviews = () => {
                                 </table>
                             </div>
 
-                        </div> {/*end table*/}
+                        </div>
+
 
 
                     </div>

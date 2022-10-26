@@ -73,7 +73,8 @@ const EmployeeWorkView = () => {
                                         { eventDetails!== null &&
                                             eventDetails.map(
                                                 (events)=>(
-                                                   // if(EventDate=='10-10-2021')
+
+
                                       //  {
                                             <tr>
                                             <th scope="col">{events.eventID}</th>
@@ -83,7 +84,6 @@ const EmployeeWorkView = () => {
                                             <th scope="col">{events.endTime}</th>
                                             <th scope="col">{events.address}</th>
                                             </tr>
-
                                       //  }
 
                                                 )

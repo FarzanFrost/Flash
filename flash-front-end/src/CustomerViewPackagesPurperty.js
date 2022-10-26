@@ -25,7 +25,7 @@ const Vieweventdetailsforadmin = () => {
 
     useEffect( () => {
 
-        axios.get( serverLink + '/Packages' ).then(
+        axios.get( serverLink + '/AllPackages' ).then(
 
             ( response ) => {
 

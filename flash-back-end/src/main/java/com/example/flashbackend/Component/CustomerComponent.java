@@ -57,8 +57,13 @@ public class CustomerComponent {
     }
 
     public String addBankDetail( AddBankDetail addBankDetail){
-       customerRepository.updateCustomer( addBankDetail.getFirstName(), addBankDetail.getLastName(), addBankDetail.getGender(), addBankDetail.getNIC(), addBankDetail.getContactNo(), addBankDetail.getCardNo(), addBankDetail.getCVCNo(), addBankDetail.getExpiaryDate(), addBankDetail.getCardType() );
+       customerRepository.updateBank( addBankDetail.getCardNo(), addBankDetail.getCVCNo(), addBankDetail.getExpiaryDate(), addBankDetail.getCardType() );
        return "done";
+    }
+
+    public String UpdateCustomer( AddBankDetail updateCustomer){
+        customerRepository.updateCustomer( updateCustomer.getFirstName(), updateCustomer.getLastName(), updateCustomer.getGender(), updateCustomer.getNIC(), updateCustomer.getContactNo() );
+        return "done";
     }
 
     public String addReview(Reviews reviews){
