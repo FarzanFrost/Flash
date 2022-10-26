@@ -31,7 +31,7 @@ const CustomerProfile = () =>{
 
     const [email, setEmail] = useState(customerDetail.email)
 
-    console.log("customerId:kdasljf;lkejafd;glkjs;d ", customerDetail.email)
+    console.log("customerId:kdasljf;lkejafd;glkjs;d ", customerDetail)
 
     useEffect(
         () => {
@@ -58,7 +58,7 @@ const CustomerProfile = () =>{
 
         }
 
-        axios.post(serverLink + '/updateBank', data).then(
+        axios.post(serverLink + '/updateCustomer', data).then(
             (response) => {
                 if ( response.data === "done"){
 
