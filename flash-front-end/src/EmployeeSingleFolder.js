@@ -3,10 +3,13 @@ import { useState } from 'react';
 import {SelectImageContext} from "./ContextFiles/EmployeeSelectImageContext";
 import axios from "axios";
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import FolderStructuresCustomers from "./FolderStructuresCustomers";
 
 const SingleFolder = () => {
 
-    const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns} = useContext( SelectImageContext )
+    const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns , ImageList} = useContext( SelectImageContext )
+
+    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( ImageList )
 
     const serverLink = 'http://localhost:8080'
     const { changeContentVisible } = useContext( AuthenticationContext )
@@ -104,6 +107,81 @@ const SingleFolder = () => {
                 </div>
             </div>
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
+
+                <div className="row">
+
+                    <div className="col  overflow-scroll" style={ { height : "665px" } }>
+
+                        <div className="row p-4">
+
+                            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+                                {
+                                    column1.map( ( image ) => (
+
+                                        <div className="p-1 bg-dark mb-4 text-light">
+
+                                            <img
+                                                src={ image }
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                        </div>
+
+                                    ) )
+
+                                }
+
+                            </div>
+
+                            <div className="col-lg-4 mb-4 mb-lg-0">
+
+                                {
+                                    column2.map( ( image ) => (
+
+                                        <div className="p-1 bg-dark mb-4 text-light">
+
+                                            <img
+                                                src={ image }
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                        </div>
+
+                                    ) )
+
+                                }
+
+                            </div>
+
+                            <div className="col-lg-4 mb-4 mb-lg-0 ">
+
+                                {
+                                    column3.map( ( image ) => (
+
+                                        <div className="p-1 bg-dark mb-4 text-light">
+
+                                            <img
+                                                src={ image }
+                                                className="w-100 shadow-1-strong rounded"
+                                                alt="Boat on Calm Water"
+                                            />
+
+                                        </div>
+
+                                    ) )
+
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
         </div>
