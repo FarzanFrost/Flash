@@ -21,7 +21,7 @@ const Vieweventdetailsforadmin = () => {
         height:'110px'
     };
 
-    const [packagesDetails, setPackagesDetails] = useState( null )
+    const [packagesDetails, setPackagesDetails] = useState(null)
 
     useEffect( () => {
 
