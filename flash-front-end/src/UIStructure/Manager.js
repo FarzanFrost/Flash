@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useState, useNavigationState} from 'react'
 import Footer from "../Footer";
 import FlashLogo from "../Images/FlashLogo.png";
 import ManagerViewAllReviews from "../ManagerViewAllReviews";
@@ -17,7 +17,7 @@ import {useLocation} from "react-router-dom";
 const Manager = () => {
 
     const location = useLocation()
-    
+
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
     const showHideSideNav = () => {
@@ -34,7 +34,9 @@ const Manager = () => {
 
     }
 
-    const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
+    const { contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
+
+    console.log( "details : " , location.state.userDetailsAfterAuthentication )
 
     return(
 
