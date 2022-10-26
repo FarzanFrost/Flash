@@ -1,6 +1,8 @@
 import React, {useContext} from "react";
 import { useState } from 'react';
 import {SelectImageContext} from "./ContextFiles/EmployeeSelectImageContext";
+import axios from "axios";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const SingleFolder = () => {
 
@@ -8,7 +10,9 @@ const SingleFolder = () => {
 
 
     const [image, setImage ] = useState("");
-    const [ url, setUrl ] = useState("");
+
+    const[eventID,setEventID]=useState("");
+    const [ imageUrl, setImageUrl ] = useState("");
     const uploadImage = () => {
         const data = new FormData()
         data.append("file", image)
@@ -20,11 +24,49 @@ const SingleFolder = () => {
         })
             .then(resp => resp.json())
             .then(data => {
-                setUrl(data.url)
+                setImageUrl(data.imageUrl)
+                setEventID(data.eventID)
+
             })
             .catch(err => console.log(err))
 
     }
+
+    const AddPhotos = () => {
+
+
+        const serverLink = 'http://localhost:8080'
+        const { changeContentVisible } = useContext( AuthenticationContext )
+        const data = {
+
+            eventID,
+            imageUrl
+
+
+        }
+
+        axios.post( serverLink + '/addphotos' , data ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    changeContentVisible( 1 )
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add photos") }
+
+        )
+
+    }
+
+
+
 
     return (
 
@@ -41,11 +83,6 @@ const SingleFolder = () => {
                 <div>
                          <input type="file" id="myFile" name="filename" onChange= {(e)=> setImage(e.target.files[0])}/>
                          <button onClick={uploadImage}>Upload</button>
-                </div>
-
-                <div>
-                    <img src={url}/>
-
                 </div>
             </div>
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
