@@ -21,12 +21,18 @@ public class GalleryImages {
     @JsonIgnore
     private Event event;
 
+    private String ImageUrl;
+
     @ManyToMany
     @JoinTable( name = "FolderImages" , joinColumns = @JoinColumn( name = "ImageID") , inverseJoinColumns = @JoinColumn( name = "FolderID" ))
     @JsonIgnore
     private List<Folder> folders;
 
     public GalleryImages(){}
+
+    public GalleryImages(String imageUrl) {
+        ImageUrl = imageUrl;
+    }
 
     public BigInteger getImageID() {
         return ImageID;
@@ -50,5 +56,13 @@ public class GalleryImages {
 
     public void setFolders(List<Folder> folders) {
         this.folders = folders;
+    }
+
+    public String getImageUrl() {
+        return ImageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
     }
 }

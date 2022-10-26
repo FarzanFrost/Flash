@@ -4,8 +4,87 @@ import client from './Images/client logo.jpg'
 import event from './Images/event logo.png'
 import income from './Images/income logo.jpg'
 import pic from "./Images/graph.jpg";
+import {useEffect, useState} from "react";
+import axios from "axios";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
+import {Line} from "react-chartjs-2";
 
 const AdminDashboard = () =>{
+
+    const serverLink = 'http://localhost:8080'
+
+    const [totalEmployeeCount , setTotalEmployeeCount] = useState( 0 )
+    useEffect( () => {
+        axios.get( serverLink + '/adminDashboardEmployeeCount' ).then(
+            ( response ) => {
+                console.log( response.data )
+                setTotalEmployeeCount( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! get userCount ") }
+        )
+    } ,[])
+
+    const [totalEventsCount , setTotalEventsCount] = useState( 0 )
+    useEffect( () => {
+        axios.get( serverLink + '/adminDashboardEventCount' ).then(
+            ( response ) => {
+                console.log( response.data )
+                setTotalEventsCount( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! get userCount ") }
+        )
+    } ,[])
+
+    const [totalClientsCount , setTotalClientsCount] = useState( 0 )
+    useEffect( () => {
+        axios.get( serverLink + '/adminDashboardCustomerCount' ).then(
+            ( response ) => {
+                console.log( response.data )
+                setTotalClientsCount( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! get userCount ") }
+        )
+    } ,[])
+
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        Title,
+        Tooltip,
+        Legend
+    );
+    const data = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [
+            {
+                label: "First dataset",
+                data: [33, 53, 85, 41, 44, 65],
+                fill: true,
+                backgroundColor: "rgba(75,192,192,0.2)",
+                borderColor: "rgba(75,192,192,1)"
+            },
+            {
+                label: "Second dataset",
+                data: [33, 25, 35, 51, 54, 76],
+                fill: false,
+                borderColor: "#742774"
+            }
+        ]
+    };
     return(
         <div className="h-100">
 
@@ -37,7 +116,7 @@ const AdminDashboard = () =>{
                                                 Total Employees
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                255
+                                                { totalEmployeeCount }
                                             </h5>
 
                                         </div>
@@ -78,7 +157,7 @@ const AdminDashboard = () =>{
                                                 Total Events
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                182
+                                                { totalEventsCount }
                                             </h5>
 
                                         </div>
@@ -119,7 +198,7 @@ const AdminDashboard = () =>{
                                                 Total Clients
                                             </p>
                                             <h5 className="font-weight-bolder mb-3">
-                                                343
+                                                { totalClientsCount }
                                             </h5>
 
                                         </div>
@@ -206,7 +285,8 @@ const AdminDashboard = () =>{
                                     {/*<canvas id="chart-line" className="my-4 w-100 chartjs-render-monitor"*/}
                                     {/*        style={{height: "375px", width: "669px", display: "block", boxSizing: "border-box" }}/>*/}
 
-                                    <img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>
+                                    {/*<img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>*/}
+                                    <Line data={data} />
 
                                 </div>
 

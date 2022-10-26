@@ -18,4 +18,8 @@ public class AdminEmployeeDetails {
     public List<Employee> getEmployees(){
         return adminEmployeeDetailsComponent.getEmployees();
     }
+    @PostMapping("/adminDeleteEmployee")
+    public String deleteEmployee( @RequestBody BigInteger reviewId ){
+        return adminEmployeeDetailsComponent.deleteEmployee( reviewId );
+    }
 }

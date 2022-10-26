@@ -1,7 +1,9 @@
 package com.example.flashbackend.Controller;
 
+import com.example.flashbackend.DTO.*;
 import com.example.flashbackend.Entity.Package;
 import com.example.flashbackend.Entity.Reviews;
+import com.example.flashbackend.Entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
@@ -32,28 +34,53 @@ public class CustomerController {
         return customerComponent.getReviews();
     }
 
-//    @PostMapping("/Booking")
-//    public String addEvent(@RequestBody AddEvent addEvent){
+    @GetMapping("/Customers")
+    public List<Customer> getCustomers(){
+        return customerComponent.getCustomer();
+    }
+
+    @PostMapping("/Booking")
+    public String addEvent(@RequestBody AddEvent addEvent){
+
+        return customerComponent.addNewEvent( addEvent );
+    }
+
+    @PostMapping("updateEvent")
+    public String updateEvent(@RequestBody EditEvent editEvent){
+
+        return customerComponent.updateEvent( editEvent );
+    }
+
+    @PostMapping("/updateBank")
+    public String addBank(@RequestBody AddBankDetail addBankDetail){
+        return customerComponent.addBankDetail( addBankDetail );
+    }
+
+    @PostMapping("/newReview")
+    public String addReviews(@RequestBody AddReview addReview){
+        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
+        return customerComponent.addReview( reviews );
+    }
+
+    @PostMapping("/deleteCustomer")
+    public String deleteCustomer( @RequestBody BigInteger customerId ){
+
+        return customerComponent.deleteCustomer( customerId );
+
+    }
+
+    @PostMapping("/deleteReviews")
+    public String deleteReview( @RequestBody BigInteger reviewId ){
+
+        return customerComponent.deleteReview( reviewId );
+
+    }
+
+//    @PostMapping( "/deleteEvent" )
+//    public String deletePackage(@RequestBody DeleteEvent deleteEvent){
 //
-//        return customerComponent.addNewEvent( addEvent );
-//    }
-
-//    @PostMapping("updateEvent")
-//    public String updateEvent(@RequestBody AddEvent addEvent){
+//        return customerComponent.deleteEvent( deleteEvent.getEventID() );
 //
-//        return customerComponent.updateEvent( addEvent );
-//    }
-
-//    @PostMapping("/newBank")
-//    public String addBank(@RequestBody AddBankDetail addBank){
-//        Customer customer = new Customer(addBank.getCardNo(), addBank.getCVCNo(), addBank.getExpiaryDate(), addBank.getCardType());
-//        return customerComponent.addBankDetail( customer );
-//    }
-
-//    @PostMapping("/newReview")
-//    public String addReviews(@RequestBody AddReview addReview){
-//        Reviews reviews = new Reviews(addReview.getComment(), new Timestamp(System.currentTimeMillis()), addReview.getRate(), addReview.getDeleted());
-//        return customerComponent.addReview( reviews );
 //    }
 
 }

@@ -21,4 +21,10 @@ public class AdminEmployeeDetailsComponent {
         return employeeRepository.findAll();
 
     }
+
+    public String deleteEmployee(BigInteger reviewId ){
+
+        employeeRepository.deleteById( reviewId );
+        return "done";
+    }
 }

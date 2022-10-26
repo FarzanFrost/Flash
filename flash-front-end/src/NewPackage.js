@@ -1,12 +1,85 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import pic from './Images/eventcollection.png';
-
-const newPack = () =>{
-
-}
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
 
 const NewPackage = () => {
+
+    const serverLink = 'http://localhost:8080'
+
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
+    const [ name , setName ] = useState( '' )
+
+    const [ frameLength , setFrameLength ] = useState( '' )
+
+    const [ frameWidth , setFrameWidth ] = useState( '' )
+
+    const [ videographer , setVideographer ] = useState( '' )
+
+    const [ photographer , setPhotographer ] = useState( '' )
+
+    const [ calender , setCalender ] = useState( '' )
+
+    const [ pages , setPages ] = useState( '' )
+
+    const [ extraPagePrice , setExtraPagePrice ] = useState( '' )
+
+    const [ outShootType , setOutShootType ] = useState( '' )
+
+    const [ signatureFrame , setSignatureFrame ] = useState( '' )
+
+    const [ albumDesign , setAlbumDesign ] = useState( '' )
+
+    const [ totalPayment , setTotalPayment ] = useState( '' )
+
+    const [ eventType , setEventType ] = useState( 'Wedding' )
+
+    const [ additional , setAdditional ] = useState( 'Wedding Only' )
+
+    const addPackage = () => {
+
+        const frame = frameLength + "x" + frameWidth
+
+        const data = {
+
+            frame,
+            videographer,
+            photographer,
+            calender,
+            name,
+            pages,
+            extraPagePrice,
+            outShootType,
+            signatureFrame,
+            albumDesign,
+            totalPayment,
+            eventType,
+            additional
+
+        }
+
+        axios.post( serverLink + '/addPackage' , data ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    changeContentVisible( 1 )
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add packages") }
+
+        )
+
+    }
+
     return (
         <div className="h-100">
 
@@ -40,11 +113,11 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">Package Name</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ name }
                                                     className="form-control"
                                                     type="text"
                                                     placeholder="Enter New Package Name"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
+                                                    onChange={ (e) => setName( e.target.value )}
                                                     autoFocus
                                                     required
                                                 />
@@ -54,7 +127,7 @@ const NewPackage = () => {
                                         <div className="form-group row mt-3 mx-3">
                                             <label className="col-sm-4 col-form-label">Event Type</label>
                                             <div className="col-sm-8">
-                                                <select className="form-select">
+                                                <select className="form-select" onChange={ ( e ) => setEventType( e.target.value ) }>
                                                     <option>Wedding</option>
                                                     <option>Birthday</option>
                                                     <option>Puberty</option>
@@ -65,31 +138,36 @@ const NewPackage = () => {
                                             </div>
                                         </div>
 
-                                        <div className="form-group row mt-3 mx-3">
-                                            <label className="col-sm-4 col-form-label">Additional</label>
-                                            <div className="col-sm-8">
-                                                <select className="form-select">
-                                                    <option>Wedding Only</option>
-                                                    <option>Reception Only</option>
-                                                    <option>Registration Only</option>
-                                                    <option>Wedding with Reception</option>
-                                                    <option>Wedding with Registration</option>
-                                                    <option>Registration with Reception</option>
-                                                    <option>Wedding with both ceremony</option>
-                                                </select>
+                                        {
+
+                                            eventType === 'Wedding' &&
+
+                                            <div className="form-group row mt-3 mx-3">
+                                                <label className="col-sm-4 col-form-label">Additional</label>
+                                                <div className="col-sm-8">
+                                                    <select className="form-select" onChange={ ( e ) => setAdditional( e.target.value ) }>
+                                                        <option>Wedding Only</option>
+                                                        <option>Reception Only</option>
+                                                        <option>Registration Only</option>
+                                                        <option>Wedding with Reception</option>
+                                                        <option>Wedding with Registration</option>
+                                                        <option>Registration with Reception</option>
+                                                        <option>Wedding with both ceremony</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
+
+                                        }
 
                                         <div className="form-group row mt-3 mx-3">
                                             <label className="col-sm-4 col-form-label">No Of Pages</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ pages }
                                                     className="form-control"
                                                     type="Number"
                                                     placeholder="Enter the Pages Count"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
+                                                    onChange={ (e) => setPages( e.target.value )}
                                                     required
                                                 />
                                             </div>
@@ -99,12 +177,11 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">No Of Photographers</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ photographer }
                                                     className="form-control"
                                                     type="Number"
                                                     placeholder="Enter the Photographer Count"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
+                                                    onChange={ (e) => setPhotographer( e.target.value )}
                                                     required
                                                 />
                                             </div>
@@ -114,12 +191,11 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">No Of Videographer</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ videographer }
                                                     className="form-control"
                                                     type="Number"
                                                     placeholder="Enter the Videographer Count"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
+                                                    onChange={ (e) => setVideographer( e.target.value )}
                                                     required
                                                 />
                                             </div>
@@ -129,17 +205,21 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">Signature Frame</label>
                                             <div className="col-sm-8">
                                                 <Form.Check
+                                                    value={ true }
                                                     inline
                                                     label="Yes"
                                                     name="group1"
                                                     type="radio"
+                                                    onChange={ ( e ) => setSignatureFrame( e.target.value ) }
                                                 />
 
                                                 <Form.Check
+                                                    value={ false }
                                                     inline
                                                     label="No"
-                                                    name="group2"
+                                                    name="group1"
                                                     type="radio"
+                                                    onChange={ ( e ) => setSignatureFrame( e.target.value ) }
                                                 />
                                             </div>
                                         </div>
@@ -149,12 +229,11 @@ const NewPackage = () => {
                                             <div className="col-sm-8 row">
                                                 <div className="col-sm-5">
                                                     <input
-                                                        // value={ firstName }
+                                                        value={ frameLength }
                                                         className="form-control"
                                                         type="Number"
                                                         placeholder="Length"
-                                                        // onChange={ (e) => setFirstName( e.target.value )}
-                                                        autoFocus
+                                                        onChange={ (e) => setFrameLength( e.target.value )}
                                                         required
                                                     />
                                                 </div>
@@ -165,12 +244,11 @@ const NewPackage = () => {
 
                                                 <div className="col-sm-5">
                                                     <input
-                                                        // value={ firstName }
+                                                        value={ frameWidth }
                                                         className="form-control"
                                                         type="Number"
                                                         placeholder="Width"
-                                                        // onChange={ (e) => setFirstName( e.target.value )}
-                                                        autoFocus
+                                                        onChange={ (e) => setFrameWidth( e.target.value )}
                                                         required
                                                     />
                                                 </div>
@@ -182,17 +260,21 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">Calendar</label>
                                             <div className="col-sm-8">
                                                 <Form.Check
+                                                    value={ true }
                                                     inline
                                                     label="Yes"
-                                                    name="group1"
+                                                    name="group2"
                                                     type="radio"
+                                                    onChange={ ( e ) => setCalender( e.target.value ) }
                                                 />
 
                                                 <Form.Check
+                                                    value={ false }
                                                     inline
                                                     label="No"
                                                     name="group2"
                                                     type="radio"
+                                                    onChange={ ( e ) => setCalender( e.target.value ) }
                                                 />
                                             </div>
                                         </div>
@@ -201,29 +283,35 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">OutShoot</label>
                                             <div className="col-sm-8">
                                                 <Form.Check
+                                                    value="PreShoot"
                                                     inline
                                                     label="Pre Shoot"
-                                                    name="group1"
+                                                    name="group3"
                                                     type="radio"
+                                                    onChange={ ( e ) => ( setOutShootType( e.target.value ) ) }
                                                 />
 
                                                 <Form.Check
+                                                    value="PostShoot"
                                                     inline
                                                     label="Post Shoot"
-                                                    name="group2"
+                                                    name="group3"
                                                     type="radio"
+                                                    onChange={ ( e ) => ( setOutShootType( e.target.value ) ) }
                                                 />
 
                                                 <Form.Check
+                                                    value="None"
                                                     inline
                                                     label="None"
                                                     name="group3"
                                                     type="radio"
+                                                    onChange={ ( e ) => ( setOutShootType( e.target.value ) ) }
                                                 />
                                             </div>
                                         </div>
 
-                                        <div className="form-group row mt-3 mx-3">
+                                        {/*<div className="form-group row mt-3 mx-3">
                                             <label className="col-sm-4 col-form-label">Out Shoot Hours</label>
                                             <div className="col-sm-8">
                                                 <input
@@ -232,22 +320,20 @@ const NewPackage = () => {
                                                     type="Number"
                                                     placeholder="Enter the Total Hours"
                                                     // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
                                                     required
                                                 />
                                             </div>
-                                        </div>
+                                        </div>*/}
 
                                         <div className="form-group row mt-3 mx-3">
                                             <label className="col-sm-4 col-form-label">Total Payment</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ totalPayment }
                                                     className="form-control"
                                                     type="Text"
                                                     placeholder="Enter the Total Payment"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
+                                                    onChange={ (e) => setTotalPayment( e.target.value )}
                                                     required
                                                 />
                                             </div>
@@ -257,12 +343,11 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">Price of Extra Pages</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ extraPagePrice }
                                                     className="form-control"
                                                     type="Text"
                                                     placeholder="Enter the Price"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
+                                                    onChange={ (e) => setExtraPagePrice( e.target.value )}
                                                     required
                                                 />
                                             </div>
@@ -272,21 +357,25 @@ const NewPackage = () => {
                                             <label className="col-sm-4 col-form-label">Album Design</label>
                                             <div className="col-sm-8">
                                                 <input
-                                                    // value={ firstName }
+                                                    value={ albumDesign }
                                                     className="form-control"
                                                     type="Text"
                                                     placeholder="Enter the Album Design"
-                                                    // onChange={ (e) => setFirstName( e.target.value )}
-                                                    autoFocus
+                                                    onChange={ (e) => setAlbumDesign( e.target.value )}
                                                     required
                                                 />
                                             </div>
                                         </div>
 
                                         <div className="d-flex align-items-center justify-content-center pt-5 pb-4">
-                                            <button type="submit"
-                                                    className="btn btn-dark btn-block">
+                                            <button type="button"
+                                                    className="btn btn-dark btn-block mx-3" onClick={addPackage}>
                                                 ADD
+                                            </button>
+
+                                            <button type="button"
+                                                    className="btn btn-dark btn-block mx-3" onClick={ () => changeContentVisible( 1 ) }>
+                                                close
                                             </button>
                                         </div>
 
