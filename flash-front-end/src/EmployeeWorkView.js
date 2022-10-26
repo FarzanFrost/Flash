@@ -76,12 +76,12 @@ const EmployeeWorkView = () => {
                                                    // if(EventDate=='10-10-2021')
                                       //  {
                                             <tr>
-                                            <th scope="col">{events.EventID}</th>
+                                            <th scope="col">{events.eventID}</th>
                                             <th scope="col">{events.packageID}</th>
-                                            <th scope="col">{events.EventDate}</th>
-                                            <th scope="col">{events.StartTime}</th>
-                                            <th scope="col">{events.EndTime}</th>
-                                            <th scope="col">{events.Address}</th>
+                                            <th scope="col">{events.eventDate}</th>
+                                            <th scope="col">{events.startTime}</th>
+                                            <th scope="col">{events.endTime}</th>
+                                            <th scope="col">{events.address}</th>
                                             </tr>
 
                                       //  }
