@@ -62,7 +62,7 @@ const CustomerProfile = () =>{
             (response) => {
                 if ( response.data === "done"){
 
-                    changeContentVisible( 1 )
+                    changeContentVisible( 0 )
                 }
             }
         ).catch(
@@ -250,9 +250,6 @@ const CustomerProfile = () =>{
                                                         </div>
 
                                                     </form>
-                                                )
-                                            )
-                                            }
 
                                         </div>
 
