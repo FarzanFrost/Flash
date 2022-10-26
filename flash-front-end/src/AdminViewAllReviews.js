@@ -96,7 +96,7 @@ const AdminViewAllReviews = () => {
                                     <thead className="align-middle">
 
                                     <tr>
-                                        <th scope="col">Reviewer ID</th>
+                                        {/*<th scope="col">Reviewer ID</th>*/}
                                         <th scope="col">Date Time</th>
                                         <th scope="col">Rating</th>
                                         <th scope="col">Comment</th>
@@ -113,7 +113,7 @@ const AdminViewAllReviews = () => {
                                             ( review ) => (
 
                                     <tr>
-                                        <th scope="col">{ review.reviewsID }</th>
+                                        {/*<th scope="col">{ review.reviewsID }</th>*/}
                                         <th scope="col">{ review.dateTime }</th>
                                         <th scope="col">{ review.rate}</th>
                                         <th scope="col">
