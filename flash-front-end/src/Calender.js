@@ -3,6 +3,8 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid'
 import {useEffect, useState} from "react";
 import axios from "axios";
+import * as events from "events";
+import Button from "react-bootstrap/Button";
 
 
 
@@ -64,10 +66,14 @@ console.log(calenderdetails)
         plugins={[ dayGridPlugin ]}
         initialView="dayGridMonth"
         weekends={true}
-        events={calenderdetails}
+     events={calenderdetails}
+/>
 
 
-    />
+
+
+
+
 
 
 </div>
