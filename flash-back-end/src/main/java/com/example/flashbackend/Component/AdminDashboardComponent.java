@@ -40,5 +40,7 @@ public class AdminDashboardComponent {
     public List<Login> getLoginDetails(){
         return loginRepository.findAll();
     }
-
+    public List<Event> getEventDetails(){
+        return eventRepository.findAll();
+    }
 }
