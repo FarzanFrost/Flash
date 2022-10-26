@@ -5,29 +5,12 @@ import {AuthenticationContext} from "./ContextFiles/Authentication/Authenticatio
 import axios from "axios";
 
 const EventReviewsCustomer = () => {
-    const serverLink = 'http://localhost:8080'
 
     const { changeContentVisible } = useContext( AuthenticationContext )
 
-    const [reviewDetails, setReviewDetails] = useState(null)
+    //const [reviewDetails, setReviewDetails] = useState(null)
 
-    //const { reviews } = useContext( EventReviewsCustomerContext )
-
-    useEffect( () => {
-            axios.get( serverLink + '/AllReviews').then(
-                ( response ) => {
-
-                    setReviewDetails( response.data )
-                    console.log( response.data )
-
-                }
-            ).catch(
-                () => {alert("Error!!! All Reviews")}
-            )
-
-        }, []
-
-    )
+    const { reviews } = useContext( EventReviewsCustomerContext )
 
     const star = "bi bi-star text-warning"
 
@@ -49,16 +32,16 @@ const EventReviewsCustomer = () => {
 
                     <div className="row text-center">
 
-                        { reviewDetails.length === 0 && <div> No Event Reviews Available </div> }
-                        { reviewDetails.length > 0 &&
+                        { reviews.length === 0 && <div> No Event Reviews Available </div> }
+                        { reviews.length > 0 &&
 
-                            reviewDetails.map( ( reviewDetails ) => (
+                            reviews.map( ( reviews ) => (
 
                                 <div className="col-md-4 my-3 shadow-lg p-4">
 
                                     <div className="d-flex">
 
-                                        <h2 className="h2 m-auto"> { reviewDetails.eventType } </h2>
+                                        <h2 className="h2 m-auto"> { reviews.eventType } </h2>
 
                                         <div className="dropdown m-auto me-0">
                                             <button className="btn bi-three-dots-vertical rounded-circle" type="button" data-bs-toggle="dropdown"
@@ -75,24 +58,24 @@ const EventReviewsCustomer = () => {
                                     </div>
 
                                     <p className="px-xl-3">
-                                        <i className="fas fa-quote-left pe-2"></i>{reviewDetails.comment}
+                                        <i className="fas fa-quote-left pe-2"></i>{reviews.comment}
                                     </p>
                                     <ul className="list-unstyled d-flex justify-content-center mb-0">
 
                                         <li>
-                                            <i className={ ( 0 < reviewDetails.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 0 < reviews.rate ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 1 < reviewDetails.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 1 < reviews.rate ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 2 < reviewDetails.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 2 < reviews.rate ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 3 < reviewDetails.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 3 < reviews.rate ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 4 < reviewDetails.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 4 < reviews.rate ) ? fillStar:star }></i>
                                         </li>
                                     </ul>
 
