@@ -36,4 +36,9 @@ public class AdminDashboard {
         return adminDashboardComponent.getCustomerCount();
     }
 
+    @GetMapping("/AdminLoginDetails")
+    public List<Login> getEmployees(){
+        return adminDashboardComponent.getLoginDetails();
+    }
+
 }
