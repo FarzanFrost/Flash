@@ -60,8 +60,8 @@ public class CustomerController {
     }
 
     @PostMapping("/updateCustomer")
-    public String updateCustomer(@RequestBody AddBankDetail updateCustomer){
-        return customerComponent.UpdateCustomer( updateCustomer );
+    public String updateCustomer(@RequestBody EditCustomer editCustomer){
+        return customerComponent.UpdateCustomer( editCustomer );
     }
 
     @PostMapping("/newReview")
