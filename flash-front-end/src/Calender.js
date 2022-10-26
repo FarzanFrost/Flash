@@ -47,7 +47,6 @@ const Calender = () => {
                 weekends={false}
                 events={[
                     {
-
                         
                         title: 'event 1', date: '2022-10-03'
                     }
