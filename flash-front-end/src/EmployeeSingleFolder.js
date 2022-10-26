@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import { useState } from 'react';
 import {SelectImageContext} from "./ContextFiles/EmployeeSelectImageContext";
 import axios from "axios";
@@ -7,15 +7,48 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 
 const SingleFolder = () => {
 
+    const serverLink = 'http://localhost:8080'
+
     const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns , ImageList} = useContext( SelectImageContext )
 
-    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( ImageList )
+    const [images, setImages ] = useState(ImageList);
 
-    const serverLink = 'http://localhost:8080'
     const { changeContentVisible } = useContext( AuthenticationContext )
 
+    // let { column1 , column2 , column3 } = null
 
-    const [images, setImages ] = useState("");
+    useEffect(
+
+        () => {
+
+            axios.get( serverLink + '/getImagesByEventId/' + currentFolderName ).then(
+
+                ( response ) => {
+
+                    setImages( response.data.galleryImages )
+                    console.log( "images list",response.data.galleryImages )
+                    // const { x , y , z } = breakImagesIntoThreeColumns( ImageList )
+                    // column1 = x;
+                    // column2 = y;
+                    // column3 = z;
+
+                }
+
+            ).catch(
+
+                () => {
+
+                    alert("images selection")
+
+                }
+
+            )
+
+        }
+
+    , [])
+
+    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( images )
 
     const[eventID,setEventID]=useState(currentFolderName );
     // const [ imageUrl, setImageUrl ] = useState("");
@@ -86,7 +119,7 @@ const SingleFolder = () => {
 
     }
 
-
+    console.log( "columns" , column1 , column2 ,column3 )
 
 
     return (
@@ -114,68 +147,68 @@ const SingleFolder = () => {
 
                         <div className="row p-4">
 
-                            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                            {column1 != null && <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
                                 {
-                                    column1.map( ( image ) => (
+                                    column1.map((image) => (
 
                                         <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
-                                                src={ image }
+                                                src={image.imageUrl}
                                                 className="w-100 shadow-1-strong rounded"
                                                 alt="Boat on Calm Water"
                                             />
 
                                         </div>
 
-                                    ) )
+                                    ))
 
                                 }
 
-                            </div>
+                            </div>}
 
-                            <div className="col-lg-4 mb-4 mb-lg-0">
+                            {column2 != null && <div className="col-lg-4 mb-4 mb-lg-0">
 
                                 {
-                                    column2.map( ( image ) => (
+                                    column2.map((image) => (
 
                                         <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
-                                                src={ image }
+                                                src={image.imageUrl}
                                                 className="w-100 shadow-1-strong rounded"
                                                 alt="Boat on Calm Water"
                                             />
 
                                         </div>
 
-                                    ) )
+                                    ))
 
                                 }
 
-                            </div>
+                            </div>}
 
-                            <div className="col-lg-4 mb-4 mb-lg-0 ">
+                            {column3 != null && <div className="col-lg-4 mb-4 mb-lg-0 ">
 
                                 {
-                                    column3.map( ( image ) => (
+                                    column3.map((image) => (
 
                                         <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
-                                                src={ image }
+                                                src={image.imageUrl}
                                                 className="w-100 shadow-1-strong rounded"
                                                 alt="Boat on Calm Water"
                                             />
 
                                         </div>
 
-                                    ) )
+                                    ))
 
                                 }
 
-                            </div>
+                            </div>}
 
                         </div>
 
