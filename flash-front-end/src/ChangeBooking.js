@@ -4,7 +4,7 @@ import {AuthenticationContext} from "./ContextFiles/Authentication/Authenticatio
 import axios from "axios";
 
 const ChangeBooking = () => {
-    const { changeContentVisible, eventDetails, setEventDetails } = useContext( AuthenticationContext )
+    const { changeContentVisible, eventDetails, assignEventDetails } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080'
 
@@ -28,7 +28,7 @@ const ChangeBooking = () => {
 
     const [ packages , setPackages ] = useState( 'Gold' )
 
-    useEffect(
+    /*useEffect(
         () => {
 
             setDate(eventDetails.date)
@@ -37,7 +37,7 @@ const ChangeBooking = () => {
             setAddress(eventDetails.address)
             setPackages(eventDetails.packages)
         }, []
-    )
+    )*/
 
     //console.log("eventId", eventID)
 
