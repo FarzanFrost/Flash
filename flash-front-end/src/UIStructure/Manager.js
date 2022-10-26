@@ -11,9 +11,13 @@ import AddEmployee from "../AddEmployee";
 import ManagerViewPackagesPurperty from "../ManagerViewPackagesPurperty";
 import NewPackage from "../NewPackage";
 import EditPackage from "../EditPackage";
+import {useLocation} from "react-router-dom";
 
 
 const Manager = () => {
+
+    const location = useLocation()
+    
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
     const showHideSideNav = () => {
@@ -55,7 +59,7 @@ const Manager = () => {
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#" onClick={ () => { location.state = null; logout() } }>Sign Out</a>
 
 
                     </div>
