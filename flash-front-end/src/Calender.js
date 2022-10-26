@@ -46,7 +46,7 @@ const Calender = () => {
     eventDetails.map(
         (events)=>{
             const calenderview={
-                "title":events.category,
+                "title":events.category+"-"+events.eventID,
                 "date":events.eventDate,
                 "address":events.address
 
@@ -59,6 +59,12 @@ const Calender = () => {
     }
 
 console.log(calenderdetails)
+
+    const displayEventDetails = ( id ) => {
+
+        alert( id.split("-")[1]  )
+
+    }
         return (
 <div>
 
@@ -69,8 +75,8 @@ console.log(calenderdetails)
         weekends={true}
         eventClick={
             function(arg){
-                alert(arg.event.title)
-                alert(arg.event.start)
+                displayEventDetails(arg.event.title)
+                // displayEventDetails(arg.event.start)
             }
         }
      events={calenderdetails}
