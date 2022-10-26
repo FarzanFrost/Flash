@@ -44,7 +44,7 @@ const Vieweventdetailsforadmin = () => {
 
         ).catch(
 
-            () => { alert( "Error!!! employee details ") }
+            () => { alert( "Error!!! Admin display event details ") }
 
         )
 
@@ -105,8 +105,8 @@ const Vieweventdetailsforadmin = () => {
                                             <th scope="col">Event Id</th>
                                             <th scope="col">Status</th>
                                             <th scope="col">Event Date</th>
-                                            <th scope="col">PackageID</th>
-                                            <th scope="col">CustomerID</th>
+                                            <th scope="col">Event ID</th>
+                                            {/*<th scope="col">CustomerID</th>*/}
                                             <th scope="col">Address</th>
                                             <th scope="col-2">More</th>
 
@@ -124,9 +124,9 @@ const Vieweventdetailsforadmin = () => {
                                             <th scope="col">{event.eventId}</th>
                                             <th scope="col">{event.status}</th>
                                             <th scope="col">{event.eventDate}</th>
-                                            <th scope="col">{event.PackageId}</th>
-                                            <th scope="col">{event.CustomerId}</th>
-                                            <th scope="col">{event.Address}</th>
+                                            <th scope="col">{event.eventID}</th>
+                                            {/*<th scope="col">{event.CustomerId}</th>*/}
+                                            <th scope="col">{event.address}</th>
                                             <th scope="col">{event}</th>
 
                                             <th scope="col">

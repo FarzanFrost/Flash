@@ -37,7 +37,7 @@ const AdminViewAllReviews = () => {
 
         ).catch(
 
-            () => { alert( "Error!!! Reviews ") }
+            () => { alert( "Error!!! Admin display Reviews ") }
 
         )
 
