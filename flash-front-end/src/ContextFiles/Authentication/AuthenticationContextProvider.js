@@ -16,6 +16,8 @@ const AuthenticationContextProvider = ( props ) => {
 
     const [ packagesDetail , setPackageDetail ] = useState( null )
 
+    const [ eventDetails, setEventDetails ] = useState(null)
+
     const authenticateUser = ( userType , setAuthenticated , setUserDetailsAfterAuthentication ) => {
 
         authenticated = setAuthenticated;

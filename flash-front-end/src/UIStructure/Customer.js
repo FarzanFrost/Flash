@@ -13,6 +13,7 @@ import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import {useLocation} from "react-router-dom";
 import CustomerViewPackagesPurperty from "../CustomerViewPackagesPurperty";
 import ChangeBooking from "../ChangeBooking";
+import CardDetail from "../CardDetail";
 
 
 const Customer = () => {
@@ -22,6 +23,9 @@ const Customer = () => {
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
     const { authenticateUser , contentVisible , changeContentVisible , logout } = useContext( AuthenticationContext )
+
+    console.log("details :", location.state.userDetailsAfterAuthentication)
+
 
     const showHideSideNav = () => {
 
@@ -161,6 +165,7 @@ const Customer = () => {
                     {contentVisible === 7 && <CustomerViewPackagesPurperty/>}
                     {contentVisible === 8 && <ChangeBooking/>}
                     {contentVisible === 9 && <CustomerViewPackagesPurperty/>}
+                    {contentVisible === 10 && <CardDetail/>}
 
 
 
