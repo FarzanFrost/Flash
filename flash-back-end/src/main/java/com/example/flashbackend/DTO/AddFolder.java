@@ -1,6 +1,6 @@
 package com.example.flashbackend.DTO;
 
-public class Addfolder {
+public class AddFolder {
 
     public int getFolderID() {
         return folderID;
@@ -14,7 +14,7 @@ public class Addfolder {
         return Name;
     }
 
-    public Addfolder(int folderID,int EventID,String Name) {
+    public AddFolder(int folderID, int EventID, String Name) {
         this.folderID=folderID;
         this.EventID=EventID;
         this.Name=Name;
