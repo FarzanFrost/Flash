@@ -2,10 +2,8 @@ package com.example.flashbackend.Component;
 
 import com.example.flashbackend.DAO.*;
 import com.example.flashbackend.DTO.*;
-import com.example.flashbackend.Entity.Customer;
-import com.example.flashbackend.Entity.Event;
+import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
-import com.example.flashbackend.Entity.Reviews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.math.BigInteger;
@@ -25,6 +23,9 @@ public class CustomerComponent {
 
     @Autowired
     ReviewsRepository ReviewsRepository;
+
+    @Autowired
+    FolderRepository folderRepository;
 
     public List<Customer> getCustomer(){
         return customerRepository.findAll();
@@ -86,5 +87,21 @@ public class CustomerComponent {
 //        return "done";
 //
 //    }
+
+    public String createFolders( BigInteger evenId , String folderName ){
+
+        folderRepository.insertFolder( evenId , folderName );
+//        folderRepository.insertFolder( evenId , "Family" );
+//        folderRepository.insertFolder( evenId , "Friends" );
+//        folderRepository.insertFolder( evenId , "Social Media" );
+        return "done";
+
+    }
+
+    public List<Folder> getFolders( BigInteger eventId ){
+
+        return folderRepository.findByEventId( eventId );
+
+    }
 
 }
