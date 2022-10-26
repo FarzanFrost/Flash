@@ -88,8 +88,8 @@ const SingleFolder = () => {
                     Folder : { currentFolderName }
                 </div>
                 <div>
-                         <input type="file" id="myFile" name="filename" onChange= {(e)=> setImage(e.target.files[0])}/>
-                         <button onClick={uploadImage}>Upload</button>
+                         <input className="btn btn-outline-primary me-1" type="file" id="myFile" name="filename" onChange= {(e)=> setImage(e.target.files[0])}/>
+                         <button className="btn btn-outline-primary" onClick={uploadImage}>Upload</button>
                 </div>
             </div>
             <div className="container-fluid d-flex p-2 flex-wrap justify-content-center " style={ { height : "555px" } }>
