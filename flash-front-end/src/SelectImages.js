@@ -1,11 +1,14 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { SelectImageContext } from "./ContextFiles/SelectImageContext";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import SingleFolder from "./SingleFolder";
 import Swal from 'sweetalert2'
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
 
 const SelectImages = () => {
+
+    const serverLink = 'http://localhost:8080'
 
     const { eventId } = useContext( AuthenticationContext )
 
@@ -13,7 +16,42 @@ const SelectImages = () => {
 
     const { ImageList , isFolderOpen , breakImagesIntoThreeColumns , AddImageToFolder , RemoveImageFromFolder , changeFolderOpenState } = useContext( SelectImageContext )
 
-    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( ImageList )
+    const [ selectedImages , setSelectedImages ] = useState(ImageList);
+
+    const selectImagesFromSource = () => {
+
+        axios.get( serverLink + '/getImagesByEventId/' + eventId ).then(
+
+            ( response ) => {
+
+                setSelectedImages( response.data.galleryImages )
+                console.log( "images customer list",response.data.galleryImages )
+
+            }
+
+        ).catch(
+
+            () => {
+
+                alert("images selection")
+
+            }
+
+        )
+
+    }
+
+    useEffect(
+
+        () => {
+
+            selectImagesFromSource()
+
+        }
+
+        , [])
+
+    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( selectedImages )
 
     const selectDeselectImages = ( e ) => {
 
@@ -51,20 +89,20 @@ const SelectImages = () => {
 
                             <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
-                                {
+                                { column1 !== null &&
                                     column1.map( ( image ) => (
 
                                         <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
-                                                src={ image }
+                                                src={ image.imageUrl }
                                                 className="w-100 shadow-1-strong rounded"
                                                 alt="Boat on Calm Water"
                                             />
 
                                             { isFolderOpen && <div className="form-check mt-1 ms-1">
 
-                                                <input className="form-check-input" type="checkbox" value={ image }
+                                                <input className="form-check-input" type="checkbox" value={ image.imageUrl }
                                                        id="flexCheckDefault" onChange={ (e) => selectDeselectImages( e ) }/>
                                                 <label className="form-check-label" htmlFor="flexCheckDefault">
 
@@ -84,20 +122,20 @@ const SelectImages = () => {
 
                             <div className="col-lg-4 mb-4 mb-lg-0">
 
-                                {
+                                { column2 !== null &&
                                     column2.map( ( image ) => (
 
                                         <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
-                                                src={ image }
+                                                src={ image.imageUrl }
                                                 className="w-100 shadow-1-strong rounded"
                                                 alt="Boat on Calm Water"
                                             />
 
                                             { isFolderOpen && <div className="form-check mt-1 ms-1">
 
-                                                <input className="form-check-input" type="checkbox" value={ image }
+                                                <input className="form-check-input" type="checkbox" value={ image.imageUrl }
                                                        id="flexCheckDefault" onChange={ (e) => selectDeselectImages( e ) }/>
                                                 <label className="form-check-label" htmlFor="flexCheckDefault">
 
@@ -117,20 +155,20 @@ const SelectImages = () => {
 
                             <div className="col-lg-4 mb-4 mb-lg-0 ">
 
-                                {
+                                { column3 !== null &&
                                     column3.map( ( image ) => (
 
                                         <div className="p-1 bg-dark mb-4 text-light">
 
                                             <img
-                                                src={ image }
+                                                src={ image.imageUrl }
                                                 className="w-100 shadow-1-strong rounded"
                                                 alt="Boat on Calm Water"
                                             />
 
                                             { isFolderOpen && <div className="form-check mt-1 ms-1">
 
-                                                <input className="form-check-input" type="checkbox" value={ image }
+                                                <input className="form-check-input" type="checkbox" value={ image.imageUrl }
                                                        id="flexCheckDefault" onChange={ (e) => selectDeselectImages( e ) }/>
                                                 <label className="form-check-label" htmlFor="flexCheckDefault">
 
