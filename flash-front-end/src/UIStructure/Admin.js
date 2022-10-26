@@ -10,10 +10,12 @@ import AdminDashboard from "../AdminDashboard";
 import AddEmployee from "../AddEmployee";
 import {useContext} from "react";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
+import {useLocation} from "react-router-dom";
 
 
 const Admin = () => {
 
+    const location = useLocation()
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
     const showHideSideNav = () => {
@@ -57,7 +59,7 @@ const Admin = () => {
                         <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-lg-5  " href="#" > <span className="sr-only"></span></a>
                         <a className="nav-item nav-link active  m-3 pb-2 pe-5 ps-lg-5  me-0" href="#" >Home <span className="sr-only"></span></a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 me-0" href="#">Book Now</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5  me-0"  href="#">Sign Out</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5  me-0"  href="#" onClick={ () => { location.state = null; logout() } }>Sign Out</a>
 
                     </div>
                 </div>

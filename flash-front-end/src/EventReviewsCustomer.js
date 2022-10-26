@@ -5,13 +5,42 @@ import {AuthenticationContext} from "./ContextFiles/Authentication/Authenticatio
 import axios from "axios";
 
 const EventReviewsCustomer = () => {
-
+    const serverLink = 'http://localhost:8080'
     const { changeContentVisible } = useContext( AuthenticationContext )
 
-    //const [reviewDetails, setReviewDetails] = useState(null)
+    const [reviewDetails, setReviewDetails] = useState(null)
 
-    const { reviews } = useContext( EventReviewsCustomerContext )
+    //const { reviews } = useContext( EventReviewsCustomerContext )
 
+    useEffect( () => {
+            axios.get( serverLink + '/AllReviews').then(
+                ( response ) => {
+
+                    setReviewDetails( response.data )
+                    console.log( response.data )
+
+                }
+            ).catch(
+                () => {alert("Error!!! All Reviews")}
+            )
+
+        }, []
+
+    )
+
+    const deleteReview = ( reviewID ) => {
+        console.log( reviewID )
+        axios.post( serverLink + '/deleteReviews' , {reviewID} ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete Review") }
+        )
+    }
+    const [show, setShow] = useState(false);
     const star = "bi bi-star text-warning"
 
     const fillStar = "bi bi-star-fill text-warning"
@@ -32,16 +61,18 @@ const EventReviewsCustomer = () => {
 
                     <div className="row text-center">
 
-                        { reviews.length === 0 && <div> No Event Reviews Available </div> }
-                        { reviews.length > 0 &&
+                        {/*{ reviews.length === 0 && <div> No Event Reviews Available </div> }*/}
+                        { reviewDetails !== null &&
 
-                            reviews.map( ( reviews ) => (
+                            reviewDetails.map(
+
+                                ( reviews ) => (
 
                                 <div className="col-md-4 my-3 shadow-lg p-4">
 
                                     <div className="d-flex">
 
-                                        <h2 className="h2 m-auto"> { reviews.eventType } </h2>
+                                        <h2 className="h2 m-auto">ReviewsID : { reviews.reviewsID } </h2>
 
                                         <div className="dropdown m-auto me-0">
                                             <button className="btn bi-three-dots-vertical rounded-circle" type="button" data-bs-toggle="dropdown"
@@ -50,7 +81,7 @@ const EventReviewsCustomer = () => {
                                             <ul className="dropdown-menu">
 
                                                 <li> <button className="dropdown-item"> Edit</button> </li>
-                                                <li> <button className="dropdown-item"> Delete</button> </li>
+                                                <li> <button className="dropdown-item" onClick={() => deleteReview( reviews.reviewsID ) }> Delete</button> </li>
 
                                             </ul>
                                         </div>

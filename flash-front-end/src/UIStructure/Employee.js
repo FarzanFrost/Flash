@@ -11,8 +11,10 @@ import Calender from "../Calender";
 import EventSelection from "../EventSelection";
 import EmployeeSelectImageContextProviderInterface from "../EmployeeSelectImageContextProviderInterface";
 import {AuthenticationContext} from "../ContextFiles/Authentication/AuthenticationContextProvider";
+import {useLocation} from "react-router-dom";
 
 const Employee = () => {
+    const location = useLocation()
     const [ isSideNavVisible , setIsSideNavVisible ] = useState( true );
 
     const showHideSideNav = () => {
@@ -54,7 +56,7 @@ const Employee = () => {
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Portfolio</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5 " href="#">About us</a>
                         <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Contact us</a>
-                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#">Sign Out</a>
+                        <a className="nav-item nav-link  m-3 pb-2 pe-5 ps-5" href="#" onClick={ () => { location.state = null; logout() } }>Sign Out</a>
 
 
                     </div>

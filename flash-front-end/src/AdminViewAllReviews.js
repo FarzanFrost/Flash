@@ -5,12 +5,12 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
-// import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
-
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import {useContext} from "react";
 
 const AdminViewAllReviews = () => {
 
-    // const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080';
 
@@ -85,6 +85,20 @@ const AdminViewAllReviews = () => {
         )
 
     } ,[])
+
+    const deleteReview = ( reviewID ) => {
+        console.log( reviewID )
+        axios.post( serverLink + '/AdminDeleteReview' , {reviewID} ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete Review") }
+        )
+    }
+
 
     return (
 
@@ -172,10 +186,11 @@ const AdminViewAllReviews = () => {
                                                 </Modal.Header>
                                                 <Modal.Body>{ review.comment }</Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button variant="dark" onClick={ () => AdminDeleteReview( review.reviewsID )}>
+
+                                                    <Button variant="dark" onClick={() => deleteReview( review.reviewsID ) }>
                                                         Delete Review
                                                     </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
+                                                    <Button variant="dark" onClick={ () => changeContentVisible( 0 ) }>
                                                         close
                                                     </Button>
                                                 </Modal.Footer>

@@ -13,6 +13,7 @@ import ViewPackagesPurperty from "../ViewPackagesPurperty";
 import {useLocation} from "react-router-dom";
 import CustomerViewPackagesPurperty from "../CustomerViewPackagesPurperty";
 import ChangeBooking from "../ChangeBooking";
+import EventReviewsCustomer from "../EventReviewsCustomer";
 import CardDetail from "../CardDetail";
 
 
@@ -156,7 +157,8 @@ const Customer = () => {
                     {/*<ChangeBooking/>*/}{/*no need*/}
                     {/*<ResetPasswordContextProviderInterface/>*/}{/*no need*/}
                     { contentVisible === 4 && <CustomerProfile/>}{/*profile*/}
-                    { contentVisible === 3 && <EventReviewsCustomerContextProviderInterface/>}{/*post reviews*/}
+                    {/*{ contentVisible === 3 && <EventReviewsCustomerContextProviderInterface/>}/!*post reviews*!/*/}
+                    { contentVisible === 3 && <EventReviewsCustomer/>}
                     { contentVisible === 0 && <EventSelection/>}{/*events*/}
                     { contentVisible === 1 && <NewEventBooking/>}{/*book here*/}
                     { contentVisible === 6 && <SelectImageContextProviderInterface/> }{/*no need*/}

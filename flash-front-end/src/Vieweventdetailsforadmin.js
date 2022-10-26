@@ -6,14 +6,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import {ModalHeader} from "react-bootstrap";
-// import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 
 
 const Vieweventdetailsforadmin = () => {
 
-    // const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080';
 
@@ -50,6 +50,19 @@ const Vieweventdetailsforadmin = () => {
         )
 
     } ,[])
+
+    const deleteEvent = ( eventID ) => {
+        console.log( eventID )
+        axios.post( serverLink + '/AdminDeleteEvent' , {eventID} ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete event") }
+        )
+    }
 
         return (
             <div className="h-100">
@@ -142,11 +155,11 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Body><Modal.Dialog>Longitude:</Modal.Dialog>{event.longitude}</Modal.Body>
                                                     <Modal.Body><Modal.Dialog>Latitude:</Modal.Dialog>{event.latitude}</Modal.Body>
                                                     <Modal.Footer>
-                                                        <Button variant="dark" onClick={handleClose}>
-                                                            Delete Event
+                                                        <Button variant="dark" onClick={() => deleteEvent( event.eventID ) }>
+                                                            Delete Review
                                                         </Button>
-                                                        <Button variant="dark" onClick={handleClose}>
-                                                            Close
+                                                        <Button variant="dark" onClick={ () => changeContentVisible( 0 ) }>
+                                                            close
                                                         </Button>
                                                     </Modal.Footer>
                                                 </Modal>

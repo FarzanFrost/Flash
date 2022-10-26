@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
 import com.example.flashbackend.Entity.Event;
+import com.example.flashbackend.DTO.DeleteReview;
 
 import java.math.BigInteger;
 import java.sql.Timestamp;
@@ -77,9 +78,9 @@ public class CustomerController {
     }
 
     @PostMapping("/deleteReviews")
-    public String deleteReview( @RequestBody BigInteger reviewId ){
+    public String deleteReview( @RequestBody DeleteReview deleteReview ){
 
-        return customerComponent.deleteReview( reviewId );
+        return customerComponent.deleteReview( deleteReview.getReviewID() );
 
     }
 
