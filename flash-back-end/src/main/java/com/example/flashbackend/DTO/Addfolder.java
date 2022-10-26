@@ -14,6 +14,15 @@ public class Addfolder {
         return Name;
     }
 
+    public Addfolder(int folderID,int EventID,String Name) {
+        this.folderID=folderID;
+        this.EventID=EventID;
+        this.Name=Name;
+
+    }
+
+
+
     private int folderID;
     private int EventID;
     private String Name;
