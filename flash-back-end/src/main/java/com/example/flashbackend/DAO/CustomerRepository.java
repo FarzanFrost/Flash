@@ -22,7 +22,7 @@ public interface CustomerRepository extends JpaRepository< Customer , BigInteger
     @Modifying
     @Query( value = "UPDATE customer SET FirstName = :firstName, LastName = :lastName, Gender = :gender, NIC = :nic, ContactNo = :contactNo WHERE CustomerID = :customerId", nativeQuery = true)
     @Transactional
-    void updateCustomer(@Param("firstName") String firstName, @Param("lastName") String lastName, @Param("gender") String gender, @Param("nic") String nic, @Param("contactNo") String contactNo);
+    void updateCustomer(@Param("customerId") BigInteger customerId, @Param("firstName") String firstName, @Param("lastName") String lastName, @Param("gender") String gender, @Param("nic") String nic, @Param("contactNo") String contactNo);
 
     @Modifying
     @Query( value = "UPDATE customer SET CardNo = :cardNo, CVCNo = :cvcNo, ExpiaryDate = :expiaryDate, CardType = :cardType WHERE CustomerID = :customerId", nativeQuery = true)
