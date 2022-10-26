@@ -3,9 +3,13 @@ import { SelectImageContext } from "./ContextFiles/SelectImageContext";
 import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import SingleFolder from "./SingleFolder";
 import Swal from 'sweetalert2'
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const SelectImages = () => {
 
+    const { eventId } = useContext( AuthenticationContext )
+
+    console.log( "select Image event Id : " , eventId )
 
     const { ImageList , isFolderOpen , breakImagesIntoThreeColumns , AddImageToFolder , RemoveImageFromFolder , changeFolderOpenState } = useContext( SelectImageContext )
 
