@@ -2,12 +2,21 @@ import React, {useState, useContext, useEffect} from 'react';
 import pic from './Images/booking.jpeg';
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 import axios from "axios";
+import {useLocation} from "react-router-dom";
 
 const NewEventBooking = () => {
 
     const serverLink = 'http://localhost:8080'
 
-    const { changeContentVisible, userDetailsAfterAuthentication } = useContext( AuthenticationContext )
+    const location = useLocation()
+
+    const { changeContentVisible, userDetailsAfterAuthentication, packagesDetail } = useContext( AuthenticationContext )
+
+    const customerDetail = location.state.userDetailsAfterAuthentication
+
+    const customerID = customerDetail.customer.customerID
+
+    const packageID = packagesDetail.packageID
 
     const [ eventType , setEventType ] = useState( 'Wedding' )
 
@@ -21,25 +30,40 @@ const NewEventBooking = () => {
 
     const [ packages , setPackages ] = useState( 'Gold' )
 
+    //const [allPackage, setAllPackage] = useState(null)
+
+    // useEffect( () => {
+    //
+    //     axios.get(serverLink + '/AllPackages').then(
+    //         (response) => {
+    //
+    //             setAllPackage(response.data)
+    //             console.log("data", response.data.packageID)
+    //         }
+    //     ).catch(
+    //         () => {alert("Error!!! All Packages")}
+    //     )
+    //
+    // }, [])
+
     const NewEvent = () => {
 
         const data = {
+
             eventType,
             date,
             startTime,
             endTime,
             address,
             packages,
-            // customerId,
-            // allPackage.packageId
+            customerID,
+            packageID
         }
 
         axios.post( serverLink + '/bookings' , data).then(
             ( response ) => {
 
                 if (response.data === "done" ){
-
-                    if (userDetailsAfterAuthentication.card)
                     changeContentVisible( 1 )
                 }
 
@@ -51,22 +75,6 @@ const NewEventBooking = () => {
         )
 
     }
-
-    const [allPackage, setAllPackage] = useState(null)
-
-    useEffect( () => {
-
-        axios.get(serverLink + '/AllPackages').then(
-            (response) => {
-
-                setAllPackage(response.data)
-                console.log(response.data)
-            }
-        ).catch(
-            () => {alert("Error!!! All Packages")}
-        )
-
-    }, [])
 
 
 
@@ -192,17 +200,16 @@ const NewEventBooking = () => {
                                                 </div>
                                             </div>
 
-                                            {allPackage !== null &&
-
-                                                allPackage.map(
-                                                    (allPackage) => (
+                                            {
+                                                packagesDetail.map(
+                                                    (packagesDetail) => (
 
                                                         <div className="form-group row mt-3 mx-3">
                                                             <label className="col-sm-4 col-form-label">Package</label>
                                                             <div className="col-sm-8">
                                                                 <select className="form-select"
                                                                         onChange={(e) => setPackages(e.target.value)}>
-                                                                    <option>{allPackage.name}</option>
+                                                                    <option>{packagesDetail.name}</option>
                                                                     {/*<option>Diamond</option>*/}
                                                                     {/*<option>Silver</option>*/}
                                                                     {/*<option>Gold</option>*/}
