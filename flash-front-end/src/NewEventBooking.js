@@ -18,6 +18,8 @@ const NewEventBooking = () => {
 
     const packageID = packagesDetail.packageID
 
+    console.log("id", packageID)
+
     const [ eventType , setEventType ] = useState( 'Wedding' )
 
     const [ date , setDate ] = useState( '' )
