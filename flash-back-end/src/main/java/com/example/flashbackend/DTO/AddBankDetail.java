@@ -4,70 +4,70 @@ import java.sql.Date;
 
 public class AddBankDetail {
 
-    private String FirstName;
+    private String firstName;
 
-    private String LastName;
+    private String lastName;
 
-    private String Gender;
+    private String gender;
 
-    private String NIC;
+    private String nic;
 
-    private String ContactNo;
+    private String contactNo;
 
-    private Integer CardNo;
+    private Integer cardNo;
 
-    private Integer CVCNo;
+    private Integer cvcNo;
 
-    private Date ExpiaryDate;
+    private Date expiaryDate;
 
-    private String CardType;
+    private String cardType;
 
-    public AddBankDetail(String FirstName, String LastName, String Gender, String NIC, String ContactNo, Integer CardNo, Integer CVCNo, Date ExpiaryDate, String CardType){
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.Gender = Gender;
-        this.NIC = NIC;
-        this.ContactNo = ContactNo;
-        this.CardNo = CardNo;
-        this.CVCNo = CVCNo;
-        this.ExpiaryDate = ExpiaryDate;
-        this.CardType = CardType;
+    public AddBankDetail(String firstName, String lastName, String gender, String nic, String contactNo, Integer cardNo, Integer cvcNo, Date expiaryDate, String cardType){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.nic = nic;
+        this.contactNo = contactNo;
+        this.cardNo = cardNo;
+        this.cvcNo = cvcNo;
+        this.expiaryDate = expiaryDate;
+        this.cardType = cardType;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public String getNIC() {
-        return NIC;
+        return nic;
     }
 
     public String getContactNo() {
-        return ContactNo;
+        return contactNo;
     }
 
     public Integer getCardNo() {
-        return CardNo;
+        return cardNo;
     }
 
     public Integer getCVCNo() {
-        return CVCNo;
+        return cvcNo;
     }
 
     public Date getExpiaryDate() {
-        return ExpiaryDate;
+        return expiaryDate;
     }
 
     public String getCardType() {
-        return CardType;
+        return cardType;
     }
 
 }
