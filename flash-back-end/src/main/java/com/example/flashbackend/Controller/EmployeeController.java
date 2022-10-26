@@ -42,13 +42,10 @@ public class EmployeeController {
 //    }
 
 
-    @PostMapping("/newFolder")
+    @PostMapping("/newfolder")
     public String addFolder(@RequestBody AddFolder addFolder){
         return employeeComponent.addFolder( addFolder );
     }
-
-
-
 
 
 }

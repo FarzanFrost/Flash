@@ -7,24 +7,24 @@ public class AddFolder {
     }
 
     public int getEventID() {
-        return EventID;
+        return eventID;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public AddFolder(int folderID, int EventID, String Name) {
+    public AddFolder(int folderID, int eventID, String name) {
         this.folderID=folderID;
-        this.EventID=EventID;
-        this.Name=Name;
+        this.eventID=eventID;
+        this.name=name;
 
     }
 
 
 
     private int folderID;
-    private int EventID;
-    private String Name;
+    private int eventID;
+    private String name;
 
 }
