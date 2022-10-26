@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import pic from './Images/booking.jpeg';
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 import axios from "axios";
@@ -7,9 +7,7 @@ const NewEventBooking = () => {
 
     const serverLink = 'http://localhost:8080'
 
-    const { userDetailsAfterAuthentication } = useContext( AuthenticationContext )
-
-    const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible, userDetailsAfterAuthentication } = useContext( AuthenticationContext )
 
     const [ eventType , setEventType ] = useState( 'Wedding' )
 
@@ -31,14 +29,17 @@ const NewEventBooking = () => {
             startTime,
             endTime,
             address,
-            packages
+            packages,
+            // customerId,
+            // allPackage.packageId
         }
 
-        axios.post( serverLink + '/Booking' , data).then(
+        axios.post( serverLink + '/bookings' , data).then(
             ( response ) => {
 
                 if (response.data === "done" ){
 
+                    if (userDetailsAfterAuthentication.card)
                     changeContentVisible( 1 )
                 }
 
@@ -50,6 +51,24 @@ const NewEventBooking = () => {
         )
 
     }
+
+    const [allPackage, setAllPackage] = useState(null)
+
+    useEffect( () => {
+
+        axios.get(serverLink + '/AllPackages').then(
+            (response) => {
+
+                setAllPackage(response.data)
+                console.log(response.data)
+            }
+        ).catch(
+            () => {alert("Error!!! All Packages")}
+        )
+
+    }, [])
+
+
 
     return (
         <div className="h-100">
@@ -173,17 +192,26 @@ const NewEventBooking = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="form-group row mt-3 mx-3">
-                                                <label className="col-sm-4 col-form-label">Package</label>
-                                                <div className="col-sm-8">
-                                                    <select className="form-select" onChange={ (e) => setPackages( e.target.value )}>
-                                                        <option>Platinum</option>
-                                                        <option>Diamond</option>
-                                                        <option>Silver</option>
-                                                        <option>Gold</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                            {allPackage !== null &&
+
+                                                allPackage.map(
+                                                    (allPackage) => (
+
+                                                        <div className="form-group row mt-3 mx-3">
+                                                            <label className="col-sm-4 col-form-label">Package</label>
+                                                            <div className="col-sm-8">
+                                                                <select className="form-select"
+                                                                        onChange={(e) => setPackages(e.target.value)}>
+                                                                    <option>{allPackage.name}</option>
+                                                                    {/*<option>Diamond</option>*/}
+                                                                    {/*<option>Silver</option>*/}
+                                                                    {/*<option>Gold</option>*/}
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    )
+                                                )
+                                            }
 
                                             <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
                                                 <button type="submit" variant="primary"
