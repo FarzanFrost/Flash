@@ -8,6 +8,8 @@ const ChangeBooking = () => {
 
     const serverLink = 'http://localhost:8080'
 
+    const [eventDetail, setEventDetail] = useState(null)
+
     const typeArray = [ 'Wedding' , 'Birthday' , 'Puberty' , 'Get together' , 'House warming' , 'Prize giving' ]
 
     const [ eventType , setEventType ] = useState( 'Wedding' )
@@ -36,6 +38,18 @@ const ChangeBooking = () => {
     )
 
     console.log("eventId", eventId)
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/Allevent').then(
+            (response) => {
+                setEventDetail(response.data)
+                console.log(response.data)
+            }
+        ).catch(
+            () => {alert("Error!!! All Events")}
+        )
+    })
 
     const editEvent = () => {
         const data = {
