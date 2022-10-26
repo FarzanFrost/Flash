@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
+import {ModalHeader} from "react-bootstrap";
 // import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
@@ -139,7 +140,10 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Header closeButton>
                                                         <Modal.Title>Event full Details</Modal.Title>
                                                     </Modal.Header>
-                                                    <Modal.Body>{}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>Start Time:</Modal.Title>{event.startTime}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>End Time:</Modal.Title>{event.endTime}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>Longitude:</Modal.Title>{event.longitude}</Modal.Body>
+                                                    <Modal.Body><Modal.Title>Latitude:</Modal.Title>{event.latitude}</Modal.Body>
                                                     <Modal.Footer>
                                                         <Button variant="dark" onClick={handleClose}>
                                                             Delete Review
