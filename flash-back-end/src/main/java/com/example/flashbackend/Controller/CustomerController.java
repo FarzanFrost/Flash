@@ -89,6 +89,13 @@ public class CustomerController {
 
     }
 
+    @PostMapping("/addFolder")
+    public String addFolder( @RequestBody AddFolder addFolder){
+
+        return customerComponent.createFolders( addFolder.getEventID() , addFolder.getName() );
+
+    }
+
 //    @PostMapping( "/deleteEvent" )
 //    public String deletePackage(@RequestBody DeleteEvent deleteEvent){
 //
