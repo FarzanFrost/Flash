@@ -1,17 +1,49 @@
-import  React from 'react'
+import React, {useEffect} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import axios from "axios";
 
 
 const ManagerViewAllReviews = () => {
+
+    const serverLink = 'http://localhost:8080'
+
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [ reviews , setReviews ] = useState( null )
+
+    useEffect(
+
+        () => {
+
+            axios.get( serverLink + "/Reviews" ).then(
+
+                ( response ) => {
+
+                    setReviews( response.data )
+
+                }
+
+            ).catch(
+
+                () => {
+
+                    alert( "manager reviews select" )
+
+                }
+
+            )
+
+        }
+
+    )
 
     return (
 
@@ -63,8 +95,8 @@ const ManagerViewAllReviews = () => {
                                     {/*<thead>*/}
 
                                     <tr>
-                                        <th scope="col">Reviewer</th>
-                                        <th scope="col">Event code</th>
+                                        {/*<th scope="col">Reviewer</th>*/}
+                                        <th scope="col">Review code</th>
                                         <th scope="col">Rating</th>
                                         <th scope="col">Details</th>
 
@@ -72,7 +104,53 @@ const ManagerViewAllReviews = () => {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
+
+                                    {
+
+                                        reviews !== null &&
+
+                                        reviews.map(
+
+                                            ( review ) => (
+
+                                                <tr>
+                                                    {/*<th scope="col">Thinesh</th>*/}
+                                                    <th scope="col">{review.reviewsID}</th>
+                                                    <th scope="col">{review.rate}</th>
+                                                    <th scope="col">
+
+                                                        <Button variant="light" onClick={handleShow}>
+                                                            Details
+                                                        </Button>
+
+                                                        <Modal show={show} onHide={handleClose}>
+                                                            <Modal.Header closeButton>
+                                                                <Modal.Title>Review</Modal.Title>
+                                                            </Modal.Header>
+                                                            <Modal.Body>{review.comment}</Modal.Body>
+                                                            <Modal.Footer>
+                                                                <Button variant="dark" onClick={handleClose}>
+                                                                    Delete Review
+                                                                </Button>
+                                                                <Button variant="dark" onClick={handleClose}>
+                                                                    close
+                                                                </Button>
+                                                            </Modal.Footer>
+                                                        </Modal>
+                                                    </th>
+
+
+
+                                                </tr>
+
+                                            )
+
+                                        )
+
+                                    }
+
+
+                                    {/*<tr>
                                         <th scope="col">Thinesh</th>
                                         <th scope="col">E101</th>
                                         <th scope="col">5</th>
@@ -97,7 +175,6 @@ const ManagerViewAllReviews = () => {
                                                 </Modal.Footer>
                                             </Modal>
                                         </th>
-
 
 
                                     </tr>
@@ -128,35 +205,7 @@ const ManagerViewAllReviews = () => {
                                         </th>
 
 
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Thinesh</th>
-                                        <th scope="col">E101</th>
-                                        <th scope="col">5</th>
-                                        <th scope="col">
-
-                                            <Button variant="light" onClick={handleShow}>
-                                                Details
-                                            </Button>
-
-                                            <Modal show={show} onHide={handleClose}>
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Review</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>It is a wonderfull studio system!</Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
-                                                    </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        close
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-                                        </th>
-
-
-                                    </tr>
+                                    </tr>*/}
                                     </tbody>
                                 </table>
                             </div>

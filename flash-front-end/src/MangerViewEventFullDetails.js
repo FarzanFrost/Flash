@@ -1,15 +1,17 @@
-import  React from 'react'
+import React, {useEffect} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import axios from "axios";
 
 
 
 const ManagerViewEventFullDetails = () => {
 
+    const serverLink = 'http://localhost:8080'
 
     const style3 = {
 
@@ -22,10 +24,35 @@ const ManagerViewEventFullDetails = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const NewEmployee = () => {
 
+    const [ events , setEvents ] = useState( null )
 
-    }
+    useEffect(
+
+        () => {
+
+            axios.get( serverLink + '/events' ).then(
+
+                ( response ) => {
+
+                    console.log( response.data )
+                    setEvents( response.data )
+
+                }
+
+            ).catch(
+
+                () => {
+
+                    alert("employee view events")
+
+                }
+
+            )
+
+        }
+
+    )
 
     return (
         <div className="h-100">
@@ -49,7 +76,7 @@ const ManagerViewEventFullDetails = () => {
                                             <option value="Wedding">Event Id</option>
                                             <option value="Birthday">Event</option>
                                             <option value="Puperty">Date</option>
-                                            <option value="Gettogether">Booking Date</option>
+                                            {/*<option value="Gettogether">Booking Date</option>*/}
                                             <option value="Housewarming">status</option>
 
 
@@ -82,7 +109,7 @@ const ManagerViewEventFullDetails = () => {
                                         <th scope="col">Event Id</th>
                                         <th scope="col">Event</th>
                                         <th scope="col">Date</th>
-                                        <th scope="col">Booking Date</th>
+                                        {/*<th scope="col">Booking Date</th>*/}
                                         <th scope="col">status</th>
                                         <th scope="col-2">More</th>
 
@@ -90,7 +117,94 @@ const ManagerViewEventFullDetails = () => {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
+
+                                    {
+
+                                        events !== null &&
+
+                                        events.map(
+
+                                            ( event ) => (
+
+                                                <tr>
+                                                    <th scope="col">{event.eventID}</th>
+                                                    <th scope="col">{event.category}</th>
+                                                    <th scope="col">{event.eventDate}</th>
+                                                    {/*<th scope="col">2022-11-18</th>*/}
+                                                    <th scope="col">{event.status}</th>
+
+                                                    <th scope="col">
+                                                        <Button variant="light" onClick={handleShow}>
+                                                            Details
+                                                        </Button>
+
+                                                        <Modal show={show} onHide={handleClose}>
+                                                            <Modal.Header closeButton>
+                                                                <Modal.Title>Event full Details</Modal.Title>
+                                                            </Modal.Header>
+                                                            <Modal.Body>
+
+                                                                <div className="card-body pb-lg-5">
+
+                                                                    <div className="table-responsive ">
+                                                                        <table className="table table-dark table-striped align-middle">
+
+                                                                            <thead className="align-middle">
+
+                                                                            <tr>
+                                                                                <th scope="col">Event Id</th>
+                                                                                <th scope="col">Event</th>
+                                                                                <th scope="col">Date</th>
+                                                                                {/*<th scope="col">Booking Date</th>*/}
+                                                                                <th scope="col">status</th>
+                                                                                <th scope="col">Event Location</th>
+                                                                                <th scope="col">Allocated Employees</th>
+
+
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <th scope="col">{event.eventID}</th>
+                                                                                <th scope="col">{event.category}</th>
+                                                                                <th scope="col">{event.eventDate}</th>
+                                                                                {/*<th scope="col">2022-11-18</th>*/}
+                                                                                <th scope="col">{event.status}</th>
+                                                                                <th scope="col">{event.address}</th>
+                                                                                <th scope="col">raj,kamal</th>
+
+
+
+
+                                                                            </tr>
+
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+
+                                                            </Modal.Body>
+                                                            <Modal.Footer>
+                                                                <Button variant="dark" onClick={handleClose}>
+                                                                    Delete Review
+                                                                </Button>
+                                                                <Button variant="dark" onClick={handleClose}>
+                                                                    close
+                                                                </Button>
+                                                            </Modal.Footer>
+                                                        </Modal>
+                                                    </th>
+
+
+                                                </tr>
+
+                                            )
+
+                                        )
+
+                                    }
+
+                                    {/*<tr>
                                         <th scope="col">E01</th>
                                         <th scope="col">Birthday</th>
                                         <th scope="col">2022-10-26</th>
@@ -172,7 +286,7 @@ const ManagerViewEventFullDetails = () => {
 
                                                                 <thead className="align-middle">
 
-                                                                {/*<thead>*/}
+                                                                <thead>
 
                                                                 <tr>
                                                                     <th scope="col">Event Id</th>
@@ -237,7 +351,7 @@ const ManagerViewEventFullDetails = () => {
                                             </Modal>
                                         </th>
 
-                                    </tr>
+                                    </tr>*/}
                                     </tbody>
                                 </table>
                             </div>
