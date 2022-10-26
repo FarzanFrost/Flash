@@ -1,13 +1,19 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import sliverPhoto from './Images/silver-package.png'
 import goldPhoto from './Images/gold-package_.png'
 import diamondPhoto from './Images/diamond-package.png'
 import platinumPhoto from './Images/platinum-package.png'
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
 
 
 const Vieweventdetailsforadmin = () => {
+
+    const serverLink = 'http://localhost:8080'
+
+    const { changeContentVisible , changePackageDetails } = useContext( AuthenticationContext )
 
     const style1 = {
 
@@ -20,6 +26,43 @@ const Vieweventdetailsforadmin = () => {
         backgroundColor:'#767676',
         color:'white',
     };
+
+    const [packagesDetails, setPackagesDetails] = useState( null )
+
+    useEffect( () => {
+
+        axios.get( serverLink + '/Packages' ).then(
+
+            ( response ) => {
+
+                setPackagesDetails( response.data )
+                console.log( response.data )
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! packages details ") }
+
+        )
+
+    } ,[])
+
+    const getPicture = ( name ) => {
+
+        if ( name === "Silver Package" ) return sliverPhoto
+        else if ( name === "Gold Package" ) return goldPhoto
+        else if ( name === "Platinum Package" ) return platinumPhoto
+        else if ( name === "Diamond Package" ) return diamondPhoto
+
+    }
+
+    const editPackagesButton = ( value ) => {
+
+        changePackageDetails( value )
+        changeContentVisible( 9 )
+
+    }
 
     return (
 
@@ -54,7 +97,7 @@ const Vieweventdetailsforadmin = () => {
                             <option value="PrizeGiving">Prize Giving</option>
                         </select>
                         <div className="btn ">
-                            <button className="btn btn-dark"  >Add Packages</button>
+                            <button className="btn btn-dark" type="button" onClick={ () => changeContentVisible( 8 ) }>Add Packages</button>
                         </div>
                     </div>
                     </div>
@@ -73,7 +116,59 @@ const Vieweventdetailsforadmin = () => {
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">
                                         <div className="row">
-                                            {/*Pupertry*/}
+
+                                            {
+
+                                                packagesDetails !== null &&
+
+                                                packagesDetails.map(
+
+                                                    ( packageDetails ) => (
+
+                                                        <div className="col-md-4 mb-3">
+                                                            <div className="card border-dark border-5 rounded-3">
+                                                                <center><img className="w-50 p-3 pb-0"  src={ getPicture( packageDetails.name ) }></img></center>
+                                                                <div className="card-body">
+                                                                    <div className="card-body">
+                                                                        <p className="card-text">
+                                                                            <h2 className="text-center pb-4">{ packageDetails.name }</h2>
+                                                                            <center>
+                                                                                <h5>{ packageDetails.photographer } Photographers</h5>
+                                                                                <h5>{ packageDetails.videographer } Videographers</h5>
+                                                                                <h5>{ packageDetails.pages } pages { packageDetails.frame } AlbumGlass top wood</h5>
+                                                                                { packageDetails.signatureFrame && <h5>1 Signature frame</h5> }
+                                                                                <h5>1 { packageDetails.frame } frame</h5>
+                                                                                { ( packageDetails.additional !== '' || packageDetails.additional !== null ) && <h5>packageDetails.additional</h5> }
+                                                                                <h5>{ packageDetails.extraPagePrice } per extra page</h5>
+                                                                                <h5> album desgin : { packageDetails.albumDesign }  </h5>
+                                                                                <h5> OutShoot Type : { packageDetails.outShootType }  </h5>
+                                                                            </center>
+                                                                            <h5>&nbsp;</h5>
+                                                                            <h5>&nbsp;</h5>
+                                                                            <h5>&nbsp;</h5>
+                                                                        </p>
+                                                                        <center><h5>Total payment:</h5></center>
+
+                                                                    </div>
+                                                                    <div className="card-footer bg-dark text-center" >
+                                                                        <small className="text-muted"><h5 className="text-light">Rs. { packageDetails.totalPayment }</h5></small>
+                                                                    </div>
+                                                                    <div className="card-body">
+                                                                        <div className="text-center">
+                                                                            <button className="btn" style={{...style3}} type="button" onClick={ () => editPackagesButton( packageDetails ) }>Edit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    )
+
+                                                )
+
+                                            }
+
+                                            {/*Pupertry
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <center><img className="w-50 p-3 pb-0"  src={sliverPhoto}></img></center>
@@ -211,7 +306,7 @@ const Vieweventdetailsforadmin = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            {/*Wedding*/}
+                                            Wedding
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <center><img className="w-50 p-3 pb-0"   src={sliverPhoto}/></center>
@@ -345,7 +440,7 @@ const Vieweventdetailsforadmin = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            {/*Birethday*/}
+                                            Birethday
                                             <div className="col-md-4 mb-3">
                                                 <div className="card border-dark border-5 rounded-3">
                                                     <center><img className="w-50 p-3 pb-0" src={sliverPhoto}></img></center>
@@ -476,7 +571,7 @@ const Vieweventdetailsforadmin = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div>*/}
 
 
 

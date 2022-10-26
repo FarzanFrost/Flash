@@ -50,14 +50,14 @@ import FolderStructuresCustomers from "./FolderStructuresCustomers";
 import ManagerDashboard from "./ManagerDashboard";
 import CustomerChat from "./CustomerChat";
 import EmployeeWorkView from "./EmployeeWorkView";
+import CloudinaryDemo from "./CloudinaryDemo";
 import AdminViewEventFullDetails from "./AdminViewEventFullDetails";
 import EmployeeSelectImageContextProviderInterface from "./EmployeeSelectImageContextProviderInterface";
-// azure
-import azureDemo from "./AzureDemo";
-import AzureDemo from "./AzureDemo";
+
 import ManagerAuthenticationContextProviderInterface from "./UIStructure/ManagerAuthenticationContextProviderInterface";
 import EmployeeAuthenticationContextProviderInterface
     from "./UIStructure/EmployeeAuthenticationContextProviderInterface";
+import AdminAuthenticationContextProviderInterface from "./UIStructure/AdminAuthenticationContextProviderInterface";
 
 function App() {
   return (
@@ -103,7 +103,7 @@ function App() {
               {/*<Route exact path="/Customer" element={ <Customer/> } />*/}
               <Route exact path="/Employee" element={ <EmployeeAuthenticationContextProviderInterface/> } />
               <Route exact path="/Manager" element={ <ManagerAuthenticationContextProviderInterface/> } />
-              <Route exact path="/Admin" element={ <Admin/> } />
+              <Route exact path="/Admin" element={ <AdminAuthenticationContextProviderInterface/> } />
               <Route exact path="/EventReviews" element={ <EventReviewsCustomerContextProviderInterface/> } />
               <Route exact path="/ViewPhotos" element={ <ViewPhotos/> } />
               <Route exact path="/UploadEditedPhotos" element={ <UploadEditedPhotos/> } />
@@ -130,8 +130,7 @@ function App() {
               <Route exact path="/CustomerChat" element={ <CustomerChat/> } />
               <Route exact path="/WorkView" element={ <EmployeeWorkView/> } />
               <Route exact path="/EmployeeFolder" element={ <EmployeeSelectImageContextProviderInterface/> } />
-              {/*azure sample*/}
-              <Route exact path="/AzureDemo" element={<AzureDemo/>}/>
+              <Route exact path="/CloudinaryDemo" element={ <CloudinaryDemo/> } />
 
           </Routes>
 

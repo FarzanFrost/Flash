@@ -1,10 +1,33 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import {EventReviewsCustomerContext} from "./ContextFiles/EventReviewsCustomerContext";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import axios from "axios";
 
 const EventReviewsCustomer = () => {
+    const serverLink = 'http://localhost:8080'
 
-    const { reviews } = useContext( EventReviewsCustomerContext )
+    const { changeContentVisible } = useContext( AuthenticationContext )
+
+    const [reviewDetails, setReviewDetails] = useState(null)
+
+    //const { reviews } = useContext( EventReviewsCustomerContext )
+
+    useEffect( () => {
+            axios.get( serverLink + '/AllReviews').then(
+                ( response ) => {
+
+                    setReviewDetails( response.data )
+                    console.log( response.data )
+
+                }
+            ).catch(
+                () => {alert("Error!!! All Reviews")}
+            )
+
+        }, []
+
+    )
 
     const star = "bi bi-star text-warning"
 
@@ -26,16 +49,16 @@ const EventReviewsCustomer = () => {
 
                     <div className="row text-center">
 
-                        { reviews.length === 0 && <div> No Event Reviews Available </div> }
-                        { reviews.length > 0 &&
+                        { reviewDetails.length === 0 && <div> No Event Reviews Available </div> }
+                        { reviewDetails.length > 0 &&
 
-                            reviews.map( ( review ) => (
+                            reviewDetails.map( ( reviewDetails ) => (
 
                                 <div className="col-md-4 my-3 shadow-lg p-4">
 
                                     <div className="d-flex">
 
-                                        <h2 className="h2 m-auto"> { review.eventType } </h2>
+                                        <h2 className="h2 m-auto"> { reviewDetails.eventType } </h2>
 
                                         <div className="dropdown m-auto me-0">
                                             <button className="btn bi-three-dots-vertical rounded-circle" type="button" data-bs-toggle="dropdown"
@@ -52,26 +75,24 @@ const EventReviewsCustomer = () => {
                                     </div>
 
                                     <p className="px-xl-3">
-                                        <i className="fas fa-quote-left pe-2"></i>Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic
-                                        tenetur.
+                                        <i className="fas fa-quote-left pe-2"></i>{reviewDetails.comment}
                                     </p>
                                     <ul className="list-unstyled d-flex justify-content-center mb-0">
 
                                         <li>
-                                            <i className={ ( 0 < review.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 0 < reviewDetails.rating ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 1 < review.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 1 < reviewDetails.rating ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 2 < review.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 2 < reviewDetails.rating ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 3 < review.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 3 < reviewDetails.rating ) ? fillStar:star }></i>
                                         </li>
                                         <li>
-                                            <i className={ ( 4 < review.rating ) ? fillStar:star }></i>
+                                            <i className={ ( 4 < reviewDetails.rating ) ? fillStar:star }></i>
                                         </li>
                                     </ul>
 

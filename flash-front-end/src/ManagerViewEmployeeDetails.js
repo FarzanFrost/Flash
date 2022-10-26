@@ -31,6 +31,28 @@ const ManagerViewEmployeeDetails = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const deleteEmployee = ( id ) => {
+
+        axios.post( serverLink + '/deleteEmployee' , id-- ).then(
+
+            ( response ) => {
+
+                if ( response.data === "done" ){
+
+                    setShow(false);
+
+                }
+
+            }
+
+        ).catch(
+
+            () => { alert( "Error!!! add employee") }
+
+        )
+
+    }
+
     useEffect( () => {
 
         axios.get( serverLink + '/Employees' ).then(
@@ -44,7 +66,7 @@ const ManagerViewEmployeeDetails = () => {
 
         ).catch(
 
-            () => { alert( "Error!!! employee details ") }
+            () => { alert( "Error!!! eventDetail error ") }
 
         )
 
@@ -142,7 +164,7 @@ const ManagerViewEmployeeDetails = () => {
 
                                                         <Modal show={show} onHide={handleClose} size="lg">
                                                             <Modal.Header closeButton>
-                                                                <Modal.Title>Review</Modal.Title>
+                                                                <Modal.Title>Employee</Modal.Title>
                                                             </Modal.Header>
                                                             <Modal.Body>
                                                                 <Modal.Body>
@@ -158,10 +180,13 @@ const ManagerViewEmployeeDetails = () => {
                                                                                 <tr>
                                                                                     <th scope="col">NO</th>
                                                                                     <th scope="col">Firstname</th>
+                                                                                    <th scope="col">Lastname</th>
+                                                                                    <th scope="col">email</th>
                                                                                     <th scope="col">NIC</th>
                                                                                     <th scope="col">Gender</th>
                                                                                     <th scope="col">Contact No</th>
                                                                                     <th scope="col">Type</th>
+                                                                                    <th scope="col">Joined Date & Time</th>
 
 
 
@@ -171,10 +196,13 @@ const ManagerViewEmployeeDetails = () => {
                                                                                 <tr>
                                                                                     <th scope="col">{ employeeCount }</th>
                                                                                     <th scope="col">{ employee.firstName }</th>
+                                                                                    <th scope="col">{ employee.lastName }</th>
+                                                                                    <th scope="col">{ employee.login.email }</th>
                                                                                     <th scope="col">{ employee.nic }</th>
                                                                                     <th scope="col">{ employee.gender }</th>
                                                                                     <th scope="col">{ employee.contactNo }</th>
                                                                                     <th scope="col">{ employee.type }</th>
+                                                                                    <th scope="col">{ employee.login.dateTime }</th>
 
 
 
@@ -189,8 +217,8 @@ const ManagerViewEmployeeDetails = () => {
 
                                                             </Modal.Body>
                                                             <Modal.Footer>
-                                                                <Button variant="dark" onClick={handleClose}>
-                                                                    Delete Review
+                                                                <Button variant="dark" onClick={ () => deleteEmployee( employee.employeeID ) }>
+                                                                    Delete Employee
                                                                 </Button>
                                                                 <Button variant="dark" onClick={handleClose}>
                                                                     close
