@@ -34,6 +34,18 @@ public class AddBankDetail {
         this.cardType = cardType;
     }
 
+    public AddBankDetail(String firstName, String lastName, String gender, String nic, String contactNo) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.nic = nic;
+        this.contactNo = contactNo;
+    }
+
+    public AddBankDetail(){
+
+    }
+
     public String getFirstName() {
         return firstName;
     }
