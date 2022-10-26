@@ -11,6 +11,9 @@ public class AddFolder {
         this.name = name;
     }
 
+    public AddFolder() {
+    }
+
     public BigInteger getEventID() {
         return eventID;
     }
