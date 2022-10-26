@@ -58,6 +58,7 @@ const NewEventBooking = () => {
 
                 <div className="container py-5 h-100">
 
+
                     <div className="row d-flex justify-content-center align-items-center h-100">
 
                         <div className="col-xl-10 my-5 py-2 my-lg-1 py-lg-1 my-xl-0 py-xl-0">

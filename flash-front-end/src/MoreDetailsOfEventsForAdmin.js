@@ -97,13 +97,6 @@ const MoreDetailsOfEventsForAdmin = () => {
                                     </div>
 
                                     <br/>
-                                    {/*<div className="container shadow p-3  bg-white rounded ">*/}
-                                    {/*    <div className="row">*/}
-                                    {/*        <div className="col-6 col-sm-4">Review</div>*/}
-                                    {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
-                                    {/*    </div>*/}
-
-                                    {/*</div>*/}
 
                                 </div>
 
@@ -213,20 +206,8 @@ const MoreDetailsOfEventsForAdmin = () => {
                                     </div>
 
                                     <br/>
-                                    {/*<div className="container shadow p-3  bg-white rounded ">*/}
-                                    {/*    <div className="row">*/}
-                                    {/*        <div className="col-6 col-sm-4">Review</div>*/}
-                                    {/*        <div className="col-6 col-sm-6">Best quality service in fair price</div>*/}
-                                    {/*    </div>*/}
-
-                                    {/*</div>*/}
 
                                 </div>
-
-                                {/*<div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">*/}
-                                {/*    <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Booking</a>*/}
-                                {/*    <a href="#" className="btn bg-dark text-light m-2 p-2">Edit Review</a><br/><br/>*/}
-                                {/*</div>*/}
 
                             </div>
 

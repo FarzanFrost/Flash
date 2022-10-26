@@ -20,6 +20,7 @@ public class AdminEventComponent {
     }
 
     public List<Event> getEvents(){
+
         return eventRepository.findAll();
     }
 
