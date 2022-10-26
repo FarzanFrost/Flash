@@ -11,44 +11,50 @@ const SingleFolder = () => {
 
     const { currentFolderName , changeFolderOpenState , imagesInFolder , breakImagesIntoThreeColumns , ImageList} = useContext( SelectImageContext )
 
-    const [images, setImages ] = useState(ImageList);
+    const [images, setImages ] = useState("");
+
+    const [ selectedImages , setSelectedImages ] = useState(ImageList);
+
+    const [ imageUploadStatus , setImageUploadStatus ] = useState( false )
 
     const { changeContentVisible } = useContext( AuthenticationContext )
 
     // let { column1 , column2 , column3 } = null
 
+    const selectImagesFromSource = () => {
+
+        axios.get( serverLink + '/getImagesByEventId/' + currentFolderName ).then(
+
+            ( response ) => {
+
+                setSelectedImages( response.data.galleryImages )
+                console.log( "images list",response.data.galleryImages )
+
+            }
+
+        ).catch(
+
+            () => {
+
+                alert("images selection")
+
+            }
+
+        )
+
+    }
+
     useEffect(
 
         () => {
 
-            axios.get( serverLink + '/getImagesByEventId/' + currentFolderName ).then(
-
-                ( response ) => {
-
-                    setImages( response.data.galleryImages )
-                    console.log( "images list",response.data.galleryImages )
-                    // const { x , y , z } = breakImagesIntoThreeColumns( ImageList )
-                    // column1 = x;
-                    // column2 = y;
-                    // column3 = z;
-
-                }
-
-            ).catch(
-
-                () => {
-
-                    alert("images selection")
-
-                }
-
-            )
+            selectImagesFromSource()
 
         }
 
     , [])
 
-    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( images )
+    const { column1 , column2 , column3 } = breakImagesIntoThreeColumns( selectedImages )
 
     const[eventID,setEventID]=useState(currentFolderName );
     // const [ imageUrl, setImageUrl ] = useState("");
@@ -63,6 +69,7 @@ const SingleFolder = () => {
             uploadImage( images[ i ] )
 
         }
+        selectImagesFromSource()
 
     }
 
