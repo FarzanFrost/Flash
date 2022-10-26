@@ -39,6 +39,7 @@ public class EmployeeComponent {
     }
 
     public String addPhotos(AddPhotos addPhotos){
+        System.out.println( "hi how are ;you " + addPhotos.getImageUrl() );
         galleryImagesRepository.insertPhotos( addPhotos.getEventID() , addPhotos.getImageUrl() );
         return "done";
     }
