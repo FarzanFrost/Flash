@@ -59,7 +59,7 @@ const NewEventBooking = () => {
             address,
             packages,
             customerID,
-            packageID
+            //packageID
         }
 
         axios.post( serverLink + '/bookings' , data).then(
@@ -202,25 +202,23 @@ const NewEventBooking = () => {
                                                 </div>
                                             </div>
 
-                                            {
-                                                allPackage.map(
-                                                    (packagesDetail) => (
-
                                                         <div className="form-group row mt-3 mx-3">
                                                             <label className="col-sm-4 col-form-label">Package</label>
                                                             <div className="col-sm-8">
                                                                 <select className="form-select"
                                                                         onChange={(e) => setPackages(e.target.value)}>
+                                                                    {
+                                                                        allPackage.map(
+                                                                            (packagesDetail) => (
                                                                     <option>{packagesDetail.name}</option>
-                                                                    {/*<option>Diamond</option>*/}
-                                                                    {/*<option>Silver</option>*/}
-                                                                    {/*<option>Gold</option>*/}
+                                                                            )
+
+                                                                        )
+                                                                    }
                                                                 </select>
                                                             </div>
                                                         </div>
-                                                    )
-                                                )
-                                            }
+
 
                                             <div className="d-flex gap-xxl-5 mb-2 align-items-center justify-content-center pt-5 pb-4">
                                                 <button type="submit" variant="primary"
