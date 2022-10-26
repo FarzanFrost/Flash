@@ -5,11 +5,26 @@ import loginPhoto from "./Images/backgroudphoto.jpg";
 import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import {useEffect} from "react";
+import axios from "axios";
 
 
 
 const AdminViewEmployeeDetailspage = () => {
 
+    const serverLink = 'http://localhost:8080'
+    const [ employeeDetails , setEmployeeDetails ] = useState( null )
+    useEffect( () => {
+        axios.get( serverLink + '/AdminEmployees' ).then(
+            ( response ) => {
+                setEmployeeDetails( response.data )
+                console.log( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! employee details ") }
+        )
+    } ,[])
+    let employeeCount  = 1
 
     const style3 = {
 
@@ -97,275 +112,79 @@ const AdminViewEmployeeDetailspage = () => {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <th scope="col">01</th>
-                                        <th scope="col">Nirmalan</th>
-                                        <th scope="col">955978844V</th>
-                                        <th scope="col">Male</th>
-                                        <th scope="col">0774053110</th>
-                                        <th scope="col">Photographer</th>
-                                        <th scope="col">
-                                            <Button variant="light" onClick={handleShow}>
-                                                Details
-                                            </Button>
+                                    { employeeDetails !== null &&
 
-                                            <Modal show={show} onHide={handleClose} size="lg">
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Employee details</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>
-                                                    <div className="card-body pb-lg-5">
+                                        employeeDetails.map(
 
-                                                        <div className="table-responsive ">
-                                                            <table className="table table-dark table-striped align-middle">
+                                            ( employee ) => (
 
-                                                                <thead className="align-middle">
+                                                <tr>
+                                                    <th scope="col">{ employeeCount++ }</th>
+                                                    <th scope="col"> { employee.firstName } </th>
+                                                    <th scope="col">{ employee.nic }</th>
+                                                    <th scope="col">{ employee.gender }</th>
+                                                    <th scope="col">{ employee.contactNo }</th>
+                                                    <th scope="col">{ employee.type }</th>
+                                                    <th scope="col">
+                                                        <Button variant="light" onClick={handleShow}>
+                                                            Details
+                                                        </Button>
 
-                                                                {/*<thead>*/}
+                                                        <Modal show={show} onHide={handleClose} size="lg">
+                                                            <Modal.Header closeButton>
+                                                                <Modal.Title>Review</Modal.Title>
+                                                            </Modal.Header>
+                                                            <Modal.Body>
+                                                                <Modal.Body>
+                                                                    <div className="card-body pb-lg-5">
 
-                                                                <tr>
-                                                                    <th scope="col">NO</th>
-                                                                    <th scope="col">Firstname</th>
-                                                                    <th scope="col">NIC</th>
-                                                                    <th scope="col">Gender</th>
-                                                                    <th scope="col">Contact No</th>
-                                                                    <th scope="col">Type</th>
+                                                                        <div className="table-responsive ">
+                                                                            <table className="table table-dark table-striped align-middle">
 
+                                                                                <thead className="align-middle">
 
+                                                                                {/*<thead>*/}
 
-                                                                </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                <tr>
-                                                                    <th scope="col">01</th>
-                                                                    <th scope="col">Nirmalan</th>
-                                                                    <th scope="col">955978844V</th>
-                                                                    <th scope="col">Male</th>
-                                                                    <th scope="col">0774053110</th>
-                                                                    <th scope="col">Photographer</th>
-
-
-
-
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="col">01</th>
-                                                                    <th scope="col">Nirmalan</th>
-                                                                    <th scope="col">955978844V</th>
-                                                                    <th scope="col">Male</th>
-                                                                    <th scope="col">0774053110</th>
-                                                                    <th scope="col">Photographer</th>
+                                                                                <tr>
+                                                                                    <th scope="col">NO</th>
+                                                                                    <th scope="col">Firstname</th>
+                                                                                    <th scope="col">NIC</th>
+                                                                                    <th scope="col">Gender</th>
+                                                                                    <th scope="col">Contact No</th>
+                                                                                    <th scope="col">Type</th>
+                                                                                </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                <tr>
+                                                                                    <th scope="col">{ employeeCount }</th>
+                                                                                    <th scope="col">{ employee.firstName }</th>
+                                                                                    <th scope="col">{ employee.nic }</th>
+                                                                                    <th scope="col">{ employee.gender }</th>
+                                                                                    <th scope="col">{ employee.contactNo }</th>
+                                                                                    <th scope="col">{ employee.type }</th>
+                                                                                </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </Modal.Body>
 
 
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="col">01</th>
-                                                                    <th scope="col">Nirmalan</th>
-                                                                    <th scope="col">955978844V</th>
-                                                                    <th scope="col">Male</th>
-                                                                    <th scope="col">0774053110</th>
-                                                                    <th scope="col">Photographer</th>
-
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
-                                                    </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        close
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-                                        </th>
-
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">01</th>
-                                        <th scope="col">Nirmalan</th>
-                                        <th scope="col">955978844V</th>
-                                        <th scope="col">Male</th>
-                                        <th scope="col">0774053110</th>
-                                        <th scope="col">Photographer</th>
-                                        <th scope="col">
-                                            <Button variant="light" onClick={handleShow}>
-                                                Details
-                                            </Button>
-
-                                            <Modal show={show} onHide={handleClose} size="lg">
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Review</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>
-                                                    <Modal.Body>
-                                                        <div className="card-body pb-lg-5">
-
-                                                            <div className="table-responsive ">
-                                                                <table className="table table-dark table-striped align-middle">
-
-                                                                    <thead className="align-middle">
-
-                                                                    {/*<thead>*/}
-
-                                                                    <tr>
-                                                                        <th scope="col">NO</th>
-                                                                        <th scope="col">Firstname</th>
-                                                                        <th scope="col">NIC</th>
-                                                                        <th scope="col">Gender</th>
-                                                                        <th scope="col">Contact No</th>
-                                                                        <th scope="col">Type</th>
-
-
-
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    <tr>
-                                                                        <th scope="col">01</th>
-                                                                        <th scope="col">Nirmalan</th>
-                                                                        <th scope="col">955978844V</th>
-                                                                        <th scope="col">Male</th>
-                                                                        <th scope="col">0774053110</th>
-                                                                        <th scope="col">Photographer</th>
-
-
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="col">01</th>
-                                                                        <th scope="col">Nirmalan</th>
-                                                                        <th scope="col">955978844V</th>
-                                                                        <th scope="col">Male</th>
-                                                                        <th scope="col">0774053110</th>
-                                                                        <th scope="col">Photographer</th>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="col">01</th>
-                                                                        <th scope="col">Nirmalan</th>
-                                                                        <th scope="col">955978844V</th>
-                                                                        <th scope="col">Male</th>
-                                                                        <th scope="col">0774053110</th>
-                                                                        <th scope="col">Photographer</th>
-
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </Modal.Body>
-
-
-                                                </Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
-                                                    </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        close
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-                                        </th>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">01</th>
-                                        <th scope="col">Nirmalan</th>
-                                        <th scope="col">955978844V</th>
-                                        <th scope="col">Male</th>
-                                        <th scope="col">0774053110</th>
-                                        <th scope="col">Photographer</th>
-                                        <th scope="col">
-                                            <Button variant="light" onClick={handleShow}>
-                                                Details
-                                            </Button>
-
-                                            <Modal show={show} onHide={handleClose} size="lg">
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Review</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>
-                                                    <Modal.Body>
-                                                        <div className="card-body pb-lg-5">
-
-                                                            <div className="table-responsive ">
-                                                                <table className="table table-dark table-striped align-middle">
-
-                                                                    <thead className="align-middle">
-
-                                                                    {/*<thead>*/}
-
-                                                                    <tr>
-                                                                        <th scope="col">NO</th>
-                                                                        <th scope="col">Firstname</th>
-                                                                        <th scope="col">NIC</th>
-                                                                        <th scope="col">Gender</th>
-                                                                        <th scope="col">Contact No</th>
-                                                                        <th scope="col">Type</th>
-
-
-
-                                                                    </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    <tr>
-                                                                        <th scope="col">01</th>
-                                                                        <th scope="col">Nirmalan</th>
-                                                                        <th scope="col">955978844V</th>
-                                                                        <th scope="col">Male</th>
-                                                                        <th scope="col">0774053110</th>
-                                                                        <th scope="col">Photographer</th>
-
-
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="col">01</th>
-                                                                        <th scope="col">Nirmalan</th>
-                                                                        <th scope="col">955978844V</th>
-                                                                        <th scope="col">Male</th>
-                                                                        <th scope="col">0774053110</th>
-                                                                        <th scope="col">Photographer</th>
-
-
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="col">01</th>
-                                                                        <th scope="col">Nirmalan</th>
-                                                                        <th scope="col">955978844V</th>
-                                                                        <th scope="col">Male</th>
-                                                                        <th scope="col">0774053110</th>
-                                                                        <th scope="col">Photographer</th>
-
-                                                                    </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                            </div>
-                                                        </div>
-                                                    </Modal.Body>
-
-                                                </Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        Delete Review
-                                                    </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
-                                                        close
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-                                        </th>
-
-                                    </tr>
+                                                            </Modal.Body>
+                                                            <Modal.Footer>
+                                                                <Button variant="dark" onClick={handleClose}>
+                                                                    Delete Review
+                                                                </Button>
+                                                                <Button variant="dark" onClick={handleClose}>
+                                                                    close
+                                                                </Button>
+                                                            </Modal.Footer>
+                                                        </Modal>
+                                                    </th>
+                                                </tr>
+                                            )
+                                        )
+                                    }
                                     </tbody>
                                 </table>
                             </div>
