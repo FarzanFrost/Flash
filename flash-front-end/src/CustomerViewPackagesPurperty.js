@@ -62,32 +62,32 @@ const Vieweventdetailsforadmin = () => {
                 </div>
             </center>
 
-            <div className=" row">
-                <div className="col-md-6">
-                    <div className=" mx-5 m-2 border-dark border-4"
-                         style={{width: '48rem', left: '16rem'}}>
-                        <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"
-                               placeholder="Example input"></input>
-                    </div>
-                </div>
+            {/*<div className=" row">*/}
+            {/*    <div className="col-md-6">*/}
+            {/*        <div className=" mx-5 m-2 border-dark border-4"*/}
+            {/*             style={{width: '48rem', left: '16rem'}}>*/}
+            {/*            <input type="text" className="form-control border-3 border-dark" id="formGroupExampleInput"*/}
+            {/*                   placeholder="Example input"></input>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
 
 
-                <div className="col-md-6">
-                    <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>
-                        <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"
-                                data-bs-toggle="dropdown">
-                            <option value="All">All</option>
-                            <option value="Wedding">Wedding</option>
-                            <option value="Birthday">Birthday</option>
-                            <option value="Puperty">Puperty</option>
-                            <option value="Gettogether">Get together</option>
-                            <option value="Housewarming">House warming</option>
-                            <option value="PrizeGiving">Prize Giving</option>
-                        </select>
-                    </div>
-                </div>
+                {/*<div className="col-md-6">*/}
+                {/*    <div className="dropdown position-relative mx-5 m-2" style={{left: '16rem'}}>*/}
+                {/*        <select className="btn btn-dark dropdown-toggle" type="button" id="Filter"*/}
+                {/*                data-bs-toggle="dropdown">*/}
+                {/*            <option value="All">All</option>*/}
+                {/*            <option value="Wedding">Wedding</option>*/}
+                {/*            <option value="Birthday">Birthday</option>*/}
+                {/*            <option value="Puperty">Puperty</option>*/}
+                {/*            <option value="Gettogether">Get together</option>*/}
+                {/*            <option value="Housewarming">House warming</option>*/}
+                {/*            <option value="PrizeGiving">Prize Giving</option>*/}
+                {/*        </select>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
-            </div>
+            {/*</div>*/}
 
 
 
