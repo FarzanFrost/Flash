@@ -51,9 +51,9 @@ const Vieweventdetailsforadmin = () => {
 
     } ,[])
 
-    const deleteEvent = ( id ) => {
-        console.log( id )
-        axios.post( serverLink + '/AdminDeleteEvent' , id ).then(
+    const deleteEvent = ( eventID ) => {
+        console.log( eventID )
+        axios.post( serverLink + '/AdminDeleteEvent' , {eventID} ).then(
             ( response ) => {
                 if ( response.data === "done" ){
                     setShow(false);
