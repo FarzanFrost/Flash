@@ -6,14 +6,14 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import {ModalHeader} from "react-bootstrap";
-// import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 
 
 const Vieweventdetailsforadmin = () => {
 
-    // const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080';
 
@@ -161,7 +161,7 @@ const Vieweventdetailsforadmin = () => {
                                                         <Button variant="dark" onClick={() => deleteEvent( event.eventID ) }>
                                                             Delete Review
                                                         </Button>
-                                                        <Button variant="dark" onClick={handleClose}>
+                                                        <Button variant="dark" onClick={ () => changeContentVisible( 0 ) }>
                                                             close
                                                         </Button>
                                                     </Modal.Footer>
