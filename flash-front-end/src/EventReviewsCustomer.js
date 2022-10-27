@@ -112,7 +112,8 @@ const EventReviewsCustomer = () => {
 
                                     <div>
 
-                                        <Link to={ "/" }> Event Details </Link>
+                                        <button type="button"
+                                                className="btn btn-dark btn-block mx-3 mt-4" onClick={ () => changeContentVisible( 2 ) }>  Event Details </button>
 
                                     </div>
 
