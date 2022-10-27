@@ -184,13 +184,13 @@ const AdminDashboard = () =>{
 
             <div className="container-fluid py-4">
 
-                <div className="btn-toolbar mb-2 mb-2 justify-content-md-end rounded-2">
+                {/*<div className="btn-toolbar mb-2 mb-2 justify-content-md-end rounded-2">*/}
 
-                    <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle btn-dark text-white">
-                        This week
-                    </button>
+                {/*    <button type="button" className="btn btn-sm btn-outline-secondary dropdown-toggle btn-dark text-white">*/}
+                {/*        This week*/}
+                {/*    </button>*/}
 
-                </div>
+                {/*</div>*/}
 
                 <div className="row">  {/*start the row*/}
 
@@ -317,46 +317,46 @@ const AdminDashboard = () =>{
 
                     </div>
 
-                    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> {/*start one container*/}
+                    {/*<div className="col-xl-3 col-sm-6 mb-xl-0 mb-4"> /!*start one container*!/*/}
 
-                        <div className="card shadow rounded-3">
+                    {/*    <div className="card shadow rounded-3">*/}
 
-                            <div className="card-body p-3">
+                    {/*        <div className="card-body p-3">*/}
 
-                                <div className="row bg-body">
+                    {/*            <div className="row bg-body">*/}
 
-                                    <div className="col-8">
+                    {/*                <div className="col-8">*/}
 
-                                        <div className="numbers">
+                    {/*                    <div className="numbers">*/}
 
-                                            <p className="text-sm mb-0 text-uppercase font-weight-bold">
-                                                Total Income
-                                            </p>
-                                            <h5 className="font-weight-bolder">
-                                                $145,000
-                                            </h5>
+                    {/*                        <p className="text-sm mb-0 text-uppercase font-weight-bold">*/}
+                    {/*                            Total Income*/}
+                    {/*                        </p>*/}
+                    {/*                        <h5 className="font-weight-bolder">*/}
+                    {/*                            $145,000*/}
+                    {/*                        </h5>*/}
 
-                                        </div>
+                    {/*                    </div>*/}
 
-                                    </div>
+                    {/*                </div>*/}
 
-                                    <div className="col-3 text-end">
+                    {/*                <div className="col-3 text-end">*/}
 
-                                        <div className="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                    {/*                    <div className="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">*/}
 
-                                            <img src={income} className="img-fluid rounded-circle h-100" aria-hidden="true"/>
+                    {/*                        <img src={income} className="img-fluid rounded-circle h-100" aria-hidden="true"/>*/}
 
-                                        </div>
+                    {/*                    </div>*/}
 
-                                    </div>
+                    {/*                </div>*/}
 
-                                </div>
+                    {/*            </div>*/}
 
-                            </div>
+                    {/*        </div>*/}
 
-                        </div>
+                    {/*    </div>*/}
 
-                    </div>
+                    {/*</div>*/}
 
                 </div>
 
@@ -393,74 +393,74 @@ const AdminDashboard = () =>{
 
                 </div>
 
-                <div className="table-responsive"> {/*table start*/}
+                {/*<div className="table-responsive"> /!*table start*!/*/}
 
-                    <table className="table table-striped table-sm text-center">
+                {/*    <table className="table table-striped table-sm text-center">*/}
 
-                        <thead>
-                        <tr>
-                            <th scope="col">Event</th>
-                            <th scope="col">Total Count</th>
-                            <th scope="col">Finish Events</th>
-                            <th scope="col">Pending Events</th>
-                            <th scope="col">Working Employees</th>
-                        </tr>
-                        </thead>
+                {/*        <thead>*/}
+                {/*        <tr>*/}
+                {/*            <th scope="col">Event</th>*/}
+                {/*            <th scope="col">Total Count</th>*/}
+                {/*            <th scope="col">Finish Events</th>*/}
+                {/*            <th scope="col">Pending Events</th>*/}
+                {/*            <th scope="col">Working Employees</th>*/}
+                {/*        </tr>*/}
+                {/*        </thead>*/}
 
-                        <tbody>
-                        <tr>
+                {/*        <tbody>*/}
+                {/*        <tr>*/}
 
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Birthday</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Birthday</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Get together</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Get together</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>House warming</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>House warming</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Prize giving</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
-                        </tbody>
+                {/*        <tr>*/}
+                {/*            <td>Prize giving</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
+                {/*        </tbody>*/}
 
-                    </table>
+                {/*    </table>*/}
 
-                </div>
+                {/*</div>*/}
 
             </div> {/*end*/}
 
