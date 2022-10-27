@@ -75,34 +75,34 @@ const Vieweventdetailsforadmin = () => {
 
                             <h2 className="text-center mt-3" >Event Details</h2>
 
-                            <div className="row">
-                                <div className="col-xs-8 col-xs-offset-2">
-                                    <div className="input-group ">
-                                        <div className="input-group-btn search-panel">
+                {/*            <div className="row">*/}
+                {/*                <div className="col-xs-8 col-xs-offset-2">*/}
+                {/*                    <div className="input-group ">*/}
+                {/*                        <div className="input-group-btn search-panel">*/}
 
-                                            <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"
-                                                    data-bs-toggle="dropdown">
-                                                <option value="All">All</option>
-                                                <option value="Wedding">Event Id</option>
-                                                <option value="EventId">Event</option>
-                                                <option value="Date">Date</option>
-                                                <option value="BookingDate">Booking Date</option>
-                                                <option value="status">status</option>
+                {/*                            <select className="btn btn-dark dropdown-toggle  "   type="button" id="Filter"*/}
+                {/*                                    data-bs-toggle="dropdown">*/}
+                {/*                                <option value="All">All</option>*/}
+                {/*                                <option value="Wedding">Event Id</option>*/}
+                {/*                                <option value="EventId">Event</option>*/}
+                {/*                                <option value="Date">Date</option>*/}
+                {/*                                <option value="BookingDate">Booking Date</option>*/}
+                {/*                                <option value="status">status</option>*/}
 
 
-                                            </select>
-                                        </div>
+                {/*                            </select>*/}
+                {/*                        </div>*/}
 
-                                        <input type="hidden" name="search_param" value="all" id="search_param"></input>
-                                        <input type="text" className="form-control" name="x"
-                                               placeholder="Search term..."></input>
-                                        <span className="input-group-btn">
-                    <button className="btn btn-default" type="button"><span
-                        className="glyphicon glyphicon-search"></span></button>
-                </span>
-                                    </div>
-                                </div>
-                            </div>
+                {/*                        <input type="hidden" name="search_param" value="all" id="search_param"></input>*/}
+                {/*                        <input type="text" className="form-control" name="x"*/}
+                {/*                               placeholder="Search term..."></input>*/}
+                {/*                        <span className="input-group-btn">*/}
+                {/*    <button className="btn btn-default" type="button"><span*/}
+                {/*        className="glyphicon glyphicon-search"></span></button>*/}
+                {/*</span>*/}
+                {/*                    </div>*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
 
 
 
