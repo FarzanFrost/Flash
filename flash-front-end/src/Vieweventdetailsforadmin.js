@@ -51,6 +51,19 @@ const Vieweventdetailsforadmin = () => {
 
     } ,[])
 
+    const deleteEvent = ( id ) => {
+        console.log( id )
+        axios.post( serverLink + '/AdminDeleteEvent' , id ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete event") }
+        )
+    }
+
         return (
             <div className="h-100">
 
@@ -145,7 +158,7 @@ const Vieweventdetailsforadmin = () => {
                                                     <Modal.Body><Modal.Title>Longitude:</Modal.Title>{event.longitude}</Modal.Body>
                                                     <Modal.Body><Modal.Title>Latitude:</Modal.Title>{event.latitude}</Modal.Body>
                                                     <Modal.Footer>
-                                                        <Button variant="dark" onClick={handleClose}>
+                                                        <Button variant="dark" onClick={() => deleteEvent( event.eventID ) }>
                                                             Delete Review
                                                         </Button>
                                                         <Button variant="dark" onClick={handleClose}>
