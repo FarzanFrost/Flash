@@ -62,7 +62,7 @@ const EventSelection = () => {
                                                     <img className="w-100 p-3 pb-0" src={birthday}></img>
                                                     <div className="card-body">
                                                         <div className="text-center">
-                                                            <a href="#" className="btn" style={{...style3}}>Packages</a>
+                                                            <a href="#" className="btn" style={{...style3}} onClick={ () => changeContentVisible(7)}>Packages</a>
                                                         </div>
                                                     </div>
                                                 </div>
