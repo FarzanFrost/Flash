@@ -43,6 +43,20 @@ const AdminViewAllReviews = () => {
 
     } ,[])
 
+    const deleteReview = ( reviewID ) => {
+        console.log( reviewID )
+        axios.post( serverLink + '/AdminDeleteReview' , {reviewID} ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete Review") }
+        )
+    }
+
+
     return (
 
         <div className="h-100">
@@ -128,7 +142,7 @@ const AdminViewAllReviews = () => {
                                                 </Modal.Header>
                                                 <Modal.Body>{ review.comment }</Modal.Body>
                                                 <Modal.Footer>
-                                                    <Button variant="dark" onClick={handleClose}>
+                                                    <Button variant="dark" onClick={() => deleteReview( review.reviewsID ) }>
                                                         Delete Review
                                                     </Button>
                                                     <Button variant="dark" onClick={handleClose}>
