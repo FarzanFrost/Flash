@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 @Component
 public class CustomerComponent {
@@ -26,6 +29,9 @@ public class CustomerComponent {
 
     @Autowired
     FolderRepository folderRepository;
+
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     public List<Customer> getCustomer(){
         return customerRepository.findAll();
@@ -46,6 +52,73 @@ public class CustomerComponent {
 
     public String addNewEvent( AddEvent addEvent ){
         eventRepository.insertEvent( addEvent.getStatus(), addEvent.getAdvanceAmount(), addEvent.getEventDate(), addEvent.getStartTime(), addEvent.getEndTime(), addEvent.getAddress(), addEvent.getLatitude(), addEvent.getLongitude(), addEvent.getExtraPage(), addEvent.getCategory(), addEvent.getDelivered(), addEvent.getCustomerId(), addEvent.getPackageId() );
+
+        List<Event> events = eventRepository.findAll();
+
+        BigInteger eventId = null;
+
+        Random random = new Random();
+
+        for (int i = 0; i < events.size(); i++) {
+
+            if ( events.get(i).getFolders().size() == 0 && events.get(i).getEmployees().size() == 0 ){
+
+                eventId = events.get(i).getEventID();
+                System.out.println( eventId );
+
+            }
+
+        }
+
+        if ( eventId != null ){
+
+            createFolders( eventId , "Family" );
+            createFolders( eventId , "Friends" );
+            createFolders( eventId , "Social Media" );
+
+            List<Employee> employees = employeeRepository.findAll();
+
+            List<Employee> employees1 = new ArrayList<>();
+
+            for (int i = 0; i < employees.size(); i++) {
+
+                if (  employees.get(i).getType() == "manager" || employees.get(i).getType() == "admin"  ){
+
+                    System.out.println("manager or admin");
+
+                }else{
+
+                    employees1.add( employees.get(i) );
+
+                }
+
+            }
+
+            if ( employees1.size() != 0 ){
+
+                int random1 = random.nextInt( employees1.size() );
+                int random2 = random.nextInt( employees1.size() );
+                int random3 = random.nextInt( employees1.size() );
+
+
+                Optional<Event> event = eventRepository.findById( eventId );
+                if ( event.isPresent() ){
+
+                    List<Employee> employees2 = event.get().getEmployees();
+                    employees2.add( employees1.get( random1 ) );
+                    employees2.add( employees1.get( random2 ) );
+                    employees2.add( employees1.get( random3 ) );
+
+                    event.get().setEmployees( employees2 );
+
+                    eventRepository.save( event.get() );
+
+                }
+
+            }
+
+        }
+
         return "done";
     }
 
@@ -88,12 +161,9 @@ public class CustomerComponent {
 //
 //    }
 
-    public String createFolders( BigInteger evenId , String folderName ){
+    public String createFolders( BigInteger eventId , String folderName ){
 
-        folderRepository.insertFolder( evenId , folderName );
-//        folderRepository.insertFolder( evenId , "Family" );
-//        folderRepository.insertFolder( evenId , "Friends" );
-//        folderRepository.insertFolder( evenId , "Social Media" );
+        folderRepository.insertFolder( eventId , folderName );
         return "done";
 
     }
