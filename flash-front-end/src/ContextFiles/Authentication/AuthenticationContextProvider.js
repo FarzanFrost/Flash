@@ -24,6 +24,14 @@ const AuthenticationContextProvider = ( props ) => {
 
     }
 
+    const [ eventId , setEventId ] = useState( null );
+
+    const assignEventId = ( eventId ) => {
+
+        setEventId( eventId )
+
+    }
+
     const authenticateUser = ( userType , setAuthenticated , setUserDetailsAfterAuthentication ) => {
 
         authenticated = setAuthenticated;
@@ -173,7 +181,7 @@ const AuthenticationContextProvider = ( props ) => {
 
     return(
 
-        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout , packagesDetail , changePackageDetails , userDetailsAfterAuthentication , eventDetails , assignEventDetails } }>
+        <AuthenticationContext.Provider value={ { authenticated , authenticateUser , login , signUp , contentVisible , changeContentVisible , logout , packagesDetail , changePackageDetails , userDetailsAfterAuthentication , eventDetails , assignEventDetails , assignEventId , eventId } }>
 
             { props.children }
 

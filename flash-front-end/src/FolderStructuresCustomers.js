@@ -1,10 +1,28 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {SelectImageContext} from "./ContextFiles/SelectImageContext";
 import Swal from 'sweetalert2'
+import axios from "axios";
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 const FolderStructuresCustomers = () => {
 
+    const serverLink = 'http://localhost:8080'
+
+    const { eventId } = useContext( AuthenticationContext )
+
     const { folderList , changeFolderOpenState } = useContext( SelectImageContext )
+
+    const [ folders , setFolders ] = useState( folderList );
+
+    // useEffect(
+    //
+    //     () => {
+    //
+    //         axios.get()
+    //
+    //     }
+    //
+    // )
 
     const createNewFolder = () => {
 
@@ -30,18 +48,59 @@ const FolderStructuresCustomers = () => {
                 /* Here we have to use useFetch to send folder name to server*/
                 if ( result.value !== ""){
 
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Folder Created',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                    const data = {
+                        eventID:eventId,
+                        name:result.value
+                    }
+
+                    axios.post( serverLink + "/addFolder" , data ).then(
+
+                        ( response ) => {
+
+                            if ( response.data === "done" ){
+
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Folder Created',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+
+                            }else {
+
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Failed to create folder 1',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+
+                            }
+
+                        }
+
+                    ).catch(
+
+                        () => {
+
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Failed to create folder 2',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+
+                        }
+
+                    )
+
+
 
                 }else{
 
                     Swal.fire({
                         icon: 'error',
-                        title: 'Failed to create folder',
+                        title: 'Failed to create folder 3',
                         showConfirmButton: false,
                         timer: 1500
                     })

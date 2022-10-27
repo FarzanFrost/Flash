@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 import java.math.BigInteger;
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 
 public interface FolderRepository extends JpaRepository<Folder , BigInteger> {
 
@@ -19,6 +20,11 @@ public interface FolderRepository extends JpaRepository<Folder , BigInteger> {
     @Query( value = "INSERT INTO Folder (EventID,Name) VALUES (  :eventID, :name );" , nativeQuery = true)
     @Transactional
     void insertFolder( @Param("eventID") BigInteger eventID , @Param("name") String name);
+
+    @Modifying
+    @Query( value = "SELECT * FROM Folder WHERE EventID = :eventID" , nativeQuery = true)
+    @Transactional
+    List<Folder> findByEventId(@Param("eventID") BigInteger eventID);
 }
 
 

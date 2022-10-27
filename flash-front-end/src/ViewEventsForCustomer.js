@@ -25,7 +25,7 @@ const ViewEventsForCustomer = () => {
         color:'white'
     };
 
-    const { changeContentVisible, eventDetails, assignEventDetails } = useContext( AuthenticationContext )
+    const { changeContentVisible, eventDetails, assignEventDetails , assignEventId } = useContext( AuthenticationContext )
 
     //const [eventDetails, setEventDetails] = useState(null)
 
@@ -105,7 +105,10 @@ const ViewEventsForCustomer = () => {
 
                                         <div className="container pt-3 pb-3 ps-5 pe-5 mx-lg-5">
                                             <a className="btn bg-dark text-light m-2 p-2" style={{...style3}}
-                                               onClick={() => changeContentVisible(6)}>View Gallery</a>
+                                               onClick={() => {
+                                                   assignEventId( eventDetails.eventID )
+                                                   changeContentVisible(6)
+                                               }}>View Gallery</a>
                                             <a href="#" className="btn bg-dark text-light m-2 p-2"
                                                onClick={() => changeContentVisible(8)}>Edit Booking</a>
                                             <a href="#" className="btn bg-dark text-light m-2 p-2"

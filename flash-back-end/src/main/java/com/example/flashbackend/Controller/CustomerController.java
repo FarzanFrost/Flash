@@ -1,13 +1,11 @@
 package com.example.flashbackend.Controller;
 
 import com.example.flashbackend.DTO.*;
+import com.example.flashbackend.Entity.*;
 import com.example.flashbackend.Entity.Package;
-import com.example.flashbackend.Entity.Reviews;
-import com.example.flashbackend.Entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.example.flashbackend.Component.CustomerComponent;
-import com.example.flashbackend.Entity.Event;
 import com.example.flashbackend.DTO.DeleteReview;
 
 import java.math.BigInteger;
@@ -81,6 +79,20 @@ public class CustomerController {
     public String deleteReview( @RequestBody DeleteReview deleteReview ){
 
         return customerComponent.deleteReview( deleteReview.getReviewID() );
+
+    }
+
+    @GetMapping( "/getFolders/{eventId}" )
+    public List<Folder> getFolders( @PathVariable BigInteger eventId ){
+
+        return customerComponent.getFolders( eventId );
+
+    }
+
+    @PostMapping("/addFolder")
+    public String addFolder( @RequestBody AddFolder addFolder){
+
+        return customerComponent.createFolders( addFolder.getEventID() , addFolder.getName() );
 
     }
 
