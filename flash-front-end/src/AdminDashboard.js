@@ -67,8 +67,8 @@ const AdminDashboard = () =>{
         Tooltip,
         Legend
     );
-    const data = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    const [ data , setData ] = useState( {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
         datasets: [
             {
                 label: "First dataset",
@@ -76,22 +76,62 @@ const AdminDashboard = () =>{
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
-            },
+            }/*,
             {
                 label: "Second dataset",
                 data: [33, 25, 35, 51, 54, 76],
                 fill: false,
                 borderColor: "#742774"
-            }
+            }*/
         ]
-    };
+    } )
 
     const [ loginDetails , setLoginDetails ] = useState( null )
     useEffect( () => {
         axios.get( serverLink + '/AdminLoginDetails' ).then(
             ( response ) => {
+
+                const details = response.data
+
+                // const z = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] > '10'  )
+                const month1 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '1'  )
+                const month2 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '2'  )
+                const month3 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '3'  )
+                const month4 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '4'  )
+                const month5 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '5'  )
+                const month6 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '6'  )
+                const month7 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '7'  )
+                const month8 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '8'  )
+                const month9 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '9'  )
+                const month10 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '10'  )
+                const month11 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '11'  )
+                const month12 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '12'  )
+
+                const arr = [ month1.length ,month2.length ,month3.length ,month4.length ,month5.length ,month6.length ,month7.length ,month8.length ,month9.length ,month10.length ,month11.length ,month12.length  ]
+
                 setLoginDetails( response.data )
-                console.log( response.data )
+
+                setData( {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                    datasets: [
+                        {
+                            label: "Users",
+                            data: arr,
+                            fill: true,
+                            backgroundColor: "rgba(75,192,192,0.2)",
+                            borderColor: "rgba(75,192,192,1)"
+                        }/*,
+            {
+                label: "Second dataset",
+                data: [33, 25, 35, 51, 54, 76],
+                fill: false,
+                borderColor: "#742774"
+            }*/
+                    ]
+                } )
+                console.log(  "pakki" ,  response.data )
+                // console.log(  "pakki2" ,  z )
+
             }
         ).catch(
             () => { alert( "Error!!! employee details ") }
