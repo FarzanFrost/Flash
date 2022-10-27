@@ -6,13 +6,13 @@ import { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
-import {useContext} from "@types/react";
+import {useContext} from "react";
 import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
 
 
 
 const ManagerViewEventFullDetails = () => {
-    
+
     const { changeContentVisible } = useContext( AuthenticationContext )
     const serverLink = 'http://localhost:8080'
 
