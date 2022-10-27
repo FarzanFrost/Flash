@@ -186,7 +186,7 @@ const ManagerViewEventFullDetails = () => {
                                                             </Modal.Body>
                                                             <Modal.Footer>
                                                                 <Button variant="dark" onClick={handleClose}>
-                                                                    Delete Review
+                                                                    Delete Event
                                                                 </Button>
                                                                 <Button variant="dark" onClick={handleClose}>
                                                                     close
