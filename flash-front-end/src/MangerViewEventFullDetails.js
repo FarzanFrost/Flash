@@ -198,7 +198,7 @@ const ManagerViewEventFullDetails = () => {
 
                                                             </Modal.Body>
                                                             <Modal.Footer>
-                                                                <Button variant="dark" onClick={handleClose}>
+                                                                <Button variant="dark" onClick={() => deleteEvent( event.eventID ) }>
                                                                     Delete Event
                                                                 </Button>
                                                                 <Button variant="dark" onClick={handleClose}>
