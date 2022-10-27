@@ -5,6 +5,8 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class EditEvent {
+    private BigInteger eventID;
+
     private Date eventDate;
 
     private Time startTime;
@@ -31,7 +33,8 @@ public class EditEvent {
 
     private BigInteger packageId;
 
-    public EditEvent(Date eventDate, Time startTime, Time endTime, String status, String advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Boolean delivered){
+    public EditEvent(BigInteger eventID, Date eventDate, Time startTime, Time endTime, String status, String advancedAmount, BigInteger customerId, BigInteger packageId, String address, String latitude, String longitude, Integer extraPage, String category, Boolean delivered){
+        this.eventID = eventID;
         this.eventDate = eventDate;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -47,6 +50,9 @@ public class EditEvent {
         this.packageId = packageId;
     }
 
+    public BigInteger getEventID() {
+        return eventID;
+    }
     public Date getEventDate() {
         return eventDate;
     }

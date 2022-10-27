@@ -50,7 +50,7 @@ public class CustomerComponent {
     }
 
     public String updateEvent( EditEvent editEvent){
-        eventRepository.updateEvent( editEvent.getStatus(), editEvent.getAdvancedAmount(), editEvent.getEventDate(), editEvent.getStartTime(), editEvent.getEndTime(), editEvent.getAddress(), editEvent.getLatitude(), editEvent.getLongitude(), editEvent.getExtraPage(), editEvent.getCategory(), editEvent.getDelivered(), editEvent.getCustomerId(), editEvent.getPackageId());
+        eventRepository.updateEvent( editEvent.getEventID(), editEvent.getStatus(), editEvent.getAdvancedAmount(), editEvent.getEventDate(), editEvent.getStartTime(), editEvent.getEndTime(), editEvent.getAddress(), editEvent.getLatitude(), editEvent.getLongitude(), editEvent.getExtraPage(), editEvent.getCategory(), editEvent.getDelivered(), editEvent.getCustomerId(), editEvent.getPackageId());
         return "done";
     }
 
