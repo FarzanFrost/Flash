@@ -62,7 +62,7 @@ public class Event {
 
     @ManyToMany
     @JoinTable( name = "EventRelationship" , joinColumns = @JoinColumn( name = "EventID") , inverseJoinColumns = @JoinColumn( name = "EmployeeID" ))
-    @JsonIgnore
+//    @JsonIgnore
     private List<Employee> employees;
 
     @OneToMany( mappedBy = "event")
