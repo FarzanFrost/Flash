@@ -54,6 +54,19 @@ const ManagerViewEventFullDetails = () => {
 
     )
 
+    const deleteEvent = ( eventID ) => {
+        console.log( eventID )
+        axios.post( serverLink + '/AdminDeleteEvent' , {eventID} ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete event") }
+        )
+    }
+
     return (
         <div className="h-100">
 
