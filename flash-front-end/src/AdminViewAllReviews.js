@@ -115,7 +115,7 @@ const AdminViewAllReviews = () => {
                                         <th scope="col">Reviewer ID</th>
                                         <th scope="col">Date Time</th>
                                         <th scope="col">Rating</th>
-                                        <th scope="col">Comment</th>
+                                        <th scope="col">More</th>
 
                                     </tr>
                                     </thead>
