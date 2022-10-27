@@ -37,8 +37,8 @@ const ManagerDashboard = () =>{
         Legend
     );
 
-    const data = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    const [ data , setData ] = useState( {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
         datasets: [
             {
                 label: "First dataset",
@@ -46,15 +46,15 @@ const ManagerDashboard = () =>{
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
-            },
+            }/*,
             {
                 label: "Second dataset",
                 data: [33, 25, 35, 51, 54, 76],
                 fill: false,
                 borderColor: "#742774"
-            }
+            }*/
         ]
-    };
+    } )
 
     useEffect( () => {
 
