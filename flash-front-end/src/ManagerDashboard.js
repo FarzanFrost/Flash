@@ -434,65 +434,65 @@ const ManagerDashboard = () =>{
 
                 </div>
 
-                <div className="table-responsive"> {/*table start*/}
+                {/*<div className="table-responsive"> /!*table start*!/*/}
 
-                    <table className="table table-striped table-sm text-center">
+                {/*    <table className="table table-striped table-sm text-center">*/}
 
-                        <thead>
-                        <tr>
-                            <th scope="col">Event</th>
-                            <th scope="col">Total Count</th>
-                            <th scope="col">Finish Events</th>
-                            <th scope="col">Pending Events</th>
-                            <th scope="col">Working Employees</th>
-                        </tr>
-                        </thead>
+                {/*        <thead>*/}
+                {/*        <tr>*/}
+                {/*            <th scope="col">Event</th>*/}
+                {/*            <th scope="col">Total Count</th>*/}
+                {/*            <th scope="col">Finish Events</th>*/}
+                {/*            <th scope="col">Pending Events</th>*/}
+                {/*            <th scope="col">Working Employees</th>*/}
+                {/*        </tr>*/}
+                {/*        </thead>*/}
 
-                        <tbody>
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tbody>*/}
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
-                        </tbody>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
+                {/*        </tbody>*/}
 
-                    </table>
+                {/*    </table>*/}
 
-                </div>
+                {/*</div>*/}
 
             </div> {/*end*/}
 
