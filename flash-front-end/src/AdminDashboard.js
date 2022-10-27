@@ -85,6 +85,19 @@ const AdminDashboard = () =>{
             }
         ]
     };
+
+    const [ loginDetails , setLoginDetails ] = useState( null )
+    useEffect( () => {
+        axios.get( serverLink + '/AdminLoginDetails' ).then(
+            ( response ) => {
+                setLoginDetails( response.data )
+                console.log( response.data )
+            }
+        ).catch(
+            () => { alert( "Error!!! employee details ") }
+        )
+    } ,[])
+
     return(
         <div className="h-100">
 
@@ -314,7 +327,16 @@ const AdminDashboard = () =>{
 
                         <tbody>
                         <tr>
+
                             <td>Wedding</td>
+                            <td>27</td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>56</td>
+                        </tr>
+
+                        <tr>
+                            <td>Birthday</td>
                             <td>27</td>
                             <td>20</td>
                             <td>07</td>
@@ -330,7 +352,7 @@ const AdminDashboard = () =>{
                         </tr>
 
                         <tr>
-                            <td>Wedding</td>
+                            <td>Get together</td>
                             <td>27</td>
                             <td>20</td>
                             <td>07</td>
@@ -338,7 +360,7 @@ const AdminDashboard = () =>{
                         </tr>
 
                         <tr>
-                            <td>Wedding</td>
+                            <td>House warming</td>
                             <td>27</td>
                             <td>20</td>
                             <td>07</td>
@@ -346,7 +368,7 @@ const AdminDashboard = () =>{
                         </tr>
 
                         <tr>
-                            <td>Wedding</td>
+                            <td>Prize giving</td>
                             <td>27</td>
                             <td>20</td>
                             <td>07</td>
