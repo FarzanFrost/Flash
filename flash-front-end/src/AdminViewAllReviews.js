@@ -5,12 +5,12 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
-// import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
-
+import {AuthenticationContext} from "./ContextFiles/Authentication/AuthenticationContextProvider";
+import {useContext} from "react";
 
 const AdminViewAllReviews = () => {
 
-    // const { changeContentVisible } = useContext( AuthenticationContext )
+    const { changeContentVisible } = useContext( AuthenticationContext )
 
     const serverLink = 'http://localhost:8080';
 
@@ -145,7 +145,7 @@ const AdminViewAllReviews = () => {
                                                     <Button variant="dark" onClick={() => deleteReview( review.reviewsID ) }>
                                                         Delete Review
                                                     </Button>
-                                                    <Button variant="dark" onClick={handleClose}>
+                                                    <Button variant="dark" onClick={ () => changeContentVisible( 0 ) }>
                                                         close
                                                     </Button>
                                                 </Modal.Footer>
