@@ -49,7 +49,7 @@ const EmployeeWorkView = () => {
                     <div className="pt-4" >
 
                         <div className="card border-dark border-0 rounded-5 shadow mt-3 mx-5 " style={{backgroundColor: '#d7d7d7'}}>
-                            <h2 className="text-center mt-3" >Pending Works</h2>
+                            <h2 className="text-center mt-3" > Works</h2>
 
                             <div className="card-body pb-5">
                                 <div className="table-responsive ">
@@ -95,53 +95,55 @@ const EmployeeWorkView = () => {
 
                             </div> {/*end table*/}
 
-                            <h2 className="text-center" >Previous Works</h2>
+                            {/*<h2 className="text-center" >Previous Works</h2>*/}
 
-                            <div className="card-body">
-                                <div className="table-responsive ">
-                                    <table className="table table-dark table-striped align-middle">
+                            {/*<div className="card-body">*/}
+                            {/*    <div className="table-responsive ">*/}
+                            {/*        <table className="table table-dark table-striped align-middle">*/}
 
-                                        <thead className="align-middle">
+                            {/*            <thead className="align-middle">*/}
 
-                                        {/*<thead>*/}
+                            {/*            /!*<thead>*!/*/}
 
-                                        <tr>
-                                            <th scope="col">Event Id</th>
-                                            <th scope="col">Event</th>
-                                            <th scope="col">Date</th>
-                                            <th scope="col">Start Time</th>
-                                            <th scope="col">End Time</th>
-                                            <th scope="col">Address</th>
+                            {/*            <tr>*/}
+                            {/*                <th scope="col">Event Id</th>*/}
+                            {/*                <th scope="col">Event</th>*/}
+                            {/*                <th scope="col">Date</th>*/}
+                            {/*                <th scope="col">Start Time</th>*/}
+                            {/*                <th scope="col">End Time</th>*/}
+                            {/*                <th scope="col">Address</th>*/}
 
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        { eventDetails!== null &&
-                                            eventDetails.map(
-                                                (events)=>(
+                            {/*            </tr>*/}
+                            {/*            </thead>*/}
+                            {/*            <tbody>*/}
+                            {/*            { eventDetails!== null &&*/}
+                            {/*                eventDetails.map(*/}
+                            {/*                    (events)=>(*/}
 
-                                                    <tr>
-                                                        <th scope="col">{events.eventID}</th>
-                                                        <th scope="col">{events.category}</th>
-                                                        <th scope="col">{events.eventDate}</th>
-                                                        <th scope="col">{events.startTime}</th>
-                                                        <th scope="col">{events.endTime}</th>
-                                                        <th scope="col">{events.address}</th>
-                                                    </tr>
+                            {/*                        <tr>*/}
+                            {/*                            <th scope="col">{events.eventID}</th>*/}
+                            {/*                            <th scope="col">{events.category}</th>*/}
+                            {/*                            <th scope="col">{events.eventDate}</th>*/}
+                            {/*                            <th scope="col">{events.startTime}</th>*/}
+                            {/*                            <th scope="col">{events.endTime}</th>*/}
+                            {/*                            <th scope="col">{events.address}</th>*/}
+                            {/*                        </tr>*/}
+                            {/*                    ))}*/}
 
-                                                )
-                                            )
-                                        }
-                                        </tbody>
-                                    </table>
-                                </div>
+                            {/*                   )*/}
+                            {/*              )*/}
+                            {/*            }*/}
+                            {/*            </tbody>*/}
+                            {/*        </table>*/}
+                            {/*    </div>*/}
 
                             </div> {/*end table*/}
-                        </div>
-                    </div>
+                    {/*    </div>*/}
+                    {/*</div>*/}
 
             </div>
 
+        </div>
         </div>
 
     )

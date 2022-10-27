@@ -105,13 +105,18 @@ console.log(calenderdetails)
             ( response ) => {
 
                 console.log( "calender " , response.data)
+                const x = response.data
+
                 Swal.fire({
-                    title: '<strong>HTML <u>example</u></strong>',
+                    title: '<strong>Event Details... <u></u></strong>',
                     icon: 'info',
                     html:
-                        'You can use <b>bold text</b>, ' +
-                        '<a href="//sweetalert2.github.io">links</a> ' +
-                        'and other HTML tags',
+                        ' <tr>EventID=>'+x.eventID+'</tr><br/>' +
+                        '<tr>Address=>'+x.address+'</tr><br/>'+
+                        '<tr>advanceAmount=>'+x.advanceAmount+'</tr></br>'+
+                        '<tr>category=>'+x.category+'</tr></br>'+
+                        '<tr>extraPage=>'+x.extraPage+'</tr></br>',
+
                     showCloseButton: true,
                     showCancelButton: false,
                     focusConfirm: false,
@@ -145,7 +150,7 @@ console.log(calenderdetails)
         eventClick={
             function(arg){
                 displayEventDetails(arg.event.title)
-                console.log("mudilla "+ ideventdetailsarray)
+                // console.log("mudilla "+ ideventdetailsarray)
 
                 // displayEventDetails(arg.event.start)
             }
