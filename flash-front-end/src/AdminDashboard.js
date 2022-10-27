@@ -71,7 +71,7 @@ const AdminDashboard = () =>{
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
         datasets: [
             {
-                label: "First dataset",
+                label: "Users",
                 data: [33, 53, 85, 41, 44, 65],
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
@@ -110,6 +110,62 @@ const AdminDashboard = () =>{
                     datasets: [
                         {
                             label: "Users",
+                            data: arr,
+                            fill: true,
+                            backgroundColor: "rgba(75,192,192,0.2)",
+                            borderColor: "rgba(75,192,192,1)"
+                        }
+                    ]
+                } )
+            }
+        ).catch(
+            () => { alert( "Error!!! employee details ") }
+        )
+    } ,[])
+
+    const [ data1 , setData1 ] = useState( {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        datasets: [
+            {
+                label: "Events",
+                data: [33, 53, 85, 41, 44, 65],
+                fill: true,
+                backgroundColor: "rgba(75,192,192,0.2)",
+                borderColor: "rgba(75,192,192,1)"
+            }
+        ]
+    } )
+
+    const [ eventDetails , setEventDetails ] = useState( null )
+    useEffect( () => {
+        axios.get( serverLink + '/AdminViewEvents' ).then(
+            ( response ) => {
+
+                const details = response.data
+
+
+                const month1 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '1'  )
+                const month2 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '2'  )
+                const month3 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '3'  )
+                const month4 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '4'  )
+                const month5 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '5'  )
+                const month6 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '6'  )
+                const month7 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '7'  )
+                const month8 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '8'  )
+                const month9 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '9'  )
+                const month10 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '10'  )
+                const month11 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '11'  )
+                const month12 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '12'  )
+
+                const arr = [ month1.length ,month2.length ,month3.length ,month4.length ,month5.length ,month6.length ,month7.length ,month8.length ,month9.length ,month10.length ,month11.length ,month12.length  ]
+
+                setEventDetails( response.data )
+
+                setData1( {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                    datasets: [
+                        {
+                            label: "Events",
                             data: arr,
                             fill: true,
                             backgroundColor: "rgba(75,192,192,0.2)",
@@ -325,6 +381,7 @@ const AdminDashboard = () =>{
 
                                     {/*<img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>*/}
                                     <Line data={data} />
+                                    <Line data={data1} />
 
                                 </div>
 
