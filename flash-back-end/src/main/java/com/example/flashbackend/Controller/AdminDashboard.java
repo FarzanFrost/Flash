@@ -40,5 +40,9 @@ public class AdminDashboard {
     public List<Login> getEmployees(){
         return adminDashboardComponent.getLoginDetails();
     }
+    @GetMapping("/AdminEventDetails")
+    public List<Event> getEventDetails(){
+        return adminDashboardComponent.getEventDetails();
+    }
 
 }
