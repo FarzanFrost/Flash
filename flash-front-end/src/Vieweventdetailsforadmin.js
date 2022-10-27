@@ -122,6 +122,7 @@ const Vieweventdetailsforadmin = () => {
                                             <th scope="col">Category</th>
                                             <th scope="col">Address</th>
                                             <th scope="col-2">More</th>
+                                            <th scope="col-2">comment</th>
 
                                         </tr>
                                         </thead>
