@@ -76,13 +76,7 @@ const AdminDashboard = () =>{
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
-            }/*,
-            {
-                label: "Second dataset",
-                data: [33, 25, 35, 51, 54, 76],
-                fill: false,
-                borderColor: "#742774"
-            }*/
+            }
         ]
     } )
 
@@ -93,7 +87,7 @@ const AdminDashboard = () =>{
 
                 const details = response.data
 
-                // const z = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] > '10'  )
+
                 const month1 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '1'  )
                 const month2 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '2'  )
                 const month3 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '3'  )
@@ -120,18 +114,9 @@ const AdminDashboard = () =>{
                             fill: true,
                             backgroundColor: "rgba(75,192,192,0.2)",
                             borderColor: "rgba(75,192,192,1)"
-                        }/*,
-            {
-                label: "Second dataset",
-                data: [33, 25, 35, 51, 54, 76],
-                fill: false,
-                borderColor: "#742774"
-            }*/
+                        }
                     ]
                 } )
-                console.log(  "pakki" ,  response.data )
-                // console.log(  "pakki2" ,  z )
-
             }
         ).catch(
             () => { alert( "Error!!! employee details ") }
