@@ -2,6 +2,7 @@ package com.example.flashbackend.Controller;
 import com.example.flashbackend.Component.AdminEventComponent;
 import com.example.flashbackend.Component.AdminReviewComponent;
 import com.example.flashbackend.DTO.DeleteEvent;
+import com.example.flashbackend.DTO.DeleteReview;
 import com.example.flashbackend.Entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,8 +29,8 @@ public class Admin {
     }
 
     @PostMapping("/AdminDeleteReview")
-        public String deleteReview(@RequestBody BigInteger reviewId) {
-            return AdminReviewComponent.deleteReview(reviewId);
+        public String deleteReview(@RequestBody DeleteReview deleteReview) {
+            return AdminReviewComponent.deleteReview(deleteReview.getReviewID());
     }
 
     @GetMapping("/AdminViewEvents")
