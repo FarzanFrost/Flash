@@ -37,8 +37,8 @@ const ManagerDashboard = () =>{
         Legend
     );
 
-    const data = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+    const [ data , setData ] = useState( {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
         datasets: [
             {
                 label: "First dataset",
@@ -46,15 +46,122 @@ const ManagerDashboard = () =>{
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
-            },
+            }/*,
             {
                 label: "Second dataset",
                 data: [33, 25, 35, 51, 54, 76],
                 fill: false,
                 borderColor: "#742774"
+            }*/
+        ]
+    } )
+
+    const [ loginDetails , setLoginDetails ] = useState( null )
+    useEffect( () => {
+        axios.get( serverLink + '/AdminLoginDetails' ).then(
+            ( response ) => {
+
+                const details = response.data
+
+                // const z = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] > '10'  )
+                const month1 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '1'  )
+                const month2 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '2'  )
+                const month3 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '3'  )
+                const month4 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '4'  )
+                const month5 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '5'  )
+                const month6 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '6'  )
+                const month7 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '7'  )
+                const month8 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '8'  )
+                const month9 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '9'  )
+                const month10 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '10'  )
+                const month11 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '11'  )
+                const month12 = details.filter( ( detail ) =>  detail.dateTime.split("T")[0].split("-")[1] === '12'  )
+
+                const arr = [ month1.length ,month2.length ,month3.length ,month4.length ,month5.length ,month6.length ,month7.length ,month8.length ,month9.length ,month10.length ,month11.length ,month12.length  ]
+
+                setLoginDetails( response.data )
+
+                setData( {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                    datasets: [
+                        {
+                            label: "Users",
+                            data: arr,
+                            fill: true,
+                            backgroundColor: "rgba(75,192,192,0.2)",
+                            borderColor: "rgba(75,192,192,1)"
+                        }/*,
+            {
+                label: "Second dataset",
+                data: [33, 25, 35, 51, 54, 76],
+                fill: false,
+                borderColor: "#742774"
+            }*/
+                    ]
+                } )
+                console.log(  "pakki" ,  response.data )
+                // console.log(  "pakki2" ,  z )
+
+            }
+        ).catch(
+            () => { alert( "Error!!! employee details ") }
+        )
+    } ,[])
+
+    const [ data1 , setData1 ] = useState( {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+        datasets: [
+            {
+                label: "Events",
+                data: [33, 53, 85, 41, 44, 65],
+                fill: true,
+                backgroundColor: "rgba(75,192,192,0.2)",
+                borderColor: "rgba(75,192,192,1)"
             }
         ]
-    };
+    } )
+    const [ eventDetails , setEventDetails ] = useState( null )
+    useEffect( () => {
+        axios.get( serverLink + '/AdminViewEvents' ).then(
+            ( response ) => {
+
+                const details = response.data
+
+
+                const month1 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '1'  )
+                const month2 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '2'  )
+                const month3 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '3'  )
+                const month4 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '4'  )
+                const month5 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '5'  )
+                const month6 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '6'  )
+                const month7 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '7'  )
+                const month8 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '8'  )
+                const month9 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '9'  )
+                const month10 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '10'  )
+                const month11 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '11'  )
+                const month12 = details.filter( ( detail ) =>  detail.eventDate.split("-")[1] === '12'  )
+
+                const arr = [ month1.length ,month2.length ,month3.length ,month4.length ,month5.length ,month6.length ,month7.length ,month8.length ,month9.length ,month10.length ,month11.length ,month12.length  ]
+
+                setEventDetails( response.data )
+
+                setData1( {
+                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+                    datasets: [
+                        {
+                            label: "Events",
+                            data: arr,
+                            fill: true,
+                            backgroundColor: "rgba(75,192,192,0.2)",
+                            borderColor: "rgba(75,192,192,1)"
+                        }
+                    ]
+                } )
+            }
+        ).catch(
+            () => { alert( "Error!!! employee details ") }
+        )
+    } ,[])
 
     useEffect( () => {
 
@@ -316,7 +423,7 @@ const ManagerDashboard = () =>{
                                     {/*<img src={ pic } className="img-fluid rounded-3 h-100" alt="Booking"/>*/}
 
                                     <Line data={data} />
-
+                                    <Line data={data1} />
                                 </div>
 
                             </div>
@@ -327,65 +434,65 @@ const ManagerDashboard = () =>{
 
                 </div>
 
-                <div className="table-responsive"> {/*table start*/}
+                {/*<div className="table-responsive"> /!*table start*!/*/}
 
-                    <table className="table table-striped table-sm text-center">
+                {/*    <table className="table table-striped table-sm text-center">*/}
 
-                        <thead>
-                        <tr>
-                            <th scope="col">Event</th>
-                            <th scope="col">Total Count</th>
-                            <th scope="col">Finish Events</th>
-                            <th scope="col">Pending Events</th>
-                            <th scope="col">Working Employees</th>
-                        </tr>
-                        </thead>
+                {/*        <thead>*/}
+                {/*        <tr>*/}
+                {/*            <th scope="col">Event</th>*/}
+                {/*            <th scope="col">Total Count</th>*/}
+                {/*            <th scope="col">Finish Events</th>*/}
+                {/*            <th scope="col">Pending Events</th>*/}
+                {/*            <th scope="col">Working Employees</th>*/}
+                {/*        </tr>*/}
+                {/*        </thead>*/}
 
-                        <tbody>
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tbody>*/}
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
 
-                        <tr>
-                            <td>Wedding</td>
-                            <td>27</td>
-                            <td>20</td>
-                            <td>07</td>
-                            <td>56</td>
-                        </tr>
-                        </tbody>
+                {/*        <tr>*/}
+                {/*            <td>Wedding</td>*/}
+                {/*            <td>27</td>*/}
+                {/*            <td>20</td>*/}
+                {/*            <td>07</td>*/}
+                {/*            <td>56</td>*/}
+                {/*        </tr>*/}
+                {/*        </tbody>*/}
 
-                    </table>
+                {/*    </table>*/}
 
-                </div>
+                {/*</div>*/}
 
             </div> {/*end*/}
 

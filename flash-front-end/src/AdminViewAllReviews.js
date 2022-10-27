@@ -70,30 +70,30 @@ const AdminViewAllReviews = () => {
 
                         <h2 className="text-center mt-3" >Reviews</h2>
 
-                        <div className="row">
-                            <div className="col-xs-8 col-xs-offset-2">
-                                <div className="input-group">
-                                    <div className="input-group-btn search-panel">
+                    {/*    <div className="row">*/}
+                    {/*        <div className="col-xs-8 col-xs-offset-2">*/}
+                    {/*            <div className="input-group">*/}
+                    {/*                <div className="input-group-btn search-panel">*/}
 
-                                        <select className="btn btn-dark dropdown-toggle"   type="button" id="Filter"
-                                                data-bs-toggle="dropdown">
-                                            <option value="All">All</option>
-                                            <option value="Today">Today</option>
-                                            <option value="This Week">This Week</option>
-                                            <option value="This Month">This Month</option>
-                                        </select>
-                                    </div>
-                                    <input type="hidden" name="search_param" value="all" id="search_param"></input>
-                                    <input type="text" className="form-control" name="x"
-                                           placeholder="Search term..."></input>
-                                    <span className="input-group-btn">
-                    <button className="btn btn-default" type="button">
-                        <span
-                        className="glyphicon glyphicon-search"></span></button>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
+                    {/*                    <select className="btn btn-dark dropdown-toggle"   type="button" id="Filter"*/}
+                    {/*                            data-bs-toggle="dropdown">*/}
+                    {/*                        <option value="All">All</option>*/}
+                    {/*                        <option value="Today">Today</option>*/}
+                    {/*                        <option value="This Week">This Week</option>*/}
+                    {/*                        <option value="This Month">This Month</option>*/}
+                    {/*                    </select>*/}
+                    {/*                </div>*/}
+                    {/*                <input type="hidden" name="search_param" value="all" id="search_param"></input>*/}
+                    {/*                <input type="text" className="form-control" name="x"*/}
+                    {/*                       placeholder="Search term..."></input>*/}
+                    {/*                <span className="input-group-btn">*/}
+                    {/*<button className="btn btn-default" type="button">*/}
+                    {/*    <span*/}
+                    {/*    className="glyphicon glyphicon-search"></span></button>*/}
+                    {/*    </span>*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
 
 
                         <div className="card-body pb-5">
