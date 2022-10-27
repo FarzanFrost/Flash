@@ -187,7 +187,11 @@ const ManagerViewEventFullDetails = () => {
                                                                                 {/*<th scope="col">2022-11-18</th>*/}
                                                                                 <th scope="col">{event.status}</th>
                                                                                 <th scope="col">{event.address}</th>
-                                                                                <th scope="col">raj,kamal</th>
+                                                                                <th scope="col">{ event.employees.map(
+
+                                                                                    ( oneEmployee ) => ( oneEmployee.firstName + " "  )
+
+                                                                                ) }</th>
 
 
 
