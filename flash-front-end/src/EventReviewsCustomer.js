@@ -27,6 +27,20 @@ const EventReviewsCustomer = () => {
         }, []
 
     )
+
+    const deleteReview = ( reviewID ) => {
+        console.log( reviewID )
+        axios.post( serverLink + '/deleteReviews' , {reviewID} ).then(
+            ( response ) => {
+                if ( response.data === "done" ){
+                    setShow(false);
+                }
+            }
+        ).catch(
+            () => { alert( "Error!!! delete Review") }
+        )
+    }
+    const [show, setShow] = useState(false);
     const star = "bi bi-star text-warning"
 
     const fillStar = "bi bi-star-fill text-warning"
@@ -58,7 +72,7 @@ const EventReviewsCustomer = () => {
 
                                     <div className="d-flex">
 
-                                        <h2 className="h2 m-auto"> { reviews.reviewsID } </h2>
+                                        <h2 className="h2 m-auto">ReviewsID : { reviews.reviewsID } </h2>
 
                                         <div className="dropdown m-auto me-0">
                                             <button className="btn bi-three-dots-vertical rounded-circle" type="button" data-bs-toggle="dropdown"
@@ -67,7 +81,7 @@ const EventReviewsCustomer = () => {
                                             <ul className="dropdown-menu">
 
                                                 <li> <button className="dropdown-item"> Edit</button> </li>
-                                                <li> <button className="dropdown-item"> Delete</button> </li>
+                                                <li> <button className="dropdown-item" onClick={() => deleteReview( reviews.reviewsID ) }> Delete</button> </li>
 
                                             </ul>
                                         </div>
